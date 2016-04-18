@@ -91,13 +91,13 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "25",
-			company: "F.Neeleman",
-			file: "PopQuiz",
+			build: "3",
+			company: "Fimme Neeleman",
+			file: "quiz",
 			fps: 60,
-			name: "PopQuiz",
+			name: "quiz",
 			orientation: "",
-			packageName: "PopQuiz",
+			packageName: "quiz",
 			version: "1.0.0",
 			windows: [
 				
@@ -113,7 +113,7 @@ class ApplicationMain {
 					parameters: "{}",
 					resizable: true,
 					stencilBuffer: true,
-					title: "PopQuiz",
+					title: "quiz",
 					vsync: false,
 					width: 800,
 					x: null,
