@@ -1,0 +1,4 @@
+HXCPP_ARMV7=1
+hxcpp=3.2.205
+hxcpp_api_level=321
+hxcpp=C:\HaxeToolkit/hxcpp/3,2,205/
