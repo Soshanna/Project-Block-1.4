@@ -55,6 +55,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
+		
+		
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_nokiafc22_ttf);
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_monsterrat_ttf);
 		
@@ -63,8 +67,16 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#if flash
 		
-		className.set ("assets/images/button.png", __ASSET__assets_images_button_png);
-		type.set ("assets/images/button.png", AssetType.IMAGE);
+		className.set ("assets/images/Candy.png", __ASSET__assets_images_candy_png);
+		type.set ("assets/images/Candy.png", AssetType.IMAGE);
+		className.set ("assets/images/Candy1.png", __ASSET__assets_images_candy1_png);
+		type.set ("assets/images/Candy1.png", AssetType.IMAGE);
+		className.set ("assets/images/Candy2.png", __ASSET__assets_images_candy2_png);
+		type.set ("assets/images/Candy2.png", AssetType.IMAGE);
+		className.set ("assets/images/Candy3.png", __ASSET__assets_images_candy3_png);
+		type.set ("assets/images/Candy3.png", AssetType.IMAGE);
+		className.set ("assets/images/Candy4.png", __ASSET__assets_images_candy4_png);
+		type.set ("assets/images/Candy4.png", AssetType.IMAGE);
 		className.set ("assets/sounds/select.wav", __ASSET__assets_sounds_select_wav);
 		type.set ("assets/sounds/select.wav", AssetType.SOUND);
 		className.set ("flixel/sounds/beep.mp3", __ASSET__flixel_sounds_beep_mp3);
@@ -82,7 +94,23 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#elseif html5
 		
 		var id;
-		id = "assets/images/button.png";
+		id = "assets/images/Candy.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/Candy1.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/Candy2.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/Candy3.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/images/Candy4.png";
 		path.set (id, id);
 		
 		type.set (id, AssetType.IMAGE);
@@ -128,8 +156,20 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		var useManifest = false;
 		
-		className.set ("assets/images/button.png", __ASSET__assets_images_button_png);
-		type.set ("assets/images/button.png", AssetType.IMAGE);
+		className.set ("assets/images/Candy.png", __ASSET__assets_images_candy_png);
+		type.set ("assets/images/Candy.png", AssetType.IMAGE);
+		
+		className.set ("assets/images/Candy1.png", __ASSET__assets_images_candy1_png);
+		type.set ("assets/images/Candy1.png", AssetType.IMAGE);
+		
+		className.set ("assets/images/Candy2.png", __ASSET__assets_images_candy2_png);
+		type.set ("assets/images/Candy2.png", AssetType.IMAGE);
+		
+		className.set ("assets/images/Candy3.png", __ASSET__assets_images_candy3_png);
+		type.set ("assets/images/Candy3.png", AssetType.IMAGE);
+		
+		className.set ("assets/images/Candy4.png", __ASSET__assets_images_candy4_png);
+		type.set ("assets/images/Candy4.png", AssetType.IMAGE);
 		
 		className.set ("assets/sounds/select.wav", __ASSET__assets_sounds_select_wav);
 		type.set ("assets/sounds/select.wav", AssetType.SOUND);
@@ -556,9 +596,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		if (path.exists (id)) {
 			
 			var loader = new URLLoader ();
+			loader.dataFormat = flash.net.URLLoaderDataFormat.BINARY;
 			loader.addEventListener (Event.COMPLETE, function (event:Event) {
 				
-				var bytes = Bytes.ofString (event.currentTarget.data);
+				var bytes = Bytes.ofData (event.currentTarget.data);
 				promise.complete (bytes);
 				
 			});
@@ -792,7 +833,11 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if !display
 #if flash
 
-@:keep @:bind #if display private #end class __ASSET__assets_images_button_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_images_candy_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_images_candy1_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_images_candy2_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_images_candy3_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_images_candy4_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_sounds_select_wav extends flash.media.Sound { }
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_beep_mp3 extends flash.media.Sound { }
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_flixel_mp3 extends flash.media.Sound { }
@@ -802,6 +847,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 #elseif html5
+
+
+
+
 
 
 
@@ -819,13 +868,17 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if (windows || mac || linux || cpp)
 
 
-@:image("assets/images/button.png") #if display private #end class __ASSET__assets_images_button_png extends lime.graphics.Image {}
+@:image("assets/images/Candy.png") #if display private #end class __ASSET__assets_images_candy_png extends lime.graphics.Image {}
+@:image("assets/images/Candy1.png") #if display private #end class __ASSET__assets_images_candy1_png extends lime.graphics.Image {}
+@:image("assets/images/Candy2.png") #if display private #end class __ASSET__assets_images_candy2_png extends lime.graphics.Image {}
+@:image("assets/images/Candy3.png") #if display private #end class __ASSET__assets_images_candy3_png extends lime.graphics.Image {}
+@:image("assets/images/Candy4.png") #if display private #end class __ASSET__assets_images_candy4_png extends lime.graphics.Image {}
 @:file("assets/sounds/select.wav") #if display private #end class __ASSET__assets_sounds_select_wav extends lime.utils.Bytes {}
-@:file("C:/HaxeToolkit/haxe/lib/flixel/4,0,1/assets/sounds/beep.mp3") #if display private #end class __ASSET__flixel_sounds_beep_mp3 extends lime.utils.Bytes {}
-@:file("C:/HaxeToolkit/haxe/lib/flixel/4,0,1/assets/sounds/flixel.mp3") #if display private #end class __ASSET__flixel_sounds_flixel_mp3 extends lime.utils.Bytes {}
-@:font("C:/HaxeToolkit/haxe/lib/flixel/4,0,1/assets/fonts/nokiafc22.ttf") #if display private #end class __ASSET__flixel_fonts_nokiafc22_ttf extends lime.text.Font {}
-@:font("C:/HaxeToolkit/haxe/lib/flixel/4,0,1/assets/fonts/monsterrat.ttf") #if display private #end class __ASSET__flixel_fonts_monsterrat_ttf extends lime.text.Font {}
-@:image("C:/HaxeToolkit/haxe/lib/flixel/4,0,1/assets/images/ui/button.png") #if display private #end class __ASSET__flixel_images_ui_button_png extends lime.graphics.Image {}
+@:file("C:/HaxeToolkit/flixel/4,0,1/assets/sounds/beep.mp3") #if display private #end class __ASSET__flixel_sounds_beep_mp3 extends lime.utils.Bytes {}
+@:file("C:/HaxeToolkit/flixel/4,0,1/assets/sounds/flixel.mp3") #if display private #end class __ASSET__flixel_sounds_flixel_mp3 extends lime.utils.Bytes {}
+@:font("C:/HaxeToolkit/flixel/4,0,1/assets/fonts/nokiafc22.ttf") #if display private #end class __ASSET__flixel_fonts_nokiafc22_ttf extends lime.text.Font {}
+@:font("C:/HaxeToolkit/flixel/4,0,1/assets/fonts/monsterrat.ttf") #if display private #end class __ASSET__flixel_fonts_monsterrat_ttf extends lime.text.Font {}
+@:image("C:/HaxeToolkit/flixel/4,0,1/assets/images/ui/button.png") #if display private #end class __ASSET__flixel_images_ui_button_png extends lime.graphics.Image {}
 
 
 

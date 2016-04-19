@@ -30,7 +30,23 @@ class ApplicationMain {
 		var types = [];
 		
 		
-		urls.push ("assets/images/button.png");
+		urls.push ("assets/images/Candy.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/images/Candy1.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/images/Candy2.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/images/Candy3.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/images/Candy4.png");
 		types.push (lime.Assets.AssetType.IMAGE);
 		
 		
@@ -119,7 +135,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "199",
+			build: "249",
 			company: "HaxeFlixel",
 			file: "Android_Test",
 			fps: 60,

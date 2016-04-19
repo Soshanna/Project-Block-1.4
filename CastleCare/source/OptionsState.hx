@@ -36,17 +36,17 @@ class OptionsState extends FlxState
 		_txtVolume.screenCenter(FlxAxes.X);
 		add(_txtVolume);
 		
-		_btnVolumeDown = new FlxButton(158, _txtVolume.y + _txtVolume.height + 2, "-", clickVolumeDown);
-		_btnVolumeDown.loadGraphic(AssetPaths.button__png, true, 20, 20);
-		_btnVolumeDown.onUp.sound = FlxG.sound.load(AssetPaths.select__wav);
-		add(_btnVolumeDown);
-		
-		_barVolume = new FlxBar(_btnVolumeDown.x + _btnVolumeDown.width + 4, _btnVolumeDown.y, LEFT_TO_RIGHT,300,30);
+		_barVolume = new FlxBar(_txtVolume.x - 125, _txtVolume.y + _txtVolume.height + 2, LEFT_TO_RIGHT,300,30);
 		_barVolume.createFilledBar(0xff464646, FlxColor.WHITE, true, FlxColor.WHITE);
 		add(_barVolume);
 		
+		_btnVolumeDown = new FlxButton(_barVolume.x - 23,_barVolume.y, "-", clickVolumeDown);
+		_btnVolumeDown.makeGraphic(20, 20, FlxColor.WHITE);
+		_btnVolumeDown.onUp.sound = FlxG.sound.load(AssetPaths.select__wav);
+		add(_btnVolumeDown);
+		
 		_btnVolumeUp = new FlxButton(_btnVolumeDown.x + _barVolume.width + 27, _btnVolumeDown.y, "+", clickVolumeUp);
-		_btnVolumeUp.loadGraphic(AssetPaths.button__png, true, 20, 20);
+		_btnVolumeUp.makeGraphic(20, 20, FlxColor.WHITE);
 		_btnVolumeUp.onUp.sound = FlxG.sound.load(AssetPaths.select__wav);
 		add(_btnVolumeUp);
 		
