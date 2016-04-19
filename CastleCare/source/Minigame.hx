@@ -13,10 +13,11 @@ class Minigame extends FlxState
 	var background:FlxSprite;
 	var placements:Array<FlxSprite> = new Array<FlxSprite>();
 	var randomcolor:FlxColor;
+	var randomFloat:Float;
 	
 	override public function create():Void 
 	{
-		background = new FlxSprite().makeGraphic(1200, 650, FlxColor.BROWN);
+		background = new FlxSprite().makeGraphic(1200, 650, FlxColor.GRAY);
 		background.screenCenter();
 		add(background);
 		
@@ -63,21 +64,21 @@ class Minigame extends FlxState
 	}
 	
 	function randomColor(){
-		var randomFloat:Float = Math.random();
+		randomFloat = Math.random();
 		if(randomFloat <= 0.20){
-			randomcolor = FlxColor.BLACK;
+			randomcolor = FlxColor.BROWN;
 		}
-		if(randomFloat <= 0.40){
+		else if(randomFloat <= 0.40){
 			randomcolor = FlxColor.BLUE;
 		}
-		if(randomFloat <= 0.60){
+		else if(randomFloat <= 0.60){
 			randomcolor = FlxColor.CYAN;
 		}
-		if(randomFloat <= 0.80){
-			randomcolor = FlxColor.GRAY;
-		}
-		if(randomFloat <= 1.00){
+		else if(randomFloat <= 0.80){
 			randomcolor = FlxColor.GREEN;
+		}
+		else{
+			randomcolor = FlxColor.WHITE;
 		}
 	}
 	
