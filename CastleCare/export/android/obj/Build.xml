@@ -2088,7 +2088,6 @@
   <file name="src/flixel/system/debug/Window.cpp">
    <depend name="include/Std.h"/>
    <depend name="include/flixel/FlxG.h"/>
-   <depend name="include/flixel/system/FlxAssets.h"/>
    <depend name="include/flixel/system/debug/DebuggerUtil.h"/>
    <depend name="include/flixel/system/debug/Window.h"/>
    <depend name="include/flixel/system/debug/_Window/GraphicCloseButton.h"/>
@@ -2115,7 +2114,6 @@
    <depend name="include/openfl/_legacy/geom/Point.h"/>
    <depend name="include/openfl/_legacy/geom/Rectangle.h"/>
    <depend name="include/openfl/_legacy/text/TextField.h"/>
-   <depend name="include/openfl/_legacy/text/TextFormat.h"/>
   </file>
   <file name="src/flixel/system/debug/_Window/GraphicCloseButton.cpp">
    <depend name="include/flixel/system/debug/_Window/GraphicCloseButton.h"/>
@@ -2152,6 +2150,7 @@
    <depend name="include/openfl/_legacy/events/EventDispatcher.h"/>
    <depend name="include/openfl/_legacy/events/IEventDispatcher.h"/>
    <depend name="include/openfl/_legacy/text/TextField.h"/>
+   <depend name="include/openfl/_legacy/text/TextFieldAutoSize.h"/>
    <depend name="include/openfl/_legacy/text/TextFormat.h"/>
   </file>
   <file name="src/flixel/system/FlxSplash.cpp">
@@ -3834,38 +3833,6 @@
   <file name="src/Reflect.cpp">
    <depend name="include/Reflect.h"/>
   </file>
-  <file name="src/PlayState.cpp">
-   <depend name="include/MenuState.h"/>
-   <depend name="include/PlayState.h"/>
-   <depend name="include/flixel/FlxBasic.h"/>
-   <depend name="include/flixel/FlxCamera.h"/>
-   <depend name="include/flixel/FlxG.h"/>
-   <depend name="include/flixel/FlxGame.h"/>
-   <depend name="include/flixel/FlxObject.h"/>
-   <depend name="include/flixel/FlxSprite.h"/>
-   <depend name="include/flixel/FlxState.h"/>
-   <depend name="include/flixel/group/FlxTypedGroup.h"/>
-   <depend name="include/flixel/input/IFlxInput.h"/>
-   <depend name="include/flixel/system/FlxSound.h"/>
-   <depend name="include/flixel/system/FlxSoundGroup.h"/>
-   <depend name="include/flixel/system/frontEnds/SoundFrontEnd.h"/>
-   <depend name="include/flixel/text/FlxText.h"/>
-   <depend name="include/flixel/ui/FlxBar.h"/>
-   <depend name="include/flixel/ui/FlxBarFillDirection.h"/>
-   <depend name="include/flixel/ui/FlxButton.h"/>
-   <depend name="include/flixel/ui/FlxTypedButton_flixel_text_FlxText.h"/>
-   <depend name="include/flixel/ui/_FlxButton/FlxButtonEvent.h"/>
-   <depend name="include/flixel/util/FlxAxes.h"/>
-   <depend name="include/flixel/util/FlxTimer.h"/>
-   <depend name="include/flixel/util/IFlxDestroyable.h"/>
-   <depend name="include/openfl/_legacy/display/DisplayObject.h"/>
-   <depend name="include/openfl/_legacy/display/DisplayObjectContainer.h"/>
-   <depend name="include/openfl/_legacy/display/IBitmapDrawable.h"/>
-   <depend name="include/openfl/_legacy/display/InteractiveObject.h"/>
-   <depend name="include/openfl/_legacy/display/Sprite.h"/>
-   <depend name="include/openfl/_legacy/events/EventDispatcher.h"/>
-   <depend name="include/openfl/_legacy/events/IEventDispatcher.h"/>
-  </file>
   <file name="src/OptionsState.cpp">
    <depend name="include/MenuState.h"/>
    <depend name="include/OptionsState.h"/>
@@ -3899,10 +3866,20 @@
    <depend name="include/openfl/_legacy/events/EventDispatcher.h"/>
    <depend name="include/openfl/_legacy/events/IEventDispatcher.h"/>
   </file>
+  <file name="src/Minigame.cpp">
+   <depend name="include/Minigame.h"/>
+   <depend name="include/flixel/FlxBasic.h"/>
+   <depend name="include/flixel/FlxObject.h"/>
+   <depend name="include/flixel/FlxSprite.h"/>
+   <depend name="include/flixel/FlxState.h"/>
+   <depend name="include/flixel/group/FlxTypedGroup.h"/>
+   <depend name="include/flixel/util/FlxAxes.h"/>
+   <depend name="include/flixel/util/IFlxDestroyable.h"/>
+  </file>
   <file name="src/MenuState.cpp">
    <depend name="include/MenuState.h"/>
+   <depend name="include/Minigame.h"/>
    <depend name="include/OptionsState.h"/>
-   <depend name="include/PlayState.h"/>
    <depend name="include/flixel/FlxBasic.h"/>
    <depend name="include/flixel/FlxCamera.h"/>
    <depend name="include/flixel/FlxG.h"/>

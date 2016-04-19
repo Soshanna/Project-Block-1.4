@@ -119,7 +119,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "150",
+			build: "186",
 			company: "HaxeFlixel",
 			file: "Android_Test",
 			fps: 60,
@@ -131,7 +131,7 @@ class ApplicationMain {
 				
 				{
 					antialiasing: 0,
-					background: 16711935,
+					background: 16777215,
 					borderless: false,
 					depthBuffer: false,
 					display: 0,
@@ -161,7 +161,7 @@ class ApplicationMain {
 		
 		#if (js && html5)
 		#if (munit || utest)
-		openfl.Lib.embed (null, 1280, 720, "FF00FF");
+		openfl.Lib.embed (null, 1280, 720, "FFFFFF");
 		#end
 		#else
 		create ();

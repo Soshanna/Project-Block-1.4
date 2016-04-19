@@ -326,17 +326,17 @@ int Frame = __o_Frame.Default(0);
 		bool tmp17 = this->finished;		HX_STACK_VAR(tmp17,"tmp17");
 		HX_STACK_LINE(154)
 		if ((tmp17)){
-			HX_STACK_LINE(154)
+			HX_STACK_LINE(155)
 			::flixel::animation::FlxAnimationController tmp18 = this->parent;		HX_STACK_VAR(tmp18,"tmp18");
-			HX_STACK_LINE(154)
+			HX_STACK_LINE(155)
 			::flixel::animation::FlxAnimationController _this = tmp18;		HX_STACK_VAR(_this,"_this");
-			HX_STACK_LINE(154)
+			HX_STACK_LINE(155)
 			bool tmp19 = (_this->finishCallback != null());		HX_STACK_VAR(tmp19,"tmp19");
-			HX_STACK_LINE(154)
+			HX_STACK_LINE(155)
 			if ((tmp19)){
-				HX_STACK_LINE(154)
+				HX_STACK_LINE(155)
 				::String tmp20 = this->name;		HX_STACK_VAR(tmp20,"tmp20");
-				HX_STACK_LINE(154)
+				HX_STACK_LINE(155)
 				_this->finishCallback(tmp20);
 			}
 		}
@@ -349,11 +349,11 @@ HX_DEFINE_DYNAMIC_FUNC3(FlxAnimation_obj,play,(void))
 
 Void FlxAnimation_obj::restart( ){
 {
-		HX_STACK_FRAME("flixel.animation.FlxAnimation","restart",0xc2d3272f,"flixel.animation.FlxAnimation.restart","flixel/animation/FlxAnimation.hx",158,0x660bc6ae)
+		HX_STACK_FRAME("flixel.animation.FlxAnimation","restart",0xc2d3272f,"flixel.animation.FlxAnimation.restart","flixel/animation/FlxAnimation.hx",159,0x660bc6ae)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(159)
+		HX_STACK_LINE(160)
 		bool tmp = this->reversed;		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(159)
+		HX_STACK_LINE(160)
 		this->play(true,tmp,null());
 	}
 return null();
@@ -364,11 +364,11 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxAnimation_obj,restart,(void))
 
 Void FlxAnimation_obj::stop( ){
 {
-		HX_STACK_FRAME("flixel.animation.FlxAnimation","stop",0xb4d334a2,"flixel.animation.FlxAnimation.stop","flixel/animation/FlxAnimation.hx",163,0x660bc6ae)
+		HX_STACK_FRAME("flixel.animation.FlxAnimation","stop",0xb4d334a2,"flixel.animation.FlxAnimation.stop","flixel/animation/FlxAnimation.hx",164,0x660bc6ae)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(164)
-		this->finished = true;
 		HX_STACK_LINE(165)
+		this->finished = true;
+		HX_STACK_LINE(166)
 		this->paused = true;
 	}
 return null();
@@ -379,26 +379,26 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxAnimation_obj,stop,(void))
 
 Void FlxAnimation_obj::reset( ){
 {
-		HX_STACK_FRAME("flixel.animation.FlxAnimation","reset",0xe6ad112f,"flixel.animation.FlxAnimation.reset","flixel/animation/FlxAnimation.hx",169,0x660bc6ae)
+		HX_STACK_FRAME("flixel.animation.FlxAnimation","reset",0xe6ad112f,"flixel.animation.FlxAnimation.reset","flixel/animation/FlxAnimation.hx",170,0x660bc6ae)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(170)
+		HX_STACK_LINE(171)
 		this->stop();
-		HX_STACK_LINE(171)
+		HX_STACK_LINE(172)
 		bool tmp = this->reversed;		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(171)
+		HX_STACK_LINE(172)
 		int tmp1;		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(171)
+		HX_STACK_LINE(172)
 		if ((tmp)){
-			HX_STACK_LINE(171)
+			HX_STACK_LINE(172)
 			int tmp2 = this->_frames->length;		HX_STACK_VAR(tmp2,"tmp2");
-			HX_STACK_LINE(171)
+			HX_STACK_LINE(172)
 			tmp1 = (tmp2 - (int)1);
 		}
 		else{
-			HX_STACK_LINE(171)
+			HX_STACK_LINE(172)
 			tmp1 = (int)0;
 		}
-		HX_STACK_LINE(171)
+		HX_STACK_LINE(172)
 		this->set_curFrame(tmp1);
 	}
 return null();
@@ -409,26 +409,26 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxAnimation_obj,reset,(void))
 
 Void FlxAnimation_obj::finish( ){
 {
-		HX_STACK_FRAME("flixel.animation.FlxAnimation","finish",0x6ec8ecf3,"flixel.animation.FlxAnimation.finish","flixel/animation/FlxAnimation.hx",175,0x660bc6ae)
+		HX_STACK_FRAME("flixel.animation.FlxAnimation","finish",0x6ec8ecf3,"flixel.animation.FlxAnimation.finish","flixel/animation/FlxAnimation.hx",176,0x660bc6ae)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(176)
+		HX_STACK_LINE(177)
 		this->stop();
-		HX_STACK_LINE(177)
+		HX_STACK_LINE(178)
 		bool tmp = this->reversed;		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(177)
+		HX_STACK_LINE(178)
 		int tmp1;		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(177)
+		HX_STACK_LINE(178)
 		if ((tmp)){
-			HX_STACK_LINE(177)
+			HX_STACK_LINE(178)
 			tmp1 = (int)0;
 		}
 		else{
-			HX_STACK_LINE(177)
+			HX_STACK_LINE(178)
 			int tmp2 = this->_frames->length;		HX_STACK_VAR(tmp2,"tmp2");
-			HX_STACK_LINE(177)
+			HX_STACK_LINE(178)
 			tmp1 = (tmp2 - (int)1);
 		}
-		HX_STACK_LINE(177)
+		HX_STACK_LINE(178)
 		this->set_curFrame(tmp1);
 	}
 return null();
@@ -439,9 +439,9 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxAnimation_obj,finish,(void))
 
 Void FlxAnimation_obj::pause( ){
 {
-		HX_STACK_FRAME("flixel.animation.FlxAnimation","pause",0xbd3c9e56,"flixel.animation.FlxAnimation.pause","flixel/animation/FlxAnimation.hx",182,0x660bc6ae)
+		HX_STACK_FRAME("flixel.animation.FlxAnimation","pause",0xbd3c9e56,"flixel.animation.FlxAnimation.pause","flixel/animation/FlxAnimation.hx",183,0x660bc6ae)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(182)
+		HX_STACK_LINE(183)
 		this->paused = true;
 	}
 return null();
@@ -452,9 +452,9 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxAnimation_obj,pause,(void))
 
 Void FlxAnimation_obj::resume( ){
 {
-		HX_STACK_FRAME("flixel.animation.FlxAnimation","resume",0xf0ce164d,"flixel.animation.FlxAnimation.resume","flixel/animation/FlxAnimation.hx",187,0x660bc6ae)
+		HX_STACK_FRAME("flixel.animation.FlxAnimation","resume",0xf0ce164d,"flixel.animation.FlxAnimation.resume","flixel/animation/FlxAnimation.hx",188,0x660bc6ae)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(187)
+		HX_STACK_LINE(188)
 		this->paused = false;
 	}
 return null();
@@ -465,21 +465,21 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxAnimation_obj,resume,(void))
 
 Void FlxAnimation_obj::reverse( ){
 {
-		HX_STACK_FRAME("flixel.animation.FlxAnimation","reverse",0x73299882,"flixel.animation.FlxAnimation.reverse","flixel/animation/FlxAnimation.hx",191,0x660bc6ae)
+		HX_STACK_FRAME("flixel.animation.FlxAnimation","reverse",0x73299882,"flixel.animation.FlxAnimation.reverse","flixel/animation/FlxAnimation.hx",192,0x660bc6ae)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(192)
+		HX_STACK_LINE(193)
 		bool tmp = this->reversed;		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(192)
+		HX_STACK_LINE(193)
 		bool tmp1 = !(tmp);		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(192)
+		HX_STACK_LINE(193)
 		this->reversed = tmp1;
-		HX_STACK_LINE(193)
+		HX_STACK_LINE(194)
 		bool tmp2 = this->finished;		HX_STACK_VAR(tmp2,"tmp2");
-		HX_STACK_LINE(193)
+		HX_STACK_LINE(194)
 		if ((tmp2)){
-			HX_STACK_LINE(193)
+			HX_STACK_LINE(195)
 			bool tmp3 = this->reversed;		HX_STACK_VAR(tmp3,"tmp3");
-			HX_STACK_LINE(193)
+			HX_STACK_LINE(195)
 			this->play(false,tmp3,null());
 		}
 	}
@@ -491,168 +491,175 @@ HX_DEFINE_DYNAMIC_FUNC0(FlxAnimation_obj,reverse,(void))
 
 Void FlxAnimation_obj::update( Float elapsed){
 {
-		HX_STACK_FRAME("flixel.animation.FlxAnimation","update",0x6f4f32a9,"flixel.animation.FlxAnimation.update","flixel/animation/FlxAnimation.hx",197,0x660bc6ae)
+		HX_STACK_FRAME("flixel.animation.FlxAnimation","update",0x6f4f32a9,"flixel.animation.FlxAnimation.update","flixel/animation/FlxAnimation.hx",199,0x660bc6ae)
 		HX_STACK_THIS(this)
 		HX_STACK_ARG(elapsed,"elapsed")
-		HX_STACK_LINE(198)
+		HX_STACK_LINE(200)
 		Float tmp = this->delay;		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(198)
-		bool tmp1 = (tmp > (int)0);		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(198)
-		bool tmp2 = tmp1;		HX_STACK_VAR(tmp2,"tmp2");
-		HX_STACK_LINE(198)
-		bool tmp3;		HX_STACK_VAR(tmp3,"tmp3");
-		HX_STACK_LINE(198)
-		if ((tmp2)){
-			HX_STACK_LINE(198)
-			bool tmp4 = this->finished;		HX_STACK_VAR(tmp4,"tmp4");
-			HX_STACK_LINE(198)
-			bool tmp5 = tmp4;		HX_STACK_VAR(tmp5,"tmp5");
-			HX_STACK_LINE(198)
-			bool tmp6 = tmp5;		HX_STACK_VAR(tmp6,"tmp6");
-			HX_STACK_LINE(198)
-			bool tmp7 = tmp6;		HX_STACK_VAR(tmp7,"tmp7");
-			HX_STACK_LINE(198)
-			bool tmp8 = tmp7;		HX_STACK_VAR(tmp8,"tmp8");
-			HX_STACK_LINE(198)
-			tmp3 = !(tmp8);
-		}
-		else{
-			HX_STACK_LINE(198)
-			tmp3 = false;
-		}
-		HX_STACK_LINE(198)
+		HX_STACK_LINE(200)
+		bool tmp1 = (tmp <= (int)0);		HX_STACK_VAR(tmp1,"tmp1");
+		HX_STACK_LINE(200)
+		bool tmp2 = !(tmp1);		HX_STACK_VAR(tmp2,"tmp2");
+		HX_STACK_LINE(200)
+		bool tmp3 = tmp2;		HX_STACK_VAR(tmp3,"tmp3");
+		HX_STACK_LINE(200)
 		bool tmp4;		HX_STACK_VAR(tmp4,"tmp4");
-		HX_STACK_LINE(198)
+		HX_STACK_LINE(200)
 		if ((tmp3)){
-			HX_STACK_LINE(198)
-			bool tmp5 = this->paused;		HX_STACK_VAR(tmp5,"tmp5");
-			HX_STACK_LINE(198)
-			bool tmp6 = tmp5;		HX_STACK_VAR(tmp6,"tmp6");
-			HX_STACK_LINE(198)
-			bool tmp7 = tmp6;		HX_STACK_VAR(tmp7,"tmp7");
-			HX_STACK_LINE(198)
-			tmp4 = !(tmp7);
+			HX_STACK_LINE(200)
+			tmp4 = this->finished;
 		}
 		else{
-			HX_STACK_LINE(198)
-			tmp4 = false;
-		}
-		HX_STACK_LINE(198)
-		if ((tmp4)){
 			HX_STACK_LINE(200)
-			hx::AddEq(this->_frameTimer,elapsed);
+			tmp4 = true;
+		}
+		HX_STACK_LINE(200)
+		bool tmp5 = !(tmp4);		HX_STACK_VAR(tmp5,"tmp5");
+		HX_STACK_LINE(200)
+		bool tmp6;		HX_STACK_VAR(tmp6,"tmp6");
+		HX_STACK_LINE(200)
+		if ((tmp5)){
+			HX_STACK_LINE(200)
+			tmp6 = this->paused;
+		}
+		else{
+			HX_STACK_LINE(200)
+			tmp6 = true;
+		}
+		HX_STACK_LINE(200)
+		if ((tmp6)){
 			HX_STACK_LINE(201)
-			while((true)){
-				HX_STACK_LINE(201)
-				Float tmp5 = this->_frameTimer;		HX_STACK_VAR(tmp5,"tmp5");
-				HX_STACK_LINE(201)
-				Float tmp6 = this->delay;		HX_STACK_VAR(tmp6,"tmp6");
-				HX_STACK_LINE(201)
-				bool tmp7 = (tmp5 > tmp6);		HX_STACK_VAR(tmp7,"tmp7");
-				HX_STACK_LINE(201)
-				bool tmp8 = !(tmp7);		HX_STACK_VAR(tmp8,"tmp8");
-				HX_STACK_LINE(201)
-				if ((tmp8)){
-					HX_STACK_LINE(201)
-					break;
-				}
-				HX_STACK_LINE(203)
-				Float tmp9 = this->delay;		HX_STACK_VAR(tmp9,"tmp9");
-				HX_STACK_LINE(203)
-				hx::SubEq(this->_frameTimer,tmp9);
-				HX_STACK_LINE(205)
-				bool tmp10 = this->looped;		HX_STACK_VAR(tmp10,"tmp10");
-				HX_STACK_LINE(205)
-				if ((tmp10)){
-					HX_STACK_LINE(207)
-					int tmp11 = this->_frames->length;		HX_STACK_VAR(tmp11,"tmp11");
-					HX_STACK_LINE(207)
-					int tmp12 = (tmp11 - (int)1);		HX_STACK_VAR(tmp12,"tmp12");
-					HX_STACK_LINE(207)
-					int numFramesMinusOne = tmp12;		HX_STACK_VAR(numFramesMinusOne,"numFramesMinusOne");
-					HX_STACK_LINE(208)
-					bool tmp13 = this->reversed;		HX_STACK_VAR(tmp13,"tmp13");
-					HX_STACK_LINE(208)
-					int tmp14;		HX_STACK_VAR(tmp14,"tmp14");
-					HX_STACK_LINE(208)
-					if ((tmp13)){
-						HX_STACK_LINE(208)
-						int tmp15 = numFramesMinusOne;		HX_STACK_VAR(tmp15,"tmp15");
-						HX_STACK_LINE(208)
-						int tmp16 = this->curFrame;		HX_STACK_VAR(tmp16,"tmp16");
-						HX_STACK_LINE(208)
-						tmp14 = (tmp15 - tmp16);
-					}
-					else{
-						HX_STACK_LINE(208)
-						tmp14 = this->curFrame;
-					}
-					HX_STACK_LINE(208)
-					int tempFrame = tmp14;		HX_STACK_VAR(tempFrame,"tempFrame");
-					HX_STACK_LINE(210)
-					bool tmp15 = (tempFrame == numFramesMinusOne);		HX_STACK_VAR(tmp15,"tmp15");
-					HX_STACK_LINE(210)
-					if ((tmp15)){
-						HX_STACK_LINE(212)
-						bool tmp16 = this->reversed;		HX_STACK_VAR(tmp16,"tmp16");
-						HX_STACK_LINE(212)
-						int tmp17;		HX_STACK_VAR(tmp17,"tmp17");
-						HX_STACK_LINE(212)
-						if ((tmp16)){
-							HX_STACK_LINE(212)
-							tmp17 = numFramesMinusOne;
-						}
-						else{
-							HX_STACK_LINE(212)
-							tmp17 = (int)0;
-						}
-						HX_STACK_LINE(212)
-						this->set_curFrame(tmp17);
-					}
-					else{
-						HX_STACK_LINE(216)
-						bool tmp16 = this->reversed;		HX_STACK_VAR(tmp16,"tmp16");
-						HX_STACK_LINE(216)
-						int tmp17;		HX_STACK_VAR(tmp17,"tmp17");
-						HX_STACK_LINE(216)
-						if ((tmp16)){
-							HX_STACK_LINE(216)
-							int tmp18 = this->curFrame;		HX_STACK_VAR(tmp18,"tmp18");
-							HX_STACK_LINE(216)
-							tmp17 = (tmp18 - (int)1);
-						}
-						else{
-							HX_STACK_LINE(216)
-							int tmp18 = this->curFrame;		HX_STACK_VAR(tmp18,"tmp18");
-							HX_STACK_LINE(216)
-							tmp17 = (tmp18 + (int)1);
-						}
-						HX_STACK_LINE(216)
-						this->set_curFrame(tmp17);
-					}
+			return null();
+		}
+		HX_STACK_LINE(203)
+		hx::AddEq(this->_frameTimer,elapsed);
+		HX_STACK_LINE(204)
+		while((true)){
+			HX_STACK_LINE(204)
+			Float tmp7 = this->_frameTimer;		HX_STACK_VAR(tmp7,"tmp7");
+			HX_STACK_LINE(204)
+			Float tmp8 = this->delay;		HX_STACK_VAR(tmp8,"tmp8");
+			HX_STACK_LINE(204)
+			bool tmp9 = (tmp7 > tmp8);		HX_STACK_VAR(tmp9,"tmp9");
+			HX_STACK_LINE(204)
+			bool tmp10;		HX_STACK_VAR(tmp10,"tmp10");
+			HX_STACK_LINE(204)
+			if ((tmp9)){
+				HX_STACK_LINE(204)
+				bool tmp11 = this->finished;		HX_STACK_VAR(tmp11,"tmp11");
+				HX_STACK_LINE(204)
+				bool tmp12 = tmp11;		HX_STACK_VAR(tmp12,"tmp12");
+				HX_STACK_LINE(204)
+				bool tmp13 = tmp12;		HX_STACK_VAR(tmp13,"tmp13");
+				HX_STACK_LINE(204)
+				tmp10 = !(tmp13);
+			}
+			else{
+				HX_STACK_LINE(204)
+				tmp10 = false;
+			}
+			HX_STACK_LINE(204)
+			bool tmp11 = !(tmp10);		HX_STACK_VAR(tmp11,"tmp11");
+			HX_STACK_LINE(204)
+			if ((tmp11)){
+				HX_STACK_LINE(204)
+				break;
+			}
+			HX_STACK_LINE(206)
+			Float tmp12 = this->delay;		HX_STACK_VAR(tmp12,"tmp12");
+			HX_STACK_LINE(206)
+			hx::SubEq(this->_frameTimer,tmp12);
+			HX_STACK_LINE(208)
+			bool tmp13 = this->looped;		HX_STACK_VAR(tmp13,"tmp13");
+			HX_STACK_LINE(208)
+			if ((tmp13)){
+				HX_STACK_LINE(210)
+				int tmp14 = this->_frames->length;		HX_STACK_VAR(tmp14,"tmp14");
+				HX_STACK_LINE(210)
+				int tmp15 = (tmp14 - (int)1);		HX_STACK_VAR(tmp15,"tmp15");
+				HX_STACK_LINE(210)
+				int numFramesMinusOne = tmp15;		HX_STACK_VAR(numFramesMinusOne,"numFramesMinusOne");
+				HX_STACK_LINE(211)
+				bool tmp16 = this->reversed;		HX_STACK_VAR(tmp16,"tmp16");
+				HX_STACK_LINE(211)
+				int tmp17;		HX_STACK_VAR(tmp17,"tmp17");
+				HX_STACK_LINE(211)
+				if ((tmp16)){
+					HX_STACK_LINE(211)
+					int tmp18 = numFramesMinusOne;		HX_STACK_VAR(tmp18,"tmp18");
+					HX_STACK_LINE(211)
+					int tmp19 = this->curFrame;		HX_STACK_VAR(tmp19,"tmp19");
+					HX_STACK_LINE(211)
+					tmp17 = (tmp18 - tmp19);
 				}
 				else{
-					HX_STACK_LINE(221)
-					bool tmp11 = this->reversed;		HX_STACK_VAR(tmp11,"tmp11");
-					HX_STACK_LINE(221)
-					int tmp12;		HX_STACK_VAR(tmp12,"tmp12");
-					HX_STACK_LINE(221)
-					if ((tmp11)){
-						HX_STACK_LINE(221)
-						int tmp13 = this->curFrame;		HX_STACK_VAR(tmp13,"tmp13");
-						HX_STACK_LINE(221)
-						tmp12 = (tmp13 - (int)1);
+					HX_STACK_LINE(211)
+					tmp17 = this->curFrame;
+				}
+				HX_STACK_LINE(211)
+				int tempFrame = tmp17;		HX_STACK_VAR(tempFrame,"tempFrame");
+				HX_STACK_LINE(213)
+				bool tmp18 = (tempFrame == numFramesMinusOne);		HX_STACK_VAR(tmp18,"tmp18");
+				HX_STACK_LINE(213)
+				if ((tmp18)){
+					HX_STACK_LINE(215)
+					bool tmp19 = this->reversed;		HX_STACK_VAR(tmp19,"tmp19");
+					HX_STACK_LINE(215)
+					int tmp20;		HX_STACK_VAR(tmp20,"tmp20");
+					HX_STACK_LINE(215)
+					if ((tmp19)){
+						HX_STACK_LINE(215)
+						tmp20 = numFramesMinusOne;
 					}
 					else{
-						HX_STACK_LINE(221)
-						int tmp13 = this->curFrame;		HX_STACK_VAR(tmp13,"tmp13");
-						HX_STACK_LINE(221)
-						tmp12 = (tmp13 + (int)1);
+						HX_STACK_LINE(215)
+						tmp20 = (int)0;
 					}
-					HX_STACK_LINE(221)
-					this->set_curFrame(tmp12);
+					HX_STACK_LINE(215)
+					this->set_curFrame(tmp20);
 				}
+				else{
+					HX_STACK_LINE(219)
+					bool tmp19 = this->reversed;		HX_STACK_VAR(tmp19,"tmp19");
+					HX_STACK_LINE(219)
+					int tmp20;		HX_STACK_VAR(tmp20,"tmp20");
+					HX_STACK_LINE(219)
+					if ((tmp19)){
+						HX_STACK_LINE(219)
+						int tmp21 = this->curFrame;		HX_STACK_VAR(tmp21,"tmp21");
+						HX_STACK_LINE(219)
+						tmp20 = (tmp21 - (int)1);
+					}
+					else{
+						HX_STACK_LINE(219)
+						int tmp21 = this->curFrame;		HX_STACK_VAR(tmp21,"tmp21");
+						HX_STACK_LINE(219)
+						tmp20 = (tmp21 + (int)1);
+					}
+					HX_STACK_LINE(219)
+					this->set_curFrame(tmp20);
+				}
+			}
+			else{
+				HX_STACK_LINE(224)
+				bool tmp14 = this->reversed;		HX_STACK_VAR(tmp14,"tmp14");
+				HX_STACK_LINE(224)
+				int tmp15;		HX_STACK_VAR(tmp15,"tmp15");
+				HX_STACK_LINE(224)
+				if ((tmp14)){
+					HX_STACK_LINE(224)
+					int tmp16 = this->curFrame;		HX_STACK_VAR(tmp16,"tmp16");
+					HX_STACK_LINE(224)
+					tmp15 = (tmp16 - (int)1);
+				}
+				else{
+					HX_STACK_LINE(224)
+					int tmp16 = this->curFrame;		HX_STACK_VAR(tmp16,"tmp16");
+					HX_STACK_LINE(224)
+					tmp15 = (tmp16 + (int)1);
+				}
+				HX_STACK_LINE(224)
+				this->set_curFrame(tmp15);
 			}
 		}
 	}
@@ -661,48 +668,48 @@ return null();
 
 
 ::flixel::animation::FlxBaseAnimation FlxAnimation_obj::clone( ::flixel::animation::FlxAnimationController Parent){
-	HX_STACK_FRAME("flixel.animation.FlxAnimation","clone",0x4847dabd,"flixel.animation.FlxAnimation.clone","flixel/animation/FlxAnimation.hx",228,0x660bc6ae)
+	HX_STACK_FRAME("flixel.animation.FlxAnimation","clone",0x4847dabd,"flixel.animation.FlxAnimation.clone","flixel/animation/FlxAnimation.hx",230,0x660bc6ae)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(Parent,"Parent")
-	HX_STACK_LINE(229)
+	HX_STACK_LINE(231)
 	::flixel::animation::FlxAnimationController tmp = Parent;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(229)
+	HX_STACK_LINE(231)
 	::String tmp1 = this->name;		HX_STACK_VAR(tmp1,"tmp1");
-	HX_STACK_LINE(229)
+	HX_STACK_LINE(231)
 	int tmp2 = this->frameRate;		HX_STACK_VAR(tmp2,"tmp2");
-	HX_STACK_LINE(229)
+	HX_STACK_LINE(231)
 	bool tmp3 = this->looped;		HX_STACK_VAR(tmp3,"tmp3");
-	HX_STACK_LINE(229)
+	HX_STACK_LINE(231)
 	bool tmp4 = this->flipX;		HX_STACK_VAR(tmp4,"tmp4");
-	HX_STACK_LINE(229)
+	HX_STACK_LINE(231)
 	bool tmp5 = this->flipY;		HX_STACK_VAR(tmp5,"tmp5");
-	HX_STACK_LINE(229)
+	HX_STACK_LINE(231)
 	::flixel::animation::FlxAnimation tmp6 = ::flixel::animation::FlxAnimation_obj::__new(tmp,tmp1,this->_frames,tmp2,tmp3,tmp4,tmp5);		HX_STACK_VAR(tmp6,"tmp6");
-	HX_STACK_LINE(229)
+	HX_STACK_LINE(231)
 	return tmp6;
 }
 
 
 int FlxAnimation_obj::set_frameRate( int value){
-	HX_STACK_FRAME("flixel.animation.FlxAnimation","set_frameRate",0x8699eef0,"flixel.animation.FlxAnimation.set_frameRate","flixel/animation/FlxAnimation.hx",233,0x660bc6ae)
+	HX_STACK_FRAME("flixel.animation.FlxAnimation","set_frameRate",0x8699eef0,"flixel.animation.FlxAnimation.set_frameRate","flixel/animation/FlxAnimation.hx",235,0x660bc6ae)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(value,"value")
-	HX_STACK_LINE(234)
+	HX_STACK_LINE(236)
 	this->delay = (int)0;
-	HX_STACK_LINE(235)
+	HX_STACK_LINE(237)
 	this->frameRate = value;
-	HX_STACK_LINE(236)
+	HX_STACK_LINE(238)
 	bool tmp = (value > (int)0);		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(236)
+	HX_STACK_LINE(238)
 	if ((tmp)){
-		HX_STACK_LINE(238)
+		HX_STACK_LINE(240)
 		Float tmp1 = (Float(((Float)1.0)) / Float(value));		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(238)
+		HX_STACK_LINE(240)
 		this->delay = tmp1;
 	}
-	HX_STACK_LINE(240)
+	HX_STACK_LINE(242)
 	int tmp1 = value;		HX_STACK_VAR(tmp1,"tmp1");
-	HX_STACK_LINE(240)
+	HX_STACK_LINE(242)
 	return tmp1;
 }
 
@@ -710,128 +717,128 @@ int FlxAnimation_obj::set_frameRate( int value){
 HX_DEFINE_DYNAMIC_FUNC1(FlxAnimation_obj,set_frameRate,return )
 
 int FlxAnimation_obj::set_curFrame( int Frame){
-	HX_STACK_FRAME("flixel.animation.FlxAnimation","set_curFrame",0x46812eaa,"flixel.animation.FlxAnimation.set_curFrame","flixel/animation/FlxAnimation.hx",244,0x660bc6ae)
+	HX_STACK_FRAME("flixel.animation.FlxAnimation","set_curFrame",0x46812eaa,"flixel.animation.FlxAnimation.set_curFrame","flixel/animation/FlxAnimation.hx",246,0x660bc6ae)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(Frame,"Frame")
-	HX_STACK_LINE(245)
+	HX_STACK_LINE(247)
 	int tmp = this->_frames->length;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(245)
+	HX_STACK_LINE(247)
 	int tmp1 = (tmp - (int)1);		HX_STACK_VAR(tmp1,"tmp1");
-	HX_STACK_LINE(245)
+	HX_STACK_LINE(247)
 	int numFramesMinusOne = tmp1;		HX_STACK_VAR(numFramesMinusOne,"numFramesMinusOne");
-	HX_STACK_LINE(247)
+	HX_STACK_LINE(249)
 	bool tmp2 = this->reversed;		HX_STACK_VAR(tmp2,"tmp2");
-	HX_STACK_LINE(247)
+	HX_STACK_LINE(249)
 	int tmp3;		HX_STACK_VAR(tmp3,"tmp3");
-	HX_STACK_LINE(247)
+	HX_STACK_LINE(249)
 	if ((tmp2)){
-		HX_STACK_LINE(247)
+		HX_STACK_LINE(249)
 		tmp3 = (numFramesMinusOne - Frame);
 	}
 	else{
-		HX_STACK_LINE(247)
+		HX_STACK_LINE(249)
 		tmp3 = Frame;
 	}
-	HX_STACK_LINE(247)
+	HX_STACK_LINE(249)
 	int tempFrame = tmp3;		HX_STACK_VAR(tempFrame,"tempFrame");
-	HX_STACK_LINE(249)
+	HX_STACK_LINE(251)
 	bool tmp4 = (tempFrame >= (int)0);		HX_STACK_VAR(tmp4,"tmp4");
-	HX_STACK_LINE(249)
+	HX_STACK_LINE(251)
 	if ((tmp4)){
-		HX_STACK_LINE(251)
+		HX_STACK_LINE(253)
 		bool tmp5 = this->looped;		HX_STACK_VAR(tmp5,"tmp5");
-		HX_STACK_LINE(251)
+		HX_STACK_LINE(253)
 		bool tmp6 = tmp5;		HX_STACK_VAR(tmp6,"tmp6");
-		HX_STACK_LINE(251)
+		HX_STACK_LINE(253)
 		bool tmp7 = !(tmp6);		HX_STACK_VAR(tmp7,"tmp7");
-		HX_STACK_LINE(251)
+		HX_STACK_LINE(253)
 		bool tmp8;		HX_STACK_VAR(tmp8,"tmp8");
-		HX_STACK_LINE(251)
+		HX_STACK_LINE(253)
 		if ((tmp7)){
-			HX_STACK_LINE(251)
+			HX_STACK_LINE(253)
 			tmp8 = (tempFrame > numFramesMinusOne);
 		}
 		else{
-			HX_STACK_LINE(251)
+			HX_STACK_LINE(253)
 			tmp8 = false;
 		}
-		HX_STACK_LINE(251)
+		HX_STACK_LINE(253)
 		if ((tmp8)){
-			HX_STACK_LINE(253)
+			HX_STACK_LINE(255)
 			this->finished = true;
-			HX_STACK_LINE(254)
+			HX_STACK_LINE(256)
 			bool tmp9 = this->reversed;		HX_STACK_VAR(tmp9,"tmp9");
-			HX_STACK_LINE(254)
+			HX_STACK_LINE(256)
 			int tmp10;		HX_STACK_VAR(tmp10,"tmp10");
-			HX_STACK_LINE(254)
+			HX_STACK_LINE(256)
 			if ((tmp9)){
-				HX_STACK_LINE(254)
+				HX_STACK_LINE(256)
 				tmp10 = (int)0;
 			}
 			else{
-				HX_STACK_LINE(254)
+				HX_STACK_LINE(256)
 				tmp10 = numFramesMinusOne;
 			}
-			HX_STACK_LINE(254)
+			HX_STACK_LINE(256)
 			this->curFrame = tmp10;
 		}
 		else{
-			HX_STACK_LINE(258)
+			HX_STACK_LINE(260)
 			this->curFrame = Frame;
 		}
 	}
 	else{
-		HX_STACK_LINE(263)
+		HX_STACK_LINE(265)
 		::flixel::math::FlxRandom tmp5 = ::flixel::FlxG_obj::random;		HX_STACK_VAR(tmp5,"tmp5");
-		HX_STACK_LINE(263)
+		HX_STACK_LINE(265)
 		int tmp6 = numFramesMinusOne;		HX_STACK_VAR(tmp6,"tmp6");
-		HX_STACK_LINE(263)
+		HX_STACK_LINE(265)
 		int tmp7 = tmp5->_int((int)0,tmp6,null());		HX_STACK_VAR(tmp7,"tmp7");
-		HX_STACK_LINE(263)
+		HX_STACK_LINE(265)
 		this->curFrame = tmp7;
 	}
-	HX_STACK_LINE(266)
+	HX_STACK_LINE(268)
 	int tmp5 = this->curFrame;		HX_STACK_VAR(tmp5,"tmp5");
-	HX_STACK_LINE(266)
+	HX_STACK_LINE(268)
 	int tmp6 = this->_frames->__get(tmp5);		HX_STACK_VAR(tmp6,"tmp6");
-	HX_STACK_LINE(266)
+	HX_STACK_LINE(268)
 	this->set_curIndex(tmp6);
-	HX_STACK_LINE(268)
+	HX_STACK_LINE(270)
 	bool tmp7 = this->finished;		HX_STACK_VAR(tmp7,"tmp7");
-	HX_STACK_LINE(268)
+	HX_STACK_LINE(270)
 	bool tmp8;		HX_STACK_VAR(tmp8,"tmp8");
-	HX_STACK_LINE(268)
+	HX_STACK_LINE(270)
 	if ((tmp7)){
-		HX_STACK_LINE(268)
+		HX_STACK_LINE(270)
 		::flixel::animation::FlxAnimationController tmp9 = this->parent;		HX_STACK_VAR(tmp9,"tmp9");
-		HX_STACK_LINE(268)
+		HX_STACK_LINE(270)
 		::flixel::animation::FlxAnimationController tmp10 = tmp9;		HX_STACK_VAR(tmp10,"tmp10");
-		HX_STACK_LINE(268)
+		HX_STACK_LINE(270)
 		tmp8 = (tmp10 != null());
 	}
 	else{
-		HX_STACK_LINE(268)
+		HX_STACK_LINE(270)
 		tmp8 = false;
 	}
-	HX_STACK_LINE(268)
+	HX_STACK_LINE(270)
 	if ((tmp8)){
-		HX_STACK_LINE(268)
+		HX_STACK_LINE(271)
 		::flixel::animation::FlxAnimationController tmp9 = this->parent;		HX_STACK_VAR(tmp9,"tmp9");
-		HX_STACK_LINE(268)
+		HX_STACK_LINE(271)
 		::flixel::animation::FlxAnimationController _this = tmp9;		HX_STACK_VAR(_this,"_this");
-		HX_STACK_LINE(268)
+		HX_STACK_LINE(271)
 		bool tmp10 = (_this->finishCallback != null());		HX_STACK_VAR(tmp10,"tmp10");
-		HX_STACK_LINE(268)
+		HX_STACK_LINE(271)
 		if ((tmp10)){
-			HX_STACK_LINE(268)
+			HX_STACK_LINE(271)
 			::String tmp11 = this->name;		HX_STACK_VAR(tmp11,"tmp11");
-			HX_STACK_LINE(268)
+			HX_STACK_LINE(271)
 			_this->finishCallback(tmp11);
 		}
 	}
-	HX_STACK_LINE(270)
+	HX_STACK_LINE(273)
 	int tmp9 = Frame;		HX_STACK_VAR(tmp9,"tmp9");
-	HX_STACK_LINE(270)
+	HX_STACK_LINE(273)
 	return tmp9;
 }
 
@@ -839,11 +846,11 @@ int FlxAnimation_obj::set_curFrame( int Frame){
 HX_DEFINE_DYNAMIC_FUNC1(FlxAnimation_obj,set_curFrame,return )
 
 int FlxAnimation_obj::get_numFrames( ){
-	HX_STACK_FRAME("flixel.animation.FlxAnimation","get_numFrames",0x65f5f5c3,"flixel.animation.FlxAnimation.get_numFrames","flixel/animation/FlxAnimation.hx",274,0x660bc6ae)
+	HX_STACK_FRAME("flixel.animation.FlxAnimation","get_numFrames",0x65f5f5c3,"flixel.animation.FlxAnimation.get_numFrames","flixel/animation/FlxAnimation.hx",277,0x660bc6ae)
 	HX_STACK_THIS(this)
-	HX_STACK_LINE(275)
+	HX_STACK_LINE(278)
 	int tmp = this->_frames->length;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(275)
+	HX_STACK_LINE(278)
 	return tmp;
 }
 

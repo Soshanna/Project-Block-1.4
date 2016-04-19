@@ -58,9 +58,6 @@ class HXCPP_CLASS_ATTRIBUTES  OptionsState_obj : public ::flixel::FlxState_obj{
 		::flixel::util::FlxSave _save;
 		virtual Void create( );
 
-		virtual Void clickClearData( );
-		Dynamic clickClearData_dyn();
-
 		virtual Void clickMenu( );
 		Dynamic clickMenu_dyn();
 

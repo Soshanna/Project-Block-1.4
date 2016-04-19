@@ -3,11 +3,11 @@
 #ifndef INCLUDED_MenuState
 #include <MenuState.h>
 #endif
+#ifndef INCLUDED_Minigame
+#include <Minigame.h>
+#endif
 #ifndef INCLUDED_OptionsState
 #include <OptionsState.h>
-#endif
-#ifndef INCLUDED_PlayState
-#include <PlayState.h>
 #endif
 #ifndef INCLUDED_flixel_FlxBasic
 #include <flixel/FlxBasic.h>
@@ -118,7 +118,7 @@ Void MenuState_obj::create( ){
 		HX_STACK_FRAME("MenuState","create",0xe57b7c18,"MenuState.create","MenuState.hx",18,0xdfbcb22c)
 		HX_STACK_THIS(this)
 		HX_STACK_LINE(19)
-		::flixel::text::FlxText tmp = ::flixel::text::FlxText_obj::__new((int)20,(int)0,(int)0,HX_HCSTRING("Android Test Game","\x2f","\x26","\xf1","\xc3"),(int)22,null());		HX_STACK_VAR(tmp,"tmp");
+		::flixel::text::FlxText tmp = ::flixel::text::FlxText_obj::__new((int)20,(int)0,(int)0,HX_HCSTRING("Castle Care","\xf9","\xc3","\x3a","\xca"),(int)22,null());		HX_STACK_VAR(tmp,"tmp");
 		HX_STACK_LINE(19)
 		this->_txtTitle = tmp;
 		HX_STACK_LINE(20)
@@ -267,7 +267,7 @@ Void MenuState_obj::clickPlay( ){
 		HX_STACK_FRAME("MenuState","clickPlay",0x5f6a9ec0,"MenuState.clickPlay","MenuState.hx",45,0xdfbcb22c)
 		HX_STACK_THIS(this)
 		HX_STACK_LINE(45)
-		::PlayState tmp = ::PlayState_obj::__new(null());		HX_STACK_VAR(tmp,"tmp");
+		::Minigame tmp = ::Minigame_obj::__new(null());		HX_STACK_VAR(tmp,"tmp");
 		HX_STACK_LINE(45)
 		::flixel::FlxState nextState = tmp;		HX_STACK_VAR(nextState,"nextState");
 		HX_STACK_LINE(45)

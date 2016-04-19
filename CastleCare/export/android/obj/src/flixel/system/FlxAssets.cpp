@@ -93,93 +93,93 @@ Dynamic FlxAssets_obj::__Create(hx::DynamicArray inArgs)
 
 Void FlxAssets_obj::drawLogo( ::openfl::_legacy::display::Graphics graph){
 {
-		HX_STACK_FRAME("flixel.system.FlxAssets","drawLogo",0xabec0035,"flixel.system.FlxAssets.drawLogo","flixel/system/FlxAssets.hx",113,0xd3ac1356)
+		HX_STACK_FRAME("flixel.system.FlxAssets","drawLogo",0xabec0035,"flixel.system.FlxAssets.drawLogo","flixel/system/FlxAssets.hx",112,0xd3ac1356)
 		HX_STACK_ARG(graph,"graph")
-		HX_STACK_LINE(115)
+		HX_STACK_LINE(114)
 		graph->beginFill((int)47394,null());
-		HX_STACK_LINE(116)
+		HX_STACK_LINE(115)
 		graph->moveTo((int)50,(int)13);
+		HX_STACK_LINE(116)
+		graph->lineTo((int)51,(int)13);
 		HX_STACK_LINE(117)
-		graph->lineTo((int)51,(int)13);
+		graph->lineTo((int)87,(int)50);
 		HX_STACK_LINE(118)
-		graph->lineTo((int)87,(int)50);
+		graph->lineTo((int)87,(int)51);
 		HX_STACK_LINE(119)
-		graph->lineTo((int)87,(int)51);
+		graph->lineTo((int)51,(int)87);
 		HX_STACK_LINE(120)
-		graph->lineTo((int)51,(int)87);
+		graph->lineTo((int)50,(int)87);
 		HX_STACK_LINE(121)
-		graph->lineTo((int)50,(int)87);
+		graph->lineTo((int)13,(int)51);
 		HX_STACK_LINE(122)
-		graph->lineTo((int)13,(int)51);
+		graph->lineTo((int)13,(int)50);
 		HX_STACK_LINE(123)
-		graph->lineTo((int)13,(int)50);
+		graph->lineTo((int)50,(int)13);
 		HX_STACK_LINE(124)
-		graph->lineTo((int)50,(int)13);
-		HX_STACK_LINE(125)
 		graph->endFill();
-		HX_STACK_LINE(128)
+		HX_STACK_LINE(127)
 		graph->beginFill((int)16761138,null());
-		HX_STACK_LINE(129)
+		HX_STACK_LINE(128)
 		graph->moveTo((int)0,(int)0);
-		HX_STACK_LINE(130)
+		HX_STACK_LINE(129)
 		graph->lineTo((int)25,(int)0);
-		HX_STACK_LINE(131)
+		HX_STACK_LINE(130)
 		graph->lineTo((int)50,(int)13);
-		HX_STACK_LINE(132)
+		HX_STACK_LINE(131)
 		graph->lineTo((int)13,(int)50);
-		HX_STACK_LINE(133)
+		HX_STACK_LINE(132)
 		graph->lineTo((int)0,(int)25);
-		HX_STACK_LINE(134)
+		HX_STACK_LINE(133)
 		graph->lineTo((int)0,(int)0);
-		HX_STACK_LINE(135)
+		HX_STACK_LINE(134)
 		graph->endFill();
-		HX_STACK_LINE(138)
+		HX_STACK_LINE(137)
 		graph->beginFill((int)16066382,null());
-		HX_STACK_LINE(139)
+		HX_STACK_LINE(138)
 		graph->moveTo((int)100,(int)0);
-		HX_STACK_LINE(140)
+		HX_STACK_LINE(139)
 		graph->lineTo((int)75,(int)0);
-		HX_STACK_LINE(141)
+		HX_STACK_LINE(140)
 		graph->lineTo((int)51,(int)13);
-		HX_STACK_LINE(142)
+		HX_STACK_LINE(141)
 		graph->lineTo((int)87,(int)50);
-		HX_STACK_LINE(143)
+		HX_STACK_LINE(142)
 		graph->lineTo((int)100,(int)25);
-		HX_STACK_LINE(144)
+		HX_STACK_LINE(143)
 		graph->lineTo((int)100,(int)0);
-		HX_STACK_LINE(145)
+		HX_STACK_LINE(144)
 		graph->endFill();
-		HX_STACK_LINE(148)
+		HX_STACK_LINE(147)
 		graph->beginFill((int)3555839,null());
-		HX_STACK_LINE(149)
+		HX_STACK_LINE(148)
 		graph->moveTo((int)0,(int)100);
-		HX_STACK_LINE(150)
+		HX_STACK_LINE(149)
 		graph->lineTo((int)25,(int)100);
-		HX_STACK_LINE(151)
+		HX_STACK_LINE(150)
 		graph->lineTo((int)50,(int)87);
-		HX_STACK_LINE(152)
+		HX_STACK_LINE(151)
 		graph->lineTo((int)13,(int)51);
-		HX_STACK_LINE(153)
+		HX_STACK_LINE(152)
 		graph->lineTo((int)0,(int)75);
-		HX_STACK_LINE(154)
+		HX_STACK_LINE(153)
 		graph->lineTo((int)0,(int)100);
-		HX_STACK_LINE(155)
+		HX_STACK_LINE(154)
 		graph->endFill();
-		HX_STACK_LINE(158)
+		HX_STACK_LINE(157)
 		graph->beginFill((int)314875,null());
-		HX_STACK_LINE(159)
+		HX_STACK_LINE(158)
 		graph->moveTo((int)100,(int)100);
-		HX_STACK_LINE(160)
+		HX_STACK_LINE(159)
 		graph->lineTo((int)75,(int)100);
-		HX_STACK_LINE(161)
+		HX_STACK_LINE(160)
 		graph->lineTo((int)51,(int)87);
-		HX_STACK_LINE(162)
+		HX_STACK_LINE(161)
 		graph->lineTo((int)87,(int)51);
-		HX_STACK_LINE(163)
+		HX_STACK_LINE(162)
 		graph->lineTo((int)100,(int)75);
-		HX_STACK_LINE(164)
+		HX_STACK_LINE(163)
 		graph->lineTo((int)100,(int)100);
-		HX_STACK_LINE(165)
+		HX_STACK_LINE(164)
 		graph->endFill();
 	}
 return null();
@@ -189,22 +189,22 @@ return null();
 STATIC_HX_DEFINE_DYNAMIC_FUNC1(FlxAssets_obj,drawLogo,(void))
 
 ::openfl::_legacy::display::BitmapData FlxAssets_obj::getBitmapData( ::String id){
-	HX_STACK_FRAME("flixel.system.FlxAssets","getBitmapData",0x17128189,"flixel.system.FlxAssets.getBitmapData","flixel/system/FlxAssets.hx",169,0xd3ac1356)
+	HX_STACK_FRAME("flixel.system.FlxAssets","getBitmapData",0x17128189,"flixel.system.FlxAssets.getBitmapData","flixel/system/FlxAssets.hx",168,0xd3ac1356)
 	HX_STACK_ARG(id,"id")
-	HX_STACK_LINE(170)
+	HX_STACK_LINE(169)
 	::String tmp = id;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(170)
+	HX_STACK_LINE(169)
 	bool tmp1 = ::openfl::_legacy::Assets_obj::exists(tmp,null());		HX_STACK_VAR(tmp1,"tmp1");
-	HX_STACK_LINE(170)
+	HX_STACK_LINE(169)
 	if ((tmp1)){
-		HX_STACK_LINE(171)
+		HX_STACK_LINE(170)
 		::String tmp2 = id;		HX_STACK_VAR(tmp2,"tmp2");
-		HX_STACK_LINE(171)
+		HX_STACK_LINE(170)
 		::openfl::_legacy::display::BitmapData tmp3 = ::openfl::_legacy::Assets_obj::getBitmapData(tmp2,false);		HX_STACK_VAR(tmp3,"tmp3");
-		HX_STACK_LINE(171)
+		HX_STACK_LINE(170)
 		return tmp3;
 	}
-	HX_STACK_LINE(173)
+	HX_STACK_LINE(172)
 	return null();
 }
 
@@ -212,13 +212,13 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC1(FlxAssets_obj,drawLogo,(void))
 STATIC_HX_DEFINE_DYNAMIC_FUNC1(FlxAssets_obj,getBitmapData,return )
 
 ::openfl::_legacy::display::BitmapData FlxAssets_obj::getBitmapFromClass( ::hx::Class source){
-	HX_STACK_FRAME("flixel.system.FlxAssets","getBitmapFromClass",0x223d9eaf,"flixel.system.FlxAssets.getBitmapFromClass","flixel/system/FlxAssets.hx",183,0xd3ac1356)
+	HX_STACK_FRAME("flixel.system.FlxAssets","getBitmapFromClass",0x223d9eaf,"flixel.system.FlxAssets.getBitmapFromClass","flixel/system/FlxAssets.hx",182,0xd3ac1356)
 	HX_STACK_ARG(source,"source")
-	HX_STACK_LINE(184)
+	HX_STACK_LINE(183)
 	::hx::Class tmp = source;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(184)
+	HX_STACK_LINE(183)
 	::openfl::_legacy::display::BitmapData tmp1 = ::Type_obj::createInstance(tmp,cpp::ArrayBase_obj::__new().Add((int)0).Add((int)0));		HX_STACK_VAR(tmp1,"tmp1");
-	HX_STACK_LINE(184)
+	HX_STACK_LINE(183)
 	return tmp1;
 }
 
@@ -226,63 +226,63 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC1(FlxAssets_obj,getBitmapData,return )
 STATIC_HX_DEFINE_DYNAMIC_FUNC1(FlxAssets_obj,getBitmapFromClass,return )
 
 ::openfl::_legacy::display::BitmapData FlxAssets_obj::resolveBitmapData( Dynamic Graphic){
-	HX_STACK_FRAME("flixel.system.FlxAssets","resolveBitmapData",0x02df705f,"flixel.system.FlxAssets.resolveBitmapData","flixel/system/FlxAssets.hx",198,0xd3ac1356)
+	HX_STACK_FRAME("flixel.system.FlxAssets","resolveBitmapData",0x02df705f,"flixel.system.FlxAssets.resolveBitmapData","flixel/system/FlxAssets.hx",197,0xd3ac1356)
 	HX_STACK_ARG(Graphic,"Graphic")
-	HX_STACK_LINE(199)
+	HX_STACK_LINE(198)
 	Dynamic tmp = Graphic;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(199)
+	HX_STACK_LINE(198)
 	bool tmp1 = ::Std_obj::is(tmp,hx::ClassOf< ::openfl::_legacy::display::BitmapData >());		HX_STACK_VAR(tmp1,"tmp1");
-	HX_STACK_LINE(199)
+	HX_STACK_LINE(198)
 	if ((tmp1)){
-		HX_STACK_LINE(201)
+		HX_STACK_LINE(200)
 		::openfl::_legacy::display::BitmapData tmp2 = ((::openfl::_legacy::display::BitmapData)(Graphic));		HX_STACK_VAR(tmp2,"tmp2");
-		HX_STACK_LINE(201)
+		HX_STACK_LINE(200)
 		return tmp2;
 	}
 	else{
-		HX_STACK_LINE(203)
+		HX_STACK_LINE(202)
 		Dynamic tmp2 = Graphic;		HX_STACK_VAR(tmp2,"tmp2");
-		HX_STACK_LINE(203)
+		HX_STACK_LINE(202)
 		bool tmp3 = ::Std_obj::is(tmp2,hx::ClassOf< ::hx::Class >());		HX_STACK_VAR(tmp3,"tmp3");
-		HX_STACK_LINE(203)
+		HX_STACK_LINE(202)
 		if ((tmp3)){
-			HX_STACK_LINE(205)
+			HX_STACK_LINE(204)
 			::hx::Class tmp4 = ((::hx::Class)(Graphic));		HX_STACK_VAR(tmp4,"tmp4");
-			HX_STACK_LINE(205)
+			HX_STACK_LINE(204)
 			::openfl::_legacy::display::BitmapData tmp5 = ::Type_obj::createInstance(tmp4,cpp::ArrayBase_obj::__new().Add((int)0).Add((int)0));		HX_STACK_VAR(tmp5,"tmp5");
-			HX_STACK_LINE(205)
+			HX_STACK_LINE(204)
 			return tmp5;
 		}
 		else{
-			HX_STACK_LINE(207)
+			HX_STACK_LINE(206)
 			Dynamic tmp4 = Graphic;		HX_STACK_VAR(tmp4,"tmp4");
-			HX_STACK_LINE(207)
+			HX_STACK_LINE(206)
 			bool tmp5 = ::Std_obj::is(tmp4,hx::ClassOf< ::String >());		HX_STACK_VAR(tmp5,"tmp5");
-			HX_STACK_LINE(207)
+			HX_STACK_LINE(206)
 			if ((tmp5)){
-				HX_STACK_LINE(209)
+				HX_STACK_LINE(208)
 				Dynamic tmp6 = Graphic;		HX_STACK_VAR(tmp6,"tmp6");
-				HX_STACK_LINE(209)
+				HX_STACK_LINE(208)
 				bool tmp7 = ::openfl::_legacy::Assets_obj::exists(tmp6,null());		HX_STACK_VAR(tmp7,"tmp7");
-				HX_STACK_LINE(209)
+				HX_STACK_LINE(208)
 				::openfl::_legacy::display::BitmapData tmp8;		HX_STACK_VAR(tmp8,"tmp8");
-				HX_STACK_LINE(209)
+				HX_STACK_LINE(208)
 				if ((tmp7)){
-					HX_STACK_LINE(209)
+					HX_STACK_LINE(208)
 					Dynamic tmp9 = Graphic;		HX_STACK_VAR(tmp9,"tmp9");
-					HX_STACK_LINE(209)
+					HX_STACK_LINE(208)
 					tmp8 = ::openfl::_legacy::Assets_obj::getBitmapData(tmp9,false);
 				}
 				else{
-					HX_STACK_LINE(209)
+					HX_STACK_LINE(208)
 					tmp8 = null();
 				}
-				HX_STACK_LINE(209)
+				HX_STACK_LINE(208)
 				return tmp8;
 			}
 		}
 	}
-	HX_STACK_LINE(212)
+	HX_STACK_LINE(211)
 	return null();
 }
 
@@ -290,58 +290,58 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC1(FlxAssets_obj,getBitmapFromClass,return )
 STATIC_HX_DEFINE_DYNAMIC_FUNC1(FlxAssets_obj,resolveBitmapData,return )
 
 ::String FlxAssets_obj::resolveKey( Dynamic Graphic,::String Key){
-	HX_STACK_FRAME("flixel.system.FlxAssets","resolveKey",0xd790f639,"flixel.system.FlxAssets.resolveKey","flixel/system/FlxAssets.hx",227,0xd3ac1356)
+	HX_STACK_FRAME("flixel.system.FlxAssets","resolveKey",0xd790f639,"flixel.system.FlxAssets.resolveKey","flixel/system/FlxAssets.hx",226,0xd3ac1356)
 	HX_STACK_ARG(Graphic,"Graphic")
 	HX_STACK_ARG(Key,"Key")
-	HX_STACK_LINE(228)
+	HX_STACK_LINE(227)
 	bool tmp = (Key != null());		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(228)
+	HX_STACK_LINE(227)
 	if ((tmp)){
-		HX_STACK_LINE(230)
+		HX_STACK_LINE(229)
 		::String tmp1 = Key;		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(230)
+		HX_STACK_LINE(229)
 		return tmp1;
 	}
-	HX_STACK_LINE(233)
+	HX_STACK_LINE(232)
 	Dynamic tmp1 = Graphic;		HX_STACK_VAR(tmp1,"tmp1");
-	HX_STACK_LINE(233)
+	HX_STACK_LINE(232)
 	bool tmp2 = ::Std_obj::is(tmp1,hx::ClassOf< ::openfl::_legacy::display::BitmapData >());		HX_STACK_VAR(tmp2,"tmp2");
-	HX_STACK_LINE(233)
+	HX_STACK_LINE(232)
 	if ((tmp2)){
-		HX_STACK_LINE(235)
+		HX_STACK_LINE(234)
 		::String tmp3 = Key;		HX_STACK_VAR(tmp3,"tmp3");
-		HX_STACK_LINE(235)
+		HX_STACK_LINE(234)
 		return tmp3;
 	}
 	else{
-		HX_STACK_LINE(237)
+		HX_STACK_LINE(236)
 		Dynamic tmp3 = Graphic;		HX_STACK_VAR(tmp3,"tmp3");
-		HX_STACK_LINE(237)
+		HX_STACK_LINE(236)
 		bool tmp4 = ::Std_obj::is(tmp3,hx::ClassOf< ::hx::Class >());		HX_STACK_VAR(tmp4,"tmp4");
-		HX_STACK_LINE(237)
+		HX_STACK_LINE(236)
 		if ((tmp4)){
-			HX_STACK_LINE(239)
+			HX_STACK_LINE(238)
 			::hx::Class tmp5 = ((::hx::Class)(Graphic));		HX_STACK_VAR(tmp5,"tmp5");
-			HX_STACK_LINE(239)
+			HX_STACK_LINE(238)
 			::String tmp6 = ::Type_obj::getClassName(tmp5);		HX_STACK_VAR(tmp6,"tmp6");
-			HX_STACK_LINE(239)
+			HX_STACK_LINE(238)
 			return tmp6;
 		}
 		else{
-			HX_STACK_LINE(241)
+			HX_STACK_LINE(240)
 			Dynamic tmp5 = Graphic;		HX_STACK_VAR(tmp5,"tmp5");
-			HX_STACK_LINE(241)
+			HX_STACK_LINE(240)
 			bool tmp6 = ::Std_obj::is(tmp5,hx::ClassOf< ::String >());		HX_STACK_VAR(tmp6,"tmp6");
-			HX_STACK_LINE(241)
+			HX_STACK_LINE(240)
 			if ((tmp6)){
-				HX_STACK_LINE(243)
+				HX_STACK_LINE(242)
 				Dynamic tmp7 = Graphic;		HX_STACK_VAR(tmp7,"tmp7");
-				HX_STACK_LINE(243)
+				HX_STACK_LINE(242)
 				return tmp7;
 			}
 		}
 	}
-	HX_STACK_LINE(246)
+	HX_STACK_LINE(245)
 	return null();
 }
 
@@ -349,17 +349,17 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC1(FlxAssets_obj,resolveBitmapData,return )
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(FlxAssets_obj,resolveKey,return )
 
 ::openfl::_legacy::media::Sound FlxAssets_obj::getSound( ::String id){
-	HX_STACK_FRAME("flixel.system.FlxAssets","getSound",0x306e52ff,"flixel.system.FlxAssets.getSound","flixel/system/FlxAssets.hx",250,0xd3ac1356)
+	HX_STACK_FRAME("flixel.system.FlxAssets","getSound",0x306e52ff,"flixel.system.FlxAssets.getSound","flixel/system/FlxAssets.hx",249,0xd3ac1356)
 	HX_STACK_ARG(id,"id")
-	HX_STACK_LINE(251)
+	HX_STACK_LINE(250)
 	::String extension = HX_HCSTRING("","\x00","\x00","\x00","\x00");		HX_STACK_VAR(extension,"extension");
-	HX_STACK_LINE(255)
+	HX_STACK_LINE(254)
 	extension = HX_HCSTRING(".ogg","\xe1","\x64","\xbc","\x1e");
-	HX_STACK_LINE(257)
+	HX_STACK_LINE(256)
 	::String tmp = (id + extension);		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(257)
+	HX_STACK_LINE(256)
 	::openfl::_legacy::media::Sound tmp1 = ::openfl::_legacy::Assets_obj::getSound(tmp,null());		HX_STACK_VAR(tmp1,"tmp1");
-	HX_STACK_LINE(257)
+	HX_STACK_LINE(256)
 	return tmp1;
 }
 
@@ -367,20 +367,20 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC2(FlxAssets_obj,resolveKey,return )
 STATIC_HX_DEFINE_DYNAMIC_FUNC1(FlxAssets_obj,getSound,return )
 
 ::flixel::graphics::frames::FlxAtlasFrames FlxAssets_obj::getVirtualInputFrames( ){
-	HX_STACK_FRAME("flixel.system.FlxAssets","getVirtualInputFrames",0xfe1716d5,"flixel.system.FlxAssets.getVirtualInputFrames","flixel/system/FlxAssets.hx",261,0xd3ac1356)
-	HX_STACK_LINE(262)
+	HX_STACK_FRAME("flixel.system.FlxAssets","getVirtualInputFrames",0xfe1716d5,"flixel.system.FlxAssets.getVirtualInputFrames","flixel/system/FlxAssets.hx",260,0xd3ac1356)
+	HX_STACK_LINE(261)
 	::flixel::graphics::FlxGraphic tmp = ::flixel::graphics::FlxGraphic_obj::fromClass(hx::ClassOf< ::flixel::_system::GraphicVirtualInput >(),null(),null(),null());		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(262)
+	HX_STACK_LINE(261)
 	::flixel::graphics::FlxGraphic graphic = tmp;		HX_STACK_VAR(graphic,"graphic");
-	HX_STACK_LINE(263)
+	HX_STACK_LINE(262)
 	::flixel::graphics::FlxGraphic tmp1 = graphic;		HX_STACK_VAR(tmp1,"tmp1");
-	HX_STACK_LINE(263)
+	HX_STACK_LINE(262)
 	::flixel::_system::VirtualInputData tmp2 = ::flixel::_system::VirtualInputData_obj::__new(null());		HX_STACK_VAR(tmp2,"tmp2");
-	HX_STACK_LINE(263)
+	HX_STACK_LINE(262)
 	::String tmp3 = ::Std_obj::string(tmp2);		HX_STACK_VAR(tmp3,"tmp3");
-	HX_STACK_LINE(263)
+	HX_STACK_LINE(262)
 	::flixel::graphics::frames::FlxAtlasFrames tmp4 = ::flixel::graphics::frames::FlxAtlasFrames_obj::fromSpriteSheetPacker(tmp1,tmp3);		HX_STACK_VAR(tmp4,"tmp4");
-	HX_STACK_LINE(263)
+	HX_STACK_LINE(262)
 	return tmp4;
 }
 

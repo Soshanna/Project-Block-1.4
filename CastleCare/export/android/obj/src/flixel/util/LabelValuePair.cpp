@@ -17,7 +17,7 @@ namespace util{
 
 Void LabelValuePair_obj::__construct()
 {
-HX_STACK_FRAME("flixel.util.LabelValuePair","new",0x8e753503,"flixel.util.LabelValuePair.new","flixel/util/FlxStringUtil.hx",625,0x4e012e33)
+HX_STACK_FRAME("flixel.util.LabelValuePair","new",0x8e753503,"flixel.util.LabelValuePair.new","flixel/util/FlxStringUtil.hx",620,0x4e012e33)
 HX_STACK_THIS(this)
 {
 }
@@ -46,15 +46,15 @@ hx::Object *LabelValuePair_obj::__ToInterface(const hx::type_info &inType) {
 LabelValuePair_obj::operator ::flixel::util::IFlxDestroyable_obj *()
 	{ return new ::flixel::util::IFlxDestroyable_delegate_< LabelValuePair_obj >(this); }
 ::flixel::util::LabelValuePair LabelValuePair_obj::create( ::String label,Dynamic value){
-	HX_STACK_FRAME("flixel.util.LabelValuePair","create",0x3da24a39,"flixel.util.LabelValuePair.create","flixel/util/FlxStringUtil.hx",608,0x4e012e33)
+	HX_STACK_FRAME("flixel.util.LabelValuePair","create",0x3da24a39,"flixel.util.LabelValuePair.create","flixel/util/FlxStringUtil.hx",602,0x4e012e33)
 	HX_STACK_THIS(this)
 	HX_STACK_ARG(label,"label")
 	HX_STACK_ARG(value,"value")
-	HX_STACK_LINE(609)
+	HX_STACK_LINE(603)
 	this->label = label;
-	HX_STACK_LINE(610)
+	HX_STACK_LINE(604)
 	this->value = value;
-	HX_STACK_LINE(611)
+	HX_STACK_LINE(605)
 	return hx::ObjectPtr<OBJ_>(this);
 }
 
@@ -63,11 +63,11 @@ HX_DEFINE_DYNAMIC_FUNC2(LabelValuePair_obj,create,return )
 
 Void LabelValuePair_obj::put( ){
 {
-		HX_STACK_FRAME("flixel.util.LabelValuePair","put",0x8e76c772,"flixel.util.LabelValuePair.put","flixel/util/FlxStringUtil.hx",615,0x4e012e33)
+		HX_STACK_FRAME("flixel.util.LabelValuePair","put",0x8e76c772,"flixel.util.LabelValuePair.put","flixel/util/FlxStringUtil.hx",609,0x4e012e33)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(616)
+		HX_STACK_LINE(610)
 		::flixel::util::FlxPool_flixel_util_LabelValuePair tmp = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(616)
+		HX_STACK_LINE(610)
 		tmp->put(hx::ObjectPtr<OBJ_>(this));
 	}
 return null();
@@ -78,11 +78,11 @@ HX_DEFINE_DYNAMIC_FUNC0(LabelValuePair_obj,put,(void))
 
 Void LabelValuePair_obj::destroy( ){
 {
-		HX_STACK_FRAME("flixel.util.LabelValuePair","destroy",0xc37a1f1d,"flixel.util.LabelValuePair.destroy","flixel/util/FlxStringUtil.hx",620,0x4e012e33)
+		HX_STACK_FRAME("flixel.util.LabelValuePair","destroy",0xc37a1f1d,"flixel.util.LabelValuePair.destroy","flixel/util/FlxStringUtil.hx",614,0x4e012e33)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(621)
+		HX_STACK_LINE(615)
 		this->label = null();
-		HX_STACK_LINE(622)
+		HX_STACK_LINE(616)
 		this->value = null();
 	}
 return null();
@@ -94,27 +94,27 @@ HX_DEFINE_DYNAMIC_FUNC0(LabelValuePair_obj,destroy,(void))
 ::flixel::util::FlxPool_flixel_util_LabelValuePair LabelValuePair_obj::_pool;
 
 ::flixel::util::LabelValuePair LabelValuePair_obj::weak( ::String label,Dynamic value){
-	HX_STACK_FRAME("flixel.util.LabelValuePair","weak",0x1e0c0675,"flixel.util.LabelValuePair.weak","flixel/util/FlxStringUtil.hx",600,0x4e012e33)
+	HX_STACK_FRAME("flixel.util.LabelValuePair","weak",0x1e0c0675,"flixel.util.LabelValuePair.weak","flixel/util/FlxStringUtil.hx",594,0x4e012e33)
 	HX_STACK_ARG(label,"label")
 	HX_STACK_ARG(value,"value")
-	HX_STACK_LINE(601)
+	HX_STACK_LINE(595)
 	::flixel::util::LabelValuePair tmp;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(601)
+	HX_STACK_LINE(595)
 	{
-		HX_STACK_LINE(601)
+		HX_STACK_LINE(595)
 		::flixel::util::FlxPool_flixel_util_LabelValuePair tmp1 = ::flixel::util::LabelValuePair_obj::_pool;		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(601)
+		HX_STACK_LINE(595)
 		::flixel::util::LabelValuePair tmp2 = tmp1->get();		HX_STACK_VAR(tmp2,"tmp2");
-		HX_STACK_LINE(601)
+		HX_STACK_LINE(595)
 		::flixel::util::LabelValuePair _this = tmp2;		HX_STACK_VAR(_this,"_this");
-		HX_STACK_LINE(601)
+		HX_STACK_LINE(595)
 		_this->label = label;
-		HX_STACK_LINE(601)
+		HX_STACK_LINE(595)
 		_this->value = value;
-		HX_STACK_LINE(601)
+		HX_STACK_LINE(595)
 		tmp = _this;
 	}
-	HX_STACK_LINE(601)
+	HX_STACK_LINE(595)
 	return tmp;
 }
 

@@ -1224,11 +1224,11 @@
 #ifndef INCLUDED_Reflect
 #include <Reflect.h>
 #endif
-#ifndef INCLUDED_PlayState
-#include <PlayState.h>
-#endif
 #ifndef INCLUDED_OptionsState
 #include <OptionsState.h>
+#endif
+#ifndef INCLUDED_Minigame
+#include <Minigame.h>
 #endif
 #ifndef INCLUDED_MenuState
 #include <MenuState.h>
@@ -1723,8 +1723,8 @@ hx::RegisterResources( hx::GetResources() );
 ::StringTools_obj::__register();
 ::StringBuf_obj::__register();
 ::Reflect_obj::__register();
-::PlayState_obj::__register();
 ::OptionsState_obj::__register();
+::Minigame_obj::__register();
 ::MenuState_obj::__register();
 ::flixel::FlxState_obj::__register();
 ::flixel::group::FlxTypedGroup_obj::__register();

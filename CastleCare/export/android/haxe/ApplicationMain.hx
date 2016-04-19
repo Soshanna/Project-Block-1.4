@@ -112,7 +112,7 @@ class ApplicationMain {
 			},
 			0, 0, 
 			60, 
-			0,
+			16777215,
 			(true ? flash.Lib.HARDWARE : 0) |
 			(true ? flash.Lib.ALLOW_SHADERS : 0) |
 			(true ? flash.Lib.REQUIRE_SHADERS : 0) |
@@ -403,7 +403,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "113",
+			build: "154",
 			company: "HaxeFlixel",
 			file: "Android_Test",
 			fps: 60,
@@ -415,7 +415,7 @@ class ApplicationMain {
 				
 				{
 					antialiasing: 0,
-					background: 0,
+					background: 16777215,
 					borderless: false,
 					depthBuffer: false,
 					display: 0,

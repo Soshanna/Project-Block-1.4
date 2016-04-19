@@ -58,9 +58,11 @@ class OptionsState extends FlxState
 		_txtVolumeAmt.screenCenter(FlxAxes.X);
 		add(_txtVolumeAmt);
 		
+		#if flash
 		_btnClearData = new FlxButton((FlxG.width / 2) - 90, FlxG.height - 28, "Clear Sound", clickClearData);
 		_btnClearData.onUp.sound = FlxG.sound.load(AssetPaths.select__wav);
 		add(_btnClearData);
+		#end
 		
 		_btnMenu = new FlxButton((FlxG.width / 2) + 10, FlxG.height - 28, "Back", clickMenu);
 		_btnMenu.onUp.sound = FlxG.sound.load(AssetPaths.select__wav);

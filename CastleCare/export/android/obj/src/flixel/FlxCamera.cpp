@@ -3586,275 +3586,275 @@ Void FlxCamera_obj::follow( ::flixel::FlxObject Target,::flixel::FlxCameraFollow
 		if ((tmp3)){
 			HX_STACK_LINE(1055)
 			switch( (int)(Style->__Index())){
-				case (int)1: {
+				case (int)0: {
 					HX_STACK_LINE(1058)
-					int tmp4 = this->width;		HX_STACK_VAR(tmp4,"tmp4");
+					::flixel::FlxObject tmp4 = this->target;		HX_STACK_VAR(tmp4,"tmp4");
 					HX_STACK_LINE(1058)
-					Float tmp5 = (Float(tmp4) / Float((int)8));		HX_STACK_VAR(tmp5,"tmp5");
+					bool tmp5 = (tmp4 != null());		HX_STACK_VAR(tmp5,"tmp5");
 					HX_STACK_LINE(1058)
-					Float w1 = tmp5;		HX_STACK_VAR(w1,"w1");
-					HX_STACK_LINE(1059)
-					int tmp6 = this->height;		HX_STACK_VAR(tmp6,"tmp6");
-					HX_STACK_LINE(1059)
-					Float tmp7 = (Float(tmp6) / Float((int)3));		HX_STACK_VAR(tmp7,"tmp7");
-					HX_STACK_LINE(1059)
-					Float h1 = tmp7;		HX_STACK_VAR(h1,"h1");
-					HX_STACK_LINE(1060)
-					::flixel::math::FlxRect tmp8;		HX_STACK_VAR(tmp8,"tmp8");
-					HX_STACK_LINE(1060)
+					if ((tmp5)){
+						HX_STACK_LINE(1060)
+						::flixel::FlxObject tmp6 = this->target;		HX_STACK_VAR(tmp6,"tmp6");
+						HX_STACK_LINE(1060)
+						Float tmp7 = tmp6->get_width();		HX_STACK_VAR(tmp7,"tmp7");
+						HX_STACK_LINE(1060)
+						w = tmp7;
+						HX_STACK_LINE(1061)
+						::flixel::FlxObject tmp8 = this->target;		HX_STACK_VAR(tmp8,"tmp8");
+						HX_STACK_LINE(1061)
+						Float tmp9 = tmp8->get_height();		HX_STACK_VAR(tmp9,"tmp9");
+						HX_STACK_LINE(1061)
+						h = tmp9;
+					}
+					HX_STACK_LINE(1063)
+					::flixel::math::FlxRect tmp6;		HX_STACK_VAR(tmp6,"tmp6");
+					HX_STACK_LINE(1063)
 					{
-						HX_STACK_LINE(1060)
-						::flixel::math::FlxRect tmp9;		HX_STACK_VAR(tmp9,"tmp9");
-						HX_STACK_LINE(1060)
+						HX_STACK_LINE(1063)
+						::flixel::math::FlxRect tmp7;		HX_STACK_VAR(tmp7,"tmp7");
+						HX_STACK_LINE(1063)
 						{
-							HX_STACK_LINE(1060)
+							HX_STACK_LINE(1063)
+							::flixel::util::FlxPool_flixel_math_FlxRect tmp8 = ::flixel::math::FlxRect_obj::_pool;		HX_STACK_VAR(tmp8,"tmp8");
+							HX_STACK_LINE(1063)
+							::flixel::math::FlxRect tmp9 = tmp8->get();		HX_STACK_VAR(tmp9,"tmp9");
+							HX_STACK_LINE(1063)
+							::flixel::math::FlxRect _this = tmp9;		HX_STACK_VAR(_this,"_this");
+							HX_STACK_LINE(1063)
+							int tmp10 = this->width;		HX_STACK_VAR(tmp10,"tmp10");
+							HX_STACK_LINE(1063)
+							Float tmp11 = w;		HX_STACK_VAR(tmp11,"tmp11");
+							HX_STACK_LINE(1063)
+							Float tmp12 = (tmp10 - tmp11);		HX_STACK_VAR(tmp12,"tmp12");
+							HX_STACK_LINE(1063)
+							Float tmp13 = (Float(tmp12) / Float((int)2));		HX_STACK_VAR(tmp13,"tmp13");
+							HX_STACK_LINE(1063)
+							_this->x = tmp13;
+							HX_STACK_LINE(1063)
+							int tmp14 = this->height;		HX_STACK_VAR(tmp14,"tmp14");
+							HX_STACK_LINE(1063)
+							Float tmp15 = h;		HX_STACK_VAR(tmp15,"tmp15");
+							HX_STACK_LINE(1063)
+							Float tmp16 = (tmp14 - tmp15);		HX_STACK_VAR(tmp16,"tmp16");
+							HX_STACK_LINE(1063)
+							Float tmp17 = (Float(tmp16) / Float((int)2));		HX_STACK_VAR(tmp17,"tmp17");
+							HX_STACK_LINE(1063)
+							Float tmp18 = (h * ((Float)0.25));		HX_STACK_VAR(tmp18,"tmp18");
+							HX_STACK_LINE(1063)
+							Float tmp19 = (tmp17 - tmp18);		HX_STACK_VAR(tmp19,"tmp19");
+							HX_STACK_LINE(1063)
+							_this->y = tmp19;
+							HX_STACK_LINE(1063)
+							_this->width = w;
+							HX_STACK_LINE(1063)
+							_this->height = h;
+							HX_STACK_LINE(1063)
+							tmp7 = _this;
+						}
+						HX_STACK_LINE(1063)
+						::flixel::math::FlxRect rect = tmp7;		HX_STACK_VAR(rect,"rect");
+						HX_STACK_LINE(1063)
+						rect->_inPool = false;
+						HX_STACK_LINE(1063)
+						tmp6 = rect;
+					}
+					HX_STACK_LINE(1063)
+					this->deadzone = tmp6;
+				}
+				;break;
+				case (int)1: {
+					HX_STACK_LINE(1066)
+					int tmp4 = this->width;		HX_STACK_VAR(tmp4,"tmp4");
+					HX_STACK_LINE(1066)
+					Float tmp5 = (Float(tmp4) / Float((int)8));		HX_STACK_VAR(tmp5,"tmp5");
+					HX_STACK_LINE(1066)
+					Float w1 = tmp5;		HX_STACK_VAR(w1,"w1");
+					HX_STACK_LINE(1067)
+					int tmp6 = this->height;		HX_STACK_VAR(tmp6,"tmp6");
+					HX_STACK_LINE(1067)
+					Float tmp7 = (Float(tmp6) / Float((int)3));		HX_STACK_VAR(tmp7,"tmp7");
+					HX_STACK_LINE(1067)
+					Float h1 = tmp7;		HX_STACK_VAR(h1,"h1");
+					HX_STACK_LINE(1068)
+					::flixel::math::FlxRect tmp8;		HX_STACK_VAR(tmp8,"tmp8");
+					HX_STACK_LINE(1068)
+					{
+						HX_STACK_LINE(1068)
+						::flixel::math::FlxRect tmp9;		HX_STACK_VAR(tmp9,"tmp9");
+						HX_STACK_LINE(1068)
+						{
+							HX_STACK_LINE(1068)
 							::flixel::util::FlxPool_flixel_math_FlxRect tmp10 = ::flixel::math::FlxRect_obj::_pool;		HX_STACK_VAR(tmp10,"tmp10");
-							HX_STACK_LINE(1060)
+							HX_STACK_LINE(1068)
 							::flixel::math::FlxRect tmp11 = tmp10->get();		HX_STACK_VAR(tmp11,"tmp11");
-							HX_STACK_LINE(1060)
+							HX_STACK_LINE(1068)
 							::flixel::math::FlxRect _this = tmp11;		HX_STACK_VAR(_this,"_this");
-							HX_STACK_LINE(1060)
+							HX_STACK_LINE(1068)
 							int tmp12 = this->width;		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(1060)
+							HX_STACK_LINE(1068)
 							Float tmp13 = w1;		HX_STACK_VAR(tmp13,"tmp13");
-							HX_STACK_LINE(1060)
+							HX_STACK_LINE(1068)
 							Float tmp14 = (tmp12 - tmp13);		HX_STACK_VAR(tmp14,"tmp14");
-							HX_STACK_LINE(1060)
+							HX_STACK_LINE(1068)
 							Float tmp15 = (Float(tmp14) / Float((int)2));		HX_STACK_VAR(tmp15,"tmp15");
-							HX_STACK_LINE(1060)
+							HX_STACK_LINE(1068)
 							_this->x = tmp15;
-							HX_STACK_LINE(1060)
+							HX_STACK_LINE(1068)
 							int tmp16 = this->height;		HX_STACK_VAR(tmp16,"tmp16");
-							HX_STACK_LINE(1060)
+							HX_STACK_LINE(1068)
 							Float tmp17 = h1;		HX_STACK_VAR(tmp17,"tmp17");
-							HX_STACK_LINE(1060)
+							HX_STACK_LINE(1068)
 							Float tmp18 = (tmp16 - tmp17);		HX_STACK_VAR(tmp18,"tmp18");
-							HX_STACK_LINE(1060)
+							HX_STACK_LINE(1068)
 							Float tmp19 = (Float(tmp18) / Float((int)2));		HX_STACK_VAR(tmp19,"tmp19");
-							HX_STACK_LINE(1060)
+							HX_STACK_LINE(1068)
 							Float tmp20 = (h1 * ((Float)0.25));		HX_STACK_VAR(tmp20,"tmp20");
-							HX_STACK_LINE(1060)
+							HX_STACK_LINE(1068)
 							Float tmp21 = (tmp19 - tmp20);		HX_STACK_VAR(tmp21,"tmp21");
-							HX_STACK_LINE(1060)
+							HX_STACK_LINE(1068)
 							_this->y = tmp21;
-							HX_STACK_LINE(1060)
+							HX_STACK_LINE(1068)
 							_this->width = w1;
-							HX_STACK_LINE(1060)
+							HX_STACK_LINE(1068)
 							_this->height = h1;
-							HX_STACK_LINE(1060)
+							HX_STACK_LINE(1068)
 							tmp9 = _this;
 						}
-						HX_STACK_LINE(1060)
+						HX_STACK_LINE(1068)
 						::flixel::math::FlxRect rect = tmp9;		HX_STACK_VAR(rect,"rect");
-						HX_STACK_LINE(1060)
+						HX_STACK_LINE(1068)
 						rect->_inPool = false;
-						HX_STACK_LINE(1060)
+						HX_STACK_LINE(1068)
 						tmp8 = rect;
 					}
-					HX_STACK_LINE(1060)
+					HX_STACK_LINE(1068)
 					this->deadzone = tmp8;
 				}
 				;break;
 				case (int)2: {
-					HX_STACK_LINE(1063)
+					HX_STACK_LINE(1071)
 					int tmp4 = this->width;		HX_STACK_VAR(tmp4,"tmp4");
-					HX_STACK_LINE(1063)
+					HX_STACK_LINE(1071)
 					int tmp5 = this->height;		HX_STACK_VAR(tmp5,"tmp5");
-					HX_STACK_LINE(1063)
+					HX_STACK_LINE(1071)
 					Float tmp6 = ::Math_obj::max(tmp4,tmp5);		HX_STACK_VAR(tmp6,"tmp6");
-					HX_STACK_LINE(1063)
+					HX_STACK_LINE(1071)
 					Float tmp7 = (Float(tmp6) / Float((int)4));		HX_STACK_VAR(tmp7,"tmp7");
-					HX_STACK_LINE(1063)
+					HX_STACK_LINE(1071)
 					helper = tmp7;
-					HX_STACK_LINE(1064)
+					HX_STACK_LINE(1072)
 					::flixel::math::FlxRect tmp8;		HX_STACK_VAR(tmp8,"tmp8");
-					HX_STACK_LINE(1064)
+					HX_STACK_LINE(1072)
 					{
-						HX_STACK_LINE(1064)
+						HX_STACK_LINE(1072)
 						::flixel::math::FlxRect tmp9;		HX_STACK_VAR(tmp9,"tmp9");
-						HX_STACK_LINE(1064)
+						HX_STACK_LINE(1072)
 						{
-							HX_STACK_LINE(1064)
+							HX_STACK_LINE(1072)
 							::flixel::util::FlxPool_flixel_math_FlxRect tmp10 = ::flixel::math::FlxRect_obj::_pool;		HX_STACK_VAR(tmp10,"tmp10");
-							HX_STACK_LINE(1064)
+							HX_STACK_LINE(1072)
 							::flixel::math::FlxRect tmp11 = tmp10->get();		HX_STACK_VAR(tmp11,"tmp11");
-							HX_STACK_LINE(1064)
+							HX_STACK_LINE(1072)
 							::flixel::math::FlxRect _this = tmp11;		HX_STACK_VAR(_this,"_this");
-							HX_STACK_LINE(1064)
+							HX_STACK_LINE(1072)
 							int tmp12 = this->width;		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(1064)
+							HX_STACK_LINE(1072)
 							Float tmp13 = helper;		HX_STACK_VAR(tmp13,"tmp13");
-							HX_STACK_LINE(1064)
+							HX_STACK_LINE(1072)
 							Float tmp14 = (tmp12 - tmp13);		HX_STACK_VAR(tmp14,"tmp14");
-							HX_STACK_LINE(1064)
+							HX_STACK_LINE(1072)
 							Float tmp15 = (Float(tmp14) / Float((int)2));		HX_STACK_VAR(tmp15,"tmp15");
-							HX_STACK_LINE(1064)
+							HX_STACK_LINE(1072)
 							_this->x = tmp15;
-							HX_STACK_LINE(1064)
+							HX_STACK_LINE(1072)
 							int tmp16 = this->height;		HX_STACK_VAR(tmp16,"tmp16");
-							HX_STACK_LINE(1064)
+							HX_STACK_LINE(1072)
 							Float tmp17 = helper;		HX_STACK_VAR(tmp17,"tmp17");
-							HX_STACK_LINE(1064)
+							HX_STACK_LINE(1072)
 							Float tmp18 = (tmp16 - tmp17);		HX_STACK_VAR(tmp18,"tmp18");
-							HX_STACK_LINE(1064)
+							HX_STACK_LINE(1072)
 							Float tmp19 = (Float(tmp18) / Float((int)2));		HX_STACK_VAR(tmp19,"tmp19");
-							HX_STACK_LINE(1064)
+							HX_STACK_LINE(1072)
 							_this->y = tmp19;
-							HX_STACK_LINE(1064)
+							HX_STACK_LINE(1072)
 							_this->width = helper;
-							HX_STACK_LINE(1064)
+							HX_STACK_LINE(1072)
 							_this->height = helper;
-							HX_STACK_LINE(1064)
+							HX_STACK_LINE(1072)
 							tmp9 = _this;
 						}
-						HX_STACK_LINE(1064)
+						HX_STACK_LINE(1072)
 						::flixel::math::FlxRect rect = tmp9;		HX_STACK_VAR(rect,"rect");
-						HX_STACK_LINE(1064)
+						HX_STACK_LINE(1072)
 						rect->_inPool = false;
-						HX_STACK_LINE(1064)
+						HX_STACK_LINE(1072)
 						tmp8 = rect;
 					}
-					HX_STACK_LINE(1064)
+					HX_STACK_LINE(1072)
 					this->deadzone = tmp8;
 				}
 				;break;
 				case (int)3: {
-					HX_STACK_LINE(1067)
+					HX_STACK_LINE(1075)
 					int tmp4 = this->width;		HX_STACK_VAR(tmp4,"tmp4");
-					HX_STACK_LINE(1067)
+					HX_STACK_LINE(1075)
 					int tmp5 = this->height;		HX_STACK_VAR(tmp5,"tmp5");
-					HX_STACK_LINE(1067)
+					HX_STACK_LINE(1075)
 					Float tmp6 = ::Math_obj::max(tmp4,tmp5);		HX_STACK_VAR(tmp6,"tmp6");
-					HX_STACK_LINE(1067)
+					HX_STACK_LINE(1075)
 					Float tmp7 = (Float(tmp6) / Float((int)8));		HX_STACK_VAR(tmp7,"tmp7");
-					HX_STACK_LINE(1067)
+					HX_STACK_LINE(1075)
 					helper = tmp7;
-					HX_STACK_LINE(1068)
+					HX_STACK_LINE(1076)
 					::flixel::math::FlxRect tmp8;		HX_STACK_VAR(tmp8,"tmp8");
-					HX_STACK_LINE(1068)
+					HX_STACK_LINE(1076)
 					{
-						HX_STACK_LINE(1068)
+						HX_STACK_LINE(1076)
 						::flixel::math::FlxRect tmp9;		HX_STACK_VAR(tmp9,"tmp9");
-						HX_STACK_LINE(1068)
+						HX_STACK_LINE(1076)
 						{
-							HX_STACK_LINE(1068)
+							HX_STACK_LINE(1076)
 							::flixel::util::FlxPool_flixel_math_FlxRect tmp10 = ::flixel::math::FlxRect_obj::_pool;		HX_STACK_VAR(tmp10,"tmp10");
-							HX_STACK_LINE(1068)
+							HX_STACK_LINE(1076)
 							::flixel::math::FlxRect tmp11 = tmp10->get();		HX_STACK_VAR(tmp11,"tmp11");
-							HX_STACK_LINE(1068)
+							HX_STACK_LINE(1076)
 							::flixel::math::FlxRect _this = tmp11;		HX_STACK_VAR(_this,"_this");
-							HX_STACK_LINE(1068)
+							HX_STACK_LINE(1076)
 							int tmp12 = this->width;		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(1068)
+							HX_STACK_LINE(1076)
 							Float tmp13 = helper;		HX_STACK_VAR(tmp13,"tmp13");
-							HX_STACK_LINE(1068)
+							HX_STACK_LINE(1076)
 							Float tmp14 = (tmp12 - tmp13);		HX_STACK_VAR(tmp14,"tmp14");
-							HX_STACK_LINE(1068)
+							HX_STACK_LINE(1076)
 							Float tmp15 = (Float(tmp14) / Float((int)2));		HX_STACK_VAR(tmp15,"tmp15");
-							HX_STACK_LINE(1068)
+							HX_STACK_LINE(1076)
 							_this->x = tmp15;
-							HX_STACK_LINE(1068)
+							HX_STACK_LINE(1076)
 							int tmp16 = this->height;		HX_STACK_VAR(tmp16,"tmp16");
-							HX_STACK_LINE(1068)
+							HX_STACK_LINE(1076)
 							Float tmp17 = helper;		HX_STACK_VAR(tmp17,"tmp17");
-							HX_STACK_LINE(1068)
+							HX_STACK_LINE(1076)
 							Float tmp18 = (tmp16 - tmp17);		HX_STACK_VAR(tmp18,"tmp18");
-							HX_STACK_LINE(1068)
+							HX_STACK_LINE(1076)
 							Float tmp19 = (Float(tmp18) / Float((int)2));		HX_STACK_VAR(tmp19,"tmp19");
-							HX_STACK_LINE(1068)
+							HX_STACK_LINE(1076)
 							_this->y = tmp19;
-							HX_STACK_LINE(1068)
+							HX_STACK_LINE(1076)
 							_this->width = helper;
-							HX_STACK_LINE(1068)
+							HX_STACK_LINE(1076)
 							_this->height = helper;
-							HX_STACK_LINE(1068)
+							HX_STACK_LINE(1076)
 							tmp9 = _this;
 						}
-						HX_STACK_LINE(1068)
+						HX_STACK_LINE(1076)
 						::flixel::math::FlxRect rect = tmp9;		HX_STACK_VAR(rect,"rect");
-						HX_STACK_LINE(1068)
+						HX_STACK_LINE(1076)
 						rect->_inPool = false;
-						HX_STACK_LINE(1068)
+						HX_STACK_LINE(1076)
 						tmp8 = rect;
 					}
-					HX_STACK_LINE(1068)
+					HX_STACK_LINE(1076)
 					this->deadzone = tmp8;
-				}
-				;break;
-				case (int)0: {
-					HX_STACK_LINE(1071)
-					::flixel::FlxObject tmp4 = this->target;		HX_STACK_VAR(tmp4,"tmp4");
-					HX_STACK_LINE(1071)
-					bool tmp5 = (tmp4 != null());		HX_STACK_VAR(tmp5,"tmp5");
-					HX_STACK_LINE(1071)
-					if ((tmp5)){
-						HX_STACK_LINE(1073)
-						::flixel::FlxObject tmp6 = this->target;		HX_STACK_VAR(tmp6,"tmp6");
-						HX_STACK_LINE(1073)
-						Float tmp7 = tmp6->get_width();		HX_STACK_VAR(tmp7,"tmp7");
-						HX_STACK_LINE(1073)
-						w = tmp7;
-						HX_STACK_LINE(1074)
-						::flixel::FlxObject tmp8 = this->target;		HX_STACK_VAR(tmp8,"tmp8");
-						HX_STACK_LINE(1074)
-						Float tmp9 = tmp8->get_height();		HX_STACK_VAR(tmp9,"tmp9");
-						HX_STACK_LINE(1074)
-						h = tmp9;
-					}
-					HX_STACK_LINE(1076)
-					::flixel::math::FlxRect tmp6;		HX_STACK_VAR(tmp6,"tmp6");
-					HX_STACK_LINE(1076)
-					{
-						HX_STACK_LINE(1076)
-						::flixel::math::FlxRect tmp7;		HX_STACK_VAR(tmp7,"tmp7");
-						HX_STACK_LINE(1076)
-						{
-							HX_STACK_LINE(1076)
-							::flixel::util::FlxPool_flixel_math_FlxRect tmp8 = ::flixel::math::FlxRect_obj::_pool;		HX_STACK_VAR(tmp8,"tmp8");
-							HX_STACK_LINE(1076)
-							::flixel::math::FlxRect tmp9 = tmp8->get();		HX_STACK_VAR(tmp9,"tmp9");
-							HX_STACK_LINE(1076)
-							::flixel::math::FlxRect _this = tmp9;		HX_STACK_VAR(_this,"_this");
-							HX_STACK_LINE(1076)
-							int tmp10 = this->width;		HX_STACK_VAR(tmp10,"tmp10");
-							HX_STACK_LINE(1076)
-							Float tmp11 = w;		HX_STACK_VAR(tmp11,"tmp11");
-							HX_STACK_LINE(1076)
-							Float tmp12 = (tmp10 - tmp11);		HX_STACK_VAR(tmp12,"tmp12");
-							HX_STACK_LINE(1076)
-							Float tmp13 = (Float(tmp12) / Float((int)2));		HX_STACK_VAR(tmp13,"tmp13");
-							HX_STACK_LINE(1076)
-							_this->x = tmp13;
-							HX_STACK_LINE(1076)
-							int tmp14 = this->height;		HX_STACK_VAR(tmp14,"tmp14");
-							HX_STACK_LINE(1076)
-							Float tmp15 = h;		HX_STACK_VAR(tmp15,"tmp15");
-							HX_STACK_LINE(1076)
-							Float tmp16 = (tmp14 - tmp15);		HX_STACK_VAR(tmp16,"tmp16");
-							HX_STACK_LINE(1076)
-							Float tmp17 = (Float(tmp16) / Float((int)2));		HX_STACK_VAR(tmp17,"tmp17");
-							HX_STACK_LINE(1076)
-							Float tmp18 = (h * ((Float)0.25));		HX_STACK_VAR(tmp18,"tmp18");
-							HX_STACK_LINE(1076)
-							Float tmp19 = (tmp17 - tmp18);		HX_STACK_VAR(tmp19,"tmp19");
-							HX_STACK_LINE(1076)
-							_this->y = tmp19;
-							HX_STACK_LINE(1076)
-							_this->width = w;
-							HX_STACK_LINE(1076)
-							_this->height = h;
-							HX_STACK_LINE(1076)
-							tmp7 = _this;
-						}
-						HX_STACK_LINE(1076)
-						::flixel::math::FlxRect rect = tmp7;		HX_STACK_VAR(rect,"rect");
-						HX_STACK_LINE(1076)
-						rect->_inPool = false;
-						HX_STACK_LINE(1076)
-						tmp6 = rect;
-					}
-					HX_STACK_LINE(1076)
-					this->deadzone = tmp6;
 				}
 				;break;
 				case (int)4: {
@@ -3898,15 +3898,12 @@ Void FlxCamera_obj::follow( ::flixel::FlxObject Target,::flixel::FlxCameraFollow
 					this->deadzone = tmp4;
 				}
 				;break;
-				default: {
+				case (int)5: {
 					HX_STACK_LINE(1082)
 					this->deadzone = null();
 				}
+				;break;
 			}
-		}
-		else{
-			HX_STACK_LINE(1082)
-			this->deadzone = null();
 		}
 	}
 return null();

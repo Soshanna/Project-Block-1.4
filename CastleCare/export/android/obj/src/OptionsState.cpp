@@ -327,131 +327,82 @@ Void OptionsState_obj::create( ){
 		::flixel::text::FlxText tmp73 = this->_txtVolumeAmt;		HX_STACK_VAR(tmp73,"tmp73");
 		HX_STACK_LINE(59)
 		this->add(tmp73);
-		HX_STACK_LINE(61)
+		HX_STACK_LINE(67)
 		int tmp74 = ::flixel::FlxG_obj::width;		HX_STACK_VAR(tmp74,"tmp74");
-		HX_STACK_LINE(61)
+		HX_STACK_LINE(67)
 		Float tmp75 = (Float(tmp74) / Float((int)2));		HX_STACK_VAR(tmp75,"tmp75");
-		HX_STACK_LINE(61)
-		Float tmp76 = (tmp75 - (int)90);		HX_STACK_VAR(tmp76,"tmp76");
-		HX_STACK_LINE(61)
+		HX_STACK_LINE(67)
+		Float tmp76 = (tmp75 + (int)10);		HX_STACK_VAR(tmp76,"tmp76");
+		HX_STACK_LINE(67)
 		int tmp77 = ::flixel::FlxG_obj::height;		HX_STACK_VAR(tmp77,"tmp77");
-		HX_STACK_LINE(61)
+		HX_STACK_LINE(67)
 		int tmp78 = (tmp77 - (int)28);		HX_STACK_VAR(tmp78,"tmp78");
-		HX_STACK_LINE(61)
-		Dynamic tmp79 = this->clickClearData_dyn();		HX_STACK_VAR(tmp79,"tmp79");
-		HX_STACK_LINE(61)
-		::flixel::ui::FlxButton tmp80 = ::flixel::ui::FlxButton_obj::__new(tmp76,tmp78,HX_HCSTRING("Clear Sound","\xbc","\xb9","\xf0","\x22"),tmp79);		HX_STACK_VAR(tmp80,"tmp80");
-		HX_STACK_LINE(61)
-		this->_btnClearData = tmp80;
-		HX_STACK_LINE(62)
+		HX_STACK_LINE(67)
+		Dynamic tmp79 = this->clickMenu_dyn();		HX_STACK_VAR(tmp79,"tmp79");
+		HX_STACK_LINE(67)
+		::flixel::ui::FlxButton tmp80 = ::flixel::ui::FlxButton_obj::__new(tmp76,tmp78,HX_HCSTRING("Back","\x47","\x06","\xea","\x2b"),tmp79);		HX_STACK_VAR(tmp80,"tmp80");
+		HX_STACK_LINE(67)
+		this->_btnMenu = tmp80;
+		HX_STACK_LINE(68)
 		::flixel::_system::frontEnds::SoundFrontEnd tmp81 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp81,"tmp81");
-		HX_STACK_LINE(62)
+		HX_STACK_LINE(68)
 		::flixel::_system::FlxSound tmp82 = tmp81->__Field(HX_HCSTRING("load","\x26","\x9a","\xb7","\x47"), hx::paccDynamic )(HX_HCSTRING("assets/sounds/select.wav","\x99","\x31","\xec","\x2e"),null(),null(),null(),null(),null(),null(),null());		HX_STACK_VAR(tmp82,"tmp82");
-		HX_STACK_LINE(62)
-		::flixel::ui::FlxButton tmp83 = this->_btnClearData;		HX_STACK_VAR(tmp83,"tmp83");
-		HX_STACK_LINE(62)
+		HX_STACK_LINE(68)
+		::flixel::ui::FlxButton tmp83 = this->_btnMenu;		HX_STACK_VAR(tmp83,"tmp83");
+		HX_STACK_LINE(68)
 		tmp83->onUp->sound = tmp82;
-		HX_STACK_LINE(63)
-		::flixel::ui::FlxButton tmp84 = this->_btnClearData;		HX_STACK_VAR(tmp84,"tmp84");
-		HX_STACK_LINE(63)
+		HX_STACK_LINE(69)
+		::flixel::ui::FlxButton tmp84 = this->_btnMenu;		HX_STACK_VAR(tmp84,"tmp84");
+		HX_STACK_LINE(69)
 		this->add(tmp84);
-		HX_STACK_LINE(65)
-		int tmp85 = ::flixel::FlxG_obj::width;		HX_STACK_VAR(tmp85,"tmp85");
-		HX_STACK_LINE(65)
-		Float tmp86 = (Float(tmp85) / Float((int)2));		HX_STACK_VAR(tmp86,"tmp86");
-		HX_STACK_LINE(65)
-		Float tmp87 = (tmp86 + (int)10);		HX_STACK_VAR(tmp87,"tmp87");
-		HX_STACK_LINE(65)
-		int tmp88 = ::flixel::FlxG_obj::height;		HX_STACK_VAR(tmp88,"tmp88");
-		HX_STACK_LINE(65)
-		int tmp89 = (tmp88 - (int)28);		HX_STACK_VAR(tmp89,"tmp89");
-		HX_STACK_LINE(65)
-		Dynamic tmp90 = this->clickMenu_dyn();		HX_STACK_VAR(tmp90,"tmp90");
-		HX_STACK_LINE(65)
-		::flixel::ui::FlxButton tmp91 = ::flixel::ui::FlxButton_obj::__new(tmp87,tmp89,HX_HCSTRING("Back","\x47","\x06","\xea","\x2b"),tmp90);		HX_STACK_VAR(tmp91,"tmp91");
-		HX_STACK_LINE(65)
-		this->_btnMenu = tmp91;
-		HX_STACK_LINE(66)
-		::flixel::_system::frontEnds::SoundFrontEnd tmp92 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp92,"tmp92");
-		HX_STACK_LINE(66)
-		::flixel::_system::FlxSound tmp93 = tmp92->__Field(HX_HCSTRING("load","\x26","\x9a","\xb7","\x47"), hx::paccDynamic )(HX_HCSTRING("assets/sounds/select.wav","\x99","\x31","\xec","\x2e"),null(),null(),null(),null(),null(),null(),null());		HX_STACK_VAR(tmp93,"tmp93");
-		HX_STACK_LINE(66)
-		::flixel::ui::FlxButton tmp94 = this->_btnMenu;		HX_STACK_VAR(tmp94,"tmp94");
-		HX_STACK_LINE(66)
-		tmp94->onUp->sound = tmp93;
-		HX_STACK_LINE(67)
-		::flixel::ui::FlxButton tmp95 = this->_btnMenu;		HX_STACK_VAR(tmp95,"tmp95");
-		HX_STACK_LINE(67)
-		this->add(tmp95);
-		HX_STACK_LINE(69)
-		::flixel::util::FlxSave tmp96 = ::flixel::util::FlxSave_obj::__new();		HX_STACK_VAR(tmp96,"tmp96");
-		HX_STACK_LINE(69)
-		this->_save = tmp96;
-		HX_STACK_LINE(70)
-		::flixel::util::FlxSave tmp97 = this->_save;		HX_STACK_VAR(tmp97,"tmp97");
-		HX_STACK_LINE(70)
-		tmp97->bind(HX_HCSTRING("flixel-tutorial","\xef","\x96","\x5f","\x79"));
+		HX_STACK_LINE(71)
+		::flixel::util::FlxSave tmp85 = ::flixel::util::FlxSave_obj::__new();		HX_STACK_VAR(tmp85,"tmp85");
+		HX_STACK_LINE(71)
+		this->_save = tmp85;
 		HX_STACK_LINE(72)
+		::flixel::util::FlxSave tmp86 = this->_save;		HX_STACK_VAR(tmp86,"tmp86");
+		HX_STACK_LINE(72)
+		tmp86->bind(HX_HCSTRING("flixel-tutorial","\xef","\x96","\x5f","\x79"));
+		HX_STACK_LINE(74)
 		this->updateVolume();
-		HX_STACK_LINE(74)
-		::flixel::FlxCamera tmp98 = ::flixel::FlxG_obj::camera;		HX_STACK_VAR(tmp98,"tmp98");
-		HX_STACK_LINE(74)
-		tmp98->fade((int)-16777216,((Float).20),true,null(),null());
-		HX_STACK_LINE(75)
+		HX_STACK_LINE(76)
+		::flixel::FlxCamera tmp87 = ::flixel::FlxG_obj::camera;		HX_STACK_VAR(tmp87,"tmp87");
+		HX_STACK_LINE(76)
+		tmp87->fade((int)-16777216,((Float).20),true,null(),null());
+		HX_STACK_LINE(77)
 		this->super::create();
 	}
 return null();
 }
 
 
-Void OptionsState_obj::clickClearData( ){
-{
-		HX_STACK_FRAME("OptionsState","clickClearData",0x24baad0a,"OptionsState.clickClearData","OptionsState.hx",78,0x342db2ab)
-		HX_STACK_THIS(this)
-		HX_STACK_LINE(79)
-		::flixel::util::FlxSave tmp = this->_save;		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(79)
-		tmp->erase();
-		HX_STACK_LINE(80)
-		::flixel::_system::frontEnds::SoundFrontEnd tmp1 = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(80)
-		tmp1->__Field(HX_HCSTRING("set_volume","\x17","\x38","\x58","\x53"), hx::paccDynamic )(((Float).5));
-		HX_STACK_LINE(81)
-		this->updateVolume();
-	}
-return null();
-}
-
-
-HX_DEFINE_DYNAMIC_FUNC0(OptionsState_obj,clickClearData,(void))
-
 Void OptionsState_obj::clickMenu( ){
 {
-		HX_STACK_FRAME("OptionsState","clickMenu",0x491f53cc,"OptionsState.clickMenu","OptionsState.hx",84,0x342db2ab)
+		HX_STACK_FRAME("OptionsState","clickMenu",0x491f53cc,"OptionsState.clickMenu","OptionsState.hx",88,0x342db2ab)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(85)
+		HX_STACK_LINE(89)
 		::flixel::FlxCamera tmp = ::flixel::FlxG_obj::camera;		HX_STACK_VAR(tmp,"tmp");
 
 		HX_BEGIN_LOCAL_FUNC_S0(hx::LocalFunc,_Function_1_1)
 		int __ArgCount() const { return 0; }
 		Void run(){
-			HX_STACK_FRAME("*","_Function_1_1",0x5200ed37,"*._Function_1_1","OptionsState.hx",86,0x342db2ab)
+			HX_STACK_FRAME("*","_Function_1_1",0x5200ed37,"*._Function_1_1","OptionsState.hx",90,0x342db2ab)
 			{
-				HX_STACK_LINE(86)
+				HX_STACK_LINE(90)
 				::MenuState tmp1 = ::MenuState_obj::__new(null());		HX_STACK_VAR(tmp1,"tmp1");
-				HX_STACK_LINE(86)
+				HX_STACK_LINE(90)
 				::flixel::FlxState nextState = tmp1;		HX_STACK_VAR(nextState,"nextState");
-				HX_STACK_LINE(86)
+				HX_STACK_LINE(90)
 				::flixel::FlxGame tmp2 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp2,"tmp2");
-				HX_STACK_LINE(86)
+				HX_STACK_LINE(90)
 				::flixel::FlxState tmp3 = nextState;		HX_STACK_VAR(tmp3,"tmp3");
-				HX_STACK_LINE(86)
+				HX_STACK_LINE(90)
 				bool tmp4 = tmp2->_state->switchTo(tmp3);		HX_STACK_VAR(tmp4,"tmp4");
-				HX_STACK_LINE(86)
+				HX_STACK_LINE(90)
 				if ((tmp4)){
-					HX_STACK_LINE(86)
+					HX_STACK_LINE(90)
 					::flixel::FlxGame tmp5 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp5,"tmp5");
-					HX_STACK_LINE(86)
+					HX_STACK_LINE(90)
 					tmp5->_requestedState = nextState;
 				}
 			}
@@ -459,7 +410,7 @@ Void OptionsState_obj::clickMenu( ){
 		}
 		HX_END_LOCAL_FUNC0((void))
 
-		HX_STACK_LINE(85)
+		HX_STACK_LINE(89)
 		tmp->fade((int)-16777216,((Float).20),false, Dynamic(new _Function_1_1()),null());
 	}
 return null();
@@ -470,26 +421,26 @@ HX_DEFINE_DYNAMIC_FUNC0(OptionsState_obj,clickMenu,(void))
 
 Void OptionsState_obj::clickVolumeDown( ){
 {
-		HX_STACK_FRAME("OptionsState","clickVolumeDown",0x7a47b149,"OptionsState.clickVolumeDown","OptionsState.hx",90,0x342db2ab)
+		HX_STACK_FRAME("OptionsState","clickVolumeDown",0x7a47b149,"OptionsState.clickVolumeDown","OptionsState.hx",94,0x342db2ab)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(91)
+		HX_STACK_LINE(95)
 		{
-			HX_STACK_LINE(91)
+			HX_STACK_LINE(95)
 			::flixel::_system::frontEnds::SoundFrontEnd tmp = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp,"tmp");
-			HX_STACK_LINE(91)
+			HX_STACK_LINE(95)
 			::flixel::_system::frontEnds::SoundFrontEnd _g = tmp;		HX_STACK_VAR(_g,"_g");
-			HX_STACK_LINE(91)
+			HX_STACK_LINE(95)
 			Float tmp1 = (_g->__Field(HX_HCSTRING("volume","\xda","\x29","\x53","\x5f"), hx::paccDynamic ) - ((Float)0.1));		HX_STACK_VAR(tmp1,"tmp1");
-			HX_STACK_LINE(91)
+			HX_STACK_LINE(95)
 			_g->__Field(HX_HCSTRING("set_volume","\x17","\x38","\x58","\x53"), hx::paccDynamic )(tmp1);
 		}
-		HX_STACK_LINE(92)
+		HX_STACK_LINE(96)
 		::flixel::_system::frontEnds::SoundFrontEnd tmp = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(92)
+		HX_STACK_LINE(96)
 		::flixel::util::FlxSave tmp1 = this->_save;		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(92)
+		HX_STACK_LINE(96)
 		tmp1->data->__FieldRef(HX_HCSTRING("volume","\xda","\x29","\x53","\x5f")) = tmp->__Field(HX_HCSTRING("volume","\xda","\x29","\x53","\x5f"), hx::paccDynamic );
-		HX_STACK_LINE(93)
+		HX_STACK_LINE(97)
 		this->updateVolume();
 	}
 return null();
@@ -500,26 +451,26 @@ HX_DEFINE_DYNAMIC_FUNC0(OptionsState_obj,clickVolumeDown,(void))
 
 Void OptionsState_obj::clickVolumeUp( ){
 {
-		HX_STACK_FRAME("OptionsState","clickVolumeUp",0x9ac24782,"OptionsState.clickVolumeUp","OptionsState.hx",96,0x342db2ab)
+		HX_STACK_FRAME("OptionsState","clickVolumeUp",0x9ac24782,"OptionsState.clickVolumeUp","OptionsState.hx",100,0x342db2ab)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(97)
+		HX_STACK_LINE(101)
 		{
-			HX_STACK_LINE(97)
+			HX_STACK_LINE(101)
 			::flixel::_system::frontEnds::SoundFrontEnd tmp = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp,"tmp");
-			HX_STACK_LINE(97)
+			HX_STACK_LINE(101)
 			::flixel::_system::frontEnds::SoundFrontEnd _g = tmp;		HX_STACK_VAR(_g,"_g");
-			HX_STACK_LINE(97)
+			HX_STACK_LINE(101)
 			Float tmp1 = (_g->__Field(HX_HCSTRING("volume","\xda","\x29","\x53","\x5f"), hx::paccDynamic ) + ((Float)0.1));		HX_STACK_VAR(tmp1,"tmp1");
-			HX_STACK_LINE(97)
+			HX_STACK_LINE(101)
 			_g->__Field(HX_HCSTRING("set_volume","\x17","\x38","\x58","\x53"), hx::paccDynamic )(tmp1);
 		}
-		HX_STACK_LINE(98)
+		HX_STACK_LINE(102)
 		::flixel::_system::frontEnds::SoundFrontEnd tmp = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(98)
+		HX_STACK_LINE(102)
 		::flixel::util::FlxSave tmp1 = this->_save;		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(98)
+		HX_STACK_LINE(102)
 		tmp1->data->__FieldRef(HX_HCSTRING("volume","\xda","\x29","\x53","\x5f")) = tmp->__Field(HX_HCSTRING("volume","\xda","\x29","\x53","\x5f"), hx::paccDynamic );
-		HX_STACK_LINE(99)
+		HX_STACK_LINE(103)
 		this->updateVolume();
 	}
 return null();
@@ -530,29 +481,29 @@ HX_DEFINE_DYNAMIC_FUNC0(OptionsState_obj,clickVolumeUp,(void))
 
 Void OptionsState_obj::updateVolume( ){
 {
-		HX_STACK_FRAME("OptionsState","updateVolume",0x0aa1d81e,"OptionsState.updateVolume","OptionsState.hx",102,0x342db2ab)
+		HX_STACK_FRAME("OptionsState","updateVolume",0x0aa1d81e,"OptionsState.updateVolume","OptionsState.hx",106,0x342db2ab)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(103)
+		HX_STACK_LINE(107)
 		::flixel::_system::frontEnds::SoundFrontEnd tmp = ::flixel::FlxG_obj::sound;		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(103)
+		HX_STACK_LINE(107)
 		Float tmp1 = tmp->__Field(HX_HCSTRING("volume","\xda","\x29","\x53","\x5f"), hx::paccDynamic );		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(103)
+		HX_STACK_LINE(107)
 		Float tmp2 = (tmp1 * (int)100);		HX_STACK_VAR(tmp2,"tmp2");
-		HX_STACK_LINE(103)
+		HX_STACK_LINE(107)
 		int tmp3 = ::Math_obj::round(tmp2);		HX_STACK_VAR(tmp3,"tmp3");
-		HX_STACK_LINE(103)
+		HX_STACK_LINE(107)
 		int vol = tmp3;		HX_STACK_VAR(vol,"vol");
-		HX_STACK_LINE(104)
+		HX_STACK_LINE(108)
 		::flixel::ui::FlxBar tmp4 = this->_barVolume;		HX_STACK_VAR(tmp4,"tmp4");
-		HX_STACK_LINE(104)
+		HX_STACK_LINE(108)
 		int tmp5 = vol;		HX_STACK_VAR(tmp5,"tmp5");
-		HX_STACK_LINE(104)
+		HX_STACK_LINE(108)
 		tmp4->set_value(tmp5);
-		HX_STACK_LINE(105)
+		HX_STACK_LINE(109)
 		::flixel::text::FlxText tmp6 = this->_txtVolumeAmt;		HX_STACK_VAR(tmp6,"tmp6");
-		HX_STACK_LINE(105)
+		HX_STACK_LINE(109)
 		::String tmp7 = (vol + HX_HCSTRING("%","\x25","\x00","\x00","\x00"));		HX_STACK_VAR(tmp7,"tmp7");
-		HX_STACK_LINE(105)
+		HX_STACK_LINE(109)
 		tmp6->set_text(tmp7);
 	}
 return null();
@@ -627,7 +578,6 @@ Dynamic OptionsState_obj::__Field(const ::String &inName,hx::PropertyAccess inCa
 		break;
 	case 14:
 		if (HX_FIELD_EQ(inName,"_btnVolumeDown") ) { return _btnVolumeDown; }
-		if (HX_FIELD_EQ(inName,"clickClearData") ) { return clickClearData_dyn(); }
 		break;
 	case 15:
 		if (HX_FIELD_EQ(inName,"clickVolumeDown") ) { return clickVolumeDown_dyn(); }
@@ -705,7 +655,6 @@ static ::String sMemberFields[] = {
 	HX_HCSTRING("_btnClearData","\x3a","\xc3","\x75","\x6a"),
 	HX_HCSTRING("_save","\x1c","\xa7","\x5e","\xff"),
 	HX_HCSTRING("create","\xfc","\x66","\x0f","\x7c"),
-	HX_HCSTRING("clickClearData","\xef","\xd8","\xda","\x3a"),
 	HX_HCSTRING("clickMenu","\x07","\xb2","\x58","\x27"),
 	HX_HCSTRING("clickVolumeDown","\xc4","\xed","\x4d","\xc0"),
 	HX_HCSTRING("clickVolumeUp","\x3d","\xdf","\xa6","\x2c"),

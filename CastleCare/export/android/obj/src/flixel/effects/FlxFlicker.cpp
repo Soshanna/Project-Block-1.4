@@ -38,7 +38,7 @@ namespace effects{
 
 Void FlxFlicker_obj::__construct()
 {
-HX_STACK_FRAME("flixel.effects.FlxFlicker","new",0x4bc826b6,"flixel.effects.FlxFlicker.new","flixel/effects/FlxFlicker.hx",186,0x4fa53f38)
+HX_STACK_FRAME("flixel.effects.FlxFlicker","new",0x4bc826b6,"flixel.effects.FlxFlicker.new","flixel/effects/FlxFlicker.hx",187,0x4fa53f38)
 HX_STACK_THIS(this)
 {
 }

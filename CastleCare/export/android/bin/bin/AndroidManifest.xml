@@ -1,4 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" android:versionCode="113" android:versionName="0.0.1" package="com.Android.Test">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" android:versionCode="154" android:versionName="0.0.1" package="com.Android.Test">
 	
 	<uses-feature android:glEsVersion="0x00020000" android:required="true"/>
 	

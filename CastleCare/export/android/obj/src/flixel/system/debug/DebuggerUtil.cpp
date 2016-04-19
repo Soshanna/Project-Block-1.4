@@ -27,6 +27,9 @@
 #ifndef INCLUDED_openfl__legacy_text_TextField
 #include <openfl/_legacy/text/TextField.h>
 #endif
+#ifndef INCLUDED_openfl__legacy_text_TextFieldAutoSize
+#include <openfl/_legacy/text/TextFieldAutoSize.h>
+#endif
 #ifndef INCLUDED_openfl__legacy_text_TextFormat
 #include <openfl/_legacy/text/TextFormat.h>
 #endif
@@ -57,55 +60,57 @@ Float X = __o_X.Default(0);
 Float Y = __o_Y.Default(0);
 int Color = __o_Color.Default(-1);
 int Size = __o_Size.Default(12);
-	HX_STACK_FRAME("flixel.system.debug.DebuggerUtil","createTextField",0x34b9b52e,"flixel.system.debug.DebuggerUtil.createTextField","flixel/system/debug/DebuggerUtil.hx",27,0x13434d32)
+	HX_STACK_FRAME("flixel.system.debug.DebuggerUtil","createTextField",0x34b9b52e,"flixel.system.debug.DebuggerUtil.createTextField","flixel/system/debug/DebuggerUtil.hx",28,0x13434d32)
 	HX_STACK_ARG(X,"X")
 	HX_STACK_ARG(Y,"Y")
 	HX_STACK_ARG(Color,"Color")
 	HX_STACK_ARG(Size,"Size")
 {
-		HX_STACK_LINE(28)
+		HX_STACK_LINE(29)
 		::openfl::_legacy::text::TextField tmp = ::openfl::_legacy::text::TextField_obj::__new();		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(28)
+		HX_STACK_LINE(29)
 		::openfl::_legacy::text::TextField tf = tmp;		HX_STACK_VAR(tf,"tf");
-		HX_STACK_LINE(29)
+		HX_STACK_LINE(30)
 		Float tmp1 = X;		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(29)
+		HX_STACK_LINE(30)
 		tf->set_x(tmp1);
-		HX_STACK_LINE(30)
-		Float tmp2 = Y;		HX_STACK_VAR(tmp2,"tmp2");
-		HX_STACK_LINE(30)
-		tf->set_y(tmp2);
 		HX_STACK_LINE(31)
-		tf->set_multiline(false);
+		Float tmp2 = Y;		HX_STACK_VAR(tmp2,"tmp2");
+		HX_STACK_LINE(31)
+		tf->set_y(tmp2);
 		HX_STACK_LINE(32)
-		tf->set_wordWrap(false);
+		tf->set_multiline(false);
 		HX_STACK_LINE(33)
-		tf->set_embedFonts(true);
+		tf->set_wordWrap(false);
 		HX_STACK_LINE(34)
+		tf->set_embedFonts(true);
+		HX_STACK_LINE(35)
 		tf->set_selectable(false);
-		HX_STACK_LINE(39)
+		HX_STACK_LINE(40)
 		::String tmp3 = ::flixel::_system::FlxAssets_obj::FONT_DEBUGGER;		HX_STACK_VAR(tmp3,"tmp3");
-		HX_STACK_LINE(39)
+		HX_STACK_LINE(40)
 		int tmp4 = Size;		HX_STACK_VAR(tmp4,"tmp4");
-		HX_STACK_LINE(39)
+		HX_STACK_LINE(40)
 		int tmp5 = (int(Color) & int((int)16777215));		HX_STACK_VAR(tmp5,"tmp5");
-		HX_STACK_LINE(39)
+		HX_STACK_LINE(40)
 		int tmp6 = tmp5;		HX_STACK_VAR(tmp6,"tmp6");
-		HX_STACK_LINE(39)
+		HX_STACK_LINE(40)
 		::openfl::_legacy::text::TextFormat tmp7 = ::openfl::_legacy::text::TextFormat_obj::__new(tmp3,tmp4,tmp6,null(),null(),null(),null(),null(),null(),null(),null(),null(),null());		HX_STACK_VAR(tmp7,"tmp7");
-		HX_STACK_LINE(39)
+		HX_STACK_LINE(40)
 		tf->set_defaultTextFormat(tmp7);
-		HX_STACK_LINE(40)
+		HX_STACK_LINE(41)
 		int tmp8 = (int(Color) >> int((int)24));		HX_STACK_VAR(tmp8,"tmp8");
-		HX_STACK_LINE(40)
+		HX_STACK_LINE(41)
 		int tmp9 = (int(tmp8) & int((int)255));		HX_STACK_VAR(tmp9,"tmp9");
-		HX_STACK_LINE(40)
+		HX_STACK_LINE(41)
 		Float tmp10 = (Float(tmp9) / Float((int)255));		HX_STACK_VAR(tmp10,"tmp10");
-		HX_STACK_LINE(40)
+		HX_STACK_LINE(41)
 		tf->set_alpha(tmp10);
-		HX_STACK_LINE(41)
+		HX_STACK_LINE(42)
+		tf->set_autoSize(::openfl::_legacy::text::TextFieldAutoSize_obj::LEFT);
+		HX_STACK_LINE(43)
 		::openfl::_legacy::text::TextField tmp11 = tf;		HX_STACK_VAR(tmp11,"tmp11");
-		HX_STACK_LINE(41)
+		HX_STACK_LINE(43)
 		return tmp11;
 	}
 }
@@ -114,11 +119,11 @@ int Size = __o_Size.Default(12);
 STATIC_HX_DEFINE_DYNAMIC_FUNC4(DebuggerUtil_obj,createTextField,return )
 
 ::openfl::_legacy::display::BitmapData DebuggerUtil_obj::fixSize( ::openfl::_legacy::display::BitmapData bitmapData){
-	HX_STACK_FRAME("flixel.system.debug.DebuggerUtil","fixSize",0xaffeaf33,"flixel.system.debug.DebuggerUtil.fixSize","flixel/system/debug/DebuggerUtil.hx",46,0x13434d32)
+	HX_STACK_FRAME("flixel.system.debug.DebuggerUtil","fixSize",0xaffeaf33,"flixel.system.debug.DebuggerUtil.fixSize","flixel/system/debug/DebuggerUtil.hx",48,0x13434d32)
 	HX_STACK_ARG(bitmapData,"bitmapData")
-	HX_STACK_LINE(52)
+	HX_STACK_LINE(54)
 	::openfl::_legacy::display::BitmapData tmp = bitmapData;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(52)
+	HX_STACK_LINE(54)
 	return tmp;
 }
 

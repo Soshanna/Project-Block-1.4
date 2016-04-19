@@ -1719,7 +1719,7 @@ void FlxG_obj::__boot()
 	fixedTimestep= true;
 	timeScale= ((Float)1);
 	worldDivisions= (int)6;
-	VERSION= ::flixel::_system::FlxVersion_obj::__new((int)4,(int)0,(int)0);
+	VERSION= ::flixel::_system::FlxVersion_obj::__new((int)4,(int)0,(int)1);
 	elapsed= ((Float)0);
 	maxElapsed= ((Float)0.1);
 struct _Function_0_1{

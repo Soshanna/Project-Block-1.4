@@ -51,7 +51,7 @@ HX_STACK_THIS(this)
 	HX_STACK_LINE(9)
 	super::__construct();
 	HX_STACK_LINE(10)
-	::flixel::FlxGame tmp = ::flixel::FlxGame_obj::__new((int)640,(int)480,hx::ClassOf< ::MenuState >(),null(),null(),null(),null(),null());		HX_STACK_VAR(tmp,"tmp");
+	::flixel::FlxGame tmp = ::flixel::FlxGame_obj::__new((int)1280,(int)720,hx::ClassOf< ::MenuState >(),null(),null(),null(),null(),null());		HX_STACK_VAR(tmp,"tmp");
 	HX_STACK_LINE(10)
 	this->addChild(tmp);
 }
