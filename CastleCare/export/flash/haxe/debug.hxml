@@ -21,6 +21,6 @@
 -swf-lib export/flash/obj/assets.swf
 -swf-version 11.8
 -swf export/flash/bin/Android_Test.swf
--swf-header 640:480:60:000000
+-swf-header 1280:720:60:FF00FF
 -cp export/flash/haxe
 -debug
