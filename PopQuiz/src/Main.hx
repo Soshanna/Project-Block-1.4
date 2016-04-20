@@ -6,6 +6,8 @@ import openfl.text.TextField;
 import openfl.text.TextFormat;
 import openfl.text.TextFormatAlign;
 import openfl.events.KeyboardEvent;
+import openfl.events.Event;
+import openfl.Lib.getTimer;
 
 /**
  * ...
@@ -19,7 +21,10 @@ class Main extends Sprite
 	var answerTextFields:Array<TextField> = new Array<TextField>();
 	var correctAnswer:Int = -1;
 	var questionNumber:Int = 0;
-
+	var lastTime:Int = 0;
+	var timer:Int = 5000;
+	var timeTextField:TextField = null;
+	
 	public function new() {
 		super();
 		
@@ -44,6 +49,15 @@ class Main extends Sprite
 		questionTextField.height = 50;
 		addChild(questionTextField);
 		
+		timeTextField = new TextField();
+		timeTextField.defaultTextFormat = textFormatRightAligned;
+		timeTextField.x = 700;
+		timeTextField.y = 20;
+		timeTextField.width = 50;
+		timeTextField.height = 50;
+		timeTextField.text = Std.string(Math.ceil(timer / 1000));
+		addChild(timeTextField);
+		
 		for(i in 0...3){
 			answerTextFields[i] = new TextField();
 			answerTextFields[i].defaultTextFormat = textFormatCenterAligned;
@@ -56,7 +70,24 @@ class Main extends Sprite
 		
 		startQuestion();
 		
+		lastTime = getTimer();
+		
 		stage.addEventListener(KeyboardEvent.KEY_DOWN, onKeyDown);
+		addEventListener(Event.ENTER_FRAME, onEnterFrame);
+	}
+	
+	function onEnterFrame(event:Event){
+		var currentTime:Int = getTimer();
+		var elapsedTime:Int = currentTime - lastTime;
+		lastTime = currentTime;
+		
+		timer = timer - elapsedTime;
+		
+		if(timer <= 0){
+			startQuestion();
+		}
+		
+		timeTextField.text = Std.string(Math.ceil(timer / 1000));
 	}
 	
 	function startQuestion(){
@@ -83,6 +114,8 @@ class Main extends Sprite
 			answerTextFields[2].text = "(3) 1.998*10^30 kg";
 			correctAnswer = 2;
 		}
+		timer = 5000;
+		questionNumber += 1;
 	}
 	
 	function onKeyDown(event:KeyboardEvent){
@@ -105,7 +138,6 @@ class Main extends Sprite
 		else{
 			trace("incorrect");
 		}
-		questionNumber += 1;
 		startQuestion();
 	}
 }

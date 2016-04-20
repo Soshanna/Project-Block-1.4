@@ -91,13 +91,13 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "3",
-			company: "Fimme Neeleman",
-			file: "quiz",
+			build: "15",
+			company: "F.Neeleman",
+			file: "quizhaxe",
 			fps: 60,
-			name: "quiz",
+			name: "quiz haxe",
 			orientation: "",
-			packageName: "quiz",
+			packageName: "quizhaxe",
 			version: "1.0.0",
 			windows: [
 				
@@ -113,7 +113,7 @@ class ApplicationMain {
 					parameters: "{}",
 					resizable: true,
 					stencilBuffer: true,
-					title: "quiz",
+					title: "quiz haxe",
 					vsync: false,
 					width: 800,
 					x: null,
