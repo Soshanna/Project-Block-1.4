@@ -135,7 +135,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "249",
+			build: "286",
 			company: "HaxeFlixel",
 			file: "Android_Test",
 			fps: 60,

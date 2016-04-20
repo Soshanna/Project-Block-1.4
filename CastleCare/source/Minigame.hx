@@ -4,6 +4,9 @@ import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
+import flixel.FlxG;
+import flixel.util.FlxSpriteUtil;
+import flash.events.Event;
 
 /**
  * ...
@@ -17,6 +20,7 @@ class Minigame extends FlxState
 	var randomFloat:Float;
 	var score:Int = 0;
 	var scoreTxt:FlxText;
+	var place:FlxSprite;
 	
 	override public function create():Void 
 	{
@@ -27,7 +31,7 @@ class Minigame extends FlxState
 		scoreTxt = new FlxText(20, 20, 0, "" + score, 30);
 		add(scoreTxt);
 		
-		for (i in 0 ... 144) {
+		for (i in 0 ... 144){
 			randomSprite();
 			placements[i] = new FlxSprite().loadGraphic(randomsprite, false, 50, 50);
 			placements[i].x = 90;
@@ -50,7 +54,7 @@ class Minigame extends FlxState
 		}
 		
 		for(i in 0 ... 144){
-			var place = placements.pop();
+			place = placements.pop();
 			add(place);
 		}
 		super.create();
@@ -77,11 +81,16 @@ class Minigame extends FlxState
 	
 	function scoreUp(){
 		score += 1;
-		scoreTxt.update;
+		scoreTxt.destroy();
+		scoreTxt = new FlxText(20, 20, 0, "" + score, 30);
+		add(scoreTxt);
 	}
 	
 	override public function update(elapsed:Float):Void 
 	{
+		if (FlxG.mouse.justPressed && FlxG.mouse.x == place.x && FlxG.mouse.y == place.y) {
+		scoreUp();
+		}
 		super.update(elapsed);
 	}
 }
