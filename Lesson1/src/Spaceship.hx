@@ -15,12 +15,13 @@ class Spaceship extends Sprite
 {
 	var ship:Bitmap = null;
 
-	public function new() 
+	public function new(y:Int) 
 	{
 		super();
 		
 		var shipBD:BitmapData = Assets.getBitmapData("img/Ship.png");
 		ship = new Bitmap(shipBD);
+		ship.y = y;
 		addChild(ship);
 	}
 	
