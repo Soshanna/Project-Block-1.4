@@ -42,7 +42,7 @@ class MenuState extends FlxState
 	}
 	
 	private function clickPlay():Void{
-		FlxG.switchState(new Minigame());
+		FlxG.switchState(new PlayState());
 	}
 
 	override public function update(elapsed:Float):Void{
