@@ -40,12 +40,10 @@ class OptionsState extends FlxState
 		
 		_btnVolumeDown = new FlxButton(_barVolume.x - 23,_barVolume.y, "-", clickVolumeDown);
 		_btnVolumeDown.makeGraphic(20, 20, FlxColor.WHITE);
-		_btnVolumeDown.onUp.sound = FlxG.sound.load(AssetPaths.select__wav);
 		add(_btnVolumeDown);
 		
 		_btnVolumeUp = new FlxButton(_btnVolumeDown.x + _barVolume.width + 27, _btnVolumeDown.y, "+", clickVolumeUp);
 		_btnVolumeUp.makeGraphic(20, 20, FlxColor.WHITE);
-		_btnVolumeUp.onUp.sound = FlxG.sound.load(AssetPaths.select__wav);
 		add(_btnVolumeUp);
 		
 		_txtVolumeAmt = new FlxText(0, 0, 200, (FlxG.sound.volume * 100) + "%", 8);
@@ -57,7 +55,6 @@ class OptionsState extends FlxState
 		add(_txtVolumeAmt);
 		
 		_btnMenu = new FlxButton((FlxG.width / 2) + 10, FlxG.height - 28, "Back", clickMenu);
-		_btnMenu.onUp.sound = FlxG.sound.load(AssetPaths.select__wav);
 		add(_btnMenu);
 		
 		updateVolume();
@@ -74,13 +71,11 @@ class OptionsState extends FlxState
 	
 	private function clickVolumeDown():Void{
 		FlxG.sound.volume -= 0.1;
-		_save.data.volume = FlxG.sound.volume;
 		updateVolume();
 	}
 	
 	private function clickVolumeUp():Void{
 		FlxG.sound.volume += 0.1;
-		_save.data.volume = FlxG.sound.volume;
 		updateVolume();
 	}
 	
