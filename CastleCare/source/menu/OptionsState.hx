@@ -1,5 +1,6 @@
-package;
+package menu;
 
+import menu.MenuState;
 import flixel.FlxState;
 import flixel.FlxG;
 import flixel.text.FlxText;
@@ -65,7 +66,7 @@ class OptionsState extends FlxState
 	
 	private function clickMenu():Void{
 		FlxG.camera.fade(FlxColor.BLACK, .20, false, function(){
-			FlxG.switchState(new MenuState());
+			FlxG.switchState(new menu.MenuState());
 		});
 	}
 	

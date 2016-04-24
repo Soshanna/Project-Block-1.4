@@ -1,5 +1,6 @@
-package;
+package menu;
 
+import menu.MenuState;
 import flixel.FlxState;
 import flixel.text.FlxText;
 import flixel.ui.FlxButton;
@@ -10,14 +11,14 @@ import flixel.util.FlxColor;
  * ...
  * @author Fimme Neeleman
  */
-class OverState extends FlxState
+class CreditsState extends FlxState
 {
 	var _txtTitle:FlxText;
 	var _btnMenu:FlxButton;
 
 	override public function create():Void 
 	{
-		_txtTitle = new FlxText(20, 0, 0, "Over", 22);
+		_txtTitle = new FlxText(20, 0, 0, "Credits", 22);
 		_txtTitle.alignment = CENTER;
 		_txtTitle.screenCenter(X);
 		add(_txtTitle);
@@ -30,7 +31,7 @@ class OverState extends FlxState
 	
 	private function clickMenu():Void{
 		FlxG.camera.fade(FlxColor.BLACK, .20, false, function(){
-			FlxG.switchState(new MenuState());
+			FlxG.switchState(new menu.MenuState());
 		});
 	}
 }

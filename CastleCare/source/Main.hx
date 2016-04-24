@@ -1,5 +1,6 @@
 package;
 
+import menu.MenuState;
 import flixel.FlxGame;
 import openfl.display.Sprite;
 

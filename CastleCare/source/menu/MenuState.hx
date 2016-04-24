@@ -1,5 +1,7 @@
-package;
+package menu;
 
+import menu.OptionsState;
+import menu.OverState;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
