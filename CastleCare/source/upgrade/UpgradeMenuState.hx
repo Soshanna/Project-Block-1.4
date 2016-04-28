@@ -16,6 +16,7 @@ class UpgradeMenuState extends FlxState
 	var upgradeCastleButton:FlxButton;
 	var _txtTitle:FlxText;
 	var backButton:FlxButton;
+	var doctorBool:PlayState = new PlayState();
 	
 	override public function create():Void {
 		_txtTitle = new FlxText(20, 0, 0, "Upgrade Menu Screen", 15);
@@ -26,9 +27,11 @@ class UpgradeMenuState extends FlxState
 		backButton = new FlxButton((FlxG.width / 2) + 10, FlxG.height - 28, "Back", clickBack);
 		add(backButton);
 		
+		if(doctorBool.doctorBool == true){
 		upgradeCharacterButton = new FlxButton(0, 350, "Upgrade Character", clickCharacter);
 		upgradeCharacterButton.screenCenter(X);
 		add(upgradeCharacterButton);
+		}
 		
 		upgradeCastleButton = new FlxButton(0, 450, "Upgrade Castle", clickCastle);
 		upgradeCastleButton.screenCenter(X);

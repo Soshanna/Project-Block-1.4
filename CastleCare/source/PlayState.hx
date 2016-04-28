@@ -13,6 +13,8 @@ import flixel.util.FlxColor;
 
 class PlayState extends FlxState
 {
+	public var doctorBool:Bool = false;
+	public var energy:Int;
 	var _btnMenu:FlxButton;
 	var _btnQuest:FlxButton;
 	var _btnUpgradeMenu:FlxButton;
