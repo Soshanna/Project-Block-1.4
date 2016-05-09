@@ -1,4 +1,4 @@
-package minigames;
+package quest;
 
 import quest.JobListState;
 import flixel.FlxState;
@@ -11,7 +11,7 @@ import flixel.util.FlxColor;
  * ...
  * @author Fimme Neeleman
  */
-class CandyCrushMiniGame extends FlxState
+class CandyCrushMiniGameScreen extends FlxState
 {
 	var backButton:FlxButton;
 	var _txtTitle:FlxText;

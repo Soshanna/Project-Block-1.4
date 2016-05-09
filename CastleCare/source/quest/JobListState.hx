@@ -1,6 +1,6 @@
 package quest;
 
-import minigames.CandyCrushMiniGame;
+import quest.CandyCrushMiniGameScreen;
 import flixel.FlxState;
 import flixel.text.FlxText;
 import flixel.ui.FlxButton;
@@ -41,7 +41,7 @@ class JobListState extends FlxState
 	
 	function clickMiniGame():Void {
 		FlxG.camera.fade(FlxColor.BLACK, .20, false ,function(){
-			FlxG.switchState(new CandyCrushMiniGame());
+			FlxG.switchState(new CandyCrushMiniGameScreen());
 		});
 	}
 }
