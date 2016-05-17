@@ -11,7 +11,7 @@ import flixel.util.FlxColor;
  * ...
  * @author Fimme Neeleman
  */
-class CandyCrushMiniGameScreen extends FlxState
+class MiniGameScreen extends FlxState
 {
 	var backButton:FlxButton;
 	var _txtTitle:FlxText;
