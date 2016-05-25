@@ -12,38 +12,49 @@ import flixel.ui.FlxButton;
 import flixel.math.FlxMath;
 import flixel.util.FlxColor;
 import flixel.system.FlxAssets.FlxGraphicAsset;
-import flash.display.BitmapData;
-import flash.Assets;
 
 class PlayState extends FlxState
 {
+	static var instance:PlayState;
 	public var doctorBool:Bool = false;
-	public var energy:Int;
+	public var energy:Int = 50;
 	var _btnMenu:FlxButton;
 	var _btnQuest:FlxButton;
 	var _btnUpgradeMenu:FlxButton;
-	var energyBar:FlxBar;
+	var energyBar:EnergyBar;
+	var energyBarFull:EnergyBar;
 	var currency:Int = 0;
 	
 	override public function create():Void
 	{
+		instance = this;
 		_btnMenu = new FlxButton((FlxG.width / 2) + 520, FlxG.height - 35, "Back", clickMenu);
 		add(_btnMenu);
 		
 		_btnQuest = new FlxButton(20, _btnMenu.y, "Quest", clickQuest);
 		add(_btnQuest);
 		
-		_btnUpgradeMenu = new FlxButton(500, 60, "$ " + currency, clickUpgradeMenu);
+		energyBarFull = new EnergyBar(130, 30, 100, 10, "assets/img/FullEnergy.png","assets/img/EmptyEnergy.png");
+		energyBarFull.value = energy;
+		add(energyBarFull);
+		
+		var energyText:FlxText = new FlxText(energyBarFull.x + (energyBarFull.width / 2) -20 , energyBarFull.y + 21, 0, "" + energyBarFull.value + "%", 25);
+		add(energyText);
+		//make this a FlxButton
+		//var mood:MoodSmiley = new MoodSmiley(10, 5);
+		//add(mood);
+		
+		var energySymbol:FlxSprite = new FlxSprite(energyBarFull.x, energyBarFull.y , "assets/img/EnergySymbol.png");
+		add(energySymbol);
+		
+		_btnUpgradeMenu = new FlxButton((energyBarFull.x + energyBarFull.width) + 10, energyBarFull.y + 20, "$ " + currency, clickUpgradeMenu);
 		add(_btnUpgradeMenu);
 		
-		var bitmapdata:BitmapData = Assets.getBitmapData("img/EmptyEnergy.png");
-		energyBar.createImageFilledBar(bitmapdata, FlxColor.GREEN);
-		add(energyBar);
-		
-		var text:FlxText = new FlxText(energyBar.x + (energyBar.width/2)-10, energyBar.y+5, 0,"" + energyBar.percent,16);
-		add(text);
-		
 		super.create();
+	}
+	
+	public function getInstance():PlayState{
+		return instance;
 	}
 	
 	private function clickMenu():Void{
