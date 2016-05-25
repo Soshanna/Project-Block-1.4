@@ -12,8 +12,6 @@ import flixel.ui.FlxButton;
 import flixel.math.FlxMath;
 import flixel.util.FlxColor;
 import flixel.system.FlxAssets.FlxGraphicAsset;
-import flash.display.BitmapData;
-import flash.Assets;
 
 class PlayState extends FlxState
 {
@@ -22,7 +20,7 @@ class PlayState extends FlxState
 	var _btnMenu:FlxButton;
 	var _btnQuest:FlxButton;
 	var _btnUpgradeMenu:FlxButton;
-	var energyBar:FlxBar;
+	var energyBar:EnergyBar;
 	var currency:Int = 0;
 	
 	override public function create():Void
@@ -33,15 +31,20 @@ class PlayState extends FlxState
 		_btnQuest = new FlxButton(20, _btnMenu.y, "Quest", clickQuest);
 		add(_btnQuest);
 		
-		_btnUpgradeMenu = new FlxButton(500, 60, "$ " + currency, clickUpgradeMenu);
-		add(_btnUpgradeMenu);
-		
-		var bitmapdata:BitmapData = Assets.getBitmapData("img/EmptyEnergy.png");
-		energyBar.createImageFilledBar(bitmapdata, FlxColor.GREEN);
+		energyBar = new EnergyBar(125, 35, 0, 0, "assets/img/EmptyEnergy.png", "assets/img/FullEnergy.png");
 		add(energyBar);
 		
-		var text:FlxText = new FlxText(energyBar.x + (energyBar.width/2)-10, energyBar.y+5, 0,"" + energyBar.percent,16);
+		var mood:MoodSmiley = new MoodSmiley(10, 5);
+		add(mood);
+		
+		var energySymbol:FlxSprite = new FlxSprite(energyBar.x, energyBar.y, "assets/img/EnergySymbol.png");
+		add(energySymbol);
+		
+		var text:FlxText = new FlxText(energyBar.x + (energyBar.width/2)-10, energyBar.y + 25, 0,"" + energyBar.percent,16);
 		add(text);
+		
+		_btnUpgradeMenu = new FlxButton(energyBar.x + energyBar.width + 50, energyBar.y + 25, "$ " + currency, clickUpgradeMenu);
+		add(_btnUpgradeMenu);
 		
 		super.create();
 	}

@@ -38,8 +38,6 @@ class OverState extends FlxState
 		
 		_btnMenu = new FlxButton( (FlxG.width / 2) + 10, FlxG.height - 70, "Back", clickMenu);
 		_btnMenu.screenCenter(X);
-		
-		
 		add(_btnMenu);
 		
 		super.create();
