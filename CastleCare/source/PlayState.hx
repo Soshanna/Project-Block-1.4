@@ -1,5 +1,6 @@
 package;
 
+import flixel.ui.FlxBar;
 import menu.MenuState;
 import quest.QuestState;
 import upgrade.UpgradeMenuState;
@@ -10,6 +11,9 @@ import flixel.text.FlxText;
 import flixel.ui.FlxButton;
 import flixel.math.FlxMath;
 import flixel.util.FlxColor;
+import flixel.system.FlxAssets.FlxGraphicAsset;
+import flash.display.BitmapData;
+import flash.Assets;
 
 class PlayState extends FlxState
 {
@@ -18,7 +22,7 @@ class PlayState extends FlxState
 	var _btnMenu:FlxButton;
 	var _btnQuest:FlxButton;
 	var _btnUpgradeMenu:FlxButton;
-	var energyBar:EnergyBar;
+	var energyBar:FlxBar;
 	var currency:Int = 0;
 	
 	override public function create():Void
@@ -32,8 +36,12 @@ class PlayState extends FlxState
 		_btnUpgradeMenu = new FlxButton(500, 60, "$ " + currency, clickUpgradeMenu);
 		add(_btnUpgradeMenu);
 		
-		energyBar = new EnergyBar(50, 50, 300, 30);
+		var bitmapdata:BitmapData = Assets.getBitmapData("img/EmptyEnergy.png");
+		energyBar.createImageFilledBar(bitmapdata, FlxColor.GREEN);
 		add(energyBar);
+		
+		var text:FlxText = new FlxText(energyBar.x + (energyBar.width/2)-10, energyBar.y+5, 0,"" + energyBar.percent,16);
+		add(text);
 		
 		super.create();
 	}

@@ -16,6 +16,14 @@ class AssetData {
 		
 		if (!initialized) {
 			
+			path.set ("assets/img/EmptyEnergy.png", "assets/img/EmptyEnergy.png");
+			type.set ("assets/img/EmptyEnergy.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/img/EnergySymbol.png", "assets/img/EnergySymbol.png");
+			type.set ("assets/img/EnergySymbol.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/img/FullEnergy.png", "assets/img/FullEnergy.png");
+			type.set ("assets/img/FullEnergy.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/img/MoodHappy.png", "assets/img/MoodHappy.png");
+			type.set ("assets/img/MoodHappy.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("flixel/sounds/beep.ogg", "flixel/sounds/beep.ogg");
 			type.set ("flixel/sounds/beep.ogg", Reflect.field (AssetType, "sound".toUpperCase ()));
 			path.set ("flixel/sounds/flixel.ogg", "flixel/sounds/flixel.ogg");

@@ -31,7 +31,7 @@ class QuestState extends FlxState
 		jobListButton.screenCenter(X);
 		add(jobListButton);
 		
-		contactListButton = new FlxButton(0, 450, "Contacten", clickJobList);
+		contactListButton = new FlxButton(0, 450, "Contacten", clickcontactList);
 		contactListButton.screenCenter(X);
 		add(contactListButton);
 		
