@@ -18,12 +18,20 @@ class MenuState extends FlxState
 	private var _btnQuit:FlxButton;
 	private var _btnOver:FlxButton;
 	private var _btnCredits:FlxButton;
+	private var _bkgrMenu = new FlxSprite();
 	
-	override public function create():Void{
-		_txtTitle = new FlxText(20, 0, 0, "Castle Care", 22);
+	override public function create():Void {
+	
+		_bkgrMenu.loadGraphic("assets/img/titelbackground.png");
+		_bkgrMenu.scale.set(1.35, 1.41);
+		_bkgrMenu.x = 160;
+		_bkgrMenu.y = 110;
+		add(_bkgrMenu);
+		
+		/*_txtTitle = new FlxText(20, 0, 0, "Castle Care", 22);
 		_txtTitle.alignment = CENTER;
 		_txtTitle.screenCenter(X);
-		add(_txtTitle);
+		add(_txtTitle);*/
 		
 		_btnPlay = new FlxButton(0, 0, "Play", clickPlay);
 		_btnPlay.x = (FlxG.width / 2) - _btnPlay.width - 110;

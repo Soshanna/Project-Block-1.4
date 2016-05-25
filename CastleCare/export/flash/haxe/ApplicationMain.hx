@@ -30,6 +30,22 @@ class ApplicationMain {
 		var types = [];
 		
 		
+		urls.push ("assets/img/EmptyEnergy.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/img/EnergySymbol.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/img/FullEnergy.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/img/MoodHappy.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
 		urls.push ("flixel/sounds/beep.mp3");
 		types.push (lime.Assets.AssetType.MUSIC);
 		
@@ -111,7 +127,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "127",
+			build: "177",
 			company: "F.Neeleman",
 			file: "CastleCare",
 			fps: 60,

@@ -53,6 +53,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
+		
+		
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_nokiafc22_ttf);
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_monsterrat_ttf);
 		
@@ -61,6 +65,14 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#if flash
 		
+		className.set ("assets/img/EmptyEnergy.png", __ASSET__assets_img_emptyenergy_png);
+		type.set ("assets/img/EmptyEnergy.png", AssetType.IMAGE);
+		className.set ("assets/img/EnergySymbol.png", __ASSET__assets_img_energysymbol_png);
+		type.set ("assets/img/EnergySymbol.png", AssetType.IMAGE);
+		className.set ("assets/img/FullEnergy.png", __ASSET__assets_img_fullenergy_png);
+		type.set ("assets/img/FullEnergy.png", AssetType.IMAGE);
+		className.set ("assets/img/MoodHappy.png", __ASSET__assets_img_moodhappy_png);
+		type.set ("assets/img/MoodHappy.png", AssetType.IMAGE);
 		className.set ("flixel/sounds/beep.mp3", __ASSET__flixel_sounds_beep_mp3);
 		type.set ("flixel/sounds/beep.mp3", AssetType.MUSIC);
 		className.set ("flixel/sounds/flixel.mp3", __ASSET__flixel_sounds_flixel_mp3);
@@ -76,6 +88,22 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#elseif html5
 		
 		var id;
+		id = "assets/img/EmptyEnergy.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/EnergySymbol.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/FullEnergy.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/MoodHappy.png";
+		path.set (id, id);
+		
+		type.set (id, AssetType.IMAGE);
 		id = "flixel/sounds/beep.mp3";
 		path.set (id, id);
 		
@@ -113,6 +141,18 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		
+		className.set ("assets/img/EmptyEnergy.png", __ASSET__assets_img_emptyenergy_png);
+		type.set ("assets/img/EmptyEnergy.png", AssetType.IMAGE);
+		
+		className.set ("assets/img/EnergySymbol.png", __ASSET__assets_img_energysymbol_png);
+		type.set ("assets/img/EnergySymbol.png", AssetType.IMAGE);
+		
+		className.set ("assets/img/FullEnergy.png", __ASSET__assets_img_fullenergy_png);
+		type.set ("assets/img/FullEnergy.png", AssetType.IMAGE);
+		
+		className.set ("assets/img/MoodHappy.png", __ASSET__assets_img_moodhappy_png);
+		type.set ("assets/img/MoodHappy.png", AssetType.IMAGE);
 		
 		className.set ("flixel/sounds/beep.mp3", __ASSET__flixel_sounds_beep_mp3);
 		type.set ("flixel/sounds/beep.mp3", AssetType.MUSIC);
@@ -773,6 +813,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if !display
 #if flash
 
+@:keep @:bind #if display private #end class __ASSET__assets_img_emptyenergy_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_img_energysymbol_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_img_fullenergy_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
+@:keep @:bind #if display private #end class __ASSET__assets_img_moodhappy_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_beep_mp3 extends flash.media.Sound { }
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_flixel_mp3 extends flash.media.Sound { }
 @:keep @:bind #if display private #end class __ASSET__flixel_fonts_nokiafc22_ttf extends flash.text.Font { }
@@ -781,6 +825,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 #elseif html5
+
+
+
+
 
 
 
@@ -796,6 +844,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if (windows || mac || linux || cpp)
 
 
+@:image("assets/img/EmptyEnergy.png") #if display private #end class __ASSET__assets_img_emptyenergy_png extends lime.graphics.Image {}
+@:image("assets/img/EnergySymbol.png") #if display private #end class __ASSET__assets_img_energysymbol_png extends lime.graphics.Image {}
+@:image("assets/img/FullEnergy.png") #if display private #end class __ASSET__assets_img_fullenergy_png extends lime.graphics.Image {}
+@:image("assets/img/MoodHappy.png") #if display private #end class __ASSET__assets_img_moodhappy_png extends lime.graphics.Image {}
 @:file("C:/HaxeToolkit/haxe/lib/flixel/4,0,1/assets/sounds/beep.mp3") #if display private #end class __ASSET__flixel_sounds_beep_mp3 extends lime.utils.Bytes {}
 @:file("C:/HaxeToolkit/haxe/lib/flixel/4,0,1/assets/sounds/flixel.mp3") #if display private #end class __ASSET__flixel_sounds_flixel_mp3 extends lime.utils.Bytes {}
 @:font("C:/HaxeToolkit/haxe/lib/flixel/4,0,1/assets/fonts/nokiafc22.ttf") #if display private #end class __ASSET__flixel_fonts_nokiafc22_ttf extends lime.text.Font {}

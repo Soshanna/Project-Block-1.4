@@ -56,6 +56,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		super ();
 		
 		
+		Font.registerFont (__ASSET__assets_data_glecb_ttf);
+		
+		
 		
 		
 		
@@ -70,6 +73,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -502,11 +508,13 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+@:keep class __ASSET__assets_data_glecb_ttf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/data/GLECB.TTF"; fontName = "Gloucester MT Extra Condensed"; }}
 
 
 #else
 
 
+class __ASSET__assets_data_glecb_ttf extends openfl.text.Font { public function new () { super (); __fontPath = "assets/data/GLECB.TTF"; fontName = "Gloucester MT Extra Condensed";  }}
 class __ASSET__flixel_fonts_nokiafc22_ttf extends openfl.text.Font { public function new () { super (); __fontPath = "flixel/fonts/nokiafc22.ttf"; fontName = "Nokia Cellphone FC Small";  }}
 class __ASSET__flixel_fonts_monsterrat_ttf extends openfl.text.Font { public function new () { super (); __fontPath = "flixel/fonts/monsterrat.ttf"; fontName = "Monsterrat";  }}
 
@@ -571,6 +579,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#if (openfl && !flash)
 		
+		openfl.text.Font.registerFont (__ASSET__OPENFL__assets_data_glecb_ttf);
+		
+		
 		
 		
 		
@@ -585,6 +596,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#if flash
 		
+		path.set ("assets/data/GLECB.TTF", "assets/data/GLECB.TTF");
+		type.set ("assets/data/GLECB.TTF", AssetType.FONT);
+		path.set ("assets/img/background.png", "assets/img/background.png");
+		type.set ("assets/img/background.png", AssetType.IMAGE);
 		path.set ("assets/img/EmptyEnergy.png", "assets/img/EmptyEnergy.png");
 		type.set ("assets/img/EmptyEnergy.png", AssetType.IMAGE);
 		path.set ("assets/img/EnergySymbol.png", "assets/img/EnergySymbol.png");
@@ -593,6 +608,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/img/FullEnergy.png", AssetType.IMAGE);
 		path.set ("assets/img/MoodHappy.png", "assets/img/MoodHappy.png");
 		type.set ("assets/img/MoodHappy.png", AssetType.IMAGE);
+		path.set ("assets/img/titelbackground.png", "assets/img/titelbackground.png");
+		type.set ("assets/img/titelbackground.png", AssetType.IMAGE);
 		className.set ("flixel/sounds/beep.ogg", __ASSET__flixel_sounds_beep_ogg);
 		type.set ("flixel/sounds/beep.ogg", AssetType.SOUND);
 		className.set ("flixel/sounds/flixel.ogg", __ASSET__flixel_sounds_flixel_ogg);
@@ -608,6 +625,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#elseif html5
 		
 		var id;
+		id = "assets/data/GLECB.TTF";
+		path.set (id, id);
+		type.set (id, AssetType.FONT);
+		id = "assets/img/background.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
 		id = "assets/img/EmptyEnergy.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
@@ -618,6 +641,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/img/MoodHappy.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/titelbackground.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "flixel/sounds/beep.ogg";
@@ -657,6 +683,11 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		
+		className.set ("assets/data/GLECB.TTF", __ASSET__assets_data_glecb_ttf);
+		type.set ("assets/data/GLECB.TTF", AssetType.FONT);
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -1398,6 +1429,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
+
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_beep_ogg extends null { }
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_flixel_ogg extends null { }
 @:keep @:bind #if display private #end class __ASSET__flixel_fonts_nokiafc22_ttf extends null { }
@@ -1406,6 +1440,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 #elseif html5
+
+@:keep #if display private #end class __ASSET__assets_data_glecb_ttf extends lime.text.Font { public function new () { super (); name = "Gloucester MT Extra Condensed"; } } 
+
 
 
 
@@ -1420,6 +1457,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 #else
 
+@:keep #if display private #end class __ASSET__assets_data_glecb_ttf extends lime.text.Font { public function new () { __fontPath = #if ios "assets/" + #end "assets/data/GLECB.TTF"; name = "Gloucester MT Extra Condensed"; super (); }}
 
 
 #if (windows || mac || linux || cpp)
@@ -1437,6 +1475,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 #end
 
 #if (openfl && !flash)
+@:keep #if display private #end class __ASSET__OPENFL__assets_data_glecb_ttf extends openfl.text.Font { public function new () { __fontPath = #if ios "assets/" + #end "assets/data/GLECB.TTF"; name = "Gloucester MT Extra Condensed"; super (); }}
 @:keep #if display private #end class __ASSET__OPENFL__flixel_fonts_nokiafc22_ttf extends openfl.text.Font { public function new () { var font = new __ASSET__flixel_fonts_nokiafc22_ttf (); src = font.src; name = font.name; super (); }}
 @:keep #if display private #end class __ASSET__OPENFL__flixel_fonts_monsterrat_ttf extends openfl.text.Font { public function new () { var font = new __ASSET__flixel_fonts_monsterrat_ttf (); src = font.src; name = font.name; super (); }}
 
