@@ -8,6 +8,7 @@
 #ifndef INCLUDED_flixel_FlxState
 #include <flixel/FlxState.h>
 #endif
+HX_DECLARE_CLASS0(EnergyBar)
 HX_DECLARE_CLASS0(PlayState)
 HX_DECLARE_CLASS1(flixel,FlxBasic)
 HX_DECLARE_CLASS1(flixel,FlxObject)
@@ -50,9 +51,12 @@ class HXCPP_CLASS_ATTRIBUTES  PlayState_obj : public ::flixel::FlxState_obj{
 		::flixel::ui::FlxButton _btnMenu;
 		::flixel::ui::FlxButton _btnQuest;
 		::flixel::ui::FlxButton _btnUpgradeMenu;
-		::flixel::ui::FlxBar energyBar;
+		::EnergyBar energyBar;
 		int currency;
 		virtual Void create( );
+
+		virtual Void clickMood( );
+		Dynamic clickMood_dyn();
 
 		virtual Void clickMenu( );
 		Dynamic clickMenu_dyn();

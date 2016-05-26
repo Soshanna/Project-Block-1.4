@@ -48,6 +48,8 @@ class HXCPP_CLASS_ATTRIBUTES  OverState_obj : public ::flixel::FlxState_obj{
 
 		::flixel::text::FlxText _txtTitle;
 		::flixel::ui::FlxButton _btnMenu;
+		::flixel::text::FlxText _txtOver;
+		::flixel::FlxSprite _bkgrOver;
 		virtual Void create( );
 
 		virtual Void clickMenu( );

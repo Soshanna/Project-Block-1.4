@@ -52,6 +52,7 @@ class HXCPP_CLASS_ATTRIBUTES  MenuState_obj : public ::flixel::FlxState_obj{
 		::flixel::ui::FlxButton _btnQuit;
 		::flixel::ui::FlxButton _btnOver;
 		::flixel::ui::FlxButton _btnCredits;
+		::flixel::FlxSprite _bkgrMenu;
 		virtual Void create( );
 
 		virtual Void clickOver( );

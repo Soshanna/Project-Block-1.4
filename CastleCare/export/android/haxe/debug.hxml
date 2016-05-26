@@ -8,7 +8,7 @@
 -cp C:/HaxeToolkit/haxe/lib/hxcpp/3,2,205
 -D hxcpp=3.2.205
 -cp source
--cp C:\HaxeToolkit\haxe\lib\lime/2,9,1/legacy
+-cp C:\HaxeToolkit\haxe\lib/lime/2,9,1/legacy
 -D FLX_NO_KEYBOARD
 -D openfl-legacy
 -D FLX_NO_MOUSE

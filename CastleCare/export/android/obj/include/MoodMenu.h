@@ -1,5 +1,5 @@
-#ifndef INCLUDED_menu_CreditsState
-#define INCLUDED_menu_CreditsState
+#ifndef INCLUDED_MoodMenu
+#define INCLUDED_MoodMenu
 
 #ifndef HXCPP_H
 #include <hxcpp.h>
@@ -8,6 +8,7 @@
 #ifndef INCLUDED_flixel_FlxState
 #include <flixel/FlxState.h>
 #endif
+HX_DECLARE_CLASS0(MoodMenu)
 HX_DECLARE_CLASS1(flixel,FlxBasic)
 HX_DECLARE_CLASS1(flixel,FlxObject)
 HX_DECLARE_CLASS1(flixel,FlxSprite)
@@ -18,24 +19,22 @@ HX_DECLARE_CLASS2(flixel,text,FlxText)
 HX_DECLARE_CLASS2(flixel,ui,FlxButton)
 HX_DECLARE_CLASS2(flixel,ui,FlxTypedButton_flixel_text_FlxText)
 HX_DECLARE_CLASS2(flixel,util,IFlxDestroyable)
-HX_DECLARE_CLASS1(menu,CreditsState)
-namespace menu{
 
 
-class HXCPP_CLASS_ATTRIBUTES  CreditsState_obj : public ::flixel::FlxState_obj{
+class HXCPP_CLASS_ATTRIBUTES  MoodMenu_obj : public ::flixel::FlxState_obj{
 	public:
 		typedef ::flixel::FlxState_obj super;
-		typedef CreditsState_obj OBJ_;
-		CreditsState_obj();
+		typedef MoodMenu_obj OBJ_;
+		MoodMenu_obj();
 		Void __construct(Dynamic MaxSize);
 
 	public:
-		inline void *operator new( size_t inSize, bool inContainer=true,const char *inName="menu.CreditsState")
+		inline void *operator new( size_t inSize, bool inContainer=true,const char *inName="MoodMenu")
 			{ return hx::Object::operator new(inSize,inContainer,inName); }
-		static hx::ObjectPtr< CreditsState_obj > __new(Dynamic MaxSize);
+		static hx::ObjectPtr< MoodMenu_obj > __new(Dynamic MaxSize);
 		static Dynamic __CreateEmpty();
 		static Dynamic __Create(hx::DynamicArray inArgs);
-		//~CreditsState_obj();
+		//~MoodMenu_obj();
 
 		HX_DO_RTTI_ALL;
 		Dynamic __Field(const ::String &inString, hx::PropertyAccess inCallProp);
@@ -44,20 +43,16 @@ class HXCPP_CLASS_ATTRIBUTES  CreditsState_obj : public ::flixel::FlxState_obj{
 		static void __register();
 		void __Mark(HX_MARK_PARAMS);
 		void __Visit(HX_VISIT_PARAMS);
-		::String __ToString() const { return HX_HCSTRING("CreditsState","\xb7","\xc5","\x81","\x3b"); }
+		::String __ToString() const { return HX_HCSTRING("MoodMenu","\x56","\x52","\xdc","\x64"); }
 
-		::flixel::text::FlxText _txtTitle;
-		::flixel::text::FlxText _txtCredits;
-		::flixel::text::FlxText _txtCredits1;
 		::flixel::ui::FlxButton _btnMenu;
-		::flixel::FlxSprite _bkgrCredits;
+		::flixel::text::FlxText _txtTitle;
 		virtual Void create( );
 
-		virtual Void clickMenu( );
-		Dynamic clickMenu_dyn();
+		virtual Void clickPlay( );
+		Dynamic clickPlay_dyn();
 
 };
 
-} // end namespace menu
 
-#endif /* INCLUDED_menu_CreditsState */ 
+#endif /* INCLUDED_MoodMenu */ 

@@ -17,9 +17,12 @@ class PlayState extends FlxState
 {
 	public var doctorBool:Bool = false;
 	public var energy:Int;
+	var _btnEnergyUp:FlxButton;
+	var _btnEnergydown:FlxButton;
 	var _btnMenu:FlxButton;
 	var _btnQuest:FlxButton;
 	var _btnUpgradeMenu:FlxButton;
+	var text:FlxText;
 	var energyBar:EnergyBar;
 	var currency:Int = 0;
 	
@@ -31,22 +34,45 @@ class PlayState extends FlxState
 		_btnQuest = new FlxButton(20, _btnMenu.y, "Quest", clickQuest);
 		add(_btnQuest);
 		
-		energyBar = new EnergyBar(125, 35, 0, 0, "assets/img/EmptyEnergy.png", "assets/img/FullEnergy.png");
+		energyBar = new EnergyBar(125, 35, 0, 0, "assets/img/FullEnergy.png", "assets/img/FullEnergy.png");
 		add(energyBar);
 		
-		var mood:MoodSmiley = new MoodSmiley(10, 5);
+		var mood:MoodSmiley = new MoodSmiley(10, 5, clickMood);
 		add(mood);
 		
 		var energySymbol:FlxSprite = new FlxSprite(energyBar.x, energyBar.y, "assets/img/EnergySymbol.png");
 		add(energySymbol);
 		
-		var text:FlxText = new FlxText(energyBar.x + (energyBar.width/2)-10, energyBar.y + 25, 0,"" + energyBar.percent,16);
+		text = new FlxText(energyBar.x + (energyBar.width/2)-10, energyBar.y + 25, 0,"" + energyBar.percent + "%",16);
 		add(text);
 		
 		_btnUpgradeMenu = new FlxButton(energyBar.x + energyBar.width + 50, energyBar.y + 25, "$ " + currency, clickUpgradeMenu);
 		add(_btnUpgradeMenu);
 		
+		_btnEnergyUp = new FlxButton(300, 300, "EnergyUp", clickEnergy);
+		add(_btnEnergyUp);
+		
+		_btnEnergydown = new FlxButton(300, 350, "EnergyDown", clickEnergyDown);
+		add(_btnEnergydown);
+		
 		super.create();
+	}
+	
+	private function clickMood():Void{
+		FlxG.camera.fade(FlxColor.BLACK, .20, false, function(){
+			FlxG.switchState(new MoodMenu());
+		});
+	}
+	
+	private function clickEnergy(){
+		energyBar.value += 5;
+		energyBar.x = energyBar.x + 5;
+
+	}
+	
+	private function clickEnergyDown(){
+		energyBar.value -= 5;
+		energyBar.x = energyBar.x - 5;
 	}
 	
 	private function clickMenu():Void{
@@ -70,5 +96,9 @@ class PlayState extends FlxState
 	override public function update(elapsed:Float):Void
 	{
 		super.update(elapsed);
+		if(energyBar.value > 0){
+			energyBar.scale.x = (energyBar.value * 0.01);
+		}
+		text.text = "" + energyBar.percent + "%";
 	}
 }
