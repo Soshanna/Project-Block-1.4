@@ -65,14 +65,13 @@ class PlayState extends FlxState
 	}
 	
 	private function clickEnergy(){
-		energyBar.value += 5;
-		energyBar.x = energyBar.x + 5;
-
+		energyBar.value += 20;
+		energyBar.x = 0;
 	}
 	
 	private function clickEnergyDown(){
-		energyBar.value -= 5;
-		energyBar.x = energyBar.x - 5;
+		energyBar.value -= 20;
+		energyBar.x = 0;
 	}
 	
 	private function clickMenu():Void{
