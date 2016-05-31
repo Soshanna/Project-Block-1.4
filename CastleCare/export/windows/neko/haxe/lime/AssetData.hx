@@ -28,6 +28,10 @@ class AssetData {
 			type.set ("assets/img/FullEnergy.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/img/MoodHappy.png", "assets/img/MoodHappy.png");
 			type.set ("assets/img/MoodHappy.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/img/orange.png", "assets/img/orange.png");
+			type.set ("assets/img/orange.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/img/red.png", "assets/img/red.png");
+			type.set ("assets/img/red.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/img/titelbackground.png", "assets/img/titelbackground.png");
 			type.set ("assets/img/titelbackground.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("flixel/sounds/beep.ogg", "flixel/sounds/beep.ogg");
