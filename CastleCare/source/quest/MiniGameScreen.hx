@@ -1,6 +1,7 @@
 package quest;
 
 import flixel.addons.plugin.FlxMouseControl;
+import flixel.FlxBasic;
 import quest.JobListState;
 import flixel.FlxState;
 import flixel.text.FlxText;
@@ -22,13 +23,13 @@ class MiniGameScreen extends FlxState
 	var backButton:FlxButton;
 	var _txtTitle:FlxText;
 	var d:Int = 1;
-	var sprite1:FlxExtendedSprite;
-	var groupRed:FlxSpriteGroup = new FlxSpriteGroup(0,0,63);
-	var groupOrange:FlxSpriteGroup = new FlxSpriteGroup(0,0,63);
-
+	var a:Int = 0;
+	
 	override public function create():Void {
 		super.create();
+		
 		FlxG.plugins.add(new FlxMouseControl());
+		
 		var whiteSquare = new FlxSprite();
 		whiteSquare.makeGraphic(1100, 600, FlxColor.WHITE);
 		whiteSquare.x = 100;
@@ -45,13 +46,13 @@ class MiniGameScreen extends FlxState
 		
 		for (i in 1 ... 64){
 			var random = Math.floor(Math.random() * 10);
-			if(random >= 5){
-				sprite1 = new FlxExtendedSprite(0, 0, "assets/img/red.png");
-				groupRed.add(sprite1);
+			var text:String;
+			if (random >= 5) {
+				text = "assets/img/red.png";
 			}else{
-				sprite1 = new FlxExtendedSprite(0, 0, "assets/img/orange.png");
-				groupOrange.add(sprite1);
+				text = "assets/img/orange.png";
 			}
+			var sprite1:FlxExtendedSprite = new FlxExtendedSprite(0, 0, text);
 			if(i > 9){
 				sprite1.x = 120 * d;
 				sprite1.y = 160;
@@ -74,7 +75,7 @@ class MiniGameScreen extends FlxState
 				sprite1.x = 120 * d;
 				sprite1.y = 80;	
 			}
-			sprite1.enableMouseDrag(false, false, 255);
+			sprite1.enableMouseClicks(false, false, 255);
 			add(sprite1);
 			d += 1;
 			if(d == 10){
@@ -83,18 +84,33 @@ class MiniGameScreen extends FlxState
 		}
 	}
 	
-	function clickBack():Void {
+	function clickBack() {
 		FlxG.camera.fade(FlxColor.BLACK, .20, false ,function(){
 			FlxG.switchState(new JobListState());
 		});
 	}
 	
+	function spriteClick(target) {	
+		trace(0);
+		var button;
+		if(a == 0){
+			button = target;
+			trace(button);
+		}else if(a == 1){
+			var button1 = target;
+			trace(button1);
+			a = 0;
+		}
+		a += 1;
+	}
+	
 	override public function update(elapsed:Float):Void 
 	{
-		super.update(elapsed);
-		if (sprite1.isDragged){
-			sprite1.drawLine(FlxG.mouse.x, FlxG.mouse.y, 0, 0, { thickness: 10, color: FlxColor.BLACK });
-			trace("ass");
+		if (FlxG.mouse.pressed && )
+		{
+			spriteClick(FlxMouseControl.clickTarget);
 		}
+		
+		super.update(elapsed);
 	}
 }
