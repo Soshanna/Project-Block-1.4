@@ -26,9 +26,13 @@ class MiniGameScreen extends FlxState
 	var itemGroup:FlxTypedSpriteGroup<Item> = new FlxTypedSpriteGroup<Item>(0, 0, 63);
 	var backButton:FlxButton;
 	var _txtTitle:FlxText;
+	var _txtScore:FlxText;
+	var rowArray:Array<Item> = new Array<Item>();
 	var d:Int = 1;
 	var a:Int = 0;
+	var b:Int = 0;
 	var object1 = null;
+	var score = 0;
 	
 	override public function create():Void {
 		super.create();
@@ -45,6 +49,9 @@ class MiniGameScreen extends FlxState
 		_txtTitle.screenCenter(X);
 		add(_txtTitle);
 		
+		_txtScore = new FlxText(20, 20, 0, "Score: " + score, 15);
+		add(_txtScore);
+		
 		backButton = new FlxButton((FlxG.width / 2) + 540, FlxG.height - 28, "Back", clickBack);
 		add(backButton);
 		
@@ -54,16 +61,24 @@ class MiniGameScreen extends FlxState
 	
 	function makeItems(){
 		for (i in 1 ... 64){
-			var random = Math.floor(Math.random() * 10);
-			var item1:Item = new Item(null);
+			var random:Int = Math.floor(Math.random() * 100);
+			var item1:Item = new Item();
 			item1.onDown.callback = itemClicked.bind(item1);
-			
-			if (random >= 5) {
+			if(random <= 20) {
 				item1.loadGraphic("assets/img/red.png");
 				item1.name = "Red";
-			}else{
+			}else if(random <= 40){
 				item1.loadGraphic("assets/img/orange.png");
 				item1.name = "Orange";
+			}else if(random <= 60){
+				item1.loadGraphic("assets/img/purple.png");
+				item1.name = "Purple";
+			}else if(random <= 80){
+				item1.loadGraphic("assets/img/green.png");
+				item1.name = "Green";
+			}else if(random <= 100){
+				item1.loadGraphic("assets/img/yellow.png");
+				item1.name = "Yellow";
 			}if(i <= 9){
 				item1.x = 120 * d;
 				item1.y = 80;	
@@ -86,26 +101,18 @@ class MiniGameScreen extends FlxState
 				item1.x = 120 * d;
 				item1.y = 560;
 			}
-			item1.positionx = item1.x;
-			item1.positiony = item1.y;
-			
-//			var rect:FlxRect = new FlxRect(item1.x - 120, item1.y - 80, 280, 200);
-//			item1.enableMouseDrag(false, false, 255, null, null);
+			item1.arrayID = b;
+			b += 1;
+			rowArray.push(item1);
 			itemGroup.add(item1);
 			add(itemGroup);
-			
 			d += 1;
 			if(d == 10){
 				d = 1;
 			}
 		}
 	}
-	
-	function collideItems(object1:Item, object2:Item){
-		//object2.y = object1.positiony;
-		//object2.x = object1.positionx;
-	}
-	
+
 	function itemClicked(button:Item){
 		a += 1;
 		if(a == 1){
@@ -119,8 +126,8 @@ class MiniGameScreen extends FlxState
 			object2.y = object1.y;
 			object1.x = posx;
 			object1.y = posy;
-			a = 0;
 			itemGroup.forEachAlive(checkItem);
+			a = 0;
 		}
 	}
 	
@@ -131,30 +138,122 @@ class MiniGameScreen extends FlxState
 	}
 	
 	function checkItem(item:Item){
-		if(item.name == "Red"){
-			
+		if(item.arrayID == 0){
+			trace("first in the row");
 		}
-		if(item.name == "Orange"){
-			
+		else if(item.arrayID == 63){
+			trace("last in the row");
 		}
-		itemGroup.forEachDead(replaceItem,false);
-	}
-	
-	function replaceItem(dead:Item):Void{
-		var random = Math.floor(Math.random() * 10);
-		var item1:Item = new Item(null);
-		item1.onDown.callback = itemClicked.bind(item1);
-		
-		if (random >= 5) {
-			item1.loadGraphic("assets/img/red.png");
-		}else{
-			item1.loadGraphic("assets/img/orange.png");
+		else if(item.arrayID != 0){
+			if(item.name == "Red"){
+				if(rowArray[item.arrayID -1].name == "Red" && rowArray[item.arrayID +1].name == "Red"){
+					rowArray[item.arrayID -1].replaceItem(Math.floor(Math.random() * 10));
+					item.replaceItem(Math.floor(Math.random() * 10));
+					rowArray[item.arrayID +1].replaceItem(Math.floor(Math.random() * 10));
+					score += 3;
+					trace("red match hor");
+				}
+				if(item.arrayID > 9 && item.arrayID < 54){
+					if (rowArray[item.arrayID -9].name == "Red" && rowArray[item.arrayID +9].name == "Red"){
+					rowArray[item.arrayID -9].replaceItem(Math.floor(Math.random() * 10));
+					item.replaceItem(Math.floor(Math.random() * 10));
+					rowArray[item.arrayID +9].replaceItem(Math.floor(Math.random() * 10));
+					score += 3;
+					trace("red match ver");
+					}
+				}
+				else{
+					trace("no match");
+				}
+			}
+			else if(item.name == "Orange"){
+				if (rowArray[item.arrayID -1].name == "Orange" && rowArray[item.arrayID +1].name == "Orange"){
+					rowArray[item.arrayID -1].replaceItem(Math.floor(Math.random() * 10));
+					item.replaceItem(Math.floor(Math.random() * 10));
+					rowArray[item.arrayID +1].replaceItem(Math.floor(Math.random() * 10));
+					score += 3;
+					trace("orange match hor");
+				}
+				if(item.arrayID > 9 && item.arrayID < 54){
+					if (rowArray[item.arrayID -9].name == "Orange" && rowArray[item.arrayID +9].name == "Orange"){
+					rowArray[item.arrayID -9].replaceItem(Math.floor(Math.random() * 10));
+					item.replaceItem(Math.floor(Math.random() * 10));
+					rowArray[item.arrayID +9].replaceItem(Math.floor(Math.random() * 10));
+					score += 3;
+					trace("Orange match ver");
+					}
+				}
+				else{
+					trace("no match");
+				}
+			}
+			else if(item.name == "Green"){
+				if (rowArray[item.arrayID -1].name == "Green" && rowArray[item.arrayID +1].name == "Green"){
+					rowArray[item.arrayID -1].replaceItem(Math.floor(Math.random() * 10));
+					item.replaceItem(Math.floor(Math.random() * 10));
+					rowArray[item.arrayID +1].replaceItem(Math.floor(Math.random() * 10));
+					score += 3;
+					trace("Green match hor");
+				}
+				if(item.arrayID > 9 && item.arrayID < 54){
+					if (rowArray[item.arrayID -9].name == "Green" && rowArray[item.arrayID +9].name == "Green"){
+					rowArray[item.arrayID -9].replaceItem(Math.floor(Math.random() * 10));
+					item.replaceItem(Math.floor(Math.random() * 10));
+					rowArray[item.arrayID +9].replaceItem(Math.floor(Math.random() * 10));
+					score += 3;
+					trace("Green match ver");
+					}
+				}
+				else{
+					trace("no match");
+				}
+			}
+			else if(item.name == "Purple"){
+				if (rowArray[item.arrayID -1].name == "Purple" && rowArray[item.arrayID +1].name == "Purple"){
+					rowArray[item.arrayID -1].replaceItem(Math.floor(Math.random() * 10));
+					item.replaceItem(Math.floor(Math.random() * 10));
+					rowArray[item.arrayID +1].replaceItem(Math.floor(Math.random() * 10));
+					score += 3;
+					trace("Purple match hor");
+				}
+				if(item.arrayID > 9 && item.arrayID < 54){
+					if (rowArray[item.arrayID -9].name == "Purple" && rowArray[item.arrayID +9].name == "Purple"){
+					rowArray[item.arrayID -9].replaceItem(Math.floor(Math.random() * 10));
+					item.replaceItem(Math.floor(Math.random() * 10));
+					rowArray[item.arrayID +9].replaceItem(Math.floor(Math.random() * 10));
+					score += 3;
+					trace("Purple match ver");
+					}
+				}
+				else{
+					trace("no match");
+				}
+			}
+			else if(item.name == "Yellow"){
+				if (rowArray[item.arrayID -1].name == "Yellow" && rowArray[item.arrayID +1].name == "Yellow"){
+					rowArray[item.arrayID -1].replaceItem(Math.floor(Math.random() * 10));
+					item.replaceItem(Math.floor(Math.random() * 10));
+					rowArray[item.arrayID +1].replaceItem(Math.floor(Math.random() * 10));
+					score += 3;
+					trace("Yellow match hor");
+				}
+				if(item.arrayID > 9 && item.arrayID < 54){
+					if (rowArray[item.arrayID -9].name == "Yellow" && rowArray[item.arrayID +9].name == "Yellow"){
+					rowArray[item.arrayID -9].replaceItem(Math.floor(Math.random() * 10));
+					item.replaceItem(Math.floor(Math.random() * 10));
+					rowArray[item.arrayID +9].replaceItem(Math.floor(Math.random() * 10));
+					score += 3;
+					trace("Yellow match ver");
+					}
+				}
+				else{
+					trace("no match");
+				}
+			}
 		}
-		replace(dead, item1);
 	}
 	
 	override public function update(elapsed:Float):Void {
-		//FlxG.overlap(itemGroup, itemGroup, collideItems);
 		super.update(elapsed);
 	}
 }
