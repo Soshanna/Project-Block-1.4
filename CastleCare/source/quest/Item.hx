@@ -1,7 +1,6 @@
 package quest;
 
 import flixel.ui.FlxButton;
-import flixel.addons.plugin.FlxMouseControl;
 
 /**
  * ...

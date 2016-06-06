@@ -511,7 +511,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "608",
+			build: "640",
 			company: "F.Neeleman",
 			file: "CastleCare",
 			fps: 60,

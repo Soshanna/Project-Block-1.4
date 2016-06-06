@@ -28,6 +28,7 @@ class MiniGameScreen extends FlxState
 	var _txtTitle:FlxText;
 	var d:Int = 1;
 	var a:Int = 0;
+	var object1 = null;
 	
 	override public function create():Void {
 		super.create();
@@ -54,7 +55,8 @@ class MiniGameScreen extends FlxState
 	function makeItems(){
 		for (i in 1 ... 64){
 			var random = Math.floor(Math.random() * 10);
-			var item1:Item= new Item(itemClicked);
+			var item1:Item = new Item(null);
+			item1.onDown.callback = itemClicked.bind(item1);
 			
 			if (random >= 5) {
 				item1.loadGraphic("assets/img/red.png");
@@ -104,20 +106,19 @@ class MiniGameScreen extends FlxState
 		//object2.x = object1.positionx;
 	}
 	
-	function itemClicked(){
+	function itemClicked(button:Item){
 		a += 1;
-		var object1;
 		if(a == 1){
-			object1 = FlxMouseControl.clickTarget;
+			object1 = button;
 		}
 		if(a == 2){
-			var object2 = FlxMouseControl.clickTarget;
-			var posx:FlxPoint = object2.point;
-			//var posy:Float = object2.y;
-			object2.point = object1.point;
-			//object2.y = object1.y;
-			object1.point = posx;
-			//object1.y = posy;
+			var object2 = button;
+			var posx:Float = object2.x;
+			var posy:Float = object2.y;
+			object2.x = object1.x;
+			object2.y = object1.y;
+			object1.x = posx;
+			object1.y = posy;
 			a = 0;
 			itemGroup.forEachAlive(checkItem);
 		}
@@ -141,7 +142,8 @@ class MiniGameScreen extends FlxState
 	
 	function replaceItem(dead:Item):Void{
 		var random = Math.floor(Math.random() * 10);
-		var item1:Item= new Item(itemClicked);
+		var item1:Item = new Item(null);
+		item1.onDown.callback = itemClicked.bind(item1);
 		
 		if (random >= 5) {
 			item1.loadGraphic("assets/img/red.png");
