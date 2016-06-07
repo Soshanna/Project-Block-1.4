@@ -41,10 +41,12 @@ class CreditsState extends FlxState
 		_txtCredits1.setFormat ("assets/data/GLECB.TTF", 50, 0x000000, CENTER);
 		add(_txtCredits1);
 		
-		_btnMenu = new FlxButton((FlxG.width / 2) + 10, FlxG.height - 70, "Back", clickMenu);
+		var _btnMenu:FlxButton = new FlxButton((FlxG.width / 2) + 10, FlxG.height - 70, "", clickMenu);
+		_btnMenu.loadGraphic("assets/img/Buttons/terug-4.png");
 		_btnMenu.screenCenter(X);
 		add(_btnMenu);
 		
+		FlxG.camera.fade(FlxColor.BLACK, .20, true);
 		super.create();
 	}
 	
