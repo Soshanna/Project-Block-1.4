@@ -55,7 +55,8 @@ class OptionsState extends FlxState
 		_txtVolumeAmt.screenCenter(FlxAxes.X);
 		add(_txtVolumeAmt);
 		
-		_btnMenu = new FlxButton((FlxG.width / 2) + 10, FlxG.height - 28, "Back", clickMenu);
+		var _btnMenu:FlxButton = new FlxButton((FlxG.width / 2) -70, FlxG.height -70,"", clickMenu);
+		_btnMenu.loadGraphic("assets/img/Buttons/terug-3.png");
 		add(_btnMenu);
 		
 		updateVolume();
