@@ -75,21 +75,21 @@ class MiniGameScreen extends FlxState
 			var random:Int = Math.floor(Math.random() * 100);
 			var item1:Item = new Item();
 			item1.onDown.callback = itemClicked.bind(item1);
-			if(random <= 20) {
+			if(random <= 50) {
 				item1.loadGraphic("assets/img/red.png");
 				item1.name = "Red";
-			}else if(random <= 40){
+			}else if(random > 50){
 				item1.loadGraphic("assets/img/orange.png");
 				item1.name = "Orange";
-			}else if(random <= 60){
-				item1.loadGraphic("assets/img/purple.png");
-				item1.name = "Purple";
-			}else if(random <= 80){
-				item1.loadGraphic("assets/img/green.png");
-				item1.name = "Green";
-			}else if(random <= 100){
-				item1.loadGraphic("assets/img/yellow.png");
-				item1.name = "Yellow";
+			//}else if(random <= 60){
+			//	item1.loadGraphic("assets/img/purple.png");
+			//	item1.name = "Purple";
+			//}else if(random <= 80){
+			//	item1.loadGraphic("assets/img/green.png");
+			//	item1.name = "Green";
+			//}else if(random <= 100){
+			//	item1.loadGraphic("assets/img/yellow.png");
+			//	item1.name = "Yellow";
 			}if(i <= 9){
 				item1.x = 120 * d;
 				item1.y = 80;	
@@ -151,122 +151,35 @@ class MiniGameScreen extends FlxState
 	}
 	
 	function checkItem(item:Item){
-		if(item.arrayID == 0){
+		if(item.name == "Red"){
+			if (rowArray[item.arrayID +1].name == "Red" || rowArray[item.arrayID -1].name == "Red" || rowArray[item.arrayID -9].name == "Red" || rowArray[item.arrayID +9].name == "Red"){
+				
+			}
 		}
-		else if(item.arrayID == 62){
+		if(item.name == "Orange"){
+			if (rowArray[item.arrayID +1].name == "Orange" || rowArray[item.arrayID -1].name == "Orange" || rowArray[item.arrayID -9].name == "Orange" || rowArray[item.arrayID +9].name == "Orange"){
+				
+			}
 		}
-		else if(item.arrayID != 0){
-			if(item.name == "Red"){
-				if(rowArray[item.arrayID -1].name == "Red" && rowArray[item.arrayID +1].name == "Red"){
-					replaceItem(rowArray[item.arrayID -1],Math.floor(Math.random() * 100));
-					replaceItem(item,Math.floor(Math.random() * 100));
-					replaceItem(rowArray[item.arrayID +1],Math.floor(Math.random() * 100));
-					score += 3;
-				}
-				if(item.arrayID > 9 && item.arrayID < 54){
-					if (rowArray[item.arrayID -9].name == "Red" && rowArray[item.arrayID +9].name == "Red"){
-					replaceItem(rowArray[item.arrayID -9],Math.floor(Math.random() * 100));
-					replaceItem(item,Math.floor(Math.random() * 100));
-					replaceItem(rowArray[item.arrayID +9],Math.floor(Math.random() * 100));
-					score += 3;
-					}
-				}
-				else{
-				}
-			}
-			if(item.name == "Orange"){
-				if (rowArray[item.arrayID -1].name == "Orange" && rowArray[item.arrayID +1].name == "Orange"){
-					replaceItem(rowArray[item.arrayID -1],Math.floor(Math.random() * 100));
-					replaceItem(item,Math.floor(Math.random() * 100));
-					replaceItem(rowArray[item.arrayID +1],Math.floor(Math.random() * 100));
-					score += 3;
-				}
-				if(item.arrayID > 9 && item.arrayID < 54){
-					if (rowArray[item.arrayID -9].name == "Orange" && rowArray[item.arrayID +9].name == "Orange"){
-					replaceItem(rowArray[item.arrayID -9],Math.floor(Math.random() * 100));
-					replaceItem(item,Math.floor(Math.random() * 100));
-					replaceItem(rowArray[item.arrayID +9],Math.floor(Math.random() * 100));
-					score += 3;
-					}
-				}
-				else{
-				}
-			}
-			if(item.name == "Green"){
-				if (rowArray[item.arrayID -1].name == "Green" && rowArray[item.arrayID +1].name == "Green"){
-					replaceItem(rowArray[item.arrayID -1],Math.floor(Math.random() * 100));
-					replaceItem(item,Math.floor(Math.random() * 100));
-					replaceItem(rowArray[item.arrayID +1],Math.floor(Math.random() * 100));
-					score += 3;
-				}
-				if(item.arrayID > 9 && item.arrayID < 54){
-					if (rowArray[item.arrayID -9].name == "Green" && rowArray[item.arrayID +9].name == "Green"){
-					replaceItem(rowArray[item.arrayID -9],Math.floor(Math.random() * 100));
-					replaceItem(item,Math.floor(Math.random() * 100));
-					replaceItem(rowArray[item.arrayID +9],Math.floor(Math.random() * 100));
-					score += 3;
-					}
-				}
-				else{
-				}
-			}
-			if(item.name == "Purple"){
-				if (rowArray[item.arrayID -1].name == "Purple" && rowArray[item.arrayID +1].name == "Purple"){
-					replaceItem(rowArray[item.arrayID -1],Math.floor(Math.random() * 100));
-					replaceItem(item,Math.floor(Math.random() * 100));
-					replaceItem(rowArray[item.arrayID +1],Math.floor(Math.random() * 100));
-					score += 3;
-				}
-				if(item.arrayID > 9 && item.arrayID < 54){
-					if (rowArray[item.arrayID -9].name == "Purple" && rowArray[item.arrayID +9].name == "Purple"){
-					replaceItem(rowArray[item.arrayID -9],Math.floor(Math.random() * 100));
-					replaceItem(item,Math.floor(Math.random() * 100));
-					replaceItem(rowArray[item.arrayID +9],Math.floor(Math.random() * 100));
-					score += 3;
-					}
-				}
-				else{
-				}
-			}
-			if(item.name == "Yellow"){
-				if (rowArray[item.arrayID -1].name == "Yellow" && rowArray[item.arrayID +1].name == "Yellow"){
-					replaceItem(rowArray[item.arrayID -1],Math.floor(Math.random() * 100));
-					replaceItem(item,Math.floor(Math.random() * 100));
-					replaceItem(rowArray[item.arrayID +1],Math.floor(Math.random() * 100));
-					score += 3;
-				}
-				if(item.arrayID > 9 && item.arrayID < 54){
-					if (rowArray[item.arrayID -9].name == "Yellow" && rowArray[item.arrayID +9].name == "Yellow"){
-					replaceItem(rowArray[item.arrayID -9],Math.floor(Math.random() * 100));
-					replaceItem(item,Math.floor(Math.random() * 100));
-					replaceItem(rowArray[item.arrayID +9],Math.floor(Math.random() * 100));
-					score += 3;
-					}
-				}
-				else{
-				}
-			}
-			_txtScore.text = "Score: " + score;
-		}
+		_txtScore.text = "Score: " + score;
 	}
 	
 	function replaceItem(item:Item, random){
-		if(random <= 20) {
-			item.loadGraphic("assets/img/red.png");
-			item.name = "Red";
-		}else if(random <= 40){
-			item.loadGraphic("assets/img/orange.png");
-			item.name = "Orange";
-		}else if(random <= 60){
-			item.loadGraphic("assets/img/purple.png");
-			item.name = "Purple";
-		}else if(random <= 80){
-			item.loadGraphic("assets/img/green.png");
-			item.name = "Green";
-		}else if(random <= 100){
-			item.loadGraphic("assets/img/yellow.png");
-			item.name = "Yellow";
-		}
+		if(random <= 50) {
+			item1.loadGraphic("assets/img/red.png");
+			item1.name = "Red";
+		}else if(random > 50){
+			item1.loadGraphic("assets/img/orange.png");
+			item1.name = "Orange";
+		//}else if(random <= 60){
+		//	item1.loadGraphic("assets/img/purple.png");
+		//	item1.name = "Purple";
+		//}else if(random <= 80){
+		//	item1.loadGraphic("assets/img/green.png");
+		//	item1.name = "Green";
+		//}else if(random <= 100){
+		//	item1.loadGraphic("assets/img/yellow.png");
+		//	item1.name = "Yellow";
 	}
 	
 	override public function update(elapsed:Float):Void {
