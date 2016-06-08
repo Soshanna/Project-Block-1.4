@@ -566,11 +566,11 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if (windows || mac || linux)
 
 
-@:sound("C:/HaxeToolkit/haxe/lib/flixel/4,0,1/assets/sounds/beep.ogg") @:keep #if display private #end class __ASSET__flixel_sounds_beep_ogg extends flash.media.Sound {}
-@:sound("C:/HaxeToolkit/haxe/lib/flixel/4,0,1/assets/sounds/flixel.ogg") @:keep #if display private #end class __ASSET__flixel_sounds_flixel_ogg extends flash.media.Sound {}
-@:font("C:/HaxeToolkit/haxe/lib/flixel/4,0,1/assets/fonts/nokiafc22.ttf") @:keep #if display private #end class __ASSET__flixel_fonts_nokiafc22_ttf extends flash.text.Font {}
-@:font("C:/HaxeToolkit/haxe/lib/flixel/4,0,1/assets/fonts/monsterrat.ttf") @:keep #if display private #end class __ASSET__flixel_fonts_monsterrat_ttf extends flash.text.Font {}
-@:bitmap("C:/HaxeToolkit/haxe/lib/flixel/4,0,1/assets/images/ui/button.png") @:keep #if display private #end class __ASSET__flixel_images_ui_button_png extends flash.display.BitmapData {}
+@:sound("C:/HaxeToolkit/flixel/4,0,1/assets/sounds/beep.ogg") @:keep #if display private #end class __ASSET__flixel_sounds_beep_ogg extends flash.media.Sound {}
+@:sound("C:/HaxeToolkit/flixel/4,0,1/assets/sounds/flixel.ogg") @:keep #if display private #end class __ASSET__flixel_sounds_flixel_ogg extends flash.media.Sound {}
+@:font("C:/HaxeToolkit/flixel/4,0,1/assets/fonts/nokiafc22.ttf") @:keep #if display private #end class __ASSET__flixel_fonts_nokiafc22_ttf extends flash.text.Font {}
+@:font("C:/HaxeToolkit/flixel/4,0,1/assets/fonts/monsterrat.ttf") @:keep #if display private #end class __ASSET__flixel_fonts_monsterrat_ttf extends flash.text.Font {}
+@:bitmap("C:/HaxeToolkit/flixel/4,0,1/assets/images/ui/button.png") @:keep #if display private #end class __ASSET__flixel_images_ui_button_png extends flash.display.BitmapData {}
 
 
 
@@ -761,20 +761,20 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/img/EnergySymbol.png", AssetType.IMAGE);
 		path.set ("assets/img/FullEnergy.png", "assets/img/FullEnergy.png");
 		type.set ("assets/img/FullEnergy.png", AssetType.IMAGE);
-		path.set ("assets/img/green.png", "assets/img/green.png");
-		type.set ("assets/img/green.png", AssetType.IMAGE);
+		path.set ("assets/img/Minigame/AppleButton.png", "assets/img/Minigame/AppleButton.png");
+		type.set ("assets/img/Minigame/AppleButton.png", AssetType.IMAGE);
+		path.set ("assets/img/Minigame/BananaButton.png", "assets/img/Minigame/BananaButton.png");
+		type.set ("assets/img/Minigame/BananaButton.png", AssetType.IMAGE);
+		path.set ("assets/img/Minigame/BurgerButton.png", "assets/img/Minigame/BurgerButton.png");
+		type.set ("assets/img/Minigame/BurgerButton.png", AssetType.IMAGE);
+		path.set ("assets/img/Minigame/Minigame Background.png", "assets/img/Minigame/Minigame Background.png");
+		type.set ("assets/img/Minigame/Minigame Background.png", AssetType.IMAGE);
+		path.set ("assets/img/Minigame/WaterMelonButton.png", "assets/img/Minigame/WaterMelonButton.png");
+		type.set ("assets/img/Minigame/WaterMelonButton.png", AssetType.IMAGE);
 		path.set ("assets/img/MoodHappy.png", "assets/img/MoodHappy.png");
 		type.set ("assets/img/MoodHappy.png", AssetType.IMAGE);
-		path.set ("assets/img/orange.png", "assets/img/orange.png");
-		type.set ("assets/img/orange.png", AssetType.IMAGE);
-		path.set ("assets/img/purple.png", "assets/img/purple.png");
-		type.set ("assets/img/purple.png", AssetType.IMAGE);
-		path.set ("assets/img/red.png", "assets/img/red.png");
-		type.set ("assets/img/red.png", AssetType.IMAGE);
 		path.set ("assets/img/titelbackground.png", "assets/img/titelbackground.png");
 		type.set ("assets/img/titelbackground.png", AssetType.IMAGE);
-		path.set ("assets/img/yellow.png", "assets/img/yellow.png");
-		type.set ("assets/img/yellow.png", AssetType.IMAGE);
 		className.set ("flixel/sounds/beep.ogg", __ASSET__flixel_sounds_beep_ogg);
 		type.set ("flixel/sounds/beep.ogg", AssetType.SOUND);
 		className.set ("flixel/sounds/flixel.ogg", __ASSET__flixel_sounds_flixel_ogg);
@@ -889,25 +889,25 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/img/FullEnergy.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
-		id = "assets/img/green.png";
+		id = "assets/img/Minigame/AppleButton.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/Minigame/BananaButton.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/Minigame/BurgerButton.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/Minigame/Minigame Background.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/Minigame/WaterMelonButton.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/img/MoodHappy.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
-		id = "assets/img/orange.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/img/purple.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/img/red.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
 		id = "assets/img/titelbackground.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/img/yellow.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "flixel/sounds/beep.ogg";
@@ -1826,11 +1826,11 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if (windows || mac || linux || cpp)
 
 
-@:file("C:/HaxeToolkit/haxe/lib/flixel/4,0,1/assets/sounds/beep.ogg") #if display private #end class __ASSET__flixel_sounds_beep_ogg extends lime.utils.ByteArray {}
-@:file("C:/HaxeToolkit/haxe/lib/flixel/4,0,1/assets/sounds/flixel.ogg") #if display private #end class __ASSET__flixel_sounds_flixel_ogg extends lime.utils.ByteArray {}
-@:font("C:/HaxeToolkit/haxe/lib/flixel/4,0,1/assets/fonts/nokiafc22.ttf") #if display private #end class __ASSET__flixel_fonts_nokiafc22_ttf extends lime.text.Font {}
-@:font("C:/HaxeToolkit/haxe/lib/flixel/4,0,1/assets/fonts/monsterrat.ttf") #if display private #end class __ASSET__flixel_fonts_monsterrat_ttf extends lime.text.Font {}
-@:image("C:/HaxeToolkit/haxe/lib/flixel/4,0,1/assets/images/ui/button.png") #if display private #end class __ASSET__flixel_images_ui_button_png extends lime.graphics.Image {}
+@:file("C:/HaxeToolkit/flixel/4,0,1/assets/sounds/beep.ogg") #if display private #end class __ASSET__flixel_sounds_beep_ogg extends lime.utils.ByteArray {}
+@:file("C:/HaxeToolkit/flixel/4,0,1/assets/sounds/flixel.ogg") #if display private #end class __ASSET__flixel_sounds_flixel_ogg extends lime.utils.ByteArray {}
+@:font("C:/HaxeToolkit/flixel/4,0,1/assets/fonts/nokiafc22.ttf") #if display private #end class __ASSET__flixel_fonts_nokiafc22_ttf extends lime.text.Font {}
+@:font("C:/HaxeToolkit/flixel/4,0,1/assets/fonts/monsterrat.ttf") #if display private #end class __ASSET__flixel_fonts_monsterrat_ttf extends lime.text.Font {}
+@:image("C:/HaxeToolkit/flixel/4,0,1/assets/images/ui/button.png") #if display private #end class __ASSET__flixel_images_ui_button_png extends lime.graphics.Image {}
 
 
 
