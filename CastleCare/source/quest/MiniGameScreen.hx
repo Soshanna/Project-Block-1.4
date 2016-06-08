@@ -66,8 +66,8 @@ class MiniGameScreen extends FlxState
 		add(backButton);
 		
 		makeItems();
-		itemGroup.forEachAlive(checkItem);
-		itemGroup.forEachAlive(checkItem);
+		itemGroup.forEachAlive(checkItem, false);
+		itemGroup.forEachAlive(checkItem, false);
 	}
 	
 	function makeItems(){
@@ -75,22 +75,22 @@ class MiniGameScreen extends FlxState
 			var random:Int = Math.floor(Math.random() * 100);
 			var item1:Item = new Item();
 			item1.onDown.callback = itemClicked.bind(item1);
-			if(random <= 50) {
+			//if(random <= 20) {
 				item1.loadGraphic("assets/img/red.png");
 				item1.name = "Red";
-			}else if(random > 50){
+			/*}else if(random <= 40){
 				item1.loadGraphic("assets/img/orange.png");
 				item1.name = "Orange";
-			//}else if(random <= 60){
-			//	item1.loadGraphic("assets/img/purple.png");
-			//	item1.name = "Purple";
-			//}else if(random <= 80){
-			//	item1.loadGraphic("assets/img/green.png");
-			//	item1.name = "Green";
-			//}else if(random <= 100){
-			//	item1.loadGraphic("assets/img/yellow.png");
-			//	item1.name = "Yellow";
-			}if(i <= 9){
+			}else if(random <= 60){
+				item1.loadGraphic("assets/img/purple.png");
+				item1.name = "Purple";
+			}else if(random <= 80){
+				item1.loadGraphic("assets/img/green.png");
+				item1.name = "Green";
+			}else if(random <= 100){
+				item1.loadGraphic("assets/img/yellow.png");
+				item1.name = "Yellow";
+			}*/if(i <= 9){
 				item1.x = 120 * d;
 				item1.y = 80;	
 			}if(i > 9){
@@ -150,36 +150,108 @@ class MiniGameScreen extends FlxState
 		});
 	}
 	
-	function checkItem(item:Item){
-		if(item.name == "Red"){
-			if (rowArray[item.arrayID +1].name == "Red" || rowArray[item.arrayID -1].name == "Red" || rowArray[item.arrayID -9].name == "Red" || rowArray[item.arrayID +9].name == "Red"){
-				
-			}
-		}
-		if(item.name == "Orange"){
-			if (rowArray[item.arrayID +1].name == "Orange" || rowArray[item.arrayID -1].name == "Orange" || rowArray[item.arrayID -9].name == "Orange" || rowArray[item.arrayID +9].name == "Orange"){
-				
+	function checkItem(item:Item) {	
+		if (item.name == "Red" || item.name == "Red MARKED") {//check color
+			item.name == "Red MARKED";
+			if (rowArray[item.arrayID] == 0) {//first block
+				if (rowArray[item.arrayID +1].name == "Red") {//check if there is an unmarked to the right
+					rowArray[item.arrayID +1].name == "Red MARKED";
+					checkItem(rowArray[item.arrayID +1]);
+				}else if (rowArray[item.arrayID +9].name == "Red") {//check if there is an unmarked under
+					rowArray[item.arrayID +9].name == "Red MARKED";
+					checkItem(rowArray[item.arrayID +9]);
+				}else {
+					checkItem(/*lastmarkeditem*/);//go back to last marked, then look if that marked one has unmarked around it. if not go back to the one before and repeat this
+				}
+			}else if (rowArray[item.arrayID] == 62) {//last block
+				if (rowArray[item.arrayID -1].name == "Red") {//check if there is an unmarked to the left
+					rowArray[item.arrayID -1].name == "Red MARKED";	
+					checkItem(rowArray[item.arrayID -1]);
+				}else if (rowArray[item.arrayID -9].name == "Red") {//check if there is an unmarked above
+					rowArray[item.arrayID -9].name == "Red MARKED";
+					checkItem(rowArray[item.arrayID -9]);
+				}else {
+					checkItem(/*lastmarkeditem*/);//go back to last marked, then look if that marked one has unmarked around it. if not go back to the one before and repeat this
+				}
+			}else if(rowArray[item.arrayID] <= 9){//first row
+				if (rowArray[item.arrayID +1].name == "Red") {//check if there is an unmarked to the right
+					rowArray[item.arrayID +1].name == "Red MARKED";
+					checkItem(rowArray[item.arrayID +1]);
+				}else if (rowArray[item.arrayID -1].name == "Red") {//check if there is an unmarked to the left
+					rowArray[item.arrayID -1].name == "Red MARKED";
+					checkItem(rowArray[item.arrayID -1]);
+				}else if (rowArray[item.arrayID +9].name == "Red") {//check if there is an unmarked under
+					rowArray[item.arrayID +9].name == "Red MARKED";	
+					checkItem(rowArray[item.arrayID +9]);
+				}else {
+					checkItem(/*lastmarkeditem*/);//go back to last marked, then look if that marked one has unmarked around it. if not go back to the one before and repeat this
+				}
+			}else if(rowArray[item.arrayID] >= 53){//last row
+				if (rowArray[item.arrayID +1].name == "Red") {//check if there is an unmarked to the right
+					rowArray[item.arrayID +1].name == "Red MARKED";
+					checkItem(rowArray[item.arrayID +1]);
+				}else if (rowArray[item.arrayID -1].name == "Red") {//check if there is an unmarked to the left
+					rowArray[item.arrayID -1].name == "Red MARKED";
+					checkItem(rowArray[item.arrayID -1]);
+				}else if (rowArray[item.arrayID -9].name == "Red") {//check if there is an unmarked above
+					rowArray[item.arrayID +9].name == "Red MARKED";	
+					checkItem(rowArray[item.arrayID +9]);
+				}else {
+					checkItem(/*lastmarkeditem*/);//go back to last marked, then look if that marked one has unmarked around it. if not go back to the one before and repeat this
+				}
+			}else if(rowArray[item.arrayID] > 9 && rowArray[item.arrayID] < 53){//The rest
+				if (rowArray[item.arrayID +1].name == "Red") {//check if there is an unmarked to the right
+					rowArray[item.arrayID +1].name == "Red MARKED";	
+					checkItem(rowArray[item.arrayID +1]);
+				}else if (rowArray[item.arrayID -1].name == "Red") {//check if there is an unmarked to the left
+					rowArray[item.arrayID -1].name == "Red MARKED";	
+					checkItem(rowArray[item.arrayID -1]);
+				}else if (rowArray[item.arrayID +9].name == "Red") {//check if there is an unmarked under
+					rowArray[item.arrayID +9].name == "Red MARKED";	
+					checkItem(rowArray[item.arrayID +9]);
+				}else if (rowArray[item.arrayID -9].name == "Red") {//check if there is an unmarked above
+					rowArray[item.arrayID -9].name == "Red MARKED";	
+					checkItem(rowArray[item.arrayID -9]);
+				}else {
+					checkItem(/*lastmarkeditem*/);//go back to last marked, then look if that marked one has unmarked around it. if not go back to the one before and repeat this
+				}
 			}
 		}
 		_txtScore.text = "Score: " + score;
 	}
 	
-	function replaceItem(item:Item, random){
-		if(random <= 50) {
+	function removeMarked(item:Item){
+		
+		if(item.name == "Red MARKED"){
+			replaceItem(item, Math.floor(Math.random() * 100));
+		}else if(item.name == "Orange MARKED"){
+			replaceItem(item, Math.floor(Math.random() * 100));
+		}else if(item.name == "Purple MARKED"){
+			replaceItem(item, Math.floor(Math.random() * 100));
+		}else if(item.name == "Green MARKED"){
+			replaceItem(item, Math.floor(Math.random() * 100));
+		}else if(item.name == "Yellow MARKED"){
+			replaceItem(item, Math.floor(Math.random() * 100));
+		}
+	}
+	
+	function replaceItem(item1:Item, random){
+		//if(random <= 20) {
 			item1.loadGraphic("assets/img/red.png");
 			item1.name = "Red";
-		}else if(random > 50){
+		/*}else if(random <= 40){
 			item1.loadGraphic("assets/img/orange.png");
 			item1.name = "Orange";
-		//}else if(random <= 60){
-		//	item1.loadGraphic("assets/img/purple.png");
-		//	item1.name = "Purple";
-		//}else if(random <= 80){
-		//	item1.loadGraphic("assets/img/green.png");
-		//	item1.name = "Green";
-		//}else if(random <= 100){
-		//	item1.loadGraphic("assets/img/yellow.png");
-		//	item1.name = "Yellow";
+		}else if(random <= 60){
+			item1.loadGraphic("assets/img/purple.png");
+			item1.name = "Purple";
+		}else if(random <= 80){
+			item1.loadGraphic("assets/img/green.png");
+			item1.name = "Green";
+		}else if(random <= 100){
+			item1.loadGraphic("assets/img/yellow.png");
+			item1.name = "Yellow";
+		}*/
 	}
 	
 	override public function update(elapsed:Float):Void {
