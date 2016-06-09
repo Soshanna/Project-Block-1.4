@@ -15,8 +15,10 @@ import flixel.system.FlxAssets.FlxGraphicAsset;
 
 class PlayState extends FlxState
 {
+	public static var instance:PlayState;
 	public var doctorBool:Bool = false;
 	public var energy:Int;
+	public var currency:Int = 0;
 	var _btnEnergyUp:FlxButton;
 	var _btnEnergydown:FlxButton;
 	var _btnMenu:FlxButton;
@@ -24,11 +26,12 @@ class PlayState extends FlxState
 	var _btnUpgradeMenu:FlxButton;
 	var text:FlxText;
 	var energyBar:EnergyBar;
-	var currency:Int = 0;
 	var _castleNavigation:Castle;
 	
 	override public function create():Void
 	{
+		var instance = this;
+		
 		_castleNavigation = new Castle();
 		add(_castleNavigation);	
 		
@@ -60,6 +63,14 @@ class PlayState extends FlxState
 		add(_btnEnergydown);
 		
 		super.create();
+	}
+	
+	public static function getInstance():PlayState{
+		return instance;
+	}
+	
+	public function miniGameWon(){
+		currency += 100;
 	}
 	
 	private function clickMood():Void{

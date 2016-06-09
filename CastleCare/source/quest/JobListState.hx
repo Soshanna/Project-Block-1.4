@@ -1,6 +1,5 @@
 package quest;
 
-import quest.MiniGameScreen;
 import flixel.FlxState;
 import flixel.text.FlxText;
 import flixel.ui.FlxButton;
@@ -41,7 +40,7 @@ class JobListState extends FlxState
 	
 	function clickMiniGame():Void {
 		FlxG.camera.fade(FlxColor.BLACK, .20, false ,function(){
-			FlxG.switchState(new MiniGameScreen());
+			FlxG.switchState(new HiddenObjectGame());
 		});
 	}
 }
