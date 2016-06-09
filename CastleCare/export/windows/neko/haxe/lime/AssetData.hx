@@ -82,6 +82,8 @@ class AssetData {
 			type.set ("assets/img/EnergySymbol.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/img/FullEnergy.png", "assets/img/FullEnergy.png");
 			type.set ("assets/img/FullEnergy.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/img/left-1.png", "assets/img/left-1.png");
+			type.set ("assets/img/left-1.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/img/Minigame/AppleButton.png", "assets/img/Minigame/AppleButton.png");
 			type.set ("assets/img/Minigame/AppleButton.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/img/Minigame/BananaButton.png", "assets/img/Minigame/BananaButton.png");
@@ -94,6 +96,18 @@ class AssetData {
 			type.set ("assets/img/Minigame/WaterMelonButton.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/img/MoodHappy.png", "assets/img/MoodHappy.png");
 			type.set ("assets/img/MoodHappy.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/img/room1.png", "assets/img/room1.png");
+			type.set ("assets/img/room1.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/img/room2.png", "assets/img/room2.png");
+			type.set ("assets/img/room2.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/img/room3.png", "assets/img/room3.png");
+			type.set ("assets/img/room3.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/img/room4.png", "assets/img/room4.png");
+			type.set ("assets/img/room4.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/img/room5.png", "assets/img/room5.png");
+			type.set ("assets/img/room5.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/img/room6.png", "assets/img/room6.png");
+			type.set ("assets/img/room6.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/img/titelbackground.png", "assets/img/titelbackground.png");
 			type.set ("assets/img/titelbackground.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("flixel/sounds/beep.ogg", "flixel/sounds/beep.ogg");
