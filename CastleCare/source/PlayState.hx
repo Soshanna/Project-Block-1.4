@@ -25,9 +25,13 @@ class PlayState extends FlxState
 	var text:FlxText;
 	var energyBar:EnergyBar;
 	var currency:Int = 0;
+	var _castleNavigation:Castle;
 	
 	override public function create():Void
 	{
+		_castleNavigation = new Castle();
+		add(_castleNavigation);	
+		
 		_btnMenu = new FlxButton((FlxG.width / 2) + 520, FlxG.height - 35, "Back", clickMenu);
 		add(_btnMenu);
 		
