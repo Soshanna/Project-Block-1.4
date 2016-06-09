@@ -53,10 +53,10 @@ class PlayState extends FlxState
 		_btnUpgradeMenu = new FlxButton(energyBar.x + energyBar.width + 50, energyBar.y + 25, "$ " + currency, clickUpgradeMenu);
 		add(_btnUpgradeMenu);
 		
-		_btnEnergyUp = new FlxButton(300, 300, "EnergyUp", clickEnergy);
+		_btnEnergyUp = new FlxButton(150, 300, "EnergyUp", clickEnergy);
 		add(_btnEnergyUp);
 		
-		_btnEnergydown = new FlxButton(300, 350, "EnergyDown", clickEnergyDown);
+		_btnEnergydown = new FlxButton(150, 350, "EnergyDown", clickEnergyDown);
 		add(_btnEnergydown);
 		
 		super.create();
