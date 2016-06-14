@@ -40,7 +40,7 @@ class JobListState extends FlxState
 	
 	function clickMiniGame():Void {
 		FlxG.camera.fade(FlxColor.BLACK, .20, false ,function(){
-			FlxG.switchState(new HiddenObjectGame());
+			FlxG.switchState(new MiniGameScreen());
 		});
 	}
 }

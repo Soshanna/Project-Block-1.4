@@ -23,18 +23,20 @@ using flixel.util.FlxSpriteUtil;
 class MiniGameScreen extends FlxState
 {
 	var itemGroup:FlxTypedSpriteGroup<Item> = new FlxTypedSpriteGroup<Item>(0, 0, 63);
+	var rowArray:Array<Item> = new Array<Item>();
 	var backButton:FlxButton;
 	var _txtScore:FlxText;
 	var _txtTurns:FlxText;
 	var _txtMaxScore:FlxText;
-	var rowArray:Array<Item> = new Array<Item>();
-	var d:Int = 1;
 	var a:Int = 0;
 	var b:Int = 0;
 	var object1 = null;
 	var score = 0;
 	var turns:Int = 25;
 	var maxScore:Int = 50;
+	var typeCount:Int = 0;
+	var lastType:Int = 0;
+	var lastCount:Int = 0;
 	
 	override public function create():Void {
 		super.create();
@@ -51,48 +53,66 @@ class MiniGameScreen extends FlxState
 		_txtMaxScore = new FlxText(1010, 370, 0, "Goal: " + maxScore, 32);
 		add(_txtMaxScore);
 		
-		backButton = new FlxButton((FlxG.width / 2) + 428, FlxG.height - 125, "", clickBack);
+		backButton = new FlxButton(1065, 580, "", buttonPress);
 		backButton.loadGraphic("assets/img/Buttons/terug-3.png");
-		backButton.onDown.callback = buttonPress;
 		add(backButton);
 		
 		makeItems();
-		//itemGroup.forEachAlive(checkItem, false);
-		//itemGroup.forEachAlive(checkItem, false);
+		
+		for(i in 0...(rowArray.length)){
+			checkItemHor(rowArray[i], i);
+		}for (i in 0...rowArray.length){
+			if(i <= 3){
+				checkItemVer(rowArray[(i * 5)], i);	
+			}else if(i <= 7){
+				checkItemVer(rowArray[((i - 4) * 5) + 1], i);
+			}else if(i <= 11){
+				checkItemVer(rowArray[((i - 8) * 5) + 2], i);
+			}else if(i <= 15){
+				checkItemVer(rowArray[((i - 12) * 5) + 3], i);
+			}else if(i <= 19){
+				checkItemVer(rowArray[((i - 16) * 5) + 4], i);
+			}
+		}for(i in 0...rowArray.length){
+			removeMarked(rowArray[i]);
+		}
 	}
 	
 	function buttonPress(){
 		backButton.loadGraphic("assets/img/Buttons/terug-4.png");
+		FlxG.camera.fade(FlxColor.BLACK, .20, false ,function(){
+			FlxG.switchState(new JobListState());
+		});
 	}
 	
 	function makeItems(){
-		for (i in 0 ... 21){
+		for (i in 0 ... 20){
 			var random:Int = Math.floor(Math.random() * 100);
 			var item1:Item = new Item();
 			item1.onDown.callback = itemClicked.bind(item1);
 			if(random <= 25) {
 				item1.loadGraphic("assets/img/Minigame/AppleButton.png");
-				item1.name = "Red";
+				item1.type = 1;
 			}else if(random <= 50){
 				item1.loadGraphic("assets/img/Minigame/BananaButton.png");
-				item1.name = "Orange";
+				item1.type = 2;
 			}else if(random <= 75){
 				item1.loadGraphic("assets/img/Minigame/BurgerButton.png");
-				item1.name = "Purple";
+				item1.type = 3;
 			}else if(random <= 100){
 				item1.loadGraphic("assets/img/Minigame/WaterMelonButton.png");
-				item1.name = "Green";
-			}if(i <= 5){
-				item1.x = 60 + (175 * d);
+				item1.type = 4;
+			}if(i < 5){
+				item1.x = 60 + (175 * (i));
 				item1.y = 60;	
-			}if(i > 5){
-				item1.x = 60 + (175 * d);
+			}if(i >= 5){
+				item1.x = 60 + (175 * (i - 5));
 				item1.y = 220;
-			}if(i > 10){
-				item1.x = 60 + (175 * d);
+			}if(i >= 10){
+				item1.x = 60 + (175 * (i - 10));
 				item1.y = 380;
-			}if(i > 15){
-				item1.x = 60 + (175 * d);
+			}if(i >= 15){
+				item1.x = 60 + (175 * (i - 15));
 				item1.y = 540;
 			}
 			item1.arrayID = b;
@@ -100,10 +120,6 @@ class MiniGameScreen extends FlxState
 			rowArray.push(item1);
 			itemGroup.add(item1);
 			add(itemGroup);
-			d += 1;
-			if(d == 5){
-				d = 0;
-			}
 		}
 	}
 
@@ -111,138 +127,92 @@ class MiniGameScreen extends FlxState
 		a += 1;
 		if(a == 1){
 			object1 = button;
-			trace(object1);
+			object1.onDown.callback = null;
 		}
 		if(a == 2){
 			var object2 = button;
-			trace(object2);
-			var pos = rowArray[object2.arrayID];
-			rowArray[object2.arrayID] = rowArray[object1.arrayID];
-			rowArray[object1.arrayID] = pos;
-			//itemGroup.forEachAlive(checkItem);
+			var pos = object2.arrayID;
+			var posx = object2.x;
+			var posy = object2.y;
+			object2.arrayID = object1.arrayID;
+			object1.arrayID = pos;
+			object2.x = object1.x;
+			object2.y = object1.y;
+			object1.x = posx;
+			object1.y = posy;
 			a = 0;
 			turns -= 1;
 			_txtTurns.text = "Turns: " + turns;
+			object1.onDown.callback = itemClicked.bind(object1);
 		}
-		trace(a);
 	}
 	
-	function clickBack() {
-		FlxG.camera.fade(FlxColor.BLACK, .20, false ,function(){
-			FlxG.switchState(new JobListState());
-		});
-	}
-	
-	/*function checkItem(item:Item) {	
-		var itemColor:String;
-		if(item.name == "Red"){
-			itemColor = "Red";
-		}else if(item.name == "Orange"){
-			itemColor = "Orange";
-		}else if(item.name == "Purple"){
-			itemColor = "Purple";
-		}else if(item.name == "Green"){
-			itemColor = "Green";
-		}else if(item.name == "Yellow"){
-			itemColor = "Yellow";
+	function checkItemHor(item:Item, i:Int) {	
+		if(i == 5 || i == 10 || i == 15){
+			typeCount = 0;
 		}
-		if (item.name == itemColor || item.name == itemColor + " MARKED") {//check color
-			item.name == itemColor + " MARKED";
-			if (item.arrayID == 0) {//first block
-				if (rowArray[item.arrayID +1].name == itemColor) {//check if there is an unmarked to the right
-					rowArray[item.arrayID +1].name == itemColor + " MARKED";
-					checkItem(rowArray[item.arrayID +1]);
-				}else if (rowArray[item.arrayID +9].name == itemColor) {//check if there is an unmarked under
-					rowArray[item.arrayID +9].name == itemColor + " MARKED";
-					checkItem(rowArray[item.arrayID +9]);
-				}else {
-					checkItem(/*lastmarkeditem);//go back to last marked, then look if that marked one has unmarked around it. if not go back to the one before and repeat this
+		else{
+			if(rowArray[item.arrayID -1] != null){
+				lastType = rowArray[item.arrayID -1].type;
+			}
+			if (lastType != item.type) {
+				lastCount = typeCount;
+				if(lastCount >= 3) {
+					for(i in 1...(typeCount + 1)){
+						rowArray[item.arrayID - i].name = "MARKED";	
+					}
 				}
-			}else if (item.arrayID == 62) {//last block
-				if (rowArray[item.arrayID -1].name == itemColor) {//check if there is an unmarked to the left
-					rowArray[item.arrayID -1].name == itemColor + " MARKED";	
-					checkItem(rowArray[item.arrayID -1]);
-				}else if (rowArray[item.arrayID -9].name == itemColor) {//check if there is an unmarked above
-					rowArray[item.arrayID -9].name == itemColor + " MARKED";
-					checkItem(rowArray[item.arrayID -9]);
-				}else {
-					checkItem(/*lastmarkeditem);//go back to last marked, then look if that marked one has unmarked around it. if not go back to the one before and repeat this
-				}
-			}else if(item.arrayID <= 9){//first row
-				if (rowArray[item.arrayID +1].name == itemColor) {//check if there is an unmarked to the right
-					rowArray[item.arrayID +1].name == itemColor + " MARKED";
-					checkItem(rowArray[item.arrayID +1]);
-				}else if (rowArray[item.arrayID -1].name == itemColor) {//check if there is an unmarked to the left
-					rowArray[item.arrayID -1].name == itemColor + " MARKED";
-					checkItem(rowArray[item.arrayID -1]);
-				}else if (rowArray[item.arrayID +9].name == itemColor) {//check if there is an unmarked under
-					rowArray[item.arrayID +9].name == itemColor + " MARKED";	
-					checkItem(rowArray[item.arrayID +9]);
-				}else {
-					checkItem(/*lastmarkeditem);//go back to last marked, then look if that marked one has unmarked around it. if not go back to the one before and repeat this
-				}
-			}else if(item.arrayID >= 53){//last row
-				if (rowArray[item.arrayID +1].name == itemColor) {//check if there is an unmarked to the right
-					rowArray[item.arrayID +1].name == itemColor + " MARKED";
-					checkItem(rowArray[item.arrayID +1]);
-				}else if (rowArray[item.arrayID -1].name == itemColor) {//check if there is an unmarked to the left
-					rowArray[item.arrayID -1].name == itemColor + " MARKED";
-					checkItem(rowArray[item.arrayID -1]);
-				}else if (rowArray[item.arrayID -9].name == itemColor) {//check if there is an unmarked above
-					rowArray[item.arrayID +9].name == itemColor + " MARKED";	
-					checkItem(rowArray[item.arrayID +9]);
-				}else {
-					checkItem(/*lastmarkeditem);//go back to last marked, then look if that marked one has unmarked around it. if not go back to the one before and repeat this
-				}
-			}else if(item.arrayID > 9 && item.arrayID < 53){//The rest
-				if (rowArray[item.arrayID +1].name == itemColor) {//check if there is an unmarked to the right
-					rowArray[item.arrayID +1].name == itemColor + " MARKED";	
-					checkItem(rowArray[item.arrayID +1]);
-				}else if (rowArray[item.arrayID -1].name == itemColor) {//check if there is an unmarked to the left
-					rowArray[item.arrayID -1].name == itemColor + " MARKED";	
-					checkItem(rowArray[item.arrayID -1]);
-				}else if (rowArray[item.arrayID +9].name == itemColor) {//check if there is an unmarked under
-					rowArray[item.arrayID +9].name == itemColor + " MARKED";	
-					checkItem(rowArray[item.arrayID +9]);
-				}else if (rowArray[item.arrayID -9].name == itemColor) {//check if there is an unmarked above
-					rowArray[item.arrayID -9].name == itemColor + " MARKED";	
-					checkItem(rowArray[item.arrayID -9]);
-				}else {
-					checkItem(/*lastmarkeditem);//go back to last marked, then look if that marked one has unmarked around it. if not go back to the one before and repeat this
-				}
+				typeCount = 1;
+			}else if(lastType == item.type){
+				typeCount ++;
 			}
 		}
-		_txtScore.text = "Score: " + score;
-	}*/
+	}
 	
-	function removeMarked(item:Item){
-		
-		if(item.name == "Red MARKED"){
-			replaceItem(item, Math.floor(Math.random() * 100));
-		}else if(item.name == "Orange MARKED"){
-			replaceItem(item, Math.floor(Math.random() * 100));
-		}else if(item.name == "Purple MARKED"){
-			replaceItem(item, Math.floor(Math.random() * 100));
-		}else if(item.name == "Green MARKED"){
-			replaceItem(item, Math.floor(Math.random() * 100));
-		}else if(item.name == "Yellow MARKED"){
-			replaceItem(item, Math.floor(Math.random() * 100));
+	function checkItemVer(item:Item, i:Int) {	
+		if(i == 1 || i == 2 || i == 3 || i == 4){
+			typeCount = 0;
+		}
+		else{
+			if(rowArray[item.arrayID -5] != null){
+				lastType = rowArray[item.arrayID -5].type;
+			}
+			if (lastType != item.type) {
+				lastCount = typeCount;
+				if(lastCount >= 3) {
+					for(i in 1...(typeCount + 1)){
+						rowArray[item.arrayID - i].name = "MARKED";	
+					}
+				}
+				typeCount = 1;
+			}else if(lastType == item.type){
+				typeCount ++;
+			}
 		}
 	}
 	
+	function removeMarked(item:Item){
+		if (item.name == "MARKED"){
+			trace(item.arrayID + " = MARKED");
+			remove(item);
+			score ++;
+			item.name = null;
+		}
+	}
+
 	function replaceItem(item1:Item, random){
 		if(random <= 25) {
 			item1.loadGraphic("assets/img/Minigame/AppleButton.png");
-			item1.name = "Red";
+			item1.type = 1;
 		}else if(random <= 50){
 			item1.loadGraphic("assets/img/Minigame/BananaButton.png");
-			item1.name = "Orange";
+			item1.type = 2;
 		}else if(random <= 75){
 			item1.loadGraphic("assets/img/Minigame/BurgerButton.png");
-			item1.name = "Purple";
+			item1.type = 3;
 		}else if(random <= 100){
 			item1.loadGraphic("assets/img/Minigame/WaterMelonButton.png");
-			item1.name = "Green";
+			item1.type = 4;
 		}
 	}
 	

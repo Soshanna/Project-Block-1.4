@@ -50,7 +50,7 @@ class PlayState extends FlxState
 		var energySymbol:FlxSprite = new FlxSprite(energyBar.x, energyBar.y, "assets/img/EnergySymbol.png");
 		add(energySymbol);
 		
-		text = new FlxText(energyBar.x + (energyBar.width/2)-10, energyBar.y + 25, 0,"" + energyBar.percent + "%",16);
+		text = new FlxText(energyBar.x + (energyBar.width/2)-80, energyBar.y + 25, 0,"" + energyBar.percent + "%",16);
 		add(text);
 		
 		_btnUpgradeMenu = new FlxButton(energyBar.x + energyBar.width + 50, energyBar.y + 25, "$ " + currency, clickUpgradeMenu);

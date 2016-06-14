@@ -8,6 +8,7 @@ import flixel.ui.FlxButton;
  */
 class Item extends FlxButton
 {
+	public var type:Int;
 	public var name:String;
 	public var arrayID:Int;
 	
