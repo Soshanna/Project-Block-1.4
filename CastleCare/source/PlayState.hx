@@ -28,6 +28,8 @@ class PlayState extends FlxState
 	var energyBar:EnergyBar;
 	var _castleNavigation:Castle;
 	
+
+	
 	override public function create():Void
 	{
 		var instance = this;
@@ -35,7 +37,13 @@ class PlayState extends FlxState
 		_castleNavigation = new Castle();
 		add(_castleNavigation);	
 		
-		_btnMenu = new FlxButton((FlxG.width / 2) + 520, FlxG.height - 35, "Back", clickMenu);
+		//_btnMenu = new FlxButton((FlxG.width / 2) + 520, FlxG.height - 35, "Back", clickMenu);
+		//add(_btnMenu);
+		
+		var _btnMenu:FlxButton = new FlxButton (0, 0, "", clickMenu);
+		_btnMenu.loadGraphic("assets/img/Buttons/terug-3.png");
+		_btnMenu.x = (FlxG.width / 2) +500;
+		_btnMenu.y = FlxG.height - 80;
 		add(_btnMenu);
 		
 		_btnQuest = new FlxButton(20, _btnMenu.y, "Quest", clickQuest);

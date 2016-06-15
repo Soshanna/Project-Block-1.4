@@ -24,8 +24,10 @@ class UpgradeMenuState extends FlxState
 		_txtTitle.screenCenter(X);
 		add(_txtTitle);
 		
-		backButton = new FlxButton((FlxG.width / 2) + 10, FlxG.height - 28, "Back", clickBack);
-		add(backButton);
+		var _btnMenu:FlxButton = new FlxButton((FlxG.width / 2) -70, FlxG.height -70,"", clickBack);
+		_btnMenu.loadGraphic("assets/img/Buttons/terug-3.png");
+		_btnMenu.screenCenter(X);
+		add(_btnMenu);
 		
 		if(doctorBool.doctorBool == true){
 		upgradeCharacterButton = new FlxButton(0, 350, "Upgrade Character", clickCharacter);
@@ -33,7 +35,8 @@ class UpgradeMenuState extends FlxState
 		add(upgradeCharacterButton);
 		}
 		
-		upgradeCastleButton = new FlxButton(0, 450, "Upgrade Castle", clickCastle);
+		var upgradeCastleButton:FlxButton = new FlxButton (0, 440, "", clickCastle);
+		upgradeCastleButton.loadGraphic("assets/img/Buttons/kasteel-1.png");
 		upgradeCastleButton.screenCenter(X);
 		add(upgradeCastleButton);
 		
