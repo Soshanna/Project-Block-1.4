@@ -8,6 +8,7 @@
 #ifndef INCLUDED_flixel_FlxState
 #include <flixel/FlxState.h>
 #endif
+HX_DECLARE_CLASS0(Castle)
 HX_DECLARE_CLASS0(EnergyBar)
 HX_DECLARE_CLASS0(PlayState)
 HX_DECLARE_CLASS1(flixel,FlxBasic)
@@ -16,6 +17,7 @@ HX_DECLARE_CLASS1(flixel,FlxSprite)
 HX_DECLARE_CLASS1(flixel,FlxState)
 HX_DECLARE_CLASS2(flixel,group,FlxTypedGroup)
 HX_DECLARE_CLASS2(flixel,input,IFlxInput)
+HX_DECLARE_CLASS2(flixel,text,FlxText)
 HX_DECLARE_CLASS2(flixel,ui,FlxBar)
 HX_DECLARE_CLASS2(flixel,ui,FlxButton)
 HX_DECLARE_CLASS2(flixel,ui,FlxTypedButton_flixel_text_FlxText)
@@ -39,24 +41,43 @@ class HXCPP_CLASS_ATTRIBUTES  PlayState_obj : public ::flixel::FlxState_obj{
 
 		HX_DO_RTTI_ALL;
 		Dynamic __Field(const ::String &inString, hx::PropertyAccess inCallProp);
+		static bool __GetStatic(const ::String &inString, Dynamic &outValue, hx::PropertyAccess inCallProp);
 		Dynamic __SetField(const ::String &inString,const Dynamic &inValue, hx::PropertyAccess inCallProp);
+		static bool __SetStatic(const ::String &inString, Dynamic &ioValue, hx::PropertyAccess inCallProp);
 		void __GetFields(Array< ::String> &outFields);
 		static void __register();
 		void __Mark(HX_MARK_PARAMS);
 		void __Visit(HX_VISIT_PARAMS);
 		::String __ToString() const { return HX_HCSTRING("PlayState","\x5d","\x83","\xc2","\x46"); }
 
+		static ::PlayState instance;
+		static ::PlayState getInstance( );
+		static Dynamic getInstance_dyn();
+
 		bool doctorBool;
 		int energy;
+		int currency;
+		::flixel::ui::FlxButton _btnEnergyUp;
+		::flixel::ui::FlxButton _btnEnergydown;
 		::flixel::ui::FlxButton _btnMenu;
 		::flixel::ui::FlxButton _btnQuest;
 		::flixel::ui::FlxButton _btnUpgradeMenu;
+		::flixel::text::FlxText text;
 		::EnergyBar energyBar;
-		int currency;
+		::Castle _castleNavigation;
 		virtual Void create( );
+
+		virtual Void miniGameWon( );
+		Dynamic miniGameWon_dyn();
 
 		virtual Void clickMood( );
 		Dynamic clickMood_dyn();
+
+		virtual Void clickEnergy( );
+		Dynamic clickEnergy_dyn();
+
+		virtual Void clickEnergyDown( );
+		Dynamic clickEnergyDown_dyn();
 
 		virtual Void clickMenu( );
 		Dynamic clickMenu_dyn();

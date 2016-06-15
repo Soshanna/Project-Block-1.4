@@ -15,14 +15,8 @@ class LoseScreen extends FlxState
 {
 	var button:FlxButton;
 
-	public function new() 
+	override public function create() 
 	{
-		super();
-		
-		var background:FlxSprite = new FlxSprite();
-		background.makeGraphic(Std.int(FlxG.stage.width), Std.int(FlxG.stage.height), FlxColor.BLACK);
-		add(background);
-		
 		var winText:FlxText = new FlxText(0, 150, 0, "Je hebt het level gehaalt!", 30);
 		winText.screenCenter(X);
 		add(winText);
@@ -39,7 +33,7 @@ class LoseScreen extends FlxState
 	function buttonPress(){
 		button.loadGraphic("assets/img/Buttons/terug-4.png");
 		FlxG.camera.fade(FlxColor.BLACK, .20, false ,function(){
-			FlxG.switchState(new JobListState());
+			FlxG.switchState(new PlayState());
 		});
 	}
 }

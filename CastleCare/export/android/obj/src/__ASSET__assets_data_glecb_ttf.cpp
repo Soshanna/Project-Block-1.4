@@ -15,14 +15,14 @@
 
 Void __ASSET__assets_data_glecb_ttf_obj::__construct()
 {
-HX_STACK_FRAME("__ASSET__assets_data_glecb_ttf","new",0xdeca2e2f,"__ASSET__assets_data_glecb_ttf.new","DefaultAssetLibrary.hx",517,0x0fc48912)
+HX_STACK_FRAME("__ASSET__assets_data_glecb_ttf","new",0xdeca2e2f,"__ASSET__assets_data_glecb_ttf.new","DefaultAssetLibrary.hx",609,0x0fc48912)
 HX_STACK_THIS(this)
 {
-	HX_STACK_LINE(517)
+	HX_STACK_LINE(609)
 	super::__construct(null(),null(),null());
-	HX_STACK_LINE(517)
+	HX_STACK_LINE(609)
 	this->__fontPath = HX_HCSTRING("assets/data/GLECB.TTF","\xde","\xd7","\x53","\x83");
-	HX_STACK_LINE(517)
+	HX_STACK_LINE(609)
 	this->fontName = HX_HCSTRING("Gloucester MT Extra Condensed","\x43","\xce","\x31","\x4e");
 }
 ;

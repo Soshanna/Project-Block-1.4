@@ -6,6 +6,7 @@
 #endif
 
 HX_DECLARE_CLASS1(flixel,FlxBasic)
+HX_DECLARE_CLASS3(flixel,input,mouse,FlxMouseEventManager)
 HX_DECLARE_CLASS3(flixel,_system,frontEnds,PluginFrontEnd)
 HX_DECLARE_CLASS2(flixel,tweens,FlxTweenManager)
 HX_DECLARE_CLASS2(flixel,util,FlxTimerManager)
@@ -38,6 +39,9 @@ class HXCPP_CLASS_ATTRIBUTES  PluginFrontEnd_obj : public hx::Object{
 		void __Mark(HX_MARK_PARAMS);
 		void __Visit(HX_VISIT_PARAMS);
 		::String __ToString() const { return HX_HCSTRING("PluginFrontEnd","\xa5","\xf8","\x8b","\xd8"); }
+
+		virtual ::flixel::input::mouse::FlxMouseEventManager add_flixel_input_mouse_FlxMouseEventManager( ::flixel::input::mouse::FlxMouseEventManager Plugin);
+		Dynamic add_flixel_input_mouse_FlxMouseEventManager_dyn();
 
 		virtual ::flixel::tweens::FlxTweenManager add_flixel_tweens_FlxTweenManager( ::flixel::tweens::FlxTweenManager Plugin);
 		Dynamic add_flixel_tweens_FlxTweenManager_dyn();

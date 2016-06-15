@@ -12,6 +12,9 @@
 #ifndef INCLUDED_flixel_FlxBasic
 #include <flixel/FlxBasic.h>
 #endif
+#ifndef INCLUDED_flixel_input_mouse_FlxMouseEventManager
+#include <flixel/input/mouse/FlxMouseEventManager.h>
+#endif
 #ifndef INCLUDED_flixel_system_frontEnds_PluginFrontEnd
 #include <flixel/system/frontEnds/PluginFrontEnd.h>
 #endif
@@ -70,6 +73,176 @@ Dynamic PluginFrontEnd_obj::__Create(hx::DynamicArray inArgs)
 {  hx::ObjectPtr< PluginFrontEnd_obj > _result_ = new PluginFrontEnd_obj();
 	_result_->__construct();
 	return _result_;}
+
+::flixel::input::mouse::FlxMouseEventManager PluginFrontEnd_obj::add_flixel_input_mouse_FlxMouseEventManager( ::flixel::input::mouse::FlxMouseEventManager Plugin){
+	HX_STACK_FRAME("flixel.system.frontEnds.PluginFrontEnd","add_flixel_input_mouse_FlxMouseEventManager",0x14733beb,"flixel.system.frontEnds.PluginFrontEnd.add_flixel_input_mouse_FlxMouseEventManager","flixel/system/frontEnds/PluginFrontEnd.hx",24,0xbff70e9e)
+	HX_STACK_THIS(this)
+	HX_STACK_ARG(Plugin,"Plugin")
+	HX_STACK_LINE(26)
+	{
+		HX_STACK_LINE(26)
+		int _g = (int)0;		HX_STACK_VAR(_g,"_g");
+		HX_STACK_LINE(26)
+		Array< ::Dynamic > _g1 = this->list;		HX_STACK_VAR(_g1,"_g1");
+		HX_STACK_LINE(26)
+		while((true)){
+			HX_STACK_LINE(26)
+			bool tmp = (_g < _g1->length);		HX_STACK_VAR(tmp,"tmp");
+			HX_STACK_LINE(26)
+			bool tmp1 = !(tmp);		HX_STACK_VAR(tmp1,"tmp1");
+			HX_STACK_LINE(26)
+			if ((tmp1)){
+				HX_STACK_LINE(26)
+				break;
+			}
+			HX_STACK_LINE(26)
+			::flixel::FlxBasic tmp2 = _g1->__get(_g).StaticCast< ::flixel::FlxBasic >();		HX_STACK_VAR(tmp2,"tmp2");
+			HX_STACK_LINE(26)
+			::flixel::FlxBasic plugin = tmp2;		HX_STACK_VAR(plugin,"plugin");
+			HX_STACK_LINE(26)
+			++(_g);
+			HX_STACK_LINE(28)
+			bool tmp3;		HX_STACK_VAR(tmp3,"tmp3");
+			HX_STACK_LINE(28)
+			{
+				HX_STACK_LINE(28)
+				bool Simple = true;		HX_STACK_VAR(Simple,"Simple");
+				HX_STACK_LINE(28)
+				::String tmp4;		HX_STACK_VAR(tmp4,"tmp4");
+				HX_STACK_LINE(28)
+				{
+					HX_STACK_LINE(28)
+					::hx::Class cl;		HX_STACK_VAR(cl,"cl");
+					HX_STACK_LINE(28)
+					::flixel::input::mouse::FlxMouseEventManager tmp5 = Plugin;		HX_STACK_VAR(tmp5,"tmp5");
+					HX_STACK_LINE(28)
+					bool tmp6 = ::Std_obj::is(tmp5,hx::ClassOf< ::hx::Class >());		HX_STACK_VAR(tmp6,"tmp6");
+					HX_STACK_LINE(28)
+					if ((tmp6)){
+						HX_STACK_LINE(28)
+						cl = ((::hx::Class)(Plugin));
+					}
+					else{
+						HX_STACK_LINE(28)
+						::flixel::input::mouse::FlxMouseEventManager tmp7 = Plugin;		HX_STACK_VAR(tmp7,"tmp7");
+						HX_STACK_LINE(28)
+						::hx::Class tmp8 = ::Type_obj::getClass(tmp7);		HX_STACK_VAR(tmp8,"tmp8");
+						HX_STACK_LINE(28)
+						cl = tmp8;
+					}
+					HX_STACK_LINE(28)
+					::hx::Class tmp7 = cl;		HX_STACK_VAR(tmp7,"tmp7");
+					HX_STACK_LINE(28)
+					::String tmp8 = ::Type_obj::getClassName(tmp7);		HX_STACK_VAR(tmp8,"tmp8");
+					HX_STACK_LINE(28)
+					::String s = tmp8;		HX_STACK_VAR(s,"s");
+					HX_STACK_LINE(28)
+					bool tmp9 = (s != null());		HX_STACK_VAR(tmp9,"tmp9");
+					HX_STACK_LINE(28)
+					if ((tmp9)){
+						HX_STACK_LINE(28)
+						::String tmp10 = s;		HX_STACK_VAR(tmp10,"tmp10");
+						HX_STACK_LINE(28)
+						::String tmp11 = ::StringTools_obj::replace(tmp10,HX_HCSTRING("::","\xc0","\x32","\x00","\x00"),HX_HCSTRING(".","\x2e","\x00","\x00","\x00"));		HX_STACK_VAR(tmp11,"tmp11");
+						HX_STACK_LINE(28)
+						s = tmp11;
+						HX_STACK_LINE(28)
+						bool tmp12 = Simple;		HX_STACK_VAR(tmp12,"tmp12");
+						HX_STACK_LINE(28)
+						if ((tmp12)){
+							HX_STACK_LINE(28)
+							int tmp13 = s.lastIndexOf(HX_HCSTRING(".","\x2e","\x00","\x00","\x00"),null());		HX_STACK_VAR(tmp13,"tmp13");
+							HX_STACK_LINE(28)
+							int tmp14 = (tmp13 + (int)1);		HX_STACK_VAR(tmp14,"tmp14");
+							HX_STACK_LINE(28)
+							::String tmp15 = s.substr(tmp14,null());		HX_STACK_VAR(tmp15,"tmp15");
+							HX_STACK_LINE(28)
+							s = tmp15;
+						}
+					}
+					HX_STACK_LINE(28)
+					tmp4 = s;
+				}
+				HX_STACK_LINE(28)
+				::String tmp5;		HX_STACK_VAR(tmp5,"tmp5");
+				HX_STACK_LINE(28)
+				{
+					HX_STACK_LINE(28)
+					::hx::Class cl;		HX_STACK_VAR(cl,"cl");
+					HX_STACK_LINE(28)
+					::flixel::FlxBasic tmp6 = plugin;		HX_STACK_VAR(tmp6,"tmp6");
+					HX_STACK_LINE(28)
+					bool tmp7 = ::Std_obj::is(tmp6,hx::ClassOf< ::hx::Class >());		HX_STACK_VAR(tmp7,"tmp7");
+					HX_STACK_LINE(28)
+					if ((tmp7)){
+						HX_STACK_LINE(28)
+						cl = ((::hx::Class)(plugin));
+					}
+					else{
+						HX_STACK_LINE(28)
+						::flixel::FlxBasic tmp8 = plugin;		HX_STACK_VAR(tmp8,"tmp8");
+						HX_STACK_LINE(28)
+						::hx::Class tmp9 = ::Type_obj::getClass(tmp8);		HX_STACK_VAR(tmp9,"tmp9");
+						HX_STACK_LINE(28)
+						cl = tmp9;
+					}
+					HX_STACK_LINE(28)
+					::hx::Class tmp8 = cl;		HX_STACK_VAR(tmp8,"tmp8");
+					HX_STACK_LINE(28)
+					::String tmp9 = ::Type_obj::getClassName(tmp8);		HX_STACK_VAR(tmp9,"tmp9");
+					HX_STACK_LINE(28)
+					::String s = tmp9;		HX_STACK_VAR(s,"s");
+					HX_STACK_LINE(28)
+					bool tmp10 = (s != null());		HX_STACK_VAR(tmp10,"tmp10");
+					HX_STACK_LINE(28)
+					if ((tmp10)){
+						HX_STACK_LINE(28)
+						::String tmp11 = s;		HX_STACK_VAR(tmp11,"tmp11");
+						HX_STACK_LINE(28)
+						::String tmp12 = ::StringTools_obj::replace(tmp11,HX_HCSTRING("::","\xc0","\x32","\x00","\x00"),HX_HCSTRING(".","\x2e","\x00","\x00","\x00"));		HX_STACK_VAR(tmp12,"tmp12");
+						HX_STACK_LINE(28)
+						s = tmp12;
+						HX_STACK_LINE(28)
+						bool tmp13 = Simple;		HX_STACK_VAR(tmp13,"tmp13");
+						HX_STACK_LINE(28)
+						if ((tmp13)){
+							HX_STACK_LINE(28)
+							int tmp14 = s.lastIndexOf(HX_HCSTRING(".","\x2e","\x00","\x00","\x00"),null());		HX_STACK_VAR(tmp14,"tmp14");
+							HX_STACK_LINE(28)
+							int tmp15 = (tmp14 + (int)1);		HX_STACK_VAR(tmp15,"tmp15");
+							HX_STACK_LINE(28)
+							::String tmp16 = s.substr(tmp15,null());		HX_STACK_VAR(tmp16,"tmp16");
+							HX_STACK_LINE(28)
+							s = tmp16;
+						}
+					}
+					HX_STACK_LINE(28)
+					tmp5 = s;
+				}
+				HX_STACK_LINE(28)
+				tmp3 = (tmp4 == tmp5);
+			}
+			HX_STACK_LINE(28)
+			if ((tmp3)){
+				HX_STACK_LINE(30)
+				::flixel::input::mouse::FlxMouseEventManager tmp4 = Plugin;		HX_STACK_VAR(tmp4,"tmp4");
+				HX_STACK_LINE(30)
+				return tmp4;
+			}
+		}
+	}
+	HX_STACK_LINE(35)
+	::flixel::input::mouse::FlxMouseEventManager tmp = Plugin;		HX_STACK_VAR(tmp,"tmp");
+	HX_STACK_LINE(35)
+	this->list->__Field(HX_HCSTRING("push","\xda","\x11","\x61","\x4a"), hx::paccDynamic )(tmp);
+	HX_STACK_LINE(36)
+	::flixel::input::mouse::FlxMouseEventManager tmp1 = Plugin;		HX_STACK_VAR(tmp1,"tmp1");
+	HX_STACK_LINE(36)
+	return tmp1;
+}
+
+
+HX_DEFINE_DYNAMIC_FUNC1(PluginFrontEnd_obj,add_flixel_input_mouse_FlxMouseEventManager,return )
 
 ::flixel::tweens::FlxTweenManager PluginFrontEnd_obj::add_flixel_tweens_FlxTweenManager( ::flixel::tweens::FlxTweenManager Plugin){
 	HX_STACK_FRAME("flixel.system.frontEnds.PluginFrontEnd","add_flixel_tweens_FlxTweenManager",0xfdb05bd3,"flixel.system.frontEnds.PluginFrontEnd.add_flixel_tweens_FlxTweenManager","flixel/system/frontEnds/PluginFrontEnd.hx",24,0xbff70e9e)
@@ -704,6 +877,9 @@ Dynamic PluginFrontEnd_obj::__Field(const ::String &inName,hx::PropertyAccess in
 		break;
 	case 33:
 		if (HX_FIELD_EQ(inName,"add_flixel_tweens_FlxTweenManager") ) { return add_flixel_tweens_FlxTweenManager_dyn(); }
+		break;
+	case 43:
+		if (HX_FIELD_EQ(inName,"add_flixel_input_mouse_FlxMouseEventManager") ) { return add_flixel_input_mouse_FlxMouseEventManager_dyn(); }
 	}
 	return super::__Field(inName,inCallProp);
 }
@@ -732,6 +908,7 @@ static hx::StaticInfo *sStaticStorageInfo = 0;
 #endif
 
 static ::String sMemberFields[] = {
+	HX_HCSTRING("add_flixel_input_mouse_FlxMouseEventManager","\x9a","\x2c","\x1e","\x8f"),
 	HX_HCSTRING("add_flixel_tweens_FlxTweenManager","\xc2","\x6b","\x6c","\x9d"),
 	HX_HCSTRING("add_flixel_util_FlxTimerManager","\xc2","\xda","\x89","\x3f"),
 	HX_HCSTRING("list","\x5e","\x1c","\xb3","\x47"),

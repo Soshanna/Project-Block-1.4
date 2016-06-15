@@ -175,18 +175,22 @@ Void OverState_obj::create( ){
 		HX_STACK_LINE(39)
 		Dynamic tmp17 = this->clickMenu_dyn();		HX_STACK_VAR(tmp17,"tmp17");
 		HX_STACK_LINE(39)
-		::flixel::ui::FlxButton tmp18 = ::flixel::ui::FlxButton_obj::__new(tmp14,tmp16,HX_HCSTRING("Back","\x47","\x06","\xea","\x2b"),tmp17);		HX_STACK_VAR(tmp18,"tmp18");
+		::flixel::ui::FlxButton tmp18 = ::flixel::ui::FlxButton_obj::__new(tmp14,tmp16,HX_HCSTRING("","\x00","\x00","\x00","\x00"),tmp17);		HX_STACK_VAR(tmp18,"tmp18");
 		HX_STACK_LINE(39)
-		this->_btnMenu = tmp18;
+		::flixel::ui::FlxButton _btnMenu = tmp18;		HX_STACK_VAR(_btnMenu,"_btnMenu");
 		HX_STACK_LINE(40)
-		::flixel::ui::FlxButton tmp19 = this->_btnMenu;		HX_STACK_VAR(tmp19,"tmp19");
-		HX_STACK_LINE(40)
-		tmp19->screenCenter(::flixel::util::FlxAxes_obj::X);
+		_btnMenu->loadGraphic(HX_HCSTRING("assets/img/Buttons/terug-3.png","\x0e","\x76","\xb8","\x35"),null(),null(),null(),null(),null());
 		HX_STACK_LINE(41)
-		::flixel::ui::FlxButton tmp20 = this->_btnMenu;		HX_STACK_VAR(tmp20,"tmp20");
-		HX_STACK_LINE(41)
-		this->add(tmp20);
-		HX_STACK_LINE(43)
+		_btnMenu->screenCenter(::flixel::util::FlxAxes_obj::X);
+		HX_STACK_LINE(42)
+		::flixel::ui::FlxButton tmp19 = _btnMenu;		HX_STACK_VAR(tmp19,"tmp19");
+		HX_STACK_LINE(42)
+		this->add(tmp19);
+		HX_STACK_LINE(44)
+		::flixel::FlxCamera tmp20 = ::flixel::FlxG_obj::camera;		HX_STACK_VAR(tmp20,"tmp20");
+		HX_STACK_LINE(44)
+		tmp20->fade((int)-16777216,((Float).20),true,null(),null());
+		HX_STACK_LINE(45)
 		this->super::create();
 	}
 return null();
@@ -195,31 +199,31 @@ return null();
 
 Void OverState_obj::clickMenu( ){
 {
-		HX_STACK_FRAME("menu.OverState","clickMenu",0x0d07e207,"menu.OverState.clickMenu","menu/OverState.hx",46,0xda0ba891)
+		HX_STACK_FRAME("menu.OverState","clickMenu",0x0d07e207,"menu.OverState.clickMenu","menu/OverState.hx",48,0xda0ba891)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(47)
+		HX_STACK_LINE(49)
 		::flixel::FlxCamera tmp = ::flixel::FlxG_obj::camera;		HX_STACK_VAR(tmp,"tmp");
 
 		HX_BEGIN_LOCAL_FUNC_S0(hx::LocalFunc,_Function_1_1)
 		int __ArgCount() const { return 0; }
 		Void run(){
-			HX_STACK_FRAME("*","_Function_1_1",0x5200ed37,"*._Function_1_1","menu/OverState.hx",48,0xda0ba891)
+			HX_STACK_FRAME("*","_Function_1_1",0x5200ed37,"*._Function_1_1","menu/OverState.hx",50,0xda0ba891)
 			{
-				HX_STACK_LINE(48)
+				HX_STACK_LINE(50)
 				::menu::MenuState tmp1 = ::menu::MenuState_obj::__new(null());		HX_STACK_VAR(tmp1,"tmp1");
-				HX_STACK_LINE(48)
+				HX_STACK_LINE(50)
 				::flixel::FlxState nextState = tmp1;		HX_STACK_VAR(nextState,"nextState");
-				HX_STACK_LINE(48)
+				HX_STACK_LINE(50)
 				::flixel::FlxGame tmp2 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp2,"tmp2");
-				HX_STACK_LINE(48)
+				HX_STACK_LINE(50)
 				::flixel::FlxState tmp3 = nextState;		HX_STACK_VAR(tmp3,"tmp3");
-				HX_STACK_LINE(48)
+				HX_STACK_LINE(50)
 				bool tmp4 = tmp2->_state->switchTo(tmp3);		HX_STACK_VAR(tmp4,"tmp4");
-				HX_STACK_LINE(48)
+				HX_STACK_LINE(50)
 				if ((tmp4)){
-					HX_STACK_LINE(48)
+					HX_STACK_LINE(50)
 					::flixel::FlxGame tmp5 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp5,"tmp5");
-					HX_STACK_LINE(48)
+					HX_STACK_LINE(50)
 					tmp5->_requestedState = nextState;
 				}
 			}
@@ -227,7 +231,7 @@ Void OverState_obj::clickMenu( ){
 		}
 		HX_END_LOCAL_FUNC0((void))
 
-		HX_STACK_LINE(47)
+		HX_STACK_LINE(49)
 		tmp->fade((int)-16777216,((Float).20),false, Dynamic(new _Function_1_1()),null());
 	}
 return null();

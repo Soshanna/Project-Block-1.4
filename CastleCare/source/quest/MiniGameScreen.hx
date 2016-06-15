@@ -32,7 +32,7 @@ class MiniGameScreen extends FlxState
 	var object1 = null;
 	var score = 0;
 	var turns:Int = 60;
-	var maxScore:Int = 10;
+	var maxScore:Int = 50;
 	var typeCount:Int = 0;
 	var lastType:Int = 0;
 	var lastCount:Int = 0;

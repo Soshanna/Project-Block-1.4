@@ -76,13 +76,13 @@ namespace quest{
 
 Void JobListState_obj::__construct(Dynamic MaxSize)
 {
-HX_STACK_FRAME("quest.JobListState","new",0x7fa04f34,"quest.JobListState.new","quest/JobListState.hx",15,0x9f94bbdb)
+HX_STACK_FRAME("quest.JobListState","new",0x7fa04f34,"quest.JobListState.new","quest/JobListState.hx",14,0x9f94bbdb)
 HX_STACK_THIS(this)
 HX_STACK_ARG(MaxSize,"MaxSize")
 {
-	HX_STACK_LINE(15)
+	HX_STACK_LINE(14)
 	Dynamic tmp = MaxSize;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(15)
+	HX_STACK_LINE(14)
 	super::__construct(tmp);
 }
 ;
@@ -104,55 +104,55 @@ Dynamic JobListState_obj::__Create(hx::DynamicArray inArgs)
 
 Void JobListState_obj::create( ){
 {
-		HX_STACK_FRAME("quest.JobListState","create",0x6946e4a8,"quest.JobListState.create","quest/JobListState.hx",21,0x9f94bbdb)
+		HX_STACK_FRAME("quest.JobListState","create",0x6946e4a8,"quest.JobListState.create","quest/JobListState.hx",20,0x9f94bbdb)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(22)
+		HX_STACK_LINE(21)
 		::flixel::text::FlxText tmp = ::flixel::text::FlxText_obj::__new((int)20,(int)0,(int)0,HX_HCSTRING("JobList Screen","\x31","\xe6","\x59","\x2c"),(int)15,null());		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(22)
+		HX_STACK_LINE(21)
 		this->_txtTitle = tmp;
-		HX_STACK_LINE(23)
+		HX_STACK_LINE(22)
 		::flixel::text::FlxText tmp1 = this->_txtTitle;		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(23)
+		HX_STACK_LINE(22)
 		tmp1->set_alignment(HX_HCSTRING("center","\xd5","\x25","\xdb","\x05"));
-		HX_STACK_LINE(24)
+		HX_STACK_LINE(23)
 		::flixel::text::FlxText tmp2 = this->_txtTitle;		HX_STACK_VAR(tmp2,"tmp2");
-		HX_STACK_LINE(24)
+		HX_STACK_LINE(23)
 		tmp2->screenCenter(::flixel::util::FlxAxes_obj::X);
-		HX_STACK_LINE(25)
+		HX_STACK_LINE(24)
 		::flixel::text::FlxText tmp3 = this->_txtTitle;		HX_STACK_VAR(tmp3,"tmp3");
-		HX_STACK_LINE(25)
+		HX_STACK_LINE(24)
 		this->add(tmp3);
-		HX_STACK_LINE(27)
+		HX_STACK_LINE(26)
 		Dynamic tmp4 = this->clickMiniGame_dyn();		HX_STACK_VAR(tmp4,"tmp4");
-		HX_STACK_LINE(27)
+		HX_STACK_LINE(26)
 		::flixel::ui::FlxButton tmp5 = ::flixel::ui::FlxButton_obj::__new((int)600,(int)300,HX_HCSTRING("MiniGame","\x49","\xc2","\x06","\xe2"),tmp4);		HX_STACK_VAR(tmp5,"tmp5");
-		HX_STACK_LINE(27)
+		HX_STACK_LINE(26)
 		this->miniGameButton = tmp5;
-		HX_STACK_LINE(28)
+		HX_STACK_LINE(27)
 		::flixel::ui::FlxButton tmp6 = this->miniGameButton;		HX_STACK_VAR(tmp6,"tmp6");
-		HX_STACK_LINE(28)
+		HX_STACK_LINE(27)
 		this->add(tmp6);
-		HX_STACK_LINE(30)
+		HX_STACK_LINE(29)
 		int tmp7 = ::flixel::FlxG_obj::width;		HX_STACK_VAR(tmp7,"tmp7");
-		HX_STACK_LINE(30)
+		HX_STACK_LINE(29)
 		Float tmp8 = (Float(tmp7) / Float((int)2));		HX_STACK_VAR(tmp8,"tmp8");
-		HX_STACK_LINE(30)
+		HX_STACK_LINE(29)
 		Float tmp9 = (tmp8 + (int)10);		HX_STACK_VAR(tmp9,"tmp9");
-		HX_STACK_LINE(30)
+		HX_STACK_LINE(29)
 		int tmp10 = ::flixel::FlxG_obj::height;		HX_STACK_VAR(tmp10,"tmp10");
-		HX_STACK_LINE(30)
+		HX_STACK_LINE(29)
 		int tmp11 = (tmp10 - (int)28);		HX_STACK_VAR(tmp11,"tmp11");
-		HX_STACK_LINE(30)
+		HX_STACK_LINE(29)
 		Dynamic tmp12 = this->clickBack_dyn();		HX_STACK_VAR(tmp12,"tmp12");
-		HX_STACK_LINE(30)
+		HX_STACK_LINE(29)
 		::flixel::ui::FlxButton tmp13 = ::flixel::ui::FlxButton_obj::__new(tmp9,tmp11,HX_HCSTRING("Back","\x47","\x06","\xea","\x2b"),tmp12);		HX_STACK_VAR(tmp13,"tmp13");
-		HX_STACK_LINE(30)
+		HX_STACK_LINE(29)
 		this->backButton = tmp13;
-		HX_STACK_LINE(31)
+		HX_STACK_LINE(30)
 		::flixel::ui::FlxButton tmp14 = this->backButton;		HX_STACK_VAR(tmp14,"tmp14");
-		HX_STACK_LINE(31)
+		HX_STACK_LINE(30)
 		this->add(tmp14);
-		HX_STACK_LINE(33)
+		HX_STACK_LINE(32)
 		this->super::create();
 	}
 return null();
@@ -161,31 +161,31 @@ return null();
 
 Void JobListState_obj::clickBack( ){
 {
-		HX_STACK_FRAME("quest.JobListState","clickBack",0x20959c63,"quest.JobListState.clickBack","quest/JobListState.hx",36,0x9f94bbdb)
+		HX_STACK_FRAME("quest.JobListState","clickBack",0x20959c63,"quest.JobListState.clickBack","quest/JobListState.hx",35,0x9f94bbdb)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(37)
+		HX_STACK_LINE(36)
 		::flixel::FlxCamera tmp = ::flixel::FlxG_obj::camera;		HX_STACK_VAR(tmp,"tmp");
 
 		HX_BEGIN_LOCAL_FUNC_S0(hx::LocalFunc,_Function_1_1)
 		int __ArgCount() const { return 0; }
 		Void run(){
-			HX_STACK_FRAME("*","_Function_1_1",0x5200ed37,"*._Function_1_1","quest/JobListState.hx",38,0x9f94bbdb)
+			HX_STACK_FRAME("*","_Function_1_1",0x5200ed37,"*._Function_1_1","quest/JobListState.hx",37,0x9f94bbdb)
 			{
-				HX_STACK_LINE(38)
+				HX_STACK_LINE(37)
 				::quest::QuestState tmp1 = ::quest::QuestState_obj::__new(null());		HX_STACK_VAR(tmp1,"tmp1");
-				HX_STACK_LINE(38)
+				HX_STACK_LINE(37)
 				::flixel::FlxState nextState = tmp1;		HX_STACK_VAR(nextState,"nextState");
-				HX_STACK_LINE(38)
+				HX_STACK_LINE(37)
 				::flixel::FlxGame tmp2 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp2,"tmp2");
-				HX_STACK_LINE(38)
+				HX_STACK_LINE(37)
 				::flixel::FlxState tmp3 = nextState;		HX_STACK_VAR(tmp3,"tmp3");
-				HX_STACK_LINE(38)
+				HX_STACK_LINE(37)
 				bool tmp4 = tmp2->_state->switchTo(tmp3);		HX_STACK_VAR(tmp4,"tmp4");
-				HX_STACK_LINE(38)
+				HX_STACK_LINE(37)
 				if ((tmp4)){
-					HX_STACK_LINE(38)
+					HX_STACK_LINE(37)
 					::flixel::FlxGame tmp5 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp5,"tmp5");
-					HX_STACK_LINE(38)
+					HX_STACK_LINE(37)
 					tmp5->_requestedState = nextState;
 				}
 			}
@@ -193,7 +193,7 @@ Void JobListState_obj::clickBack( ){
 		}
 		HX_END_LOCAL_FUNC0((void))
 
-		HX_STACK_LINE(37)
+		HX_STACK_LINE(36)
 		tmp->fade((int)-16777216,((Float).20),false, Dynamic(new _Function_1_1()),null());
 	}
 return null();
@@ -204,31 +204,31 @@ HX_DEFINE_DYNAMIC_FUNC0(JobListState_obj,clickBack,(void))
 
 Void JobListState_obj::clickMiniGame( ){
 {
-		HX_STACK_FRAME("quest.JobListState","clickMiniGame",0x426d9665,"quest.JobListState.clickMiniGame","quest/JobListState.hx",42,0x9f94bbdb)
+		HX_STACK_FRAME("quest.JobListState","clickMiniGame",0x426d9665,"quest.JobListState.clickMiniGame","quest/JobListState.hx",41,0x9f94bbdb)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(43)
+		HX_STACK_LINE(42)
 		::flixel::FlxCamera tmp = ::flixel::FlxG_obj::camera;		HX_STACK_VAR(tmp,"tmp");
 
 		HX_BEGIN_LOCAL_FUNC_S0(hx::LocalFunc,_Function_1_1)
 		int __ArgCount() const { return 0; }
 		Void run(){
-			HX_STACK_FRAME("*","_Function_1_1",0x5200ed37,"*._Function_1_1","quest/JobListState.hx",44,0x9f94bbdb)
+			HX_STACK_FRAME("*","_Function_1_1",0x5200ed37,"*._Function_1_1","quest/JobListState.hx",43,0x9f94bbdb)
 			{
-				HX_STACK_LINE(44)
+				HX_STACK_LINE(43)
 				::quest::MiniGameScreen tmp1 = ::quest::MiniGameScreen_obj::__new(null());		HX_STACK_VAR(tmp1,"tmp1");
-				HX_STACK_LINE(44)
+				HX_STACK_LINE(43)
 				::flixel::FlxState nextState = tmp1;		HX_STACK_VAR(nextState,"nextState");
-				HX_STACK_LINE(44)
+				HX_STACK_LINE(43)
 				::flixel::FlxGame tmp2 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp2,"tmp2");
-				HX_STACK_LINE(44)
+				HX_STACK_LINE(43)
 				::flixel::FlxState tmp3 = nextState;		HX_STACK_VAR(tmp3,"tmp3");
-				HX_STACK_LINE(44)
+				HX_STACK_LINE(43)
 				bool tmp4 = tmp2->_state->switchTo(tmp3);		HX_STACK_VAR(tmp4,"tmp4");
-				HX_STACK_LINE(44)
+				HX_STACK_LINE(43)
 				if ((tmp4)){
-					HX_STACK_LINE(44)
+					HX_STACK_LINE(43)
 					::flixel::FlxGame tmp5 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp5,"tmp5");
-					HX_STACK_LINE(44)
+					HX_STACK_LINE(43)
 					tmp5->_requestedState = nextState;
 				}
 			}
@@ -236,7 +236,7 @@ Void JobListState_obj::clickMiniGame( ){
 		}
 		HX_END_LOCAL_FUNC0((void))
 
-		HX_STACK_LINE(43)
+		HX_STACK_LINE(42)
 		tmp->fade((int)-16777216,((Float).20),false, Dynamic(new _Function_1_1()),null());
 	}
 return null();

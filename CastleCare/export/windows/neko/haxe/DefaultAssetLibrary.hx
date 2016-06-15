@@ -111,6 +111,14 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
 		Font.registerFont (__ASSET__flixel_fonts_nokiafc22_ttf);
 		Font.registerFont (__ASSET__flixel_fonts_monsterrat_ttf);
 		
@@ -119,6 +127,14 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -592,11 +608,11 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if (windows || mac || linux)
 
 
-@:sound("C:/HaxeToolkit/haxe/lib/flixel/4,0,1/assets/sounds/beep.ogg") @:keep #if display private #end class __ASSET__flixel_sounds_beep_ogg extends flash.media.Sound {}
-@:sound("C:/HaxeToolkit/haxe/lib/flixel/4,0,1/assets/sounds/flixel.ogg") @:keep #if display private #end class __ASSET__flixel_sounds_flixel_ogg extends flash.media.Sound {}
-@:font("C:/HaxeToolkit/haxe/lib/flixel/4,0,1/assets/fonts/nokiafc22.ttf") @:keep #if display private #end class __ASSET__flixel_fonts_nokiafc22_ttf extends flash.text.Font {}
-@:font("C:/HaxeToolkit/haxe/lib/flixel/4,0,1/assets/fonts/monsterrat.ttf") @:keep #if display private #end class __ASSET__flixel_fonts_monsterrat_ttf extends flash.text.Font {}
-@:bitmap("C:/HaxeToolkit/haxe/lib/flixel/4,0,1/assets/images/ui/button.png") @:keep #if display private #end class __ASSET__flixel_images_ui_button_png extends flash.display.BitmapData {}
+@:sound("C:/HaxeToolkit/flixel/4,0,1/assets/sounds/beep.ogg") @:keep #if display private #end class __ASSET__flixel_sounds_beep_ogg extends flash.media.Sound {}
+@:sound("C:/HaxeToolkit/flixel/4,0,1/assets/sounds/flixel.ogg") @:keep #if display private #end class __ASSET__flixel_sounds_flixel_ogg extends flash.media.Sound {}
+@:font("C:/HaxeToolkit/flixel/4,0,1/assets/fonts/nokiafc22.ttf") @:keep #if display private #end class __ASSET__flixel_fonts_nokiafc22_ttf extends flash.text.Font {}
+@:font("C:/HaxeToolkit/flixel/4,0,1/assets/fonts/monsterrat.ttf") @:keep #if display private #end class __ASSET__flixel_fonts_monsterrat_ttf extends flash.text.Font {}
+@:bitmap("C:/HaxeToolkit/flixel/4,0,1/assets/images/ui/button.png") @:keep #if display private #end class __ASSET__flixel_images_ui_button_png extends flash.display.BitmapData {}
 
 
 
@@ -672,6 +688,14 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (openfl && !flash)
 		
 		openfl.text.Font.registerFont (__ASSET__OPENFL__assets_data_glecb_ttf);
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
@@ -806,6 +830,22 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/img/Buttons/upgrades-1.png", AssetType.IMAGE);
 		path.set ("assets/img/Buttons/upgrades-2.png", "assets/img/Buttons/upgrades-2.png");
 		type.set ("assets/img/Buttons/upgrades-2.png", AssetType.IMAGE);
+		path.set ("assets/img/Characters/architect.png", "assets/img/Characters/architect.png");
+		type.set ("assets/img/Characters/architect.png", AssetType.IMAGE);
+		path.set ("assets/img/Characters/bever-button.png", "assets/img/Characters/bever-button.png");
+		type.set ("assets/img/Characters/bever-button.png", AssetType.IMAGE);
+		path.set ("assets/img/Characters/duck-button.png", "assets/img/Characters/duck-button.png");
+		type.set ("assets/img/Characters/duck-button.png", AssetType.IMAGE);
+		path.set ("assets/img/Characters/NPC-Duck.png", "assets/img/Characters/NPC-Duck.png");
+		type.set ("assets/img/Characters/NPC-Duck.png", AssetType.IMAGE);
+		path.set ("assets/img/Characters/penguin-button.png", "assets/img/Characters/penguin-button.png");
+		type.set ("assets/img/Characters/penguin-button.png", AssetType.IMAGE);
+		path.set ("assets/img/Characters/plaguepenguinnew.png", "assets/img/Characters/plaguepenguinnew.png");
+		type.set ("assets/img/Characters/plaguepenguinnew.png", AssetType.IMAGE);
+		path.set ("assets/img/Characters/turtle-button.png", "assets/img/Characters/turtle-button.png");
+		type.set ("assets/img/Characters/turtle-button.png", AssetType.IMAGE);
+		path.set ("assets/img/Characters/turtle.png", "assets/img/Characters/turtle.png");
+		type.set ("assets/img/Characters/turtle.png", AssetType.IMAGE);
 		path.set ("assets/img/EmptyEnergy.png", "assets/img/EmptyEnergy.png");
 		type.set ("assets/img/EmptyEnergy.png", AssetType.IMAGE);
 		path.set ("assets/img/EnergySymbol.png", "assets/img/EnergySymbol.png");
@@ -963,6 +1003,30 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/img/Buttons/upgrades-2.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
+		id = "assets/img/Characters/architect.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/Characters/bever-button.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/Characters/duck-button.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/Characters/NPC-Duck.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/Characters/penguin-button.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/Characters/plaguepenguinnew.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/Characters/turtle-button.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/Characters/turtle.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
 		id = "assets/img/EmptyEnergy.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
@@ -1054,6 +1118,14 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		className.set ("assets/data/GLECB.TTF", __ASSET__assets_data_glecb_ttf);
 		type.set ("assets/data/GLECB.TTF", AssetType.FONT);
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -1892,6 +1964,14 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
+
+
+
+
+
+
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_beep_ogg extends null { }
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_flixel_ogg extends null { }
 @:keep @:bind #if display private #end class __ASSET__flixel_fonts_nokiafc22_ttf extends null { }
@@ -1902,6 +1982,14 @@ class DefaultAssetLibrary extends AssetLibrary {
 #elseif html5
 
 @:keep #if display private #end class __ASSET__assets_data_glecb_ttf extends lime.text.Font { public function new () { super (); name = "Gloucester MT Extra Condensed"; } } 
+
+
+
+
+
+
+
+
 
 
 
@@ -1969,11 +2057,11 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if (windows || mac || linux || cpp)
 
 
-@:file("C:/HaxeToolkit/haxe/lib/flixel/4,0,1/assets/sounds/beep.ogg") #if display private #end class __ASSET__flixel_sounds_beep_ogg extends lime.utils.ByteArray {}
-@:file("C:/HaxeToolkit/haxe/lib/flixel/4,0,1/assets/sounds/flixel.ogg") #if display private #end class __ASSET__flixel_sounds_flixel_ogg extends lime.utils.ByteArray {}
-@:font("C:/HaxeToolkit/haxe/lib/flixel/4,0,1/assets/fonts/nokiafc22.ttf") #if display private #end class __ASSET__flixel_fonts_nokiafc22_ttf extends lime.text.Font {}
-@:font("C:/HaxeToolkit/haxe/lib/flixel/4,0,1/assets/fonts/monsterrat.ttf") #if display private #end class __ASSET__flixel_fonts_monsterrat_ttf extends lime.text.Font {}
-@:image("C:/HaxeToolkit/haxe/lib/flixel/4,0,1/assets/images/ui/button.png") #if display private #end class __ASSET__flixel_images_ui_button_png extends lime.graphics.Image {}
+@:file("C:/HaxeToolkit/flixel/4,0,1/assets/sounds/beep.ogg") #if display private #end class __ASSET__flixel_sounds_beep_ogg extends lime.utils.ByteArray {}
+@:file("C:/HaxeToolkit/flixel/4,0,1/assets/sounds/flixel.ogg") #if display private #end class __ASSET__flixel_sounds_flixel_ogg extends lime.utils.ByteArray {}
+@:font("C:/HaxeToolkit/flixel/4,0,1/assets/fonts/nokiafc22.ttf") #if display private #end class __ASSET__flixel_fonts_nokiafc22_ttf extends lime.text.Font {}
+@:font("C:/HaxeToolkit/flixel/4,0,1/assets/fonts/monsterrat.ttf") #if display private #end class __ASSET__flixel_fonts_monsterrat_ttf extends lime.text.Font {}
+@:image("C:/HaxeToolkit/flixel/4,0,1/assets/images/ui/button.png") #if display private #end class __ASSET__flixel_images_ui_button_png extends lime.graphics.Image {}
 
 
 

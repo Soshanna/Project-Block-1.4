@@ -13,11 +13,13 @@ HX_DECLARE_CLASS1(flixel,FlxObject)
 HX_DECLARE_CLASS1(flixel,FlxSprite)
 HX_DECLARE_CLASS1(flixel,FlxState)
 HX_DECLARE_CLASS2(flixel,group,FlxTypedGroup)
+HX_DECLARE_CLASS2(flixel,group,FlxTypedSpriteGroup)
 HX_DECLARE_CLASS2(flixel,input,IFlxInput)
 HX_DECLARE_CLASS2(flixel,text,FlxText)
 HX_DECLARE_CLASS2(flixel,ui,FlxButton)
 HX_DECLARE_CLASS2(flixel,ui,FlxTypedButton_flixel_text_FlxText)
 HX_DECLARE_CLASS2(flixel,util,IFlxDestroyable)
+HX_DECLARE_CLASS1(quest,Item)
 HX_DECLARE_CLASS1(quest,MiniGameScreen)
 namespace quest{
 
@@ -46,12 +48,53 @@ class HXCPP_CLASS_ATTRIBUTES  MiniGameScreen_obj : public ::flixel::FlxState_obj
 		void __Visit(HX_VISIT_PARAMS);
 		::String __ToString() const { return HX_HCSTRING("MiniGameScreen","\x95","\xce","\x14","\xc6"); }
 
+		::flixel::group::FlxTypedSpriteGroup itemGroup;
+		Array< ::Dynamic > rowArray;
 		::flixel::ui::FlxButton backButton;
-		::flixel::text::FlxText _txtTitle;
+		::flixel::text::FlxText _txtScore;
+		::flixel::text::FlxText _txtTurns;
+		::flixel::text::FlxText _txtMaxScore;
+		int a;
+		::quest::Item object1;
+		int score;
+		int turns;
+		int maxScore;
+		int typeCount;
+		int lastType;
+		int lastCount;
 		virtual Void create( );
 
-		virtual Void clickBack( );
-		Dynamic clickBack_dyn();
+		virtual Void itemCheck( );
+		Dynamic itemCheck_dyn();
+
+		virtual Void makeItems( );
+		Dynamic makeItems_dyn();
+
+		virtual Void itemClicked( ::quest::Item button);
+		Dynamic itemClicked_dyn();
+
+		virtual Void checkItemHor( ::quest::Item item,int i);
+		Dynamic checkItemHor_dyn();
+
+		virtual Void checkItemVer( ::quest::Item item,int i);
+		Dynamic checkItemVer_dyn();
+
+		virtual Void removeMarked( ::quest::Item item);
+		Dynamic removeMarked_dyn();
+
+		virtual Void replaceItem( ::quest::Item item1,int random);
+		Dynamic replaceItem_dyn();
+
+		virtual Void winScreen( );
+		Dynamic winScreen_dyn();
+
+		virtual Void loseScreen( );
+		Dynamic loseScreen_dyn();
+
+		virtual Void buttonPress( );
+		Dynamic buttonPress_dyn();
+
+		virtual Void update( Float elapsed);
 
 };
 
