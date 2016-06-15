@@ -21,13 +21,16 @@ class UpgradeRoomState extends FlxState
 		_txtTitle.screenCenter(X);
 		add(_txtTitle);
 		
-		backButton = new FlxButton((FlxG.width / 2) + 10, FlxG.height - 28, "Back", clickBack);
+		var backButton:FlxButton = new FlxButton((FlxG.width / 2) -70, FlxG.height -70,"", clickBack);
+		backButton.loadGraphic("assets/img/Buttons/terug-3.png");
+ 		backButton.screenCenter(X);
 		add(backButton);
 		
 		super.create();
 	}
 	
 	function clickBack():Void {
+		backButton.loadGraphic("assets/img/Buttons/terug-4.png");
 		FlxG.camera.fade(FlxColor.BLACK, .20, false ,function(){
 			FlxG.switchState(new UpgradeCastleState());
 		});

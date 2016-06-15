@@ -23,14 +23,18 @@ class UpgradeCastleState extends FlxState
 		_txtTitle.screenCenter(X);
 		add(_txtTitle);
 		
-		backButton = new FlxButton((FlxG.width / 2) + 10, FlxG.height - 28, "Back", clickBack);
+		backButton = new FlxButton((FlxG.width / 2) + 10, FlxG.height - 70, "", clickBack);
+		backButton.loadGraphic("assets/img/Buttons/terug-3.png");
+		backButton.screenCenter(X);
 		add(backButton);
 		
-		upgradeInteriorButton = new FlxButton(0, 350, "Upgrade Interior", clickInterior);
+		var upgradeInteriorButton:FlxButton = new FlxButton(0,250, "", clickInterior);
+		upgradeInteriorButton.loadGraphic("assets/img/Buttons/interieur-1.png");
 		upgradeInteriorButton.screenCenter(X);
 		add(upgradeInteriorButton);
 		
-		upgradeRoomButton = new FlxButton(0, 450, "Upgrade Room", clickRoom);
+		upgradeRoomButton = new FlxButton(0, 400, "", clickRoom);
+		upgradeRoomButton.loadGraphic("assets/img/Buttons/kamers-1.png");
 		upgradeRoomButton.screenCenter(X);
 		add(upgradeRoomButton);
 		
@@ -38,18 +42,21 @@ class UpgradeCastleState extends FlxState
 	}
 	
 	function clickBack():Void {
+		backButton.loadGraphic("assets/img/Buttons/terug-4.png");
 		FlxG.camera.fade(FlxColor.BLACK, .20, false ,function(){
 			FlxG.switchState(new UpgradeMenuState());
 		});
 	}
 	
 	function clickInterior():Void {
+		upgradeInteriorButton.loadGraphic("assets/img/Buttons/interieur-2.png");
 		FlxG.camera.fade(FlxColor.BLACK, .20, false, function(){
 			FlxG.switchState(new UpgradeInteriorState());
 		});
 	}
 	
 	function clickRoom():Void {
+		upgradeRoomButton.loadGraphic("assets/img/Buttons/kamers-2.png");
 		FlxG.camera.fade(FlxColor.BLACK, .20, false, function(){
 			FlxG.switchState(new UpgradeRoomState());
 		});

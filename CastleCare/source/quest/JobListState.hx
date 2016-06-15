@@ -50,13 +50,16 @@ class JobListState extends FlxState
 		beverButton.loadGraphic("assets/img/Characters/bever-button.png", false, 60, 60);
 		add(beverButton);
 		
-		backButton = new FlxButton((FlxG.width / 2) + 10, FlxG.height - 28, "Back", clickBack);
+		var backButton:FlxButton = new FlxButton((FlxG.width / 2) + 10, FlxG.height - 70, "", clickBack);
+		backButton.loadGraphic("assets/img/Buttons/terug-3.png");
+		backButton.screenCenter(X);
 		add(backButton);
 		
 		super.create();
 	}
 	
 	function clickBack():Void {
+		backButton.loadGraphic("assets/img/Buttons/terug-4.png");
 		FlxG.camera.fade(FlxColor.BLACK, .20, false ,function(){
 			FlxG.switchState(new PlayState());
 		});

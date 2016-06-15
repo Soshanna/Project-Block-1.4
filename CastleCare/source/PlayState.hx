@@ -75,7 +75,10 @@ class PlayState extends FlxState
 		_castleNavigation = new Castle();
 		add(_castleNavigation);	
 		
-		_btnMenu = new FlxButton((FlxG.width / 2) + 520, FlxG.height - 35, "Back", clickMenu);
+		var _btnMenu:FlxButton = new FlxButton (0, 0, "", clickMenu);
+		_btnMenu.loadGraphic("assets/img/Buttons/terug-3.png");
+		_btnMenu.x = (FlxG.width / 2) +500;
+		_btnMenu.y = FlxG.height - 80;
 		add(_btnMenu);
 		
 		_btnQuest = new FlxButton(20, _btnMenu.y, "Quest", clickQuest);
@@ -120,6 +123,7 @@ class PlayState extends FlxState
 	}
 	
 	private function clickMenu():Void{
+		_btnMenu.loadGraphic("assets/img/Buttons/terug-4.png");
 		FlxG.camera.fade(FlxColor.BLACK, .20, false, function(){
 			FlxG.switchState(new MenuState());
 		});
