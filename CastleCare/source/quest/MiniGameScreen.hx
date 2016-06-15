@@ -29,11 +29,10 @@ class MiniGameScreen extends FlxState
 	var _txtTurns:FlxText;
 	var _txtMaxScore:FlxText;
 	var a:Int = 0;
-	var b:Int = 0;
 	var object1 = null;
 	var score = 0;
-	var turns:Int = 25;
-	var maxScore:Int = 50;
+	var turns:Int = 60;
+	var maxScore:Int = 10;
 	var typeCount:Int = 0;
 	var lastType:Int = 0;
 	var lastCount:Int = 0;
@@ -59,6 +58,11 @@ class MiniGameScreen extends FlxState
 		
 		makeItems();
 		
+		itemCheck();
+		itemCheck();
+	}
+	
+	function itemCheck(){
 		for(i in 0...(rowArray.length)){
 			checkItemHor(rowArray[i], i);
 		}for (i in 0...rowArray.length){
@@ -76,13 +80,6 @@ class MiniGameScreen extends FlxState
 		}for(i in 0...rowArray.length){
 			removeMarked(rowArray[i]);
 		}
-	}
-	
-	function buttonPress(){
-		backButton.loadGraphic("assets/img/Buttons/terug-4.png");
-		FlxG.camera.fade(FlxColor.BLACK, .20, false ,function(){
-			FlxG.switchState(new JobListState());
-		});
 	}
 	
 	function makeItems(){
@@ -115,35 +112,40 @@ class MiniGameScreen extends FlxState
 				item1.x = 60 + (175 * (i - 15));
 				item1.y = 540;
 			}
-			item1.arrayID = b;
-			b += 1;
+			item1.arrayID = i;
 			rowArray.push(item1);
 			itemGroup.add(item1);
 			add(itemGroup);
 		}
 	}
 
-	function itemClicked(button:Item){//*BUGGED*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	function itemClicked(button:Item){
 		a += 1;
 		if(a == 1){
 			object1 = button;
 			object1.onDown.callback = null;
+			for(i in 0...rowArray.length){
+				if(i != object1.arrayID -1 && i != object1.arrayID +1 && i != object1.arrayID -5 && i != object1.arrayID +5){
+					rowArray[i].onDown.callback = null;
+				}else{
+				}
+			}
 		}
 		if(a == 2){
 			var object2 = button;
-			var pos = object2.arrayID;
-			var posx = object2.x;
-			var posy = object2.y;
-			object2.arrayID = object1.arrayID;
-			object1.arrayID = pos;
-			object2.x = object1.x;
-			object2.y = object1.y;
-			object1.x = posx;
-			object1.y = posy;
+			var graph = object2.graphic.key;
+			object2.loadGraphic(object1.graphic.key);
+			object1.loadGraphic(graph);
+			var typ = object2.type;
+			object2.type = object1.type;
+			object1.type = typ;
 			a = 0;
 			turns -= 1;
 			_txtTurns.text = "Turns: " + turns;
-			object1.onDown.callback = itemClicked.bind(object1);
+			itemCheck();
+			for(i in 0...rowArray.length){
+				rowArray[i].onDown.callback = itemClicked.bind(rowArray[i]);
+			}
 		}
 	}
 	
@@ -159,7 +161,9 @@ class MiniGameScreen extends FlxState
 				lastCount = typeCount;
 				if(lastCount >= 3) {
 					for(i in 1...(typeCount + 1)){
-						rowArray[item.arrayID - i].name = "MARKED";	
+						if(rowArray[item.arrayID - i] != null){
+							rowArray[item.arrayID - i].name = "MARKED";	
+						}
 					}
 				}
 				typeCount = 1;
@@ -181,7 +185,9 @@ class MiniGameScreen extends FlxState
 				lastCount = typeCount;
 				if(lastCount >= 3) {
 					for(i in 1...(typeCount + 1)){
-						rowArray[item.arrayID - i].name = "MARKED";	
+						if(rowArray[item.arrayID - (i * 5)] != null){
+							rowArray[item.arrayID - (i * 5)].name = "MARKED";	
+						}
 					}
 				}
 				typeCount = 1;
@@ -192,10 +198,11 @@ class MiniGameScreen extends FlxState
 	}
 	
 	function removeMarked(item:Item){
-		if (item.name == "MARKED"){
-			trace(item.arrayID + " = MARKED");
-			remove(item);
-			score ++;
+		if (item.name == "MARKED") {
+			trace(item.arrayID + " = MARKED");	
+			replaceItem(item, Math.floor(Math.random() * 100));
+			score += 1;
+			_txtScore.text = "Score: " + score;
 			item.name = null;
 		}
 	}
@@ -216,12 +223,31 @@ class MiniGameScreen extends FlxState
 		}
 	}
 	
+	function winScreen(){
+		FlxG.camera.fade(FlxColor.BLACK, .20, false ,function(){
+			FlxG.switchState(new WinScreen());
+		});
+	}
+	
+	function loseScreen(){
+		FlxG.camera.fade(FlxColor.BLACK, .20, false ,function(){
+			FlxG.switchState(new LoseScreen());
+		});
+	}
+	
+	function buttonPress(){
+		backButton.loadGraphic("assets/img/Buttons/terug-4.png");
+		FlxG.camera.fade(FlxColor.BLACK, .20, false ,function(){
+			FlxG.switchState(new JobListState());
+		});
+	}
+	
 	override public function update(elapsed:Float):Void {
 		if(score >= maxScore){
-			trace("WIN");
+			winScreen();
 		}
 		if(turns == 0){
-			trace("LOSE");
+			loseScreen();
 		}
 		super.update(elapsed);
 	}
