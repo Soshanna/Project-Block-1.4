@@ -30,7 +30,6 @@ class UpgradeCharacterState extends FlxState
 	}
 	
 	function clickBack():Void {
-		backButton.loadGraphic("assets/img/Buttons/terug-4.png");
 		FlxG.camera.fade(FlxColor.BLACK, .20, false ,function(){
 			FlxG.switchState(new UpgradeMenuState());
 		});

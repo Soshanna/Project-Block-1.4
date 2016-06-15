@@ -9,26 +9,7 @@ import flixel.input.mouse.FlxMouseEventManager;
 import flixel.FlxG; 
 import flixel.util.FlxColor;
 import flixel.group.FlxGroup;
-
-/**
- * ...
- * @author Soshanna Botter
- */
-class Castle extends FlxState
-{
-	package;
-
-import flash.display.Sprite;
-import flixel.FlxState;
-import flixel.FlxSprite;
-import flixel.ui.FlxButton;
-import flixel.FlxObject;
-import flixel.input.mouse.FlxMouseEventManager;
-import flixel.FlxG; 
-import flixel.util.FlxColor;
-import flixel.group.FlxGroup;
 import flixel.text.FlxText;
-
 
 /**
  * ...

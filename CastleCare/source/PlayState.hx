@@ -93,7 +93,7 @@ class PlayState extends FlxState
 		var mood:MoodSmiley = new MoodSmiley(10, 5, clickMood);
 		add(mood);
 		
-		text = new FlxText(energyBar.x + (energyBar.width/2) - 40, energyBar.y + 3, 0,"" + energyBar.percent + "%",16);
+		text = new FlxText(energyBar.x + (energyBar.width/2) - 40, energyBar.y + 3, 0, energy + "%",16);
 		add(text);
 		
 		_btnUpgradeMenu = new FlxButton(energyBar.x + energyBar.width + 50, energyBar.y + 3, "$ " + currency, clickUpgradeMenu);
@@ -123,7 +123,6 @@ class PlayState extends FlxState
 	}
 	
 	private function clickMenu():Void{
-		_btnMenu.loadGraphic("assets/img/Buttons/terug-4.png");
 		FlxG.camera.fade(FlxColor.BLACK, .20, false, function(){
 			FlxG.switchState(new MenuState());
 		});

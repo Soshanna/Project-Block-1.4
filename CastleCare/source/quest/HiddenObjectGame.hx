@@ -95,7 +95,6 @@ class HiddenObjectGame extends FlxState
 	}
 	
 	function back(){
-		button.loadGraphic("assets/img/Buttons/terug-4.png");
 		FlxG.camera.fade(FlxColor.BLACK, .20, false ,function(){
 			FlxG.switchState(new PlayState());
 		});
