@@ -36,7 +36,7 @@ class MiniGameScreen extends FlxState
 	var typeCount:Int = 0;
 	var lastType:Int = 0;
 	var lastCount:Int = 0;
-	
+
 	override public function create():Void {
 		super.create();
 		

@@ -21,7 +21,6 @@ class MenuState extends FlxState
 	private var _bkgrMenu = new FlxSprite();
 	
 	override public function create():Void {
-	
 		_bkgrMenu.loadGraphic("assets/img/titelbackground.png");
 		_bkgrMenu.scale.set(1.35, 1.41);
 		_bkgrMenu.x = 160;

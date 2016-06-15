@@ -17,6 +17,7 @@ class HiddenObjectGame extends FlxState
 	var PosArray:Array<Int> = new Array<Int>();
 	var itemCounter:Int = 0;
 	var button:FlxButton;
+	var currency:Int;
 	
 	override public function create():Void
 	{
@@ -90,16 +91,13 @@ class HiddenObjectGame extends FlxState
 		
 		button = new FlxButton(550, 350, "", back);
 		button.loadGraphic("assets/img/Buttons/terug-3.png");
-		button.onDown.callback = buttonDown;
 		add(button);
 	}
 	
-	function buttonDown(){
-		button.loadGraphic("assets/img/Buttons/terug-4.png");
-	}
-	
 	function back(){
-		//PlayState.getInstance().miniGameWon();
-		FlxG.switchState(new PlayState());
+		button.loadGraphic("assets/img/Buttons/terug-4.png");
+		FlxG.camera.fade(FlxColor.BLACK, .20, false ,function(){
+			FlxG.switchState(new PlayState());
+		});
 	}
 }

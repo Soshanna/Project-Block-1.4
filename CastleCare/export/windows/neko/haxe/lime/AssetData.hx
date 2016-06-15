@@ -18,6 +18,8 @@ class AssetData {
 			
 			path.set ("assets/data/GLECB.TTF", "assets/data/GLECB.TTF");
 			type.set ("assets/data/GLECB.TTF", Reflect.field (AssetType, "font".toUpperCase ()));
+			path.set ("assets/data/saveFile.db", "assets/data/saveFile.db");
+			type.set ("assets/data/saveFile.db", Reflect.field (AssetType, "binary".toUpperCase ()));
 			path.set ("assets/images/Axe.png", "assets/images/Axe.png");
 			type.set ("assets/images/Axe.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/Chisel.png", "assets/images/Chisel.png");
@@ -124,6 +126,12 @@ class AssetData {
 			type.set ("assets/img/Minigame/WaterMelonButton.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/img/MoodHappy.png", "assets/img/MoodHappy.png");
 			type.set ("assets/img/MoodHappy.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/img/Moodmenu/MoodAngry.png", "assets/img/Moodmenu/MoodAngry.png");
+			type.set ("assets/img/Moodmenu/MoodAngry.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/img/Moodmenu/MoodHappy.png", "assets/img/Moodmenu/MoodHappy.png");
+			type.set ("assets/img/Moodmenu/MoodHappy.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/img/Moodmenu/MoodMenu.png", "assets/img/Moodmenu/MoodMenu.png");
+			type.set ("assets/img/Moodmenu/MoodMenu.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/img/room1.png", "assets/img/room1.png");
 			type.set ("assets/img/room1.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/img/room2.png", "assets/img/room2.png");

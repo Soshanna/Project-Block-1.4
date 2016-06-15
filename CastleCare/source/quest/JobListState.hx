@@ -58,7 +58,7 @@ class JobListState extends FlxState
 	
 	function clickBack():Void {
 		FlxG.camera.fade(FlxColor.BLACK, .20, false ,function(){
-			FlxG.switchState(new QuestState());
+			FlxG.switchState(new PlayState());
 		});
 	}
 	
