@@ -60,6 +60,8 @@ class AssetData {
 			type.set ("assets/img/Buttons/koop-1.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/img/Buttons/koop-2.png", "assets/img/Buttons/koop-2.png");
 			type.set ("assets/img/Buttons/koop-2.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/img/Buttons/leeg.png", "assets/img/Buttons/leeg.png");
+			type.set ("assets/img/Buttons/leeg.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/img/Buttons/left-1.png", "assets/img/Buttons/left-1.png");
 			type.set ("assets/img/Buttons/left-1.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/img/Buttons/left-2.png", "assets/img/Buttons/left-2.png");
@@ -84,6 +86,8 @@ class AssetData {
 			type.set ("assets/img/Buttons/start-1.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/img/Buttons/start-2.png", "assets/img/Buttons/start-2.png");
 			type.set ("assets/img/Buttons/start-2.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/img/Buttons/taken.png", "assets/img/Buttons/taken.png");
+			type.set ("assets/img/Buttons/taken.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/img/Buttons/terug-3.png", "assets/img/Buttons/terug-3.png");
 			type.set ("assets/img/Buttons/terug-3.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/img/Buttons/terug-4.png", "assets/img/Buttons/terug-4.png");

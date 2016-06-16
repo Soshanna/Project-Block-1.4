@@ -63,6 +63,9 @@ class HiddenObjectGame extends FlxState
 		shovel.onDown.callback = onClicked.bind(shovel);
 		add(shovel);
 		
+		button = new FlxButton(1065, 580, "", back);
+		button.loadGraphic("assets/img/Buttons/terug-3.png");
+		add(button);
 	}
 	
 	function onClicked(button:FlxButton)

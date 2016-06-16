@@ -17,7 +17,6 @@ class MoodMenu extends FlxState
 	var energy:Int;
 	var happy:Bool = true;
 	var _btnMenu:FlxButton;
-	var _txtTitle:FlxText;
 	var _bkgrOver:FlxSprite = new FlxSprite();
 	var smiley:FlxSprite = new FlxSprite();
 	
@@ -46,18 +45,16 @@ class MoodMenu extends FlxState
 			add(smiley);
 		}
 		
-		_txtTitle = new FlxText(20, 0, 0, "Mood Menu", 15);
-		_txtTitle.alignment = CENTER;
-		_txtTitle.screenCenter(X);
-		add(_txtTitle);
-		
-		_btnMenu = new FlxButton((FlxG.width / 2) + 520, FlxG.height - 35, "Back", clickPlay);
+		_btnMenu = new FlxButton((FlxG.width / 2) + 510, FlxG.height - 95, "", clickBack);
+		_btnMenu.loadGraphic("assets/img/Buttons/terug-3.png");
 		add(_btnMenu);
 	}
 	
-	private function clickPlay():Void{
+	private function clickBack():Void{
 		FlxG.camera.fade(FlxColor.BLACK, .20, false, function(){
 			FlxG.switchState(new PlayState());
 		});
 	}
+	
+	
 }

@@ -27,11 +27,6 @@ class MenuState extends FlxState
 		_bkgrMenu.y = 110;
 		add(_bkgrMenu);
 		
-		/*_txtTitle = new FlxText(20, 0, 0, "Castle Care", 22);
-		_txtTitle.alignment = CENTER;
-		_txtTitle.screenCenter(X);
-		add(_txtTitle);*/
-		
 		var _btnPlay:FlxButton = new FlxButton (0, 0, "", clickPlay);
 		_btnPlay.loadGraphic("assets/img/Buttons/start-1.png");
 		_btnPlay.x = (FlxG.width / 2) - _btnPlay.width - 110;

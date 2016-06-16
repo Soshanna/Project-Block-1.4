@@ -130,6 +130,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
 		Font.registerFont (__ASSET__flixel_fonts_nokiafc22_ttf);
 		Font.registerFont (__ASSET__flixel_fonts_monsterrat_ttf);
 		
@@ -138,6 +140,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -783,6 +787,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_nokiafc22_ttf);
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_monsterrat_ttf);
 		
@@ -835,6 +841,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/img/Buttons/koop-1.png", AssetType.IMAGE);
 		path.set ("assets/img/Buttons/koop-2.png", "assets/img/Buttons/koop-2.png");
 		type.set ("assets/img/Buttons/koop-2.png", AssetType.IMAGE);
+		path.set ("assets/img/Buttons/leeg.png", "assets/img/Buttons/leeg.png");
+		type.set ("assets/img/Buttons/leeg.png", AssetType.IMAGE);
 		path.set ("assets/img/Buttons/left-1.png", "assets/img/Buttons/left-1.png");
 		type.set ("assets/img/Buttons/left-1.png", AssetType.IMAGE);
 		path.set ("assets/img/Buttons/left-2.png", "assets/img/Buttons/left-2.png");
@@ -859,6 +867,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/img/Buttons/start-1.png", AssetType.IMAGE);
 		path.set ("assets/img/Buttons/start-2.png", "assets/img/Buttons/start-2.png");
 		type.set ("assets/img/Buttons/start-2.png", AssetType.IMAGE);
+		path.set ("assets/img/Buttons/taken.png", "assets/img/Buttons/taken.png");
+		type.set ("assets/img/Buttons/taken.png", AssetType.IMAGE);
 		path.set ("assets/img/Buttons/terug-3.png", "assets/img/Buttons/terug-3.png");
 		type.set ("assets/img/Buttons/terug-3.png", AssetType.IMAGE);
 		path.set ("assets/img/Buttons/terug-4.png", "assets/img/Buttons/terug-4.png");
@@ -1016,6 +1026,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/img/Buttons/koop-2.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
+		id = "assets/img/Buttons/leeg.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
 		id = "assets/img/Buttons/left-1.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
@@ -1050,6 +1063,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/img/Buttons/start-2.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/Buttons/taken.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/img/Buttons/terug-3.png";
@@ -1206,6 +1222,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		className.set ("assets/data/GLECB.TTF", __ASSET__assets_data_glecb_ttf);
 		type.set ("assets/data/GLECB.TTF", AssetType.FONT);
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -2082,6 +2100,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_beep_ogg extends null { }
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_flixel_ogg extends null { }
 @:keep @:bind #if display private #end class __ASSET__flixel_fonts_nokiafc22_ttf extends null { }
@@ -2092,6 +2112,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 #elseif html5
 
 @:keep #if display private #end class __ASSET__assets_data_glecb_ttf extends lime.text.Font { public function new () { super (); name = "Gloucester MT Extra Condensed"; } } 
+
+
 
 
 

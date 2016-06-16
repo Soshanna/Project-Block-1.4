@@ -15,7 +15,6 @@ import flixel.util.FlxColor;
 class JobListState extends FlxState
 {
 	var backButton:FlxButton;
-	var _txtTitle:FlxText;
 	var duckButton:FlxButton;
 	var pinguinButton:FlxButton;
 	var turtleButton:FlxButton;
@@ -28,11 +27,6 @@ class JobListState extends FlxState
 		_bkgrOver.x = 100;
 		_bkgrOver.y = 120;
 		add(_bkgrOver);
-		
-		_txtTitle = new FlxText(20, 0, 0, "JobList Screen", 15);
-		_txtTitle.alignment = CENTER;
-		_txtTitle.screenCenter(X);
-		add(_txtTitle);
 		
 		duckButton = new FlxButton(100, 80, "", null);
 		duckButton.loadGraphic("assets/img/Characters/duck-button.png");
