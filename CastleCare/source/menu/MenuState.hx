@@ -56,19 +56,27 @@ class MenuState extends FlxState
 	}
 	
 	private function clickOver():Void{
+		FlxG.camera.fade(FlxColor.BLACK, .20, false, function(){
 		FlxG.switchState(new OverState());
+		});
 	}
 	
 	private function clickCredits():Void{
+		FlxG.camera.fade(FlxColor.BLACK, .20, false, function(){
 		FlxG.switchState(new CreditsState());
+		});
 	}
 	
 	private function clickOptions():Void{
+		FlxG.camera.fade(FlxColor.BLACK, .20, false, function(){
 		FlxG.switchState(new OptionsState());
+		});
 	}
 	
 	private function clickPlay():Void{
+		FlxG.camera.fade(FlxColor.BLACK, 1, false, function(){
 		FlxG.switchState(new PlayState());
+		});
 	}
 
 	override public function update(elapsed:Float):Void{

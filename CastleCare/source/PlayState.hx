@@ -41,10 +41,8 @@ class PlayState extends FlxState
 		_castleNavigation = new Castle();
 		add(_castleNavigation);	
 		
-		var _btnMenu:FlxButton = new FlxButton (0, 0, "", clickMenu);
-		_btnMenu.loadGraphic("assets/img/Buttons/terug-3.png");
-		_btnMenu.x = (FlxG.width / 2) +500;
-		_btnMenu.y = FlxG.height - 80;
+		var _btnMenu:FlxButton = new FlxButton ((FlxG.width / 2) +500, FlxG.height - 80, "", clickMenu);
+		_btnMenu.loadGraphic("assets/img/Buttons/menu.png");
 		add(_btnMenu);
 		
 		_btnQuest = new FlxButton(20, _btnMenu.y, "", clickQuest);

@@ -22,12 +22,12 @@ class HiddenObjectGame extends FlxState
 	override public function create():Void
 	{
 		var room:FlxSprite = new FlxSprite();
-		room.loadGraphic("assets/images/room.jpg");
+		room.loadGraphic("assets/images/hiddenobjectgame3.jpg");
 		add(room);
 		
 		for (i in 0...6){
-			var posx:Int = 750 + (50 * i);
-			var posy:Int = 40;
+			var posx:Int = 400 - (50 * i);
+			var posy:Int = 110;
 			PosArray.push(posx);
 			PosArray.push(posy);
 		}
@@ -36,29 +36,29 @@ class HiddenObjectGame extends FlxState
 	
 	function displayButtons()
 	{
-		var hammer:FlxButton = new FlxButton(0, 0);
+		var hammer:FlxButton = new FlxButton(500, 500);
 		hammer.loadGraphic("assets/images/hammer.png");
 		hammer.onDown.callback = onClicked.bind(hammer);
 		hammer.scale.x = .77;
 		hammer.scale.y = .77;
 		add(hammer);
 		
-		var chisel:FlxButton = new FlxButton(200, 200);
+		var chisel:FlxButton = new FlxButton(600, 600);
 		chisel.loadGraphic("assets/images/Chisel.png");
 		chisel.onDown.callback = onClicked.bind(chisel);
 		add(chisel);
 		
-		var axe:FlxButton = new FlxButton(300, 300);
+		var axe:FlxButton = new FlxButton(500, 550);
 		axe.loadGraphic("assets/images/Axe.png");
 		axe.onDown.callback = onClicked.bind(axe);
 		add(axe);
 		
-		var saw:FlxButton = new FlxButton(400, 400);
+		var saw:FlxButton = new FlxButton(450, 450);
 		saw.loadGraphic("assets/images/saw.png");
 		saw.onDown.callback = onClicked.bind(saw);
 		add(saw);
 		
-		var shovel:FlxButton = new FlxButton(800, 500);
+		var shovel:FlxButton = new FlxButton(800, 650);
 		shovel.loadGraphic("assets/images/Shovel.png");
 		shovel.onDown.callback = onClicked.bind(shovel);
 		add(shovel);
@@ -99,7 +99,7 @@ class HiddenObjectGame extends FlxState
 	
 	function back(){
 		FlxG.camera.fade(FlxColor.BLACK, .20, false ,function(){
-			FlxG.switchState(new PlayState());
+			FlxG.switchState(new JobListState());
 		});
 	}
 }
