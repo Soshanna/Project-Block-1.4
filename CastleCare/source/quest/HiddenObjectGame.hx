@@ -93,18 +93,19 @@ class HiddenObjectGame extends FlxState
 		scoreText.screenCenter(X);
 		add(scoreText);
 		
-		button = new FlxButton(550, 350, "", back);
-		button.loadGraphic("assets/img/Buttons/terug-3.png");
-		add(button);
-	}
-	
-	function back(){
 		var save:FlxSave = new FlxSave();
 		save.bind("Data");
 		currency = save.data.currency;
 		save.data.currency = (currency + 100);
 		save.flush();
 		save.close();
+		
+		button = new FlxButton(550, 350, "", back);
+		button.loadGraphic("assets/img/Buttons/terug-3.png");
+		add(button);
+	}
+	
+	function back(){
 		FlxG.camera.fade(FlxColor.BLACK, .20, false ,function(){
 			FlxG.switchState(new PlayState());
 		});

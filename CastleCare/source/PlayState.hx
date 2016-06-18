@@ -63,7 +63,7 @@ class PlayState extends FlxState
 		var mood:MoodSmiley = new MoodSmiley(10, 5, clickMood);
 		add(mood);
 		
-		text = new FlxText(energyBar.x + (energyBar.width / 2) - 40, energyBar.y + 3, 0, energy + "%", 16);
+		text = new FlxText(energyBar.x + (energyBar.width / 2) - 40, energyBar.y + 3, 0, Math.floor(energy) + "%", 16);
 		add(text);
 		
 		_btnUpgradeMenu = new FlxButton(energyBar.x + energyBar.width + 50, energyBar.y - 5, "$ " + currency, clickUpgradeMenu);
@@ -76,8 +76,8 @@ class PlayState extends FlxState
 	function saveData(){
 		var save:FlxSave = new FlxSave();
 		save.bind("Data");
-		save.data.energy = energy;
-		save.data.currency = currency;
+		save.data.energy = 100;
+		save.data.currency = 0;
 		save.data.time	= rightNow.getTime();
 		trace(save.data.time);
 		save.flush();
@@ -108,9 +108,9 @@ class PlayState extends FlxState
 	override public function update(elapsed:Float):Void
 	{
 		super.update(elapsed);
-		text.text = energy + "%";
 		energyBar.value = energy;
 		energyBar.updateBar();
+		text.text = Math.floor(energy) + "%";
 		_btnUpgradeMenu.text = "$ " + currency;
 		if(energy < 100){
 			energy += 0.0002777778;
