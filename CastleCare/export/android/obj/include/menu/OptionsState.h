@@ -54,6 +54,7 @@ class HXCPP_CLASS_ATTRIBUTES  OptionsState_obj : public ::flixel::FlxState_obj{
 		::flixel::text::FlxText _txtVolumeAmt;
 		::flixel::ui::FlxButton _btnVolumeDown;
 		::flixel::ui::FlxButton _btnVolumeUp;
+		::flixel::FlxSprite _bkgrOver;
 		virtual Void create( );
 
 		virtual Void clickMenu( );

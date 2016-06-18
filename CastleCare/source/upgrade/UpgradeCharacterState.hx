@@ -1,5 +1,6 @@
 package upgrade;
 
+import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.FlxG;
 import flixel.ui.FlxButton;
@@ -12,16 +13,21 @@ import flixel.text.FlxText;
  */
 class UpgradeCharacterState extends FlxState
 {
-	var _txtTitle:FlxText;
+	var state:PlayState = new PlayState();
+	var currency:Int;
 	var backButton:FlxButton;
+	var _bkgrOver:FlxSprite = new FlxSprite();
 
 	override public function create():Void {
-		_txtTitle = new FlxText(20, 0, 0, "Upgrade Character Screen", 15);
-		_txtTitle.alignment = CENTER;
-		_txtTitle.screenCenter(X);
-		add(_txtTitle);
+		_bkgrOver.loadGraphic("assets/img/Minigame/Minigame Background.png");
+		add(_bkgrOver);
 		
-		backButton = new FlxButton((FlxG.width / 2) + 10, FlxG.height - 28, "Back", clickBack);
+		currency = state.currency;
+		var currencyText:FlxText = new FlxText(1100, 80, 0, "$" + currency, 24);
+		add(currencyText);
+		
+		backButton = new FlxButton(1065, 580, "", clickBack);
+		backButton.loadGraphic("assets/img/Buttons/terug-3.png");
 		add(backButton);
 		
 		super.create();

@@ -7,6 +7,7 @@ import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.input.mouse.FlxMouseEventManager;
 import flixel.util.FlxColor;
+import flixel.util.FlxSave;
 
 /**
  * ...
@@ -17,16 +18,17 @@ class HiddenObjectGame extends FlxState
 	var PosArray:Array<Int> = new Array<Int>();
 	var itemCounter:Int = 0;
 	var button:FlxButton;
+	var currency:Int;
 	
 	override public function create():Void
 	{
 		var room:FlxSprite = new FlxSprite();
-		room.loadGraphic("assets/images/room.jpg");
+		room.loadGraphic("assets/images/hiddenobjectgame3.jpg");
 		add(room);
 		
 		for (i in 0...6){
-			var posx:Int = 750 + (50 * i);
-			var posy:Int = 40;
+			var posx:Int = 400 - (50 * i);
+			var posy:Int = 110;
 			PosArray.push(posx);
 			PosArray.push(posy);
 		}
@@ -35,33 +37,36 @@ class HiddenObjectGame extends FlxState
 	
 	function displayButtons()
 	{
-		var hammer:FlxButton = new FlxButton(0, 0);
+		var hammer:FlxButton = new FlxButton(465, 565);
 		hammer.loadGraphic("assets/images/hammer.png");
 		hammer.onDown.callback = onClicked.bind(hammer);
 		hammer.scale.x = .77;
 		hammer.scale.y = .77;
 		add(hammer);
 		
-		var chisel:FlxButton = new FlxButton(200, 200);
+		var chisel:FlxButton = new FlxButton(900, 630);
 		chisel.loadGraphic("assets/images/Chisel.png");
 		chisel.onDown.callback = onClicked.bind(chisel);
 		add(chisel);
 		
-		var axe:FlxButton = new FlxButton(300, 300);
+		var axe:FlxButton = new FlxButton(500, 555);
 		axe.loadGraphic("assets/images/Axe.png");
 		axe.onDown.callback = onClicked.bind(axe);
 		add(axe);
 		
-		var saw:FlxButton = new FlxButton(400, 400);
+		var saw:FlxButton = new FlxButton(268, 428);
 		saw.loadGraphic("assets/images/saw.png");
 		saw.onDown.callback = onClicked.bind(saw);
 		add(saw);
 		
-		var shovel:FlxButton = new FlxButton(800, 500);
+		var shovel:FlxButton = new FlxButton(425, 410);
 		shovel.loadGraphic("assets/images/Shovel.png");
 		shovel.onDown.callback = onClicked.bind(shovel);
 		add(shovel);
 		
+		button = new FlxButton(1065, 580, "", back);
+		button.loadGraphic("assets/img/Buttons/terug-3.png");
+		add(button);
 	}
 	
 	function onClicked(button:FlxButton)
@@ -90,16 +95,18 @@ class HiddenObjectGame extends FlxState
 		
 		button = new FlxButton(550, 350, "", back);
 		button.loadGraphic("assets/img/Buttons/terug-3.png");
-		button.onDown.callback = buttonDown;
 		add(button);
 	}
 	
-	function buttonDown(){
-		button.loadGraphic("assets/img/Buttons/terug-4.png");
-	}
-	
 	function back(){
-		//PlayState.getInstance().miniGameWon();
-		FlxG.switchState(new PlayState());
+		var save:FlxSave = new FlxSave();
+		save.bind("Data");
+		currency = save.data.currency;
+		save.data.currency = (currency + 100);
+		save.flush();
+		save.close();
+		FlxG.camera.fade(FlxColor.BLACK, .20, false ,function(){
+			FlxG.switchState(new PlayState());
+		});
 	}
 }

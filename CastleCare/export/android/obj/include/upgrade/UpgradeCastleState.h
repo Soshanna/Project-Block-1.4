@@ -14,7 +14,6 @@ HX_DECLARE_CLASS1(flixel,FlxSprite)
 HX_DECLARE_CLASS1(flixel,FlxState)
 HX_DECLARE_CLASS2(flixel,group,FlxTypedGroup)
 HX_DECLARE_CLASS2(flixel,input,IFlxInput)
-HX_DECLARE_CLASS2(flixel,text,FlxText)
 HX_DECLARE_CLASS2(flixel,ui,FlxButton)
 HX_DECLARE_CLASS2(flixel,ui,FlxTypedButton_flixel_text_FlxText)
 HX_DECLARE_CLASS2(flixel,util,IFlxDestroyable)
@@ -48,8 +47,8 @@ class HXCPP_CLASS_ATTRIBUTES  UpgradeCastleState_obj : public ::flixel::FlxState
 
 		::flixel::ui::FlxButton upgradeInteriorButton;
 		::flixel::ui::FlxButton upgradeRoomButton;
-		::flixel::text::FlxText _txtTitle;
 		::flixel::ui::FlxButton backButton;
+		::flixel::FlxSprite _bkgrOver;
 		virtual Void create( );
 
 		virtual Void clickBack( );

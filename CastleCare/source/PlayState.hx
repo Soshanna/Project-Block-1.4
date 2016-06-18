@@ -2,7 +2,7 @@ package;
 
 import flixel.ui.FlxBar;
 import menu.MenuState;
-import quest.QuestState;
+import quest.JobListState;
 import upgrade.UpgradeMenuState;
 import flixel.FlxG;
 import flixel.FlxSprite;
@@ -12,96 +12,77 @@ import flixel.ui.FlxButton;
 import flixel.math.FlxMath;
 import flixel.util.FlxColor;
 import flixel.system.FlxAssets.FlxGraphicAsset;
+import flixel.util.FlxSave;
 
 class PlayState extends FlxState
 {
-	public static var instance:PlayState;
-	public var doctorBool:Bool = false;
 	public var energy:Int;
-	public var currency:Int = 0;
-	var _btnEnergyUp:FlxButton;
-	var _btnEnergydown:FlxButton;
+	public var currency:Int;
 	var _btnMenu:FlxButton;
-	var _btnQuest:FlxButton;
 	var _btnUpgradeMenu:FlxButton;
+	var energySymbol:FlxSprite;
 	var text:FlxText;
-	var energyBar:EnergyBar;
+	var energyBar:FlxBar;
 	var _castleNavigation:Castle;
 	
-	override public function create():Void
-	{
-		var instance = this;
+	override public function create():Void{
+		var save:FlxSave = new FlxSave();
+		save.bind("Data");
+		energy = save.data.energy;
+		currency = save.data.currency;
+		save.close();
 		
 		_castleNavigation = new Castle();
 		add(_castleNavigation);	
 		
-		_btnMenu = new FlxButton((FlxG.width / 2) + 520, FlxG.height - 35, "Back", clickMenu);
+		var _btnMenu:FlxButton = new FlxButton ((FlxG.width / 2) +500, FlxG.height - 80, "", clickMenu);
+		_btnMenu.loadGraphic("assets/img/Buttons/menu.png");
 		add(_btnMenu);
 		
-		_btnQuest = new FlxButton(20, _btnMenu.y, "Quest", clickQuest);
-		add(_btnQuest);
-		
-		energyBar = new EnergyBar(125, 35, 0, 0, "assets/img/FullEnergy.png", "assets/img/FullEnergy.png");
+		energyBar = new FlxBar(155, 60, LEFT_TO_RIGHT, 500, 30, energy, "energy", 0, 100, true);
 		add(energyBar);
+		
+		energySymbol = new FlxSprite(145, 50, "assets/img/EnergySymbol.png");
+		add(energySymbol);
 		
 		var mood:MoodSmiley = new MoodSmiley(10, 5, clickMood);
 		add(mood);
 		
-		var energySymbol:FlxSprite = new FlxSprite(energyBar.x, energyBar.y, "assets/img/EnergySymbol.png");
-		add(energySymbol);
-		
-		text = new FlxText(energyBar.x + (energyBar.width/2)-80, energyBar.y + 25, 0,"" + energyBar.percent + "%",16);
+		text = new FlxText(energyBar.x + (energyBar.width / 2) - 40, energyBar.y + 3, 0, energy + "%", 16);
 		add(text);
 		
-		_btnUpgradeMenu = new FlxButton(energyBar.x + energyBar.width + 50, energyBar.y + 25, "$ " + currency, clickUpgradeMenu);
+		_btnUpgradeMenu = new FlxButton(energyBar.x + energyBar.width + 50, energyBar.y - 5, "$ " + currency, clickUpgradeMenu);
+		_btnUpgradeMenu.label.size = 24;
+		_btnUpgradeMenu.loadGraphic("assets/img/Buttons/leeg.png");
 		add(_btnUpgradeMenu);
-		
-		_btnEnergyUp = new FlxButton(150, 300, "EnergyUp", clickEnergy);
-		add(_btnEnergyUp);
-		
-		_btnEnergydown = new FlxButton(150, 350, "EnergyDown", clickEnergyDown);
-		add(_btnEnergydown);
-		
 		super.create();
 	}
 	
-	public static function getInstance():PlayState{
-		return instance;
-	}
-	
-	public function miniGameWon(){
-		currency += 100;
+	function saveData(){
+		var save:FlxSave = new FlxSave();
+		save.bind("Data");
+		save.data.energy = energy;
+		save.data.currency = currency;
+		save.flush();
+		save.close();
 	}
 	
 	private function clickMood():Void{
+		saveData();
 		FlxG.camera.fade(FlxColor.BLACK, .20, false, function(){
 			FlxG.switchState(new MoodMenu());
 		});
 	}
 	
-	private function clickEnergy(){
-		energyBar.value += 20;
-		energyBar.x = 0;
-	}
-	
-	private function clickEnergyDown(){
-		energyBar.value -= 20;
-		energyBar.x = 0;
-	}
-	
 	private function clickMenu():Void{
+		saveData();
 		FlxG.camera.fade(FlxColor.BLACK, .20, false, function(){
 			FlxG.switchState(new MenuState());
 		});
 	}
 	
-	private function clickQuest():Void{
-		FlxG.camera.fade(FlxColor.BLACK, .20, false, function(){
-		FlxG.switchState(new QuestState());
-		});
-	}
-	
 	private function clickUpgradeMenu():Void{
+		saveData();
 		FlxG.camera.fade(FlxColor.BLACK, .20, false, function(){
 		FlxG.switchState(new UpgradeMenuState());
 		});
@@ -110,9 +91,9 @@ class PlayState extends FlxState
 	override public function update(elapsed:Float):Void
 	{
 		super.update(elapsed);
-		if(energyBar.value > 0){
-			energyBar.scale.x = (energyBar.value * 0.01);
-		}
-		text.text = "" + energyBar.percent + "%";
+		text.text = energy + "%";
+		energyBar.value = energy;
+		energyBar.updateBar();
+		_btnUpgradeMenu.text = "$ " + currency;
 	}
 }

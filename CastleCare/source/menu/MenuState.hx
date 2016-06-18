@@ -21,17 +21,11 @@ class MenuState extends FlxState
 	private var _bkgrMenu = new FlxSprite();
 	
 	override public function create():Void {
-	
 		_bkgrMenu.loadGraphic("assets/img/titelbackground.png");
 		_bkgrMenu.scale.set(1.35, 1.41);
 		_bkgrMenu.x = 160;
 		_bkgrMenu.y = 110;
 		add(_bkgrMenu);
-		
-		/*_txtTitle = new FlxText(20, 0, 0, "Castle Care", 22);
-		_txtTitle.alignment = CENTER;
-		_txtTitle.screenCenter(X);
-		add(_txtTitle);*/
 		
 		var _btnPlay:FlxButton = new FlxButton (0, 0, "", clickPlay);
 		_btnPlay.loadGraphic("assets/img/Buttons/start-1.png");
@@ -62,19 +56,27 @@ class MenuState extends FlxState
 	}
 	
 	private function clickOver():Void{
+		FlxG.camera.fade(FlxColor.BLACK, .20, false, function(){
 		FlxG.switchState(new OverState());
+		});
 	}
 	
 	private function clickCredits():Void{
+		FlxG.camera.fade(FlxColor.BLACK, .20, false, function(){
 		FlxG.switchState(new CreditsState());
+		});
 	}
 	
 	private function clickOptions():Void{
+		FlxG.camera.fade(FlxColor.BLACK, .20, false, function(){
 		FlxG.switchState(new OptionsState());
+		});
 	}
 	
 	private function clickPlay():Void{
+		FlxG.camera.fade(FlxColor.BLACK, 1, false, function(){
 		FlxG.switchState(new PlayState());
+		});
 	}
 
 	override public function update(elapsed:Float):Void{

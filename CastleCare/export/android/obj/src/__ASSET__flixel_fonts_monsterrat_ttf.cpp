@@ -15,14 +15,14 @@
 
 Void __ASSET__flixel_fonts_monsterrat_ttf_obj::__construct()
 {
-HX_STACK_FRAME("__ASSET__flixel_fonts_monsterrat_ttf","new",0x5ab5a7f2,"__ASSET__flixel_fonts_monsterrat_ttf.new","DefaultAssetLibrary.hx",519,0x0fc48912)
+HX_STACK_FRAME("__ASSET__flixel_fonts_monsterrat_ttf","new",0x5ab5a7f2,"__ASSET__flixel_fonts_monsterrat_ttf.new","DefaultAssetLibrary.hx",641,0x0fc48912)
 HX_STACK_THIS(this)
 {
-	HX_STACK_LINE(519)
+	HX_STACK_LINE(641)
 	super::__construct(null(),null(),null());
-	HX_STACK_LINE(519)
+	HX_STACK_LINE(641)
 	this->__fontPath = HX_HCSTRING("flixel/fonts/monsterrat.ttf","\x01","\x2e","\xa7","\x65");
-	HX_STACK_LINE(519)
+	HX_STACK_LINE(641)
 	this->fontName = HX_HCSTRING("Monsterrat","\x2b","\x92","\x73","\x63");
 }
 ;

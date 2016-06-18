@@ -1,6 +1,5 @@
 package;
 
-import flash.display.Sprite;
 import flixel.FlxState;
 import flixel.FlxSprite;
 import flixel.ui.FlxButton;
@@ -9,6 +8,11 @@ import flixel.input.mouse.FlxMouseEventManager;
 import flixel.FlxG; 
 import flixel.util.FlxColor;
 import flixel.group.FlxGroup;
+import flixel.text.FlxText;
+import flixel.util.FlxTimer;
+import quest.HiddenObjectGame;
+import quest.MiniGameScreen;
+import flixel.util.FlxSave;
 
 /**
  * ...
@@ -16,187 +20,204 @@ import flixel.group.FlxGroup;
  */
 class Castle extends FlxState
 {
-	private var _room1:FlxSprite;
-	private var _room2:FlxSprite;
-	private var _room3:FlxSprite;
-	private var _room4:FlxSprite;
-	private var _room5:FlxSprite;
-	private var _room6:FlxSprite;
-
-	
+	private var background:FlxSprite;
+	private var _room1:FlxButton;
+	private var _room2:FlxButton;
+	private var _room3:FlxButton;
 	private var _roomOne:FlxSprite;
 	private var _roomTwo:FlxSprite;
 	private var _roomThree:FlxSprite;
-	private var _roomFour:FlxSprite;
-	private var _roomFive:FlxSprite;
-	private var _roomSix:FlxSprite;
-	private var myButton:FlxSprite;
-
+	private var myButton:FlxButton;
+	private var talkButton:FlxButton;
+	private var missionButton:FlxButton;
+	var energy:Int;
+	var timer:FlxTimer = new FlxTimer();
+	var character:FlxSprite;
+	var textBox:FlxSprite;
+	var _txtCharacter:FlxText;
+	var _txtRoom:FlxText;
+	
+	
 	public function new() 
 	{
 		super();
+		var save:FlxSave = new FlxSave();
+		save.bind("Data");
+		energy = save.data.energy;
+		save.close();
 		
-		_room1 = new FlxSprite();
+		myButton = new FlxButton(FlxG.stage.width - 180, 330, "", null);
+      	myButton.loadGraphic("assets/img/Buttons/terug-3.png");
+		
+		missionButton = new FlxButton(390, 590, "", null);
+      	missionButton.loadGraphic("assets/img/MissionButton.png");
+		
+		talkButton = new FlxButton(680, 590, "", null);
+      	talkButton.loadGraphic("assets/img/TalkButton.png");
+		
+		textBox = new FlxSprite(0, 550, "assets/img/TextBoxText.png");
+		textBox.screenCenter(X);
+		
+		_txtRoom = new FlxText(850, 40, 0, "", 45);
+		_txtRoom.setFormat("assets/data/GLECB.TTF", 45, 0xFFFFFF);
+		
+		_txtCharacter = new FlxText(0, 140, 0, "Dit is nu niet beschikbaar!", 26);
+		_txtCharacter.screenCenter(X);
+		
+		background = new FlxSprite(0, 0, "assets/img/castle-background.png");
+		add(background);
+		
+		_room1 = new FlxButton(440,32,"",roomOne);
 		_room1.loadGraphic("assets/img/room1.png");
-		_room1.x = 251;
-		_room1.y = 200;
 		add(_room1);
-		FlxMouseEventManager.add(_room1, roomOne, null, null, null);
 		
-		_room2 = new FlxSprite();
+		_room2 = new FlxButton(27,26,"",roomTwo);
 		_room2.loadGraphic("assets/img/room2.png");
-		_room2.x = 520;
-		_room2.y = 201;
 		add(_room2);
-		FlxMouseEventManager.add(_room2, roomTwo, null, null , null); 
 		
-		_room3 = new FlxSprite();
+		_room3 = new FlxButton(28,360,"",roomThree);
 		_room3.loadGraphic("assets/img/room3.png");
-		_room3.x = 785;
-		_room3.y = 200;
 		add(_room3);
-		FlxMouseEventManager.add(_room3, roomThree, null, null , null); 
-		
-		_room4 = new FlxSprite();
-		_room4.loadGraphic("assets/img/room4.png");
-		_room4.x = 251;
-		_room4.y = 414;
-		add(_room4);
-		FlxMouseEventManager.add(_room4, roomFour, null, null , null); 
-		
-		_room5 = new FlxSprite();
-		_room5.loadGraphic("assets/img/room5.png");
-		_room5.x = 520;
-		_room5.y = 415;
-		add(_room5);
-		FlxMouseEventManager.add(_room5, roomFive, null, null , null); 
-		
-		_room6 = new FlxSprite();
-		_room6.loadGraphic("assets/img/room6.png");
-		_room6.x = 786;
-		_room6.y = 415;
-		add(_room6);
-		FlxMouseEventManager.add(_room6, roomSix, null, null , null);
 	}
 	
-	public function roomOne(sprite:FlxSprite)
+	function removeCallback(){
+		remove(_room1);
+		remove(_room2);
+		remove(_room3);
+	}
+	
+	function addCallback(){
+		add(_room1);
+		add(_room2);
+		add(_room3);
+	}
+	
+	function roomOne()
 	{
-		_roomOne = new FlxSprite();
-		_roomOne.loadGraphic("assets/img/room1.png");
-		_roomOne.x = 350;
-		_roomOne.y = 289;
-		_roomOne.scale.set(1.5, 1.5);
+		removeCallback();
+		_roomOne = new FlxSprite(0, 0, "assets/img/Bigroom-1.png");
 		add(_roomOne);
 		
-		myButton = new FlxSprite();
-      	myButton.loadGraphic("assets/img/left-1.png");
+		_txtRoom.text = "Troonzaal";
+		add(_txtRoom);
+		
+		add(textBox);
+		myButton.onDown.callback = removeRoom.bind(_roomOne);
 		add(myButton);
-		myButton.x = 150;
-		myButton.y = 400;
-		FlxMouseEventManager.add(myButton, smallRooms, null, null , null); 
+		talkButton.onDown.callback = talkCat;
+		add(talkButton);
+		missionButton.onDown.callback = missionCat;
+		add(missionButton);
+		character = new FlxSprite(200, 480, "assets/img/Characters/cat.png");
+		add(character);
 	}
 
-	public function roomTwo(sprite:FlxSprite)
+	function roomTwo()
 	{
-		_roomTwo = new FlxSprite();
-		_roomTwo.loadGraphic("assets/img/room2.png");
-		_roomTwo.x = 350;
-		_roomTwo.y = 289;
-		_roomTwo.scale.set(1.5, 1.5);
+		removeCallback();
+		_roomTwo = new FlxSprite(0, 0, "assets/img/Bigroom-2.png");
 		add(_roomTwo);
 		
-		myButton = new FlxSprite();
-      	myButton.loadGraphic("assets/img/left-1.png");
+		_txtRoom.text = "Architect Kamer";
+		add(_txtRoom);
+		
+		add(textBox);
+		myButton.onDown.callback = removeRoom.bind(_roomTwo);
 		add(myButton);
-		myButton.x = 150;
-		myButton.y = 400;
-		FlxMouseEventManager.add(myButton, smallRooms, null, null , null); 
+		talkButton.onDown.callback = talkArchitect;
+		add(talkButton);
+		missionButton.onDown.callback = missionArchitect;
+		add(missionButton);
+		character = new FlxSprite(190, 480, "assets/img/Characters/architect.png");
+		add(character);
 	}
 	
-	public function roomThree(sprite:FlxSprite)
+	function roomThree()
 	{
-		_roomThree = new FlxSprite();
-		_roomThree.loadGraphic("assets/img/room3.png");
-		_roomThree.x = 350;
-		_roomThree.y = 289;
-		_roomThree.scale.set(1.5, 1.5);
+		removeCallback();
+		_roomThree = new FlxSprite(0, 0, "assets/img/Bigroom-3.png");
 		add(_roomThree);
 		
-		myButton = new FlxSprite();
-      	myButton.loadGraphic("assets/img/left-1.png");
-		add(myButton);
-		myButton.x = 150;
-		myButton.y = 400;
-		FlxMouseEventManager.add(myButton, smallRooms, null, null , null); 
-	}
-	
-	public function roomFour(sprite:FlxSprite)
-	{
-		_roomFour = new FlxSprite();
-		_roomFour.loadGraphic("assets/img/room4.png");
-		_roomFour.x = 350;
-		_roomFour.y = 289;
-		_roomFour.scale.set(1.5, 1.5);
-		add(_roomFour);
+		_txtRoom.text = "Dokter Kamer";
+		add(_txtRoom);
 		
-		myButton = new FlxSprite();
-      	myButton.loadGraphic("assets/img/left-1.png");
+		add(textBox);
+		myButton.onDown.callback = removeRoom.bind(_roomThree);
 		add(myButton);
-		myButton.x = 150;
-		myButton.y = 400;
-		FlxMouseEventManager.add(myButton, smallRooms, null, null , null); 
+		talkButton.onDown.callback = talkDoctor;
+		add(talkButton);
+		missionButton.onDown.callback = missionDoctor;
+		add(missionButton);
+		character = new FlxSprite(190, 480, "assets/img/Characters/doctor.png");
+		add(character);
 	}
 	
-	public function roomFive(sprite:FlxSprite)
-	{
-		_roomFive = new FlxSprite();
-		_roomFive.loadGraphic("assets/img/room5.png");
-		_roomFive.x = 350;
-		_roomFive.y = 289;
-		_roomFive.scale.set(1.5, 1.5);
-		add(_roomFive);
-		
-		myButton = new FlxSprite();
-      	myButton.loadGraphic("assets/img/left-1.png");
-		add(myButton);
-		myButton.x = 150;
-		myButton.y = 400;
-		FlxMouseEventManager.add(myButton, smallRooms, null, null , null); 
+	function talkCat(){
+		add(_txtCharacter);
+		timer.start(2,removeText);
 	}
 	
-	public function roomSix(sprite:FlxSprite)
-	{
-		_roomSix = new FlxSprite();
-		_roomSix.loadGraphic("assets/img/room6.png");
-		_roomSix.x = 350;
-		_roomSix.y = 289;
-		_roomSix.scale.set(1.5, 1.5);
-		add(_roomSix);
-		
-		myButton = new FlxSprite();
-      	myButton.loadGraphic("assets/img/left-1.png");
-		add(myButton);
-		myButton.x = 150;
-		myButton.y = 400;
-		FlxMouseEventManager.add(myButton, smallRooms, null, null , null); 
+	function missionCat(){
+		add(_txtCharacter);
+		timer.start(2,removeText);
 	}
 	
-	public function smallRooms(sprite:FlxSprite)
+	function talkArchitect(){
+		add(_txtCharacter);
+		timer.start(2,removeText);
+	}
+	
+	function missionArchitect(){
+		if(energy >= 25){
+			var save:FlxSave = new FlxSave();
+			save.bind("Data");
+			save.data.energy = (energy - 25);
+			save.flush();
+			save.close();
+			FlxG.camera.fade(FlxColor.BLACK, .20, false ,function(){
+				FlxG.switchState(new HiddenObjectGame());
+			});
+		}else{
+			add(_txtCharacter);
+			timer.start(2,removeText);
+		}
+	}
+	
+	function talkDoctor(){
+		add(_txtCharacter);
+		timer.start(2,removeText);
+	}
+	
+	function missionDoctor(){
+		if(energy >= 25){
+			var save:FlxSave = new FlxSave();
+			save.bind("Data");
+			save.data.energy = (energy - 25);
+			save.flush();
+			save.close();
+			FlxG.camera.fade(FlxColor.BLACK, .20, false ,function(){
+				FlxG.switchState(new MiniGameScreen());
+			});
+		}else{
+			add(_txtCharacter);
+			timer.start(2,removeText);
+		}
+	}
+	
+	function removeText(timer:FlxTimer){
+		remove(_txtCharacter);
+	}
+	
+	function removeRoom(sprite:FlxSprite)
 	{
+		remove(sprite);
+		remove(_txtRoom);
 		remove(myButton);
-		remove(_roomOne);
-		remove(_roomTwo);
-		remove(_roomThree);
-		remove(_roomFour);
-		remove(_roomFive);
-		remove(_roomSix);
-		
-		add(_room1);
-		add(_room2);
-		add(_room3);
-		add(_room4);
-		add(_room5);
-		add(_room6);
-	}
-	
+		remove(talkButton);
+		remove(missionButton);
+		remove(textBox);
+		remove(character);
+		remove(_txtCharacter);
+		addCallback();
+	}	
 }

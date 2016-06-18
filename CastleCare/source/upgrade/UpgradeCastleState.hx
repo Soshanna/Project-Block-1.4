@@ -1,5 +1,6 @@
 package upgrade;
 
+import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.FlxG;
 import flixel.ui.FlxButton;
@@ -14,23 +15,28 @@ class UpgradeCastleState extends FlxState
 {
 	var upgradeInteriorButton:FlxButton;
 	var upgradeRoomButton:FlxButton;
-	var _txtTitle:FlxText;
 	var backButton:FlxButton;
+	var _bkgrOver:FlxSprite = new FlxSprite();
 	
 	override public function create():Void {
-		_txtTitle = new FlxText(20, 0, 0, "Upgrade Castle Screen", 15);
-		_txtTitle.alignment = CENTER;
-		_txtTitle.screenCenter(X);
-		add(_txtTitle);
+		_bkgrOver.loadGraphic("assets/img/background.png");
+		_bkgrOver.scale.set(1.5, 1.5);
+		_bkgrOver.x = 100;
+		_bkgrOver.y = 120;
+		add(_bkgrOver);
 		
-		backButton = new FlxButton((FlxG.width / 2) + 10, FlxG.height - 28, "Back", clickBack);
+		backButton = new FlxButton((FlxG.width / 2) + 10, FlxG.height - 70, "", clickBack);
+		backButton.loadGraphic("assets/img/Buttons/terug-3.png");
+		backButton.screenCenter(X);
 		add(backButton);
 		
-		upgradeInteriorButton = new FlxButton(0, 350, "Upgrade Interior", clickInterior);
+		var upgradeInteriorButton:FlxButton = new FlxButton(0,250, "", clickInterior);
+		upgradeInteriorButton.loadGraphic("assets/img/Buttons/interieur-1.png");
 		upgradeInteriorButton.screenCenter(X);
 		add(upgradeInteriorButton);
 		
-		upgradeRoomButton = new FlxButton(0, 450, "Upgrade Room", clickRoom);
+		upgradeRoomButton = new FlxButton(0, 400, "", clickRoom);
+		upgradeRoomButton.loadGraphic("assets/img/Buttons/kamers-1.png");
 		upgradeRoomButton.screenCenter(X);
 		add(upgradeRoomButton);
 		

@@ -8,7 +8,7 @@
 #ifndef INCLUDED_flixel_FlxState
 #include <flixel/FlxState.h>
 #endif
-HX_DECLARE_CLASS0(EnergyBar)
+HX_DECLARE_CLASS0(Castle)
 HX_DECLARE_CLASS0(PlayState)
 HX_DECLARE_CLASS1(flixel,FlxBasic)
 HX_DECLARE_CLASS1(flixel,FlxObject)
@@ -16,6 +16,7 @@ HX_DECLARE_CLASS1(flixel,FlxSprite)
 HX_DECLARE_CLASS1(flixel,FlxState)
 HX_DECLARE_CLASS2(flixel,group,FlxTypedGroup)
 HX_DECLARE_CLASS2(flixel,input,IFlxInput)
+HX_DECLARE_CLASS2(flixel,text,FlxText)
 HX_DECLARE_CLASS2(flixel,ui,FlxBar)
 HX_DECLARE_CLASS2(flixel,ui,FlxButton)
 HX_DECLARE_CLASS2(flixel,ui,FlxTypedButton_flixel_text_FlxText)
@@ -46,23 +47,24 @@ class HXCPP_CLASS_ATTRIBUTES  PlayState_obj : public ::flixel::FlxState_obj{
 		void __Visit(HX_VISIT_PARAMS);
 		::String __ToString() const { return HX_HCSTRING("PlayState","\x5d","\x83","\xc2","\x46"); }
 
-		bool doctorBool;
 		int energy;
-		::flixel::ui::FlxButton _btnMenu;
-		::flixel::ui::FlxButton _btnQuest;
-		::flixel::ui::FlxButton _btnUpgradeMenu;
-		::EnergyBar energyBar;
 		int currency;
+		::flixel::ui::FlxButton _btnMenu;
+		::flixel::ui::FlxButton _btnUpgradeMenu;
+		::flixel::FlxSprite energySymbol;
+		::flixel::text::FlxText text;
+		::flixel::ui::FlxBar energyBar;
+		::Castle _castleNavigation;
 		virtual Void create( );
+
+		virtual Void saveData( );
+		Dynamic saveData_dyn();
 
 		virtual Void clickMood( );
 		Dynamic clickMood_dyn();
 
 		virtual Void clickMenu( );
 		Dynamic clickMenu_dyn();
-
-		virtual Void clickQuest( );
-		Dynamic clickQuest_dyn();
 
 		virtual Void clickUpgradeMenu( );
 		Dynamic clickUpgradeMenu_dyn();

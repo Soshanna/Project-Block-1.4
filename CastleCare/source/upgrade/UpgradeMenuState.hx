@@ -1,5 +1,6 @@
 package upgrade;
 
+import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.FlxG;
 import flixel.ui.FlxButton;
@@ -12,28 +13,30 @@ import flixel.text.FlxText;
  */
 class UpgradeMenuState extends FlxState
 {
+	var _btnMenu:FlxButton;
 	var upgradeCharacterButton:FlxButton;
 	var upgradeCastleButton:FlxButton;
-	var _txtTitle:FlxText;
-	var backButton:FlxButton;
-	var doctorBool:PlayState = new PlayState();
+	var _bkgrOver:FlxSprite = new FlxSprite();
 	
 	override public function create():Void {
-		_txtTitle = new FlxText(20, 0, 0, "Upgrade Menu Screen", 15);
-		_txtTitle.alignment = CENTER;
-		_txtTitle.screenCenter(X);
-		add(_txtTitle);
+		_bkgrOver.loadGraphic("assets/img/background.png");
+		_bkgrOver.scale.set(1.5, 1.5);
+		_bkgrOver.x = 100;
+		_bkgrOver.y = 120;
+		add(_bkgrOver);
 		
-		backButton = new FlxButton((FlxG.width / 2) + 10, FlxG.height - 28, "Back", clickBack);
-		add(backButton);
+		_btnMenu = new FlxButton((FlxG.width / 2) -70, FlxG.height -70,"", clickBack);
+ 		_btnMenu.loadGraphic("assets/img/Buttons/terug-3.png");
+ 		_btnMenu.screenCenter(X);
+ 		add(_btnMenu);
 		
-		if(doctorBool.doctorBool == true){
-		upgradeCharacterButton = new FlxButton(0, 350, "Upgrade Character", clickCharacter);
+		upgradeCharacterButton = new FlxButton(0, 350, "", clickCharacter);
+		upgradeCharacterButton.loadGraphic("assets/img/Buttons/karakter-1.png");
 		upgradeCharacterButton.screenCenter(X);
 		add(upgradeCharacterButton);
-		}
 		
-		upgradeCastleButton = new FlxButton(0, 450, "Upgrade Castle", clickCastle);
+		var upgradeCastleButton:FlxButton = new FlxButton (0, 440, "", clickCastle);
+ 		upgradeCastleButton.loadGraphic("assets/img/Buttons/kasteel-1.png");
 		upgradeCastleButton.screenCenter(X);
 		add(upgradeCastleButton);
 		
@@ -41,7 +44,7 @@ class UpgradeMenuState extends FlxState
 	}
 	
 	function clickBack():Void {
-		FlxG.camera.fade(FlxColor.BLACK, .20, false ,function(){
+		FlxG.camera.fade(FlxColor.BLACK, 1, false ,function(){
 			FlxG.switchState(new PlayState());
 		});
 	}
