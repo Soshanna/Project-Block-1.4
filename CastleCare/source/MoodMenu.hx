@@ -6,6 +6,7 @@ import flixel.ui.FlxButton;
 import flixel.FlxG;
 import flixel.util.FlxColor;
 import flixel.text.FlxText;
+import flixel.util.FlxSave;
 
 /**
  * ...
@@ -13,7 +14,6 @@ import flixel.text.FlxText;
  */
 class MoodMenu extends FlxState
 {
-	var state:PlayState = new PlayState();
 	var energy:Int;
 	var happy:Bool = true;
 	var _btnMenu:FlxButton;
@@ -23,8 +23,11 @@ class MoodMenu extends FlxState
 	override public function create():Void 
 	{
 		super.create();
+		var save:FlxSave = new FlxSave();
+		save.bind("Data");
+		energy = save.data.energy;
+		save.close();
 		
-		energy = state.energy;
 		if(energy <= 40){
 			happy = false;
 		}

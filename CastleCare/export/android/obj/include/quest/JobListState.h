@@ -14,7 +14,6 @@ HX_DECLARE_CLASS1(flixel,FlxSprite)
 HX_DECLARE_CLASS1(flixel,FlxState)
 HX_DECLARE_CLASS2(flixel,group,FlxTypedGroup)
 HX_DECLARE_CLASS2(flixel,input,IFlxInput)
-HX_DECLARE_CLASS2(flixel,text,FlxText)
 HX_DECLARE_CLASS2(flixel,ui,FlxButton)
 HX_DECLARE_CLASS2(flixel,ui,FlxTypedButton_flixel_text_FlxText)
 HX_DECLARE_CLASS2(flixel,util,IFlxDestroyable)
@@ -47,15 +46,21 @@ class HXCPP_CLASS_ATTRIBUTES  JobListState_obj : public ::flixel::FlxState_obj{
 		::String __ToString() const { return HX_HCSTRING("JobListState","\x36","\x29","\x67","\xba"); }
 
 		::flixel::ui::FlxButton backButton;
-		::flixel::text::FlxText _txtTitle;
-		::flixel::ui::FlxButton miniGameButton;
+		::flixel::ui::FlxButton duckButton;
+		::flixel::ui::FlxButton pinguinButton;
+		::flixel::ui::FlxButton turtleButton;
+		::flixel::ui::FlxButton beverButton;
+		::flixel::FlxSprite _bkgrOver;
 		virtual Void create( );
 
 		virtual Void clickBack( );
 		Dynamic clickBack_dyn();
 
-		virtual Void clickMiniGame( );
-		Dynamic clickMiniGame_dyn();
+		virtual Void clickpinguin( );
+		Dynamic clickpinguin_dyn();
+
+		virtual Void clickbever( );
+		Dynamic clickbever_dyn();
 
 };
 

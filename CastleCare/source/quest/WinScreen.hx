@@ -6,6 +6,7 @@ import flixel.text.FlxText;
 import flixel.ui.FlxButton;
 import flixel.FlxG;
 import flixel.util.FlxColor;
+import flixel.util.FlxSave;
 
 /**
  * ...
@@ -14,6 +15,7 @@ import flixel.util.FlxColor;
 class WinScreen extends FlxState
 {
 	var button:FlxButton;
+	var currency:Int;
 
 	override public function create() 
 	{
@@ -32,6 +34,12 @@ class WinScreen extends FlxState
 	
 	function buttonPress(){
 		button.loadGraphic("assets/img/Buttons/terug-4.png");
+		var save:FlxSave = new FlxSave();
+		save.bind("Data");
+		currency = save.data.currency;
+		save.data.currency = (currency + 100);
+		save.flush();
+		save.close();
 		FlxG.camera.fade(FlxColor.BLACK, .20, false ,function(){
 			FlxG.switchState(new PlayState());
 		});

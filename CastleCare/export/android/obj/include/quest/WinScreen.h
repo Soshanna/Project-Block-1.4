@@ -26,12 +26,12 @@ class HXCPP_CLASS_ATTRIBUTES  WinScreen_obj : public ::flixel::FlxState_obj{
 		typedef ::flixel::FlxState_obj super;
 		typedef WinScreen_obj OBJ_;
 		WinScreen_obj();
-		Void __construct();
+		Void __construct(Dynamic MaxSize);
 
 	public:
 		inline void *operator new( size_t inSize, bool inContainer=true,const char *inName="quest.WinScreen")
 			{ return hx::Object::operator new(inSize,inContainer,inName); }
-		static hx::ObjectPtr< WinScreen_obj > __new();
+		static hx::ObjectPtr< WinScreen_obj > __new(Dynamic MaxSize);
 		static Dynamic __CreateEmpty();
 		static Dynamic __Create(hx::DynamicArray inArgs);
 		//~WinScreen_obj();
@@ -46,6 +46,8 @@ class HXCPP_CLASS_ATTRIBUTES  WinScreen_obj : public ::flixel::FlxState_obj{
 		::String __ToString() const { return HX_HCSTRING("WinScreen","\x88","\x34","\xe6","\x7f"); }
 
 		::flixel::ui::FlxButton button;
+		virtual Void create( );
+
 		virtual Void buttonPress( );
 		Dynamic buttonPress_dyn();
 

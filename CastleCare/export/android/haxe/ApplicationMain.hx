@@ -403,7 +403,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "924",
+			build: "1342",
 			company: "F.Neeleman",
 			file: "CastleCare",
 			fps: 60,

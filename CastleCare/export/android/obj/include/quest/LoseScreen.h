@@ -26,12 +26,12 @@ class HXCPP_CLASS_ATTRIBUTES  LoseScreen_obj : public ::flixel::FlxState_obj{
 		typedef ::flixel::FlxState_obj super;
 		typedef LoseScreen_obj OBJ_;
 		LoseScreen_obj();
-		Void __construct();
+		Void __construct(Dynamic MaxSize);
 
 	public:
 		inline void *operator new( size_t inSize, bool inContainer=true,const char *inName="quest.LoseScreen")
 			{ return hx::Object::operator new(inSize,inContainer,inName); }
-		static hx::ObjectPtr< LoseScreen_obj > __new();
+		static hx::ObjectPtr< LoseScreen_obj > __new(Dynamic MaxSize);
 		static Dynamic __CreateEmpty();
 		static Dynamic __Create(hx::DynamicArray inArgs);
 		//~LoseScreen_obj();
@@ -46,6 +46,8 @@ class HXCPP_CLASS_ATTRIBUTES  LoseScreen_obj : public ::flixel::FlxState_obj{
 		::String __ToString() const { return HX_HCSTRING("LoseScreen","\x41","\xeb","\x5a","\x22"); }
 
 		::flixel::ui::FlxButton button;
+		virtual Void create( );
+
 		virtual Void buttonPress( );
 		Dynamic buttonPress_dyn();
 

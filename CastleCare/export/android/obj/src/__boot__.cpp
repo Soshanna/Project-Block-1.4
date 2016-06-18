@@ -591,9 +591,6 @@
 #ifndef INCLUDED_quest_WinScreen
 #include <quest/WinScreen.h>
 #endif
-#ifndef INCLUDED_quest_QuestState
-#include <quest/QuestState.h>
-#endif
 #ifndef INCLUDED_quest_MiniGameScreen
 #include <quest/MiniGameScreen.h>
 #endif
@@ -606,8 +603,8 @@
 #ifndef INCLUDED_quest_Item
 #include <quest/Item.h>
 #endif
-#ifndef INCLUDED_quest_ContactListState
-#include <quest/ContactListState.h>
+#ifndef INCLUDED_quest_HiddenObjectGame
+#include <quest/HiddenObjectGame.h>
 #endif
 #ifndef INCLUDED_haxe_lang_Iterable
 #include <haxe/lang/Iterable.h>
@@ -923,6 +920,9 @@
 #endif
 #ifndef INCLUDED_flixel_ui_FlxTypedButton
 #include <flixel/ui/FlxTypedButton.h>
+#endif
+#ifndef INCLUDED_flixel_ui_FlxBar
+#include <flixel/ui/FlxBar.h>
 #endif
 #ifndef INCLUDED_flixel_tweens_motion_QuadPath
 #include <flixel/tweens/motion/QuadPath.h>
@@ -1269,24 +1269,6 @@
 #ifndef INCLUDED_flixel_input_IFlxInput
 #include <flixel/input/IFlxInput.h>
 #endif
-#ifndef INCLUDED_MoodMenu
-#include <MoodMenu.h>
-#endif
-#ifndef INCLUDED__List_ListIterator
-#include <_List/ListIterator.h>
-#endif
-#ifndef INCLUDED_List
-#include <List.h>
-#endif
-#ifndef INCLUDED_Lambda
-#include <Lambda.h>
-#endif
-#ifndef INCLUDED_EnergyBar
-#include <EnergyBar.h>
-#endif
-#ifndef INCLUDED_flixel_ui_FlxBar
-#include <flixel/ui/FlxBar.h>
-#endif
 #ifndef INCLUDED_flixel_FlxSprite
 #include <flixel/FlxSprite.h>
 #endif
@@ -1298,6 +1280,18 @@
 #endif
 #ifndef INCLUDED_flixel_util_IFlxPooled
 #include <flixel/util/IFlxPooled.h>
+#endif
+#ifndef INCLUDED_MoodMenu
+#include <MoodMenu.h>
+#endif
+#ifndef INCLUDED__List_ListIterator
+#include <_List/ListIterator.h>
+#endif
+#ifndef INCLUDED_List
+#include <List.h>
+#endif
+#ifndef INCLUDED_Lambda
+#include <Lambda.h>
 #endif
 #ifndef INCLUDED___ASSET__flixel_fonts_monsterrat_ttf
 #include <__ASSET__flixel_fonts_monsterrat_ttf.h>
@@ -1575,12 +1569,11 @@ hx::RegisterResources( hx::GetResources() );
 ::upgrade::UpgradeCharacterState_obj::__register();
 ::upgrade::UpgradeCastleState_obj::__register();
 ::quest::WinScreen_obj::__register();
-::quest::QuestState_obj::__register();
 ::quest::MiniGameScreen_obj::__register();
 ::quest::LoseScreen_obj::__register();
 ::quest::JobListState_obj::__register();
 ::quest::Item_obj::__register();
-::quest::ContactListState_obj::__register();
+::quest::HiddenObjectGame_obj::__register();
 ::haxe::lang::Iterable_obj::__register();
 ::haxe::lang::Iterator_obj::__register();
 ::openfl::utils::_Object::Object_Impl__obj::__register();
@@ -1686,6 +1679,7 @@ hx::RegisterResources( hx::GetResources() );
 ::flixel::util::FlxArrayUtil_obj::__register();
 ::flixel::ui::_FlxButton::FlxButtonEvent_obj::__register();
 ::flixel::ui::FlxTypedButton_obj::__register();
+::flixel::ui::FlxBar_obj::__register();
 ::flixel::tweens::motion::QuadPath_obj::__register();
 ::flixel::tweens::motion::QuadMotion_obj::__register();
 ::flixel::tweens::motion::LinearPath_obj::__register();
@@ -1801,16 +1795,14 @@ hx::RegisterResources( hx::GetResources() );
 ::MoodSmiley_obj::__register();
 ::flixel::ui::FlxTypedButton_flixel_text_FlxText_obj::__register();
 ::flixel::input::IFlxInput_obj::__register();
-::MoodMenu_obj::__register();
-::_List::ListIterator_obj::__register();
-::List_obj::__register();
-::Lambda_obj::__register();
-::EnergyBar_obj::__register();
-::flixel::ui::FlxBar_obj::__register();
 ::flixel::FlxSprite_obj::__register();
 ::flixel::util::FlxPool_flixel_math_FlxRect_obj::__register();
 ::flixel::util::IFlxPool_obj::__register();
 ::flixel::util::IFlxPooled_obj::__register();
+::MoodMenu_obj::__register();
+::_List::ListIterator_obj::__register();
+::List_obj::__register();
+::Lambda_obj::__register();
 ::__ASSET__flixel_fonts_monsterrat_ttf_obj::__register();
 ::__ASSET__flixel_fonts_nokiafc22_ttf_obj::__register();
 ::__ASSET__assets_data_glecb_ttf_obj::__register();

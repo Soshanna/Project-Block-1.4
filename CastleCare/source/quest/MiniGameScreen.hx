@@ -57,13 +57,10 @@ class MiniGameScreen extends FlxState
 		add(backButton);
 		
 		makeItems();
-		
-		itemCheck();
-		itemCheck();
 	}
 	
 	function itemCheck(){
-		for(i in 0...(rowArray.length)){
+		for (i in 0...(rowArray.length)){
 			checkItemHor(rowArray[i], i);
 		}for (i in 0...rowArray.length){
 			if(i <= 3){
@@ -77,7 +74,7 @@ class MiniGameScreen extends FlxState
 			}else if(i <= 19){
 				checkItemVer(rowArray[((i - 16) * 5) + 4], i);
 			}
-		}for(i in 0...rowArray.length){
+		}for (i in 0...rowArray.length){
 			removeMarked(rowArray[i]);
 		}
 	}
@@ -142,14 +139,13 @@ class MiniGameScreen extends FlxState
 			a = 0;
 			turns -= 1;
 			_txtTurns.text = "Turns: " + turns;
-			itemCheck();
 			for(i in 0...rowArray.length){
 				rowArray[i].onDown.callback = itemClicked.bind(rowArray[i]);
 			}
 		}
 	}
 	
-	function checkItemHor(item:Item, i:Int) {	
+	function checkItemHor(item:Item, i:Int){//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!BUGGED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		if(i == 5 || i == 10 || i == 15){
 			typeCount = 0;
 		}
@@ -173,7 +169,7 @@ class MiniGameScreen extends FlxState
 		}
 	}
 	
-	function checkItemVer(item:Item, i:Int) {	
+	function checkItemVer(item:Item, i:Int){//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!BUGGED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		if(i == 1 || i == 2 || i == 3 || i == 4){
 			typeCount = 0;
 		}
@@ -199,7 +195,7 @@ class MiniGameScreen extends FlxState
 	
 	function removeMarked(item:Item){
 		if (item.name == "MARKED") {
-			trace(item.arrayID + " = MARKED");	
+			trace(item.arrayID + " of type:" + item.type + " = MARKED");	
 			replaceItem(item, Math.floor(Math.random() * 100));
 			score += 1;
 			_txtScore.text = "Score: " + score;
@@ -237,7 +233,7 @@ class MiniGameScreen extends FlxState
 	
 	function buttonPress(){
 		FlxG.camera.fade(FlxColor.BLACK, .20, false ,function(){
-			FlxG.switchState(new JobListState());
+			FlxG.switchState(new PlayState());
 		});
 	}
 	
@@ -248,6 +244,7 @@ class MiniGameScreen extends FlxState
 		if(turns == 0){
 			loseScreen();
 		}
+		itemCheck();
 		super.update(elapsed);
 	}
 }

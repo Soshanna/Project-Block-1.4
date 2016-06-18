@@ -126,8 +126,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
-		
-		
 		Font.registerFont (__ASSET__flixel_fonts_nokiafc22_ttf);
 		Font.registerFont (__ASSET__flixel_fonts_monsterrat_ttf);
 		
@@ -136,8 +134,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
-		useManifest = true;
-		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -775,8 +771,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
-		
-		
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_nokiafc22_ttf);
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_monsterrat_ttf);
 		
@@ -877,20 +871,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/img/castle-background.png", AssetType.IMAGE);
 		path.set ("assets/img/Characters/architect.png", "assets/img/Characters/architect.png");
 		type.set ("assets/img/Characters/architect.png", AssetType.IMAGE);
-		path.set ("assets/img/Characters/bever-button.png", "assets/img/Characters/bever-button.png");
-		type.set ("assets/img/Characters/bever-button.png", AssetType.IMAGE);
-		path.set ("assets/img/Characters/duck-button.png", "assets/img/Characters/duck-button.png");
-		type.set ("assets/img/Characters/duck-button.png", AssetType.IMAGE);
-		path.set ("assets/img/Characters/NPC-Duck.png", "assets/img/Characters/NPC-Duck.png");
-		type.set ("assets/img/Characters/NPC-Duck.png", AssetType.IMAGE);
-		path.set ("assets/img/Characters/penguin-button.png", "assets/img/Characters/penguin-button.png");
-		type.set ("assets/img/Characters/penguin-button.png", AssetType.IMAGE);
-		path.set ("assets/img/Characters/plaguepenguinnew.png", "assets/img/Characters/plaguepenguinnew.png");
-		type.set ("assets/img/Characters/plaguepenguinnew.png", AssetType.IMAGE);
-		path.set ("assets/img/Characters/turtle-button.png", "assets/img/Characters/turtle-button.png");
-		type.set ("assets/img/Characters/turtle-button.png", AssetType.IMAGE);
-		path.set ("assets/img/Characters/turtle.png", "assets/img/Characters/turtle.png");
-		type.set ("assets/img/Characters/turtle.png", AssetType.IMAGE);
+		path.set ("assets/img/Characters/cat.png", "assets/img/Characters/cat.png");
+		type.set ("assets/img/Characters/cat.png", AssetType.IMAGE);
+		path.set ("assets/img/Characters/doctor.png", "assets/img/Characters/doctor.png");
+		type.set ("assets/img/Characters/doctor.png", AssetType.IMAGE);
 		path.set ("assets/img/EmptyEnergy.png", "assets/img/EmptyEnergy.png");
 		type.set ("assets/img/EmptyEnergy.png", AssetType.IMAGE);
 		path.set ("assets/img/EnergySymbol.png", "assets/img/EnergySymbol.png");
@@ -909,6 +893,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/img/Minigame/Minigame Background.png", AssetType.IMAGE);
 		path.set ("assets/img/Minigame/WaterMelonButton.png", "assets/img/Minigame/WaterMelonButton.png");
 		type.set ("assets/img/Minigame/WaterMelonButton.png", AssetType.IMAGE);
+		path.set ("assets/img/MissionButton.png", "assets/img/MissionButton.png");
+		type.set ("assets/img/MissionButton.png", AssetType.IMAGE);
 		path.set ("assets/img/MoodHappy.png", "assets/img/MoodHappy.png");
 		type.set ("assets/img/MoodHappy.png", AssetType.IMAGE);
 		path.set ("assets/img/Moodmenu/MoodAngry.png", "assets/img/Moodmenu/MoodAngry.png");
@@ -923,6 +909,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/img/room2.png", AssetType.IMAGE);
 		path.set ("assets/img/room3.png", "assets/img/room3.png");
 		type.set ("assets/img/room3.png", AssetType.IMAGE);
+		path.set ("assets/img/TalkButton.png", "assets/img/TalkButton.png");
+		type.set ("assets/img/TalkButton.png", AssetType.IMAGE);
+		path.set ("assets/img/TextBoxText.png", "assets/img/TextBoxText.png");
+		type.set ("assets/img/TextBoxText.png", AssetType.IMAGE);
 		path.set ("assets/img/titelbackground.png", "assets/img/titelbackground.png");
 		type.set ("assets/img/titelbackground.png", AssetType.IMAGE);
 		className.set ("flixel/sounds/beep.ogg", __ASSET__flixel_sounds_beep_ogg);
@@ -1078,25 +1068,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/img/Characters/architect.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
-		id = "assets/img/Characters/bever-button.png";
+		id = "assets/img/Characters/cat.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
-		id = "assets/img/Characters/duck-button.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/img/Characters/NPC-Duck.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/img/Characters/penguin-button.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/img/Characters/plaguepenguinnew.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/img/Characters/turtle-button.png";
-		path.set (id, id);
-		type.set (id, AssetType.IMAGE);
-		id = "assets/img/Characters/turtle.png";
+		id = "assets/img/Characters/doctor.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/img/EmptyEnergy.png";
@@ -1126,6 +1101,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/img/Minigame/WaterMelonButton.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
+		id = "assets/img/MissionButton.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
 		id = "assets/img/MoodHappy.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
@@ -1145,6 +1123,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/img/room3.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/TalkButton.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/TextBoxText.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/img/titelbackground.png";
@@ -1190,8 +1174,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		className.set ("assets/data/GLECB.TTF", __ASSET__assets_data_glecb_ttf);
 		type.set ("assets/data/GLECB.TTF", AssetType.FONT);
-		useManifest = true;
-		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -2060,8 +2042,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
-
-
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_beep_ogg extends null { }
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_flixel_ogg extends null { }
 @:keep @:bind #if display private #end class __ASSET__flixel_fonts_nokiafc22_ttf extends null { }
@@ -2072,8 +2052,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 #elseif html5
 
 @:keep #if display private #end class __ASSET__assets_data_glecb_ttf extends lime.text.Font { public function new () { super (); name = "Gloucester MT Extra Condensed"; } } 
-
-
 
 
 

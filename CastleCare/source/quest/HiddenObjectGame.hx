@@ -7,6 +7,7 @@ import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.input.mouse.FlxMouseEventManager;
 import flixel.util.FlxColor;
+import flixel.util.FlxSave;
 
 /**
  * ...
@@ -36,29 +37,29 @@ class HiddenObjectGame extends FlxState
 	
 	function displayButtons()
 	{
-		var hammer:FlxButton = new FlxButton(500, 500);
+		var hammer:FlxButton = new FlxButton(465, 565);
 		hammer.loadGraphic("assets/images/hammer.png");
 		hammer.onDown.callback = onClicked.bind(hammer);
 		hammer.scale.x = .77;
 		hammer.scale.y = .77;
 		add(hammer);
 		
-		var chisel:FlxButton = new FlxButton(600, 600);
+		var chisel:FlxButton = new FlxButton(900, 630);
 		chisel.loadGraphic("assets/images/Chisel.png");
 		chisel.onDown.callback = onClicked.bind(chisel);
 		add(chisel);
 		
-		var axe:FlxButton = new FlxButton(500, 550);
+		var axe:FlxButton = new FlxButton(500, 555);
 		axe.loadGraphic("assets/images/Axe.png");
 		axe.onDown.callback = onClicked.bind(axe);
 		add(axe);
 		
-		var saw:FlxButton = new FlxButton(450, 450);
+		var saw:FlxButton = new FlxButton(268, 428);
 		saw.loadGraphic("assets/images/saw.png");
 		saw.onDown.callback = onClicked.bind(saw);
 		add(saw);
 		
-		var shovel:FlxButton = new FlxButton(800, 650);
+		var shovel:FlxButton = new FlxButton(425, 410);
 		shovel.loadGraphic("assets/images/Shovel.png");
 		shovel.onDown.callback = onClicked.bind(shovel);
 		add(shovel);
@@ -98,8 +99,14 @@ class HiddenObjectGame extends FlxState
 	}
 	
 	function back(){
+		var save:FlxSave = new FlxSave();
+		save.bind("Data");
+		currency = save.data.currency;
+		save.data.currency = (currency + 100);
+		save.flush();
+		save.close();
 		FlxG.camera.fade(FlxColor.BLACK, .20, false ,function(){
-			FlxG.switchState(new JobListState());
+			FlxG.switchState(new PlayState());
 		});
 	}
 }

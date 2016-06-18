@@ -14,6 +14,11 @@ HX_DECLARE_CLASS1(flixel,FlxObject)
 HX_DECLARE_CLASS1(flixel,FlxSprite)
 HX_DECLARE_CLASS1(flixel,FlxState)
 HX_DECLARE_CLASS2(flixel,group,FlxTypedGroup)
+HX_DECLARE_CLASS2(flixel,input,IFlxInput)
+HX_DECLARE_CLASS2(flixel,text,FlxText)
+HX_DECLARE_CLASS2(flixel,ui,FlxButton)
+HX_DECLARE_CLASS2(flixel,ui,FlxTypedButton_flixel_text_FlxText)
+HX_DECLARE_CLASS2(flixel,util,FlxTimer)
 HX_DECLARE_CLASS2(flixel,util,IFlxDestroyable)
 
 
@@ -41,39 +46,59 @@ class HXCPP_CLASS_ATTRIBUTES  Castle_obj : public ::flixel::FlxState_obj{
 		void __Visit(HX_VISIT_PARAMS);
 		::String __ToString() const { return HX_HCSTRING("Castle","\x18","\x5f","\x23","\xf0"); }
 
-		::flixel::FlxSprite _room1;
-		::flixel::FlxSprite _room2;
-		::flixel::FlxSprite _room3;
-		::flixel::FlxSprite _room4;
-		::flixel::FlxSprite _room5;
-		::flixel::FlxSprite _room6;
+		::flixel::FlxSprite background;
+		::flixel::ui::FlxButton _room1;
+		::flixel::ui::FlxButton _room2;
+		::flixel::ui::FlxButton _room3;
 		::flixel::FlxSprite _roomOne;
 		::flixel::FlxSprite _roomTwo;
 		::flixel::FlxSprite _roomThree;
-		::flixel::FlxSprite _roomFour;
-		::flixel::FlxSprite _roomFive;
-		::flixel::FlxSprite _roomSix;
-		::flixel::FlxSprite myButton;
-		virtual Void roomOne( ::flixel::FlxSprite sprite);
+		::flixel::ui::FlxButton myButton;
+		::flixel::ui::FlxButton talkButton;
+		::flixel::ui::FlxButton missionButton;
+		::flixel::util::FlxTimer timer;
+		::flixel::FlxSprite character;
+		::flixel::FlxSprite textBox;
+		::flixel::text::FlxText _txtCharacter;
+		::flixel::text::FlxText _txtRoom;
+		virtual Void removeCallback( );
+		Dynamic removeCallback_dyn();
+
+		virtual Void addCallback( );
+		Dynamic addCallback_dyn();
+
+		virtual Void roomOne( );
 		Dynamic roomOne_dyn();
 
-		virtual Void roomTwo( ::flixel::FlxSprite sprite);
+		virtual Void roomTwo( );
 		Dynamic roomTwo_dyn();
 
-		virtual Void roomThree( ::flixel::FlxSprite sprite);
+		virtual Void roomThree( );
 		Dynamic roomThree_dyn();
 
-		virtual Void roomFour( ::flixel::FlxSprite sprite);
-		Dynamic roomFour_dyn();
+		virtual Void talkCat( );
+		Dynamic talkCat_dyn();
 
-		virtual Void roomFive( ::flixel::FlxSprite sprite);
-		Dynamic roomFive_dyn();
+		virtual Void missionCat( );
+		Dynamic missionCat_dyn();
 
-		virtual Void roomSix( ::flixel::FlxSprite sprite);
-		Dynamic roomSix_dyn();
+		virtual Void talkArchitect( );
+		Dynamic talkArchitect_dyn();
 
-		virtual Void smallRooms( ::flixel::FlxSprite sprite);
-		Dynamic smallRooms_dyn();
+		virtual Void missionArchitect( );
+		Dynamic missionArchitect_dyn();
+
+		virtual Void talkDoctor( );
+		Dynamic talkDoctor_dyn();
+
+		virtual Void missionDoctor( );
+		Dynamic missionDoctor_dyn();
+
+		virtual Void removeText( ::flixel::util::FlxTimer timer);
+		Dynamic removeText_dyn();
+
+		virtual Void removeRoom( ::flixel::FlxSprite sprite);
+		Dynamic removeRoom_dyn();
 
 };
 
