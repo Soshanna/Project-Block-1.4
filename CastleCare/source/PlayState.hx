@@ -16,7 +16,7 @@ import flixel.util.FlxSave;
 
 class PlayState extends FlxState
 {
-	public var energy:Int;
+	public var energy:Float;
 	public var currency:Int;
 	var _btnMenu:FlxButton;
 	var _btnUpgradeMenu:FlxButton;
@@ -24,13 +24,28 @@ class PlayState extends FlxState
 	var text:FlxText;
 	var energyBar:FlxBar;
 	var _castleNavigation:Castle;
+	var rightNow:Date = Date.now();
+	var timeDifference:Float;
+	var lastTime:Float;
 	
 	override public function create():Void{
 		var save:FlxSave = new FlxSave();
 		save.bind("Data");
 		energy = save.data.energy;
+		lastTime = save.data.time;
 		currency = save.data.currency;
 		save.close();
+		
+		timeDifference = (((rightNow.getTime() - lastTime) / 1000) / 100)* 0.02777778;
+		if (energy >= 100){
+			energy = 100;
+		}else if (energy < 100){
+			energy = energy + timeDifference;
+			if (energy > 100){
+				energy = 100;
+			}
+			trace(energy);
+		}
 		
 		_castleNavigation = new Castle();
 		add(_castleNavigation);	
@@ -63,6 +78,8 @@ class PlayState extends FlxState
 		save.bind("Data");
 		save.data.energy = energy;
 		save.data.currency = currency;
+		save.data.time	= rightNow.getTime();
+		trace(save.data.time);
 		save.flush();
 		save.close();
 	}
@@ -95,5 +112,13 @@ class PlayState extends FlxState
 		energyBar.value = energy;
 		energyBar.updateBar();
 		_btnUpgradeMenu.text = "$ " + currency;
+		if(energy < 100){
+			energy += 0.0002777778;
+		}else if (energy >= 100){
+			energy = 100;
+		}
+		if(energy < 0){
+			energy = 0;
+		}
 	}
 }

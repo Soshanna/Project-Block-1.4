@@ -182,7 +182,7 @@ class MiniGameScreen extends FlxState
 				if(lastCount >= 3) {
 					for(i in 1...(typeCount + 1)){
 						if(rowArray[item.arrayID - (i * 5)] != null){
-							rowArray[item.arrayID - (i * 5)].name = "MARKED";	
+							rowArray[item.arrayID - (i * 5)].name = "MARKED";
 						}
 					}
 				}
