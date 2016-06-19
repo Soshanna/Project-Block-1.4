@@ -9,7 +9,6 @@
 #include <flixel/FlxState.h>
 #endif
 HX_DECLARE_CLASS0(MoodMenu)
-HX_DECLARE_CLASS0(PlayState)
 HX_DECLARE_CLASS1(flixel,FlxBasic)
 HX_DECLARE_CLASS1(flixel,FlxObject)
 HX_DECLARE_CLASS1(flixel,FlxSprite)
@@ -45,7 +44,6 @@ class HXCPP_CLASS_ATTRIBUTES  MoodMenu_obj : public ::flixel::FlxState_obj{
 		void __Visit(HX_VISIT_PARAMS);
 		::String __ToString() const { return HX_HCSTRING("MoodMenu","\x56","\x52","\xdc","\x64"); }
 
-		::PlayState state;
 		int energy;
 		bool happy;
 		::flixel::ui::FlxButton _btnMenu;

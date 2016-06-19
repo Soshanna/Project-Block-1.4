@@ -16,6 +16,7 @@ import flixel.util.FlxSave;
 class HiddenObjectGame extends FlxState
 {
 	var PosArray:Array<Int> = new Array<Int>();
+	var energy:Int;
 	var itemCounter:Int = 0;
 	var button:FlxButton;
 	var currency:Int;
@@ -93,6 +94,15 @@ class HiddenObjectGame extends FlxState
 		scoreText.screenCenter(X);
 		add(scoreText);
 		
+		var save:FlxSave = new FlxSave();
+		save.bind("Data");
+		currency = save.data.currency;
+		energy = save.data.energy;
+		save.data.energy = (energy - 25);
+		save.data.currency = (currency + 100);
+		save.flush();
+		save.close();
+		
 		button = new FlxButton(550, 350, "", back);
 		button.loadGraphic("assets/img/Buttons/terug-3.png");
 		add(button);
@@ -101,8 +111,8 @@ class HiddenObjectGame extends FlxState
 	function back(){
 		var save:FlxSave = new FlxSave();
 		save.bind("Data");
-		currency = save.data.currency;
-		save.data.currency = (currency + 100);
+		energy = save.data.energy;
+		save.data.energy = (energy - 25);
 		save.flush();
 		save.close();
 		FlxG.camera.fade(FlxColor.BLACK, .20, false ,function(){

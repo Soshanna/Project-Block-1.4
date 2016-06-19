@@ -9,6 +9,7 @@
 #include <flixel/FlxState.h>
 #endif
 HX_DECLARE_CLASS0(Castle)
+HX_DECLARE_CLASS0(Date)
 HX_DECLARE_CLASS0(PlayState)
 HX_DECLARE_CLASS1(flixel,FlxBasic)
 HX_DECLARE_CLASS1(flixel,FlxObject)
@@ -47,7 +48,7 @@ class HXCPP_CLASS_ATTRIBUTES  PlayState_obj : public ::flixel::FlxState_obj{
 		void __Visit(HX_VISIT_PARAMS);
 		::String __ToString() const { return HX_HCSTRING("PlayState","\x5d","\x83","\xc2","\x46"); }
 
-		int energy;
+		Float energy;
 		int currency;
 		::flixel::ui::FlxButton _btnMenu;
 		::flixel::ui::FlxButton _btnUpgradeMenu;
@@ -55,6 +56,9 @@ class HXCPP_CLASS_ATTRIBUTES  PlayState_obj : public ::flixel::FlxState_obj{
 		::flixel::text::FlxText text;
 		::flixel::ui::FlxBar energyBar;
 		::Castle _castleNavigation;
+		::Date rightNow;
+		Float timeDifference;
+		Float lastTime;
 		virtual Void create( );
 
 		virtual Void saveData( );

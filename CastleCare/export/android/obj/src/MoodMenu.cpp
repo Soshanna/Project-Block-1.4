@@ -39,6 +39,9 @@
 #ifndef INCLUDED_flixel_ui_FlxTypedButton_flixel_text_FlxText
 #include <flixel/ui/FlxTypedButton_flixel_text_FlxText.h>
 #endif
+#ifndef INCLUDED_flixel_util_FlxSave
+#include <flixel/util/FlxSave.h>
+#endif
 #ifndef INCLUDED_flixel_util_IFlxDestroyable
 #include <flixel/util/IFlxDestroyable.h>
 #endif
@@ -66,7 +69,7 @@
 
 Void MoodMenu_obj::__construct(Dynamic MaxSize)
 {
-HX_STACK_FRAME("MoodMenu","new",0x819ed648,"MoodMenu.new","MoodMenu.hx",14,0x791e8a28)
+HX_STACK_FRAME("MoodMenu","new",0x819ed648,"MoodMenu.new","MoodMenu.hx",15,0x791e8a28)
 HX_STACK_THIS(this)
 HX_STACK_ARG(MaxSize,"MaxSize")
 {
@@ -76,11 +79,9 @@ HX_STACK_ARG(MaxSize,"MaxSize")
 	this->_bkgrOver = ::flixel::FlxSprite_obj::__new(null(),null(),null());
 	HX_STACK_LINE(18)
 	this->happy = true;
-	HX_STACK_LINE(16)
-	this->state = ::PlayState_obj::__new(null());
-	HX_STACK_LINE(14)
+	HX_STACK_LINE(15)
 	Dynamic tmp = MaxSize;		HX_STACK_VAR(tmp,"tmp");
-	HX_STACK_LINE(14)
+	HX_STACK_LINE(15)
 	super::__construct(tmp);
 }
 ;
@@ -106,88 +107,94 @@ Void MoodMenu_obj::create( ){
 		HX_STACK_THIS(this)
 		HX_STACK_LINE(25)
 		this->super::create();
+		HX_STACK_LINE(26)
+		::flixel::util::FlxSave tmp = ::flixel::util::FlxSave_obj::__new();		HX_STACK_VAR(tmp,"tmp");
+		HX_STACK_LINE(26)
+		::flixel::util::FlxSave save = tmp;		HX_STACK_VAR(save,"save");
 		HX_STACK_LINE(27)
-		::PlayState tmp = this->state;		HX_STACK_VAR(tmp,"tmp");
-		HX_STACK_LINE(27)
-		this->energy = tmp->energy;
+		save->bind(HX_HCSTRING("Data","\x4a","\x82","\x3c","\x2d"));
 		HX_STACK_LINE(28)
+		this->energy = save->data->__Field(HX_HCSTRING("energy","\xc8","\xa8","\x38","\xfb"), hx::paccDynamic );
+		HX_STACK_LINE(29)
+		save->close(null(),null());
+		HX_STACK_LINE(31)
 		int tmp1 = this->energy;		HX_STACK_VAR(tmp1,"tmp1");
-		HX_STACK_LINE(28)
+		HX_STACK_LINE(31)
 		bool tmp2 = (tmp1 <= (int)40);		HX_STACK_VAR(tmp2,"tmp2");
-		HX_STACK_LINE(28)
+		HX_STACK_LINE(31)
 		if ((tmp2)){
-			HX_STACK_LINE(29)
+			HX_STACK_LINE(32)
 			this->happy = false;
 		}
-		HX_STACK_LINE(32)
+		HX_STACK_LINE(35)
 		::flixel::FlxSprite tmp3 = this->_bkgrOver;		HX_STACK_VAR(tmp3,"tmp3");
-		HX_STACK_LINE(32)
+		HX_STACK_LINE(35)
 		tmp3->loadGraphic(HX_HCSTRING("assets/img/Moodmenu/MoodMenu.png","\x32","\xff","\xbd","\x54"),null(),null(),null(),null(),null());
-		HX_STACK_LINE(33)
+		HX_STACK_LINE(36)
 		::flixel::FlxSprite tmp4 = this->_bkgrOver;		HX_STACK_VAR(tmp4,"tmp4");
-		HX_STACK_LINE(33)
+		HX_STACK_LINE(36)
 		this->add(tmp4);
-		HX_STACK_LINE(35)
+		HX_STACK_LINE(38)
 		::flixel::FlxSprite tmp5 = this->smiley;		HX_STACK_VAR(tmp5,"tmp5");
-		HX_STACK_LINE(35)
+		HX_STACK_LINE(38)
 		tmp5->set_x((int)8);
-		HX_STACK_LINE(36)
+		HX_STACK_LINE(39)
 		::flixel::FlxSprite tmp6 = this->smiley;		HX_STACK_VAR(tmp6,"tmp6");
-		HX_STACK_LINE(36)
+		HX_STACK_LINE(39)
 		tmp6->set_y((int)8);
-		HX_STACK_LINE(38)
+		HX_STACK_LINE(41)
 		bool tmp7 = this->happy;		HX_STACK_VAR(tmp7,"tmp7");
-		HX_STACK_LINE(38)
+		HX_STACK_LINE(41)
 		bool tmp8 = (tmp7 == true);		HX_STACK_VAR(tmp8,"tmp8");
-		HX_STACK_LINE(38)
+		HX_STACK_LINE(41)
 		if ((tmp8)){
-			HX_STACK_LINE(39)
+			HX_STACK_LINE(42)
 			::flixel::FlxSprite tmp9 = this->smiley;		HX_STACK_VAR(tmp9,"tmp9");
-			HX_STACK_LINE(39)
+			HX_STACK_LINE(42)
 			tmp9->loadGraphic(HX_HCSTRING("assets/img/Moodmenu/MoodHappy.png","\x83","\x8e","\xd1","\x24"),null(),null(),null(),null(),null());
-			HX_STACK_LINE(40)
+			HX_STACK_LINE(43)
 			::flixel::FlxSprite tmp10 = this->smiley;		HX_STACK_VAR(tmp10,"tmp10");
-			HX_STACK_LINE(40)
+			HX_STACK_LINE(43)
 			this->add(tmp10);
 		}
-		HX_STACK_LINE(43)
+		HX_STACK_LINE(46)
 		bool tmp9 = this->happy;		HX_STACK_VAR(tmp9,"tmp9");
-		HX_STACK_LINE(43)
+		HX_STACK_LINE(46)
 		bool tmp10 = (tmp9 == false);		HX_STACK_VAR(tmp10,"tmp10");
-		HX_STACK_LINE(43)
+		HX_STACK_LINE(46)
 		if ((tmp10)){
-			HX_STACK_LINE(44)
+			HX_STACK_LINE(47)
 			::flixel::FlxSprite tmp11 = this->smiley;		HX_STACK_VAR(tmp11,"tmp11");
-			HX_STACK_LINE(44)
+			HX_STACK_LINE(47)
 			tmp11->loadGraphic(HX_HCSTRING("assets/img/Moodmenu/MoodAngry.png","\x04","\x07","\x3d","\x9e"),null(),null(),null(),null(),null());
-			HX_STACK_LINE(45)
+			HX_STACK_LINE(48)
 			::flixel::FlxSprite tmp12 = this->smiley;		HX_STACK_VAR(tmp12,"tmp12");
-			HX_STACK_LINE(45)
+			HX_STACK_LINE(48)
 			this->add(tmp12);
 		}
-		HX_STACK_LINE(48)
+		HX_STACK_LINE(51)
 		int tmp11 = ::flixel::FlxG_obj::width;		HX_STACK_VAR(tmp11,"tmp11");
-		HX_STACK_LINE(48)
+		HX_STACK_LINE(51)
 		Float tmp12 = (Float(tmp11) / Float((int)2));		HX_STACK_VAR(tmp12,"tmp12");
-		HX_STACK_LINE(48)
+		HX_STACK_LINE(51)
 		Float tmp13 = (tmp12 + (int)510);		HX_STACK_VAR(tmp13,"tmp13");
-		HX_STACK_LINE(48)
+		HX_STACK_LINE(51)
 		int tmp14 = ::flixel::FlxG_obj::height;		HX_STACK_VAR(tmp14,"tmp14");
-		HX_STACK_LINE(48)
+		HX_STACK_LINE(51)
 		int tmp15 = (tmp14 - (int)95);		HX_STACK_VAR(tmp15,"tmp15");
-		HX_STACK_LINE(48)
+		HX_STACK_LINE(51)
 		Dynamic tmp16 = this->clickBack_dyn();		HX_STACK_VAR(tmp16,"tmp16");
-		HX_STACK_LINE(48)
+		HX_STACK_LINE(51)
 		::flixel::ui::FlxButton tmp17 = ::flixel::ui::FlxButton_obj::__new(tmp13,tmp15,HX_HCSTRING("","\x00","\x00","\x00","\x00"),tmp16);		HX_STACK_VAR(tmp17,"tmp17");
-		HX_STACK_LINE(48)
+		HX_STACK_LINE(51)
 		this->_btnMenu = tmp17;
-		HX_STACK_LINE(49)
+		HX_STACK_LINE(52)
 		::flixel::ui::FlxButton tmp18 = this->_btnMenu;		HX_STACK_VAR(tmp18,"tmp18");
-		HX_STACK_LINE(49)
+		HX_STACK_LINE(52)
 		tmp18->loadGraphic(HX_HCSTRING("assets/img/Buttons/terug-3.png","\x0e","\x76","\xb8","\x35"),null(),null(),null(),null(),null());
-		HX_STACK_LINE(50)
+		HX_STACK_LINE(53)
 		::flixel::ui::FlxButton tmp19 = this->_btnMenu;		HX_STACK_VAR(tmp19,"tmp19");
-		HX_STACK_LINE(50)
+		HX_STACK_LINE(53)
 		this->add(tmp19);
 	}
 return null();
@@ -196,31 +203,31 @@ return null();
 
 Void MoodMenu_obj::clickBack( ){
 {
-		HX_STACK_FRAME("MoodMenu","clickBack",0xc660aa77,"MoodMenu.clickBack","MoodMenu.hx",53,0x791e8a28)
+		HX_STACK_FRAME("MoodMenu","clickBack",0xc660aa77,"MoodMenu.clickBack","MoodMenu.hx",56,0x791e8a28)
 		HX_STACK_THIS(this)
-		HX_STACK_LINE(54)
+		HX_STACK_LINE(57)
 		::flixel::FlxCamera tmp = ::flixel::FlxG_obj::camera;		HX_STACK_VAR(tmp,"tmp");
 
 		HX_BEGIN_LOCAL_FUNC_S0(hx::LocalFunc,_Function_1_1)
 		int __ArgCount() const { return 0; }
 		Void run(){
-			HX_STACK_FRAME("*","_Function_1_1",0x5200ed37,"*._Function_1_1","MoodMenu.hx",55,0x791e8a28)
+			HX_STACK_FRAME("*","_Function_1_1",0x5200ed37,"*._Function_1_1","MoodMenu.hx",58,0x791e8a28)
 			{
-				HX_STACK_LINE(55)
+				HX_STACK_LINE(58)
 				::PlayState tmp1 = ::PlayState_obj::__new(null());		HX_STACK_VAR(tmp1,"tmp1");
-				HX_STACK_LINE(55)
+				HX_STACK_LINE(58)
 				::flixel::FlxState nextState = tmp1;		HX_STACK_VAR(nextState,"nextState");
-				HX_STACK_LINE(55)
+				HX_STACK_LINE(58)
 				::flixel::FlxGame tmp2 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp2,"tmp2");
-				HX_STACK_LINE(55)
+				HX_STACK_LINE(58)
 				::flixel::FlxState tmp3 = nextState;		HX_STACK_VAR(tmp3,"tmp3");
-				HX_STACK_LINE(55)
+				HX_STACK_LINE(58)
 				bool tmp4 = tmp2->_state->switchTo(tmp3);		HX_STACK_VAR(tmp4,"tmp4");
-				HX_STACK_LINE(55)
+				HX_STACK_LINE(58)
 				if ((tmp4)){
-					HX_STACK_LINE(55)
+					HX_STACK_LINE(58)
 					::flixel::FlxGame tmp5 = ::flixel::FlxG_obj::game;		HX_STACK_VAR(tmp5,"tmp5");
-					HX_STACK_LINE(55)
+					HX_STACK_LINE(58)
 					tmp5->_requestedState = nextState;
 				}
 			}
@@ -228,7 +235,7 @@ Void MoodMenu_obj::clickBack( ){
 		}
 		HX_END_LOCAL_FUNC0((void))
 
-		HX_STACK_LINE(54)
+		HX_STACK_LINE(57)
 		tmp->fade((int)-16777216,((Float).20),false, Dynamic(new _Function_1_1()),null());
 	}
 return null();
@@ -245,7 +252,6 @@ MoodMenu_obj::MoodMenu_obj()
 void MoodMenu_obj::__Mark(HX_MARK_PARAMS)
 {
 	HX_MARK_BEGIN_CLASS(MoodMenu);
-	HX_MARK_MEMBER_NAME(state,"state");
 	HX_MARK_MEMBER_NAME(energy,"energy");
 	HX_MARK_MEMBER_NAME(happy,"happy");
 	HX_MARK_MEMBER_NAME(_btnMenu,"_btnMenu");
@@ -257,7 +263,6 @@ void MoodMenu_obj::__Mark(HX_MARK_PARAMS)
 
 void MoodMenu_obj::__Visit(HX_VISIT_PARAMS)
 {
-	HX_VISIT_MEMBER_NAME(state,"state");
 	HX_VISIT_MEMBER_NAME(energy,"energy");
 	HX_VISIT_MEMBER_NAME(happy,"happy");
 	HX_VISIT_MEMBER_NAME(_btnMenu,"_btnMenu");
@@ -270,7 +275,6 @@ Dynamic MoodMenu_obj::__Field(const ::String &inName,hx::PropertyAccess inCallPr
 {
 	switch(inName.length) {
 	case 5:
-		if (HX_FIELD_EQ(inName,"state") ) { return state; }
 		if (HX_FIELD_EQ(inName,"happy") ) { return happy; }
 		break;
 	case 6:
@@ -292,7 +296,6 @@ Dynamic MoodMenu_obj::__SetField(const ::String &inName,const Dynamic &inValue,h
 {
 	switch(inName.length) {
 	case 5:
-		if (HX_FIELD_EQ(inName,"state") ) { state=inValue.Cast< ::PlayState >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"happy") ) { happy=inValue.Cast< bool >(); return inValue; }
 		break;
 	case 6:
@@ -310,7 +313,6 @@ Dynamic MoodMenu_obj::__SetField(const ::String &inName,const Dynamic &inValue,h
 
 void MoodMenu_obj::__GetFields(Array< ::String> &outFields)
 {
-	outFields->push(HX_HCSTRING("state","\x11","\x76","\x0b","\x84"));
 	outFields->push(HX_HCSTRING("energy","\xc8","\xa8","\x38","\xfb"));
 	outFields->push(HX_HCSTRING("happy","\x20","\x65","\x1f","\x22"));
 	outFields->push(HX_HCSTRING("_btnMenu","\x9c","\xeb","\x9b","\x0f"));
@@ -321,7 +323,6 @@ void MoodMenu_obj::__GetFields(Array< ::String> &outFields)
 
 #if HXCPP_SCRIPTABLE
 static hx::StorageInfo sMemberStorageInfo[] = {
-	{hx::fsObject /*::PlayState*/ ,(int)offsetof(MoodMenu_obj,state),HX_HCSTRING("state","\x11","\x76","\x0b","\x84")},
 	{hx::fsInt,(int)offsetof(MoodMenu_obj,energy),HX_HCSTRING("energy","\xc8","\xa8","\x38","\xfb")},
 	{hx::fsBool,(int)offsetof(MoodMenu_obj,happy),HX_HCSTRING("happy","\x20","\x65","\x1f","\x22")},
 	{hx::fsObject /*::flixel::ui::FlxButton*/ ,(int)offsetof(MoodMenu_obj,_btnMenu),HX_HCSTRING("_btnMenu","\x9c","\xeb","\x9b","\x0f")},
@@ -333,7 +334,6 @@ static hx::StaticInfo *sStaticStorageInfo = 0;
 #endif
 
 static ::String sMemberFields[] = {
-	HX_HCSTRING("state","\x11","\x76","\x0b","\x84"),
 	HX_HCSTRING("energy","\xc8","\xa8","\x38","\xfb"),
 	HX_HCSTRING("happy","\x20","\x65","\x1f","\x22"),
 	HX_HCSTRING("_btnMenu","\x9c","\xeb","\x9b","\x0f"),

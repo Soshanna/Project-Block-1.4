@@ -16,4 +16,8 @@ class Item extends FlxButton
 	{
 		super(0, 0, null, null);
 	}
+
+	public function setName(string:String){
+		name = string;
+	}
 }

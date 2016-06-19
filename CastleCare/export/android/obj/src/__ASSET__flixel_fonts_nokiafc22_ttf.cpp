@@ -15,14 +15,14 @@
 
 Void __ASSET__flixel_fonts_nokiafc22_ttf_obj::__construct()
 {
-HX_STACK_FRAME("__ASSET__flixel_fonts_nokiafc22_ttf","new",0x22f03f2a,"__ASSET__flixel_fonts_nokiafc22_ttf.new","DefaultAssetLibrary.hx",640,0x0fc48912)
+HX_STACK_FRAME("__ASSET__flixel_fonts_nokiafc22_ttf","new",0x22f03f2a,"__ASSET__flixel_fonts_nokiafc22_ttf.new","DefaultAssetLibrary.hx",644,0x0fc48912)
 HX_STACK_THIS(this)
 {
-	HX_STACK_LINE(640)
+	HX_STACK_LINE(644)
 	super::__construct(null(),null(),null());
-	HX_STACK_LINE(640)
+	HX_STACK_LINE(644)
 	this->__fontPath = HX_HCSTRING("flixel/fonts/nokiafc22.ttf","\x59","\xd0","\x25","\x83");
-	HX_STACK_LINE(640)
+	HX_STACK_LINE(644)
 	this->fontName = HX_HCSTRING("Nokia Cellphone FC Small","\xd6","\x2f","\x44","\xca");
 }
 ;

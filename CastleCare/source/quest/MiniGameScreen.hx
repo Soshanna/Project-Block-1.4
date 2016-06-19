@@ -3,6 +3,7 @@ package quest;
 import flixel.FlxBasic;
 import flixel.math.FlxPoint;
 import flixel.math.FlxRect;
+import flixel.util.FlxSave;
 import quest.JobListState;
 import flixel.FlxState;
 import flixel.text.FlxText;
@@ -24,6 +25,9 @@ class MiniGameScreen extends FlxState
 {
 	var itemGroup:FlxTypedSpriteGroup<Item> = new FlxTypedSpriteGroup<Item>(0, 0, 63);
 	var rowArray:Array<Item> = new Array<Item>();
+	var lastArray:Array<Item> = new Array<Item>();
+	var markedArray:Array<Item> = new Array<Item>();
+	var energy:Int;
 	var backButton:FlxButton;
 	var _txtScore:FlxText;
 	var _txtTurns:FlxText;
@@ -32,13 +36,18 @@ class MiniGameScreen extends FlxState
 	var object1 = null;
 	var score = 0;
 	var turns:Int = 60;
-	var maxScore:Int = 50;
+	var maxScore:Int = 200;
 	var typeCount:Int = 0;
 	var lastType:Int = 0;
 	var lastCount:Int = 0;
 
 	override public function create():Void {
 		super.create();
+		
+		var save:FlxSave = new FlxSave();
+		save.bind("Data");
+		energy = save.data.energy;
+		save.close();
 		
 		var backGround:FlxSprite = new FlxSprite(0,0,"assets/img/Minigame/Minigame Background.png");
 		add(backGround);
@@ -57,26 +66,35 @@ class MiniGameScreen extends FlxState
 		add(backButton);
 		
 		makeItems();
+		itemCheck();
 	}
 	
 	function itemCheck(){
+		typeCount = 0;
 		for (i in 0...(rowArray.length)){
 			checkItemHor(rowArray[i], i);
-		}for (i in 0...rowArray.length){
-			if(i <= 3){
-				checkItemVer(rowArray[(i * 5)], i);	
-			}else if(i <= 7){
-				checkItemVer(rowArray[((i - 4) * 5) + 1], i);
-			}else if(i <= 11){
-				checkItemVer(rowArray[((i - 8) * 5) + 2], i);
-			}else if(i <= 15){
-				checkItemVer(rowArray[((i - 12) * 5) + 3], i);
-			}else if(i <= 19){
-				checkItemVer(rowArray[((i - 16) * 5) + 4], i);
+			if(i == rowArray.length -1){
+				checkForRemove();
 			}
-		}for (i in 0...rowArray.length){
-			removeMarked(rowArray[i]);
 		}
+		typeCount = 0;
+		for (i in 0...rowArray.length){
+			if(i <= 3){
+				checkItemVer(rowArray[(i * 5)], (i * 5));	
+			}else if(i <= 7){
+				checkItemVer(rowArray[((i - 4) * 5) + 1],(((i - 4) * 5) + 1));
+			}else if(i <= 11){
+				checkItemVer(rowArray[((i - 8) * 5) + 2],(((i - 8) * 5) + 2));
+			}else if(i <= 15){
+				checkItemVer(rowArray[((i - 12) * 5) + 3],(((i - 12) * 5) + 3));
+			}else if(i <= 19){
+				checkItemVer(rowArray[((i - 16) * 5) + 4],(((i - 16) * 5) + 4));
+			}
+			if(i == rowArray.length -1){
+				checkForRemove();
+			}
+		}
+		typeCount = 0;
 	}
 	
 	function makeItems(){
@@ -138,6 +156,7 @@ class MiniGameScreen extends FlxState
 			object1.type = typ;
 			a = 0;
 			turns -= 1;
+			itemCheck();
 			_txtTurns.text = "Turns: " + turns;
 			for(i in 0...rowArray.length){
 				rowArray[i].onDown.callback = itemClicked.bind(rowArray[i]);
@@ -146,61 +165,87 @@ class MiniGameScreen extends FlxState
 	}
 	
 	function checkItemHor(item:Item, i:Int){//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!BUGGED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-		if(i == 5 || i == 10 || i == 15){
+		if (i == 5 || i == 10 || i == 15){
+			checkForRemove();
 			typeCount = 0;
 		}
-		else{
-			if(rowArray[item.arrayID -1] != null){
-				lastType = rowArray[item.arrayID -1].type;
+		if(lastArray[0] != null){
+			lastType = lastArray[0].type;
+		}
+		if (lastType != item.type) {
+			checkForRemove();
+			typeCount = 0;
+		}else if(lastType == item.type){
+			typeCount ++;
+			if(markedArray[0] != null){
+				markedArray.push(item);
+			}else if(markedArray[0] == null){
+				markedArray.push(lastArray[0]);
+				markedArray.push(item);
 			}
-			if (lastType != item.type) {
-				lastCount = typeCount;
-				if(lastCount >= 3) {
-					for(i in 1...(typeCount + 1)){
-						if(rowArray[item.arrayID - i] != null){
-							rowArray[item.arrayID - i].name = "MARKED";	
-						}
-					}
-				}
-				typeCount = 1;
-			}else if(lastType == item.type){
-				typeCount ++;
-			}
+		}
+		if(lastArray[0] != null){
+			lastArray.remove(lastArray[0]);
+			lastArray.push(item);
+		}else if(lastArray[0] == null){
+			lastArray.push(item);
 		}
 	}
 	
 	function checkItemVer(item:Item, i:Int){//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!BUGGED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		if(i == 1 || i == 2 || i == 3 || i == 4){
+			checkForRemove();
 			typeCount = 0;
 		}
-		else{
-			if(rowArray[item.arrayID -5] != null){
-				lastType = rowArray[item.arrayID -5].type;
+		if(lastArray[0] != null){
+			lastType = lastArray[0].type;
+		}
+		if (lastType != item.type) {
+			checkForRemove();
+			typeCount = 0;
+		}else if(lastType == item.type){
+			typeCount ++;
+			if(markedArray[0] != null){
+				markedArray.push(item);
+			}else if(markedArray[0] == null){
+				markedArray.push(lastArray[0]);
+				markedArray.push(item);
 			}
-			if (lastType != item.type) {
-				lastCount = typeCount;
-				if(lastCount >= 3) {
-					for(i in 1...(typeCount + 1)){
-						if(rowArray[item.arrayID - (i * 5)] != null){
-							rowArray[item.arrayID - (i * 5)].name = "MARKED";	
-						}
-					}
-				}
-				typeCount = 1;
-			}else if(lastType == item.type){
-				typeCount ++;
+		}
+		if(lastArray[0] != null){
+			lastArray.remove(lastArray[0]);
+			lastArray.push(item);
+		}else if(lastArray[0] == null){
+			lastArray.push(item);
+		}
+	}
+	
+	function checkForRemove(){
+		lastCount = typeCount;
+		if(lastCount >= 2) {
+			for (i in 0...lastCount){
+				trace(markedArray[i]);
+				replaceItem(markedArray[i], Math.floor(Math.random() * 100));
+			}
+			for(i in 0...markedArray.length){
+				markedArray.remove(markedArray[i]);
+			}
+			itemCheck();
+		}else{
+			for(i in 0...markedArray.length){
+				markedArray.remove(markedArray[i]);
 			}
 		}
 	}
 	
 	function removeMarked(item:Item){
-		if (item.name == "MARKED") {
+		/*if (item.name == "MARKED") {
 			trace(item.arrayID + " of type:" + item.type + " = MARKED");	
 			replaceItem(item, Math.floor(Math.random() * 100));
 			score += 1;
 			_txtScore.text = "Score: " + score;
 			item.name = null;
-		}
+		}*/
 	}
 
 	function replaceItem(item1:Item, random){
@@ -217,21 +262,38 @@ class MiniGameScreen extends FlxState
 			item1.loadGraphic("assets/img/Minigame/WaterMelonButton.png");
 			item1.type = 4;
 		}
+		score += 1;
+		_txtScore.text = "Score: " + score;
 	}
 	
 	function winScreen(){
+		var save:FlxSave = new FlxSave();
+		save.bind("Data");
+		save.data.energy = (energy - 25);
+		save.flush();
+		save.close();
 		FlxG.camera.fade(FlxColor.BLACK, .20, false ,function(){
 			FlxG.switchState(new WinScreen());
 		});
 	}
 	
 	function loseScreen(){
+		var save:FlxSave = new FlxSave();
+		save.bind("Data");
+		save.data.energy = (energy - 25);
+		save.flush();
+		save.close();
 		FlxG.camera.fade(FlxColor.BLACK, .20, false ,function(){
 			FlxG.switchState(new LoseScreen());
 		});
 	}
 	
 	function buttonPress(){
+		var save:FlxSave = new FlxSave();
+		save.bind("Data");
+		save.data.energy = (energy - 25);
+		save.flush();
+		save.close();
 		FlxG.camera.fade(FlxColor.BLACK, .20, false ,function(){
 			FlxG.switchState(new PlayState());
 		});
@@ -244,7 +306,6 @@ class MiniGameScreen extends FlxState
 		if(turns == 0){
 			loseScreen();
 		}
-		itemCheck();
 		super.update(elapsed);
 	}
 }

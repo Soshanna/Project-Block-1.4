@@ -31,6 +31,9 @@ class HXCPP_CLASS_ATTRIBUTES  Date_obj : public hx::Object{
 		static void __register();
 		::String __ToString() const { return HX_HCSTRING("Date","\x4e","\x82","\x3c","\x2d"); }
 
+		static ::Date now( );
+		static Dynamic now_dyn();
+
 		static ::Date fromTime( Float t);
 		static Dynamic fromTime_dyn();
 

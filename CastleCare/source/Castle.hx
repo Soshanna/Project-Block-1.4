@@ -169,11 +169,6 @@ class Castle extends FlxState
 	
 	function missionArchitect(){
 		if(energy >= 25){
-			var save:FlxSave = new FlxSave();
-			save.bind("Data");
-			save.data.energy = (energy - 25);
-			save.flush();
-			save.close();
 			FlxG.camera.fade(FlxColor.BLACK, .20, false ,function(){
 				FlxG.switchState(new HiddenObjectGame());
 			});
@@ -190,11 +185,6 @@ class Castle extends FlxState
 	
 	function missionDoctor(){
 		if(energy >= 25){
-			var save:FlxSave = new FlxSave();
-			save.bind("Data");
-			save.data.energy = (energy - 25);
-			save.flush();
-			save.close();
 			FlxG.camera.fade(FlxColor.BLACK, .20, false ,function(){
 				FlxG.switchState(new MiniGameScreen());
 			});

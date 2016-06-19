@@ -6,6 +6,7 @@ import flixel.FlxG;
 import flixel.ui.FlxButton;
 import flixel.util.FlxColor;
 import flixel.text.FlxText;
+import flixel.util.FlxSave;
 
 /**
  * ...
@@ -13,7 +14,6 @@ import flixel.text.FlxText;
  */
 class UpgradeInteriorState extends FlxState
 {
-	var state:PlayState = new PlayState();
 	var currency:Int;
 	var backButton:FlxButton;
 	var _bkgrOver:FlxSprite = new FlxSprite();
@@ -22,7 +22,10 @@ class UpgradeInteriorState extends FlxState
 		_bkgrOver.loadGraphic("assets/img/Minigame/Minigame Background.png");
 		add(_bkgrOver);
 		
-		currency = state.currency;
+		var save:FlxSave = new FlxSave();
+		save.bind("Data");
+		currency = save.data.currency;
+		save.close();
 		var currencyText:FlxText = new FlxText(1100, 80, 0, "$" + currency, 24);
 		add(currencyText);
 		

@@ -8,7 +8,6 @@
 #ifndef INCLUDED_flixel_FlxState
 #include <flixel/FlxState.h>
 #endif
-HX_DECLARE_CLASS0(PlayState)
 HX_DECLARE_CLASS1(flixel,FlxBasic)
 HX_DECLARE_CLASS1(flixel,FlxObject)
 HX_DECLARE_CLASS1(flixel,FlxSprite)
@@ -46,7 +45,6 @@ class HXCPP_CLASS_ATTRIBUTES  UpgradeRoomState_obj : public ::flixel::FlxState_o
 		void __Visit(HX_VISIT_PARAMS);
 		::String __ToString() const { return HX_HCSTRING("UpgradeRoomState","\xda","\x89","\x74","\xe4"); }
 
-		::PlayState state;
 		int currency;
 		::flixel::ui::FlxButton backButton;
 		::flixel::FlxSprite _bkgrOver;

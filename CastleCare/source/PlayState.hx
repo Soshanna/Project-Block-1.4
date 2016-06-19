@@ -16,7 +16,7 @@ import flixel.util.FlxSave;
 
 class PlayState extends FlxState
 {
-	public var energy:Int;
+	public var energy:Float;
 	public var currency:Int;
 	var _btnMenu:FlxButton;
 	var _btnUpgradeMenu:FlxButton;
@@ -24,13 +24,31 @@ class PlayState extends FlxState
 	var text:FlxText;
 	var energyBar:FlxBar;
 	var _castleNavigation:Castle;
+	var rightNow:Date = Date.now();
+	var timeDifference:Float;
+	var lastTime:Float;
 	
 	override public function create():Void{
 		var save:FlxSave = new FlxSave();
 		save.bind("Data");
 		energy = save.data.energy;
+		lastTime = save.data.time;
 		currency = save.data.currency;
 		save.close();
+		
+		timeDifference = (((rightNow.getTime() - lastTime) / 1000) / 100) * 60;
+		trace(rightNow.getTime());
+		trace(lastTime);
+		trace(timeDifference);
+		//timeDifference = (((rightNow.getTime() - lastTime) / 1000) / 100)* 0.02777778;
+		if (energy >= 100){
+			energy = 100;
+		}else if (energy < 100){
+			energy = energy + timeDifference;
+			if (energy > 100){
+				energy = 100;
+			}
+		}
 		
 		_castleNavigation = new Castle();
 		add(_castleNavigation);	
@@ -48,7 +66,7 @@ class PlayState extends FlxState
 		var mood:MoodSmiley = new MoodSmiley(10, 5, clickMood);
 		add(mood);
 		
-		text = new FlxText(energyBar.x + (energyBar.width / 2) - 40, energyBar.y + 3, 0, energy + "%", 16);
+		text = new FlxText(energyBar.x + (energyBar.width / 2) - 40, energyBar.y + 3, 0, Math.floor(energy) + "%", 16);
 		add(text);
 		
 		_btnUpgradeMenu = new FlxButton(energyBar.x + energyBar.width + 50, energyBar.y - 5, "$ " + currency, clickUpgradeMenu);
@@ -63,6 +81,7 @@ class PlayState extends FlxState
 		save.bind("Data");
 		save.data.energy = energy;
 		save.data.currency = currency;
+		save.data.time	= rightNow.getTime();
 		save.flush();
 		save.close();
 	}
@@ -91,9 +110,18 @@ class PlayState extends FlxState
 	override public function update(elapsed:Float):Void
 	{
 		super.update(elapsed);
-		text.text = energy + "%";
 		energyBar.value = energy;
 		energyBar.updateBar();
+		text.text = Math.floor(energy) + "%";
 		_btnUpgradeMenu.text = "$ " + currency;
+		if(energy < 100){
+			energy += 0.01;
+			//energy += 0.0002777778;
+		}else if (energy >= 100){
+			energy = 100;
+		}
+		if(energy < 0){
+			energy = 0;
+		}
 	}
 }

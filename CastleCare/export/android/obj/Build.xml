@@ -3,7 +3,6 @@
 <files id="haxe">
 <compilerflag value="-Iinclude"/>
   <file name="src/upgrade/UpgradeRoomState.cpp">
-   <depend name="include/PlayState.h"/>
    <depend name="include/flixel/FlxBasic.h"/>
    <depend name="include/flixel/FlxCamera.h"/>
    <depend name="include/flixel/FlxG.h"/>
@@ -16,6 +15,7 @@
    <depend name="include/flixel/text/FlxText.h"/>
    <depend name="include/flixel/ui/FlxButton.h"/>
    <depend name="include/flixel/ui/FlxTypedButton_flixel_text_FlxText.h"/>
+   <depend name="include/flixel/util/FlxSave.h"/>
    <depend name="include/flixel/util/IFlxDestroyable.h"/>
    <depend name="include/openfl/_legacy/display/DisplayObject.h"/>
    <depend name="include/openfl/_legacy/display/DisplayObjectContainer.h"/>
@@ -56,7 +56,6 @@
    <depend name="include/upgrade/UpgradeMenuState.h"/>
   </file>
   <file name="src/upgrade/UpgradeInteriorState.cpp">
-   <depend name="include/PlayState.h"/>
    <depend name="include/flixel/FlxBasic.h"/>
    <depend name="include/flixel/FlxCamera.h"/>
    <depend name="include/flixel/FlxG.h"/>
@@ -69,6 +68,7 @@
    <depend name="include/flixel/text/FlxText.h"/>
    <depend name="include/flixel/ui/FlxButton.h"/>
    <depend name="include/flixel/ui/FlxTypedButton_flixel_text_FlxText.h"/>
+   <depend name="include/flixel/util/FlxSave.h"/>
    <depend name="include/flixel/util/IFlxDestroyable.h"/>
    <depend name="include/openfl/_legacy/display/DisplayObject.h"/>
    <depend name="include/openfl/_legacy/display/DisplayObjectContainer.h"/>
@@ -81,7 +81,6 @@
    <depend name="include/upgrade/UpgradeInteriorState.h"/>
   </file>
   <file name="src/upgrade/UpgradeCharacterState.cpp">
-   <depend name="include/PlayState.h"/>
    <depend name="include/flixel/FlxBasic.h"/>
    <depend name="include/flixel/FlxCamera.h"/>
    <depend name="include/flixel/FlxG.h"/>
@@ -94,6 +93,7 @@
    <depend name="include/flixel/text/FlxText.h"/>
    <depend name="include/flixel/ui/FlxButton.h"/>
    <depend name="include/flixel/ui/FlxTypedButton_flixel_text_FlxText.h"/>
+   <depend name="include/flixel/util/FlxSave.h"/>
    <depend name="include/flixel/util/IFlxDestroyable.h"/>
    <depend name="include/openfl/_legacy/display/DisplayObject.h"/>
    <depend name="include/openfl/_legacy/display/DisplayObjectContainer.h"/>
@@ -148,6 +148,7 @@
    <depend name="include/flixel/ui/FlxButton.h"/>
    <depend name="include/flixel/ui/FlxTypedButton_flixel_text_FlxText.h"/>
    <depend name="include/flixel/util/FlxAxes.h"/>
+   <depend name="include/flixel/util/FlxSave.h"/>
    <depend name="include/flixel/util/IFlxDestroyable.h"/>
    <depend name="include/openfl/_legacy/display/DisplayObject.h"/>
    <depend name="include/openfl/_legacy/display/DisplayObjectContainer.h"/>
@@ -175,6 +176,7 @@
    <depend name="include/flixel/ui/FlxButton.h"/>
    <depend name="include/flixel/ui/FlxTypedButton_flixel_text_FlxText.h"/>
    <depend name="include/flixel/ui/_FlxButton/FlxButtonEvent.h"/>
+   <depend name="include/flixel/util/FlxSave.h"/>
    <depend name="include/flixel/util/IFlxDestroyable.h"/>
    <depend name="include/haxe/Log.h"/>
    <depend name="include/openfl/_legacy/display/DisplayObject.h"/>
@@ -270,6 +272,7 @@
    <depend name="include/flixel/ui/FlxTypedButton_flixel_text_FlxText.h"/>
    <depend name="include/flixel/ui/_FlxButton/FlxButtonEvent.h"/>
    <depend name="include/flixel/util/FlxAxes.h"/>
+   <depend name="include/flixel/util/FlxSave.h"/>
    <depend name="include/flixel/util/IFlxDestroyable.h"/>
    <depend name="include/flixel/util/IFlxPooled.h"/>
    <depend name="include/openfl/_legacy/Lib.h"/>
@@ -4140,6 +4143,7 @@
   </file>
   <file name="src/PlayState.cpp">
    <depend name="include/Castle.h"/>
+   <depend name="include/Date.h"/>
    <depend name="include/MoodMenu.h"/>
    <depend name="include/MoodSmiley.h"/>
    <depend name="include/PlayState.h"/>
@@ -4162,6 +4166,7 @@
    <depend name="include/flixel/util/FlxSave.h"/>
    <depend name="include/flixel/util/IFlxDestroyable.h"/>
    <depend name="include/flixel/util/IFlxPooled.h"/>
+   <depend name="include/haxe/Log.h"/>
    <depend name="include/menu/MenuState.h"/>
    <depend name="include/openfl/_legacy/display/DisplayObject.h"/>
    <depend name="include/openfl/_legacy/display/DisplayObjectContainer.h"/>
@@ -4341,6 +4346,7 @@
    <depend name="include/flixel/input/IFlxInput.h"/>
    <depend name="include/flixel/ui/FlxButton.h"/>
    <depend name="include/flixel/ui/FlxTypedButton_flixel_text_FlxText.h"/>
+   <depend name="include/flixel/util/FlxSave.h"/>
    <depend name="include/flixel/util/IFlxDestroyable.h"/>
    <depend name="include/openfl/_legacy/display/DisplayObject.h"/>
    <depend name="include/openfl/_legacy/display/DisplayObjectContainer.h"/>
@@ -4472,6 +4478,7 @@
    <depend name="include/flixel/ui/FlxTypedButton_flixel_text_FlxText.h"/>
    <depend name="include/flixel/ui/_FlxButton/FlxButtonEvent.h"/>
    <depend name="include/flixel/util/FlxAxes.h"/>
+   <depend name="include/flixel/util/FlxSave.h"/>
    <depend name="include/flixel/util/FlxTimer.h"/>
    <depend name="include/flixel/util/IFlxDestroyable.h"/>
    <depend name="include/openfl/_legacy/Lib.h"/>

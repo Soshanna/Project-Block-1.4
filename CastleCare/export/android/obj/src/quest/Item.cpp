@@ -51,6 +51,20 @@ Dynamic Item_obj::__Create(hx::DynamicArray inArgs)
 	_result_->__construct();
 	return _result_;}
 
+Void Item_obj::setName( ::String string){
+{
+		HX_STACK_FRAME("quest.Item","setName",0x61d2ccde,"quest.Item.setName","quest/Item.hx",21,0xd1fc04fe)
+		HX_STACK_THIS(this)
+		HX_STACK_ARG(string,"string")
+		HX_STACK_LINE(21)
+		this->name = string;
+	}
+return null();
+}
+
+
+HX_DEFINE_DYNAMIC_FUNC1(Item_obj,setName,(void))
+
 
 Item_obj::Item_obj()
 {
@@ -83,6 +97,7 @@ Dynamic Item_obj::__Field(const ::String &inName,hx::PropertyAccess inCallProp)
 		break;
 	case 7:
 		if (HX_FIELD_EQ(inName,"arrayID") ) { return arrayID; }
+		if (HX_FIELD_EQ(inName,"setName") ) { return setName_dyn(); }
 	}
 	return super::__Field(inName,inCallProp);
 }
@@ -122,6 +137,7 @@ static ::String sMemberFields[] = {
 	HX_HCSTRING("type","\xba","\xf2","\x08","\x4d"),
 	HX_HCSTRING("name","\x4b","\x72","\xff","\x48"),
 	HX_HCSTRING("arrayID","\xb4","\x05","\x79","\x3a"),
+	HX_HCSTRING("setName","\x0d","\xb3","\x83","\x0e"),
 	::String(null()) };
 
 static void sMarkStatics(HX_MARK_PARAMS) {
