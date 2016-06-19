@@ -17,11 +17,11 @@ class LoseScreen extends FlxState
 
 	override public function create() 
 	{
-		var winText:FlxText = new FlxText(0, 150, 0, "Je hebt het level gehaalt!", 30);
+		var winText:FlxText = new FlxText(0, 150, 0, "Je hebt het niet gehaald :(", 30);
 		winText.screenCenter(X);
 		add(winText);
 		
-		var scoreText:FlxText = new FlxText(0, 200, 0, "Je hebt $100 verdient", 20);
+		var scoreText:FlxText = new FlxText(0, 200, 0, "Je hebt $0 verdient", 20);
 		scoreText.screenCenter(X);
 		add(scoreText);
 		

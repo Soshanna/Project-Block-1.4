@@ -81,20 +81,9 @@ class MenuState extends FlxState
 	}
 	
 	private function clickPlay():Void{
-		if(tut == true){
-			FlxG.camera.fade(FlxColor.BLACK, 1, false, function(){
-			FlxG.switchState(new OptionsState());
-			});
-			var save:FlxSave = new FlxSave();
-			save.bind("Data");
-			save.data.tut = false;
-			save.flush();
-			save.close();
-		}else if(tut == false){
-			FlxG.camera.fade(FlxColor.BLACK, 1, false, function(){
-			FlxG.switchState(new PlayState());
-			});
-		}
+		FlxG.camera.fade(FlxColor.BLACK, 1, false, function(){
+		FlxG.switchState(new PlayState());
+		});
 	}
 
 	override public function update(elapsed:Float):Void{
