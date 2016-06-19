@@ -46,6 +46,7 @@ class HXCPP_CLASS_ATTRIBUTES  WinScreen_obj : public ::flixel::FlxState_obj{
 		::String __ToString() const { return HX_HCSTRING("WinScreen","\x88","\x34","\xe6","\x7f"); }
 
 		::flixel::ui::FlxButton button;
+		int currency;
 		virtual Void create( );
 
 		virtual Void buttonPress( );

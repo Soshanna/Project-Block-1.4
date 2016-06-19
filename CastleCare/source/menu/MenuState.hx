@@ -1,5 +1,6 @@
 package menu;
 
+import flixel.util.FlxSave;
 import menu.OptionsState;
 import menu.OverState;
 import flixel.FlxG;
@@ -19,8 +20,14 @@ class MenuState extends FlxState
 	private var _btnOver:FlxButton;
 	private var _btnCredits:FlxButton;
 	private var _bkgrMenu = new FlxSprite();
+	var tut:Bool;
 	
 	override public function create():Void {
+		var save:FlxSave = new FlxSave();
+		save.bind("Data");
+		tut = save.data.tut;
+		save.close();
+		
 		_bkgrMenu.loadGraphic("assets/img/titelbackground.png");
 		_bkgrMenu.scale.set(1.35, 1.41);
 		_bkgrMenu.x = 160;
@@ -74,9 +81,20 @@ class MenuState extends FlxState
 	}
 	
 	private function clickPlay():Void{
-		FlxG.camera.fade(FlxColor.BLACK, 1, false, function(){
-		FlxG.switchState(new PlayState());
-		});
+		if(tut == true){
+			FlxG.camera.fade(FlxColor.BLACK, 1, false, function(){
+			FlxG.switchState(new OptionsState());
+			});
+			var save:FlxSave = new FlxSave();
+			save.bind("Data");
+			save.data.tut = false;
+			save.flush();
+			save.close();
+		}else if(tut == false){
+			FlxG.camera.fade(FlxColor.BLACK, 1, false, function(){
+			FlxG.switchState(new PlayState());
+			});
+		}
 	}
 
 	override public function update(elapsed:Float):Void{

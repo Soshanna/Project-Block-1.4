@@ -54,6 +54,21 @@ Float Date_obj::getTime( ){
 
 HX_DEFINE_DYNAMIC_FUNC0(Date_obj,getTime,return )
 
+::Date Date_obj::now( ){
+	HX_STACK_FRAME("Date","now",0x9aa26af6,"Date.now","C:\\HaxeToolkit\\haxe\\std/cpp/_std/Date.hx",50,0x1bc6780a)
+	HX_STACK_LINE(51)
+	int tmp = ::__hxcpp_date_now();		HX_STACK_VAR(tmp,"tmp");
+	HX_STACK_LINE(51)
+	Float tmp1 = (tmp * ((Float)1000.0));		HX_STACK_VAR(tmp1,"tmp1");
+	HX_STACK_LINE(51)
+	::Date tmp2 = ::Date_obj::fromTime(tmp1);		HX_STACK_VAR(tmp2,"tmp2");
+	HX_STACK_LINE(51)
+	return tmp2;
+}
+
+
+STATIC_HX_DEFINE_DYNAMIC_FUNC0(Date_obj,now,return )
+
 ::Date Date_obj::fromTime( Float t){
 	HX_STACK_FRAME("Date","fromTime",0x44fd3cb7,"Date.fromTime","C:\\HaxeToolkit\\haxe\\std/cpp/_std/Date.hx",57,0x1bc6780a)
 	HX_STACK_ARG(t,"t")
@@ -208,6 +223,9 @@ Dynamic Date_obj::__Field(const ::String &inName,hx::PropertyAccess inCallProp)
 bool Date_obj::__GetStatic(const ::String &inName, Dynamic &outValue, hx::PropertyAccess inCallProp)
 {
 	switch(inName.length) {
+	case 3:
+		if (HX_FIELD_EQ(inName,"now") ) { outValue = now_dyn(); return true;  }
+		break;
 	case 8:
 		if (HX_FIELD_EQ(inName,"fromTime") ) { outValue = fromTime_dyn(); return true;  }
 		break;
@@ -259,6 +277,7 @@ static void sVisitStatics(HX_VISIT_PARAMS) {
 hx::Class Date_obj::__mClass;
 
 static ::String sStaticFields[] = {
+	HX_HCSTRING("now","\x16","\xd9","\x53","\x00"),
 	HX_HCSTRING("fromTime","\x97","\x9a","\xc8","\xaa"),
 	HX_HCSTRING("fromString","\xdb","\x2d","\x74","\x54"),
 	::String(null()) };

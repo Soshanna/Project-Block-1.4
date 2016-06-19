@@ -36,7 +36,11 @@ class PlayState extends FlxState
 		currency = save.data.currency;
 		save.close();
 		
-		timeDifference = (((rightNow.getTime() - lastTime) / 1000) / 100)* 0.02777778;
+		timeDifference = (((rightNow.getTime() - lastTime) / 1000) / 100) * 60;
+		trace(rightNow.getTime());
+		trace(lastTime);
+		trace(timeDifference);
+		//timeDifference = (((rightNow.getTime() - lastTime) / 1000) / 100)* 0.02777778;
 		if (energy >= 100){
 			energy = 100;
 		}else if (energy < 100){
@@ -44,7 +48,6 @@ class PlayState extends FlxState
 			if (energy > 100){
 				energy = 100;
 			}
-			trace(energy);
 		}
 		
 		_castleNavigation = new Castle();
@@ -76,10 +79,9 @@ class PlayState extends FlxState
 	function saveData(){
 		var save:FlxSave = new FlxSave();
 		save.bind("Data");
-		save.data.energy = 100;
-		save.data.currency = 0;
+		save.data.energy = energy;
+		save.data.currency = currency;
 		save.data.time	= rightNow.getTime();
-		trace(save.data.time);
 		save.flush();
 		save.close();
 	}
@@ -113,7 +115,8 @@ class PlayState extends FlxState
 		text.text = Math.floor(energy) + "%";
 		_btnUpgradeMenu.text = "$ " + currency;
 		if(energy < 100){
-			energy += 0.0002777778;
+			energy += 0.01;
+			//energy += 0.0002777778;
 		}else if (energy >= 100){
 			energy = 100;
 		}

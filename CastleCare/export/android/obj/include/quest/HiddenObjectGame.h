@@ -46,6 +46,7 @@ class HXCPP_CLASS_ATTRIBUTES  HiddenObjectGame_obj : public ::flixel::FlxState_o
 		::String __ToString() const { return HX_HCSTRING("HiddenObjectGame","\x7b","\x72","\x06","\x79"); }
 
 		Array< int > PosArray;
+		int energy;
 		int itemCounter;
 		::flixel::ui::FlxButton button;
 		int currency;

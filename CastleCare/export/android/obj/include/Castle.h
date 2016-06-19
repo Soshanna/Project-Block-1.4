@@ -56,6 +56,7 @@ class HXCPP_CLASS_ATTRIBUTES  Castle_obj : public ::flixel::FlxState_obj{
 		::flixel::ui::FlxButton myButton;
 		::flixel::ui::FlxButton talkButton;
 		::flixel::ui::FlxButton missionButton;
+		int energy;
 		::flixel::util::FlxTimer timer;
 		::flixel::FlxSprite character;
 		::flixel::FlxSprite textBox;

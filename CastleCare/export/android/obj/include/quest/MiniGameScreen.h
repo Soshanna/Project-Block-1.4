@@ -50,6 +50,9 @@ class HXCPP_CLASS_ATTRIBUTES  MiniGameScreen_obj : public ::flixel::FlxState_obj
 
 		::flixel::group::FlxTypedSpriteGroup itemGroup;
 		Array< ::Dynamic > rowArray;
+		Array< ::Dynamic > lastArray;
+		Array< ::Dynamic > markedArray;
+		int energy;
 		::flixel::ui::FlxButton backButton;
 		::flixel::text::FlxText _txtScore;
 		::flixel::text::FlxText _txtTurns;
@@ -78,6 +81,9 @@ class HXCPP_CLASS_ATTRIBUTES  MiniGameScreen_obj : public ::flixel::FlxState_obj
 
 		virtual Void checkItemVer( ::quest::Item item,int i);
 		Dynamic checkItemVer_dyn();
+
+		virtual Void checkForRemove( );
+		Dynamic checkForRemove_dyn();
 
 		virtual Void removeMarked( ::quest::Item item);
 		Dynamic removeMarked_dyn();

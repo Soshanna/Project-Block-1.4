@@ -53,6 +53,7 @@ D:\school\Haxe projects\Project-Block-1.4\CastleCare\export\android\bin\assets\a
 D:\school\Haxe projects\Project-Block-1.4\CastleCare\export\android\bin\assets\assets\img\TalkButton.png \
 D:\school\Haxe projects\Project-Block-1.4\CastleCare\export\android\bin\assets\assets\img\TextBoxText.png \
 D:\school\Haxe projects\Project-Block-1.4\CastleCare\export\android\bin\assets\assets\img\titelbackground.png \
+D:\school\Haxe projects\Project-Block-1.4\CastleCare\export\android\bin\assets\assets\img\Buttons\contacten.png \
 D:\school\Haxe projects\Project-Block-1.4\CastleCare\export\android\bin\assets\assets\img\Buttons\credits-1.png \
 D:\school\Haxe projects\Project-Block-1.4\CastleCare\export\android\bin\assets\assets\img\Buttons\credits-2.png \
 D:\school\Haxe projects\Project-Block-1.4\CastleCare\export\android\bin\assets\assets\img\Buttons\interieur-1.png \
@@ -75,10 +76,12 @@ D:\school\Haxe projects\Project-Block-1.4\CastleCare\export\android\bin\assets\a
 D:\school\Haxe projects\Project-Block-1.4\CastleCare\export\android\bin\assets\assets\img\Buttons\opties-4.png \
 D:\school\Haxe projects\Project-Block-1.4\CastleCare\export\android\bin\assets\assets\img\Buttons\over-1.png \
 D:\school\Haxe projects\Project-Block-1.4\CastleCare\export\android\bin\assets\assets\img\Buttons\over-2.png \
+D:\school\Haxe projects\Project-Block-1.4\CastleCare\export\android\bin\assets\assets\img\Buttons\quests.png \
 D:\school\Haxe projects\Project-Block-1.4\CastleCare\export\android\bin\assets\assets\img\Buttons\right-1.png \
 D:\school\Haxe projects\Project-Block-1.4\CastleCare\export\android\bin\assets\assets\img\Buttons\right-2.png \
 D:\school\Haxe projects\Project-Block-1.4\CastleCare\export\android\bin\assets\assets\img\Buttons\start-1.png \
 D:\school\Haxe projects\Project-Block-1.4\CastleCare\export\android\bin\assets\assets\img\Buttons\start-2.png \
+D:\school\Haxe projects\Project-Block-1.4\CastleCare\export\android\bin\assets\assets\img\Buttons\taken (2).png \
 D:\school\Haxe projects\Project-Block-1.4\CastleCare\export\android\bin\assets\assets\img\Buttons\taken.png \
 D:\school\Haxe projects\Project-Block-1.4\CastleCare\export\android\bin\assets\assets\img\Buttons\terug-3.png \
 D:\school\Haxe projects\Project-Block-1.4\CastleCare\export\android\bin\assets\assets\img\Buttons\terug-4.png \

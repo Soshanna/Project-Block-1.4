@@ -46,6 +46,9 @@ class HXCPP_CLASS_ATTRIBUTES  Item_obj : public ::flixel::ui::FlxButton_obj{
 		int type;
 		::String name;
 		int arrayID;
+		virtual Void setName( ::String string);
+		Dynamic setName_dyn();
+
 };
 
 } // end namespace quest
