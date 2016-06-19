@@ -36,13 +36,15 @@ class Castle extends FlxState
 	var textBox:FlxSprite;
 	var _txtCharacter:FlxText;
 	var _txtRoom:FlxText;
-	
+	var flower:FlxSprite;
+	var flowerBool:Bool;
 	
 	public function new() 
 	{
 		super();
 		var save:FlxSave = new FlxSave();
 		save.bind("Data");
+		flowerBool = true;
 		energy = save.data.energy;
 		save.close();
 		
@@ -78,18 +80,32 @@ class Castle extends FlxState
 		_room3 = new FlxButton(28,360,"",roomThree);
 		_room3.loadGraphic("assets/img/room3.png");
 		add(_room3);
+		
+		if(flowerBool == true){
+			flower = new FlxSprite(390, 170, "assets/img/flower_Plant_Thing.png");
+			flower.scale.x = 0.3;
+			flower.scale.y = 0.3;
+			add(flower);
+		}
 	}
 	
 	function removeCallback(){
 		remove(_room1);
 		remove(_room2);
 		remove(_room3);
+		remove(flower);
 	}
 	
 	function addCallback(){
 		add(_room1);
 		add(_room2);
 		add(_room3);
+		if(flowerBool == true){
+			flower = new FlxSprite(390, 170, "assets/img/flower_Plant_Thing.png");
+			flower.scale.x = 0.3;
+			flower.scale.y = 0.3;
+			add(flower);
+		}
 	}
 	
 	function roomOne()
@@ -100,6 +116,13 @@ class Castle extends FlxState
 		
 		_txtRoom.text = "Troonzaal";
 		add(_txtRoom);
+		
+		if(flowerBool == true){
+			flower = new FlxSprite(240, 400, "assets/img/flower_Plant_Thing.png");
+			flower.scale.x = 0.8;
+			flower.scale.y = 0.8;
+			add(flower);
+		}
 		
 		add(textBox);
 		myButton.onDown.callback = removeRoom.bind(_roomOne);
@@ -208,6 +231,7 @@ class Castle extends FlxState
 		remove(textBox);
 		remove(character);
 		remove(_txtCharacter);
+		remove(flower);
 		addCallback();
 	}	
 }

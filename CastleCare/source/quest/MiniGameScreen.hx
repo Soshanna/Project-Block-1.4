@@ -4,6 +4,7 @@ import flixel.FlxBasic;
 import flixel.math.FlxPoint;
 import flixel.math.FlxRect;
 import flixel.util.FlxSave;
+import flixel.util.FlxTimer;
 import quest.JobListState;
 import flixel.FlxState;
 import flixel.text.FlxText;
@@ -27,6 +28,8 @@ class MiniGameScreen extends FlxState
 	var rowArray:Array<Item> = new Array<Item>();
 	var lastArray:Array<Item> = new Array<Item>();
 	var markedArray:Array<Item> = new Array<Item>();
+	var animationArray:Array<FlxSprite> = new Array<FlxSprite>();
+	var timer:FlxTimer = new FlxTimer();
 	var energy:Int;
 	var backButton:FlxButton;
 	var _txtScore:FlxText;
@@ -35,7 +38,7 @@ class MiniGameScreen extends FlxState
 	var a:Int = 0;
 	var object1 = null;
 	var score = 0;
-	var turns:Int = 60;
+	var turns:Int = 45;
 	var maxScore:Int = 200;
 	var typeCount:Int = 0;
 	var lastType:Int = 0;
@@ -224,10 +227,10 @@ class MiniGameScreen extends FlxState
 		lastCount = typeCount;
 		if(lastCount >= 2) {
 			for (i in 0...lastCount){
-				trace(markedArray[i]);
+				poefAnimation(markedArray[i].x,markedArray[i].y);
 				replaceItem(markedArray[i], Math.floor(Math.random() * 100));
 			}
-			for(i in 0...markedArray.length){
+			for (i in 0...markedArray.length){
 				markedArray.remove(markedArray[i]);
 			}
 			itemCheck();
@@ -238,14 +241,17 @@ class MiniGameScreen extends FlxState
 		}
 	}
 	
-	function removeMarked(item:Item){
-		/*if (item.name == "MARKED") {
-			trace(item.arrayID + " of type:" + item.type + " = MARKED");	
-			replaceItem(item, Math.floor(Math.random() * 100));
-			score += 1;
-			_txtScore.text = "Score: " + score;
-			item.name = null;
-		}*/
+	function poefAnimation(x:Float,y:Float){
+		var animation:FlxSprite = new FlxSprite(x,y,"assets/img/Minigame/DestroyImagePoef.png");
+		add(animation);
+		animationArray.push(animation);
+		timer.start(1, removePoef);
+	}
+	
+	function removePoef(timer:FlxTimer){
+		for(i in 0...animationArray.length){
+			remove(animationArray[i]);
+		}
 	}
 
 	function replaceItem(item1:Item, random){

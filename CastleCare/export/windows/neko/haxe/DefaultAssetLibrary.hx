@@ -128,6 +128,14 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
 		Font.registerFont (__ASSET__flixel_fonts_nokiafc22_ttf);
 		Font.registerFont (__ASSET__flixel_fonts_monsterrat_ttf);
 		
@@ -136,6 +144,14 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -777,6 +793,14 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_nokiafc22_ttf);
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_monsterrat_ttf);
 		
@@ -801,6 +825,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/images/saw.png", AssetType.IMAGE);
 		path.set ("assets/images/Shovel.png", "assets/images/Shovel.png");
 		type.set ("assets/images/Shovel.png", AssetType.IMAGE);
+		path.set ("assets/img/ArchitectTutTalk.png", "assets/img/ArchitectTutTalk.png");
+		type.set ("assets/img/ArchitectTutTalk.png", AssetType.IMAGE);
 		path.set ("assets/img/back.png", "assets/img/back.png");
 		type.set ("assets/img/back.png", AssetType.IMAGE);
 		path.set ("assets/img/background.png", "assets/img/background.png");
@@ -879,16 +905,26 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/img/Buttons/upgrades-2.png", AssetType.IMAGE);
 		path.set ("assets/img/castle-background.png", "assets/img/castle-background.png");
 		type.set ("assets/img/castle-background.png", AssetType.IMAGE);
+		path.set ("assets/img/CatTalkTut.png", "assets/img/CatTalkTut.png");
+		type.set ("assets/img/CatTalkTut.png", AssetType.IMAGE);
 		path.set ("assets/img/Characters/architect.png", "assets/img/Characters/architect.png");
 		type.set ("assets/img/Characters/architect.png", AssetType.IMAGE);
 		path.set ("assets/img/Characters/cat.png", "assets/img/Characters/cat.png");
 		type.set ("assets/img/Characters/cat.png", AssetType.IMAGE);
 		path.set ("assets/img/Characters/doctor.png", "assets/img/Characters/doctor.png");
 		type.set ("assets/img/Characters/doctor.png", AssetType.IMAGE);
+		path.set ("assets/img/DoctorTutTalk.png", "assets/img/DoctorTutTalk.png");
+		type.set ("assets/img/DoctorTutTalk.png", AssetType.IMAGE);
 		path.set ("assets/img/EmptyEnergy.png", "assets/img/EmptyEnergy.png");
 		type.set ("assets/img/EmptyEnergy.png", AssetType.IMAGE);
 		path.set ("assets/img/EnergySymbol.png", "assets/img/EnergySymbol.png");
 		type.set ("assets/img/EnergySymbol.png", AssetType.IMAGE);
+		path.set ("assets/img/FlowerUpgrade.png", "assets/img/FlowerUpgrade.png");
+		type.set ("assets/img/FlowerUpgrade.png", AssetType.IMAGE);
+		path.set ("assets/img/FlowerUpgradeDONE.png", "assets/img/FlowerUpgradeDONE.png");
+		type.set ("assets/img/FlowerUpgradeDONE.png", AssetType.IMAGE);
+		path.set ("assets/img/flower_Plant_Thing.png", "assets/img/flower_Plant_Thing.png");
+		type.set ("assets/img/flower_Plant_Thing.png", AssetType.IMAGE);
 		path.set ("assets/img/FullEnergy.png", "assets/img/FullEnergy.png");
 		type.set ("assets/img/FullEnergy.png", AssetType.IMAGE);
 		path.set ("assets/img/left-1.png", "assets/img/left-1.png");
@@ -899,12 +935,16 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/img/Minigame/BananaButton.png", AssetType.IMAGE);
 		path.set ("assets/img/Minigame/BurgerButton.png", "assets/img/Minigame/BurgerButton.png");
 		type.set ("assets/img/Minigame/BurgerButton.png", AssetType.IMAGE);
+		path.set ("assets/img/Minigame/DestroyImagePoef.png", "assets/img/Minigame/DestroyImagePoef.png");
+		type.set ("assets/img/Minigame/DestroyImagePoef.png", AssetType.IMAGE);
 		path.set ("assets/img/Minigame/Minigame Background.png", "assets/img/Minigame/Minigame Background.png");
 		type.set ("assets/img/Minigame/Minigame Background.png", AssetType.IMAGE);
 		path.set ("assets/img/Minigame/WaterMelonButton.png", "assets/img/Minigame/WaterMelonButton.png");
 		type.set ("assets/img/Minigame/WaterMelonButton.png", AssetType.IMAGE);
 		path.set ("assets/img/MissionButton.png", "assets/img/MissionButton.png");
 		type.set ("assets/img/MissionButton.png", AssetType.IMAGE);
+		path.set ("assets/img/MoneyBar.png", "assets/img/MoneyBar.png");
+		type.set ("assets/img/MoneyBar.png", AssetType.IMAGE);
 		path.set ("assets/img/MoodHappy.png", "assets/img/MoodHappy.png");
 		type.set ("assets/img/MoodHappy.png", AssetType.IMAGE);
 		path.set ("assets/img/Moodmenu/MoodAngry.png", "assets/img/Moodmenu/MoodAngry.png");
@@ -962,6 +1002,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/images/Shovel.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/ArchitectTutTalk.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/img/back.png";
@@ -1081,6 +1124,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/img/castle-background.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
+		id = "assets/img/CatTalkTut.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
 		id = "assets/img/Characters/architect.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
@@ -1090,10 +1136,22 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/img/Characters/doctor.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
+		id = "assets/img/DoctorTutTalk.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
 		id = "assets/img/EmptyEnergy.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/img/EnergySymbol.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/FlowerUpgrade.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/FlowerUpgradeDONE.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/flower_Plant_Thing.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/img/FullEnergy.png";
@@ -1111,6 +1169,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/img/Minigame/BurgerButton.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
+		id = "assets/img/Minigame/DestroyImagePoef.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
 		id = "assets/img/Minigame/Minigame Background.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
@@ -1118,6 +1179,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/img/MissionButton.png";
+		path.set (id, id);
+		type.set (id, AssetType.IMAGE);
+		id = "assets/img/MoneyBar.png";
 		path.set (id, id);
 		type.set (id, AssetType.IMAGE);
 		id = "assets/img/MoodHappy.png";
@@ -1190,6 +1254,14 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		className.set ("assets/data/GLECB.TTF", __ASSET__assets_data_glecb_ttf);
 		type.set ("assets/data/GLECB.TTF", AssetType.FONT);
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -2062,6 +2134,14 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
+
+
+
+
+
+
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_beep_ogg extends null { }
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_flixel_ogg extends null { }
 @:keep @:bind #if display private #end class __ASSET__flixel_fonts_nokiafc22_ttf extends null { }
@@ -2072,6 +2152,14 @@ class DefaultAssetLibrary extends AssetLibrary {
 #elseif html5
 
 @:keep #if display private #end class __ASSET__assets_data_glecb_ttf extends lime.text.Font { public function new () { super (); name = "Gloucester MT Extra Condensed"; } } 
+
+
+
+
+
+
+
+
 
 
 

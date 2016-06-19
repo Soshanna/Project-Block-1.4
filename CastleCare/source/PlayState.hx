@@ -27,6 +27,9 @@ class PlayState extends FlxState
 	var rightNow:Date = Date.now();
 	var timeDifference:Float;
 	var lastTime:Float;
+	var upgradeText:FlxText;
+	var flowerBool:Bool;
+	var flower:FlxSprite;
 	
 	override public function create():Void{
 		var save:FlxSave = new FlxSave();
@@ -37,9 +40,6 @@ class PlayState extends FlxState
 		save.close();
 		
 		timeDifference = (((rightNow.getTime() - lastTime) / 1000) / 100) * 60;
-		trace(rightNow.getTime());
-		trace(lastTime);
-		trace(timeDifference);
 		//timeDifference = (((rightNow.getTime() - lastTime) / 1000) / 100)* 0.02777778;
 		if (energy >= 100){
 			energy = 100;
@@ -69,10 +69,13 @@ class PlayState extends FlxState
 		text = new FlxText(energyBar.x + (energyBar.width / 2) - 40, energyBar.y + 3, 0, Math.floor(energy) + "%", 16);
 		add(text);
 		
-		_btnUpgradeMenu = new FlxButton(energyBar.x + energyBar.width + 50, energyBar.y - 5, "$ " + currency, clickUpgradeMenu);
-		_btnUpgradeMenu.label.size = 24;
-		_btnUpgradeMenu.loadGraphic("assets/img/Buttons/leeg.png");
+		_btnUpgradeMenu = new FlxButton(energyBar.x + energyBar.width + 50, energyBar.y - 18, "" ,clickUpgradeMenu);
+		_btnUpgradeMenu.loadGraphic("assets/img/MoneyBar.png");
 		add(_btnUpgradeMenu);
+		
+		upgradeText = new FlxText(_btnUpgradeMenu.x + 45, _btnUpgradeMenu.y + 20, 0, "" + currency, 24);
+		add(upgradeText);
+		
 		super.create();
 	}
 	
@@ -113,7 +116,7 @@ class PlayState extends FlxState
 		energyBar.value = energy;
 		energyBar.updateBar();
 		text.text = Math.floor(energy) + "%";
-		_btnUpgradeMenu.text = "$ " + currency;
+		upgradeText.text = "" + currency;
 		if(energy < 100){
 			energy += 0.01;
 			//energy += 0.0002777778;
